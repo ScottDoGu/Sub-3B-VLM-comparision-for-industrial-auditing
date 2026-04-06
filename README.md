@@ -103,6 +103,8 @@ four_models\Scripts\python.exe src\generation_cot\run_smolvlm_cot.py
 four_models\Scripts\python.exe src\evaluation\parse_results.py
 four_models\Scripts\python.exe src\evaluation\metrics.py
 four_models\Scripts\python.exe src\evaluation\failure_analysis.py
+four_models\Scripts\python.exe src\evaluation\multi_run_metrics.py
+four_models\Scripts\python.exe src\evaluation\statistical_tests.py --intervention decomp
 ```
 
 ### 5. Results & Outputs
@@ -110,7 +112,8 @@ All outputs are saved to `results/`:
 - **Baseline**: `results/baseline/` (raw outputs, parsed results, metrics, failure analysis)
 - **Innovation phases**: `results/innovation/{cot,decomposition,contrast,contrast_cot}/`
 - **Profiling**: `results/profiling/hardware_summary.csv`
-- **Metrics**: Each phase directory contains a `metrics/metrics_summary.csv`
+- **Metrics**: Each phase directory contains a `metrics/metrics_summary.csv` and multi-run `aggregated_multi_run_metrics.csv`.
+- **Statistical Significance**: Model architecture proofs and McNemar paired exact test p-values are generated heavily in `results/metrics/mcnemar_{intervention}_significance.csv`.
 
 ## Dataset Information
 The `Dataset/` directory contains the manually curated "Golden 100" benchmark:
@@ -126,6 +129,8 @@ No additional data ingestion is needed. The dataset and preprocessed images are 
 - **Resolution**: Standardized to model-native input resolution (384px or 448px)
 - **Decoding**: Greedy search with repetition penalty 1.1
 - **Evaluation**: ANLS (reading accuracy), LCR (logic compliance), F1, Accuracy
+- **Statistical Testing**: Multi-run ($N=3$) deterministic validation utilizing McNemar’s exact paired test to prevent arbitrary benchmarking.
+- **Architectural Analysis**: Advanced Safety-Critical tradeoffs (False Positive Rate vs False Negative Rate) mapped directly to neural frameworks (e.g. Attention Overshadowing, Modality Collapse) are formally documented in `docs/Deep_comparative_hypothesis_test.md`.
 
 ## License
 Refer to the individual model cards or official repositories for specific licensing information.
