@@ -1,0 +1,6 @@
+Model,N (Pairs),Base LCR %,Inv LCR %,Regressed(b),Improved(c),p-value
+SmolVLM,300,10.0%,18.0%,24,48,0.0063*
+InternVL2,300,25.0%,36.0%,48,81,0.0046*
+Janus,300,18.0%,14.0%,24,12,0.0652
+Qwen2-VL,300,19.0%,40.0%,9,72,0.0000*
+MiniCPM,300,27.0%,27.0%,60,60,1.0000
