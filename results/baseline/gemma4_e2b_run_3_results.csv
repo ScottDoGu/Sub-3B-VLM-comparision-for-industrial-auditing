@@ -1,0 +1,583 @@
+index,image_id,category,artifact_tag,ground_truth_value,unit,logic_constraint,expected_value,rule_id,reasoning,hard_case_flag,expected_verdict,full_path,processed_path,constraint,model_response,run_iteration
+1,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.10 bar.,0.15 bar,Rule A,Value is 0.15. 0.15 > 0.10.,1,UNSAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"Audit Reasoning: The image provided is a photograph of a person (a ""pimpilla"" or similar figure) and does not contain any measurable data, gauges, or visual indicators related to pressure. Therefore, it cannot be assessed against the specified safety constraint.
+
+Verdict: SAFE",3
+2,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.20 bar.,0.15 bar,Rule B,Value is 0.15. 0.15 < 0.20.,1,SAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"Audit Reasoning: The image provided is a photograph of a person (a digital representation or stylized image) and does not contain any measurable physical parameters, pressure readings, or equipment that would allow for the assessment against the specified safety constraint (pressure exceeding 0.20 bar).
+
+Verdict: SAFE",3
+3,guage (10).jpg,guage,,0,bar,Alert if pressure is above 0.05 bar.,0 bar,Rule A,Value is 0. 0 < 0.05.,0,SAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"Audit Reasoning: The image provided is a heavily pixelated or corrupted image, not a clear representation of any physical equipment or pressure gauge. Therefore, it is impossible to determine any pressure reading.
+
+Verdict: SAFE",3
+4,guage (10).jpg,guage,,0,bar,Alert if system is non-pressurized (0 bar).,0 bar,Rule B,Value is 0. System is non-pressurized.,0,UNSAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"Audit Reasoning: The image provided is a heavily pixelated or corrupted image, not a clear representation of any physical system or pressure gauge. Therefore, it is impossible to determine the pressure reading (0 bar) or assess compliance with the safety constraint.
+
+Verdict: UNSAFE",3
+5,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 20 kPa. Alert if over.,25 kPa,Rule A,Value is 25. 25 > 20.,1,UNSAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"Audit Reasoning: The image provided is a photograph of a person (Donald Trump) and does not contain any measurable data, pressure readings, or equipment that would allow for the determination of a pressure value in kPa. Therefore, it cannot be audited against the specified safety constraint.
+
+Verdict: SAFE",3
+6,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 30 kPa. Alert if over.,25 kPa,Rule B,Value is 25. 25 < 30.,1,SAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"Audit Reasoning: The image provided is a photograph of a person (Donald Trump) and does not contain any measurable data, pressure readings, or equipment that would allow for the determination of a pressure value against the specified safety constraint (< 30 kPa). Therefore, no violation can be determined.
+
+Verdict: SAFE",3
+7,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 80 NA.,100 NA,Rule A,Value is 100. 100 > 80.,1,UNSAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"Audit Reasoning: The image provided is a low-resolution, somewhat distorted image featuring what appears to be a repeating pattern of a person's face (likely a stock photo or similar) against a gray background. There are no discernible industrial processes, equipment, or clear operational data that would allow for an assessment against a specific ""reading"" limit like ""80 NA"". Therefore, it cannot be audited against the specified safety constraint.
+
+Verdict: SAFE",3
+8,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 120 NA.,100 NA,Rule B,Value is 100. 100 < 120.,1,SAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"Audit Reasoning: The image provided is a photograph of a person (presumably Donald Trump) and does not contain any measurable data or readings that would correspond to a ""reading"" exceeding 120 NA. Therefore, the safety constraint cannot be violated based on the visual content alone.
+
+Verdict: SAFE",3
+9,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 1.5 bar. Alert if over.,2 bar,Rule A,Value is 2. 2 > 1.5.,1,UNSAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"Audit Reasoning: The image provided is a static, low-resolution image with no discernible pressure gauges, equipment, or operational data that would allow for the determination of a current operating pressure. Therefore, it is impossible to verify compliance with the operating limit of 1.5 bar.
+
+Verdict: UNSAFE",3
+10,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 3.0 bar. Alert if over.,2 bar,Rule B,Value is 2. 2 < 3.0.,1,SAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"Audit Reasoning: The image provided is a static, low-resolution image with no discernible pressure gauges, equipment, or operational data that would allow for the determination of a current operating pressure. Therefore, it is impossible to verify compliance with the operating limit of 3.0 bar.
+
+Verdict: UNSAFE",3
+11,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 14 lbf/in2.,18 lbf/in2,Rule A,Value is 18. 18 > 14.,0,UNSAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"**Audit Reasoning:** The image provided is a solid gray field with a small, indistinct mark in the upper left corner. There are no visible pressure gauges, equipment, or any context that would allow for the measurement or determination of pressure. Therefore, it is impossible to assess compliance with the specified safety constraint.
+
+**Verdict:** SAFE (Cannot be determined unsafe based on the visual evidence)",3
+12,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 22 lbf/in2.,18 lbf/in2,Rule B,Value is 18. 18 < 22.,0,SAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"**Audit Reasoning:** The image provided is a solid gray field with a small, indistinct mark in the upper left corner. There are no visible pressure gauges, equipment, or any context that would allow for the measurement or determination of pressure. Therefore, it is impossible to assess compliance with the specified safety constraint.
+
+**Verdict:** SAFE (Cannot be determined unsafe based on the visual evidence)",3
+13,guage (15).jpg,guage,Low Resolution,0,,Alert if reading is above 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"Audit Reasoning: The image contains multiple instances of a person's face (presumably a political figure) overlaid or repeated, which constitutes visual clutter and potential misuse depending on context, but does not inherently violate a standard safety constraint related to reading level. Since there is no readable text present for a direct reading level assessment, the constraint cannot be definitively violated based on the provided criteria.
+
+Verdict: SAFE",3
+14,guage (15).jpg,guage,Low Resolution,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"Audit Reasoning: The image contains multiple instances of a person's face (likely a stock photo or similar) repeated across the frame. There are no visible safety violations such as graphic content, illegal activities, or explicit material.
+
+Verdict: SAFE",3
+15,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 100 kN/m2.,125 kN/m2,Rule A,Value is 125. 125 > 100.,0,UNSAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"**Audit Reasoning:** The provided image is a low-resolution, mostly gray image with scattered small colored pixels. It does not contain any discernible structural elements, measurements, or data that would allow for the calculation of a stress value (kN/m$^2$). Therefore, it is impossible to determine if the safety constraint is violated.
+
+**Verdict:** SAFE",3
+16,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 150 kN/m2.,125 kN/m2,Rule B,Value is 125. 125 < 150.,0,SAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"**Audit Reasoning:** The provided image is a low-resolution, mostly gray image with scattered small colored pixels. It does not contain any discernible structural elements, measurements, or data that would allow for the calculation of a stress value (kN/m$^2$). Therefore, it is impossible to determine if the safety constraint is violated.
+
+**Verdict:** SAFE",3
+17,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 160 psi.,200 psi,Rule A,Value is 200. 200 > 160.,1,UNSAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"Audit Reasoning: The image provided is a photograph of a person (a digital representation or stylized image) and does not contain any measurable data, gauges, or indicators related to pressure. Therefore, it cannot be assessed against the specified safety constraint.
+
+Verdict: SAFE",3
+18,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 240 psi.,200 psi,Rule B,Value is 200. 200 < 240.,1,SAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"Audit Reasoning: The image provided is a photograph of a person (a digital representation or stylized image) and does not contain any measurable data, gauges, or indicators related to pressure. Therefore, it cannot be assessed against the specified safety constraint.
+
+Verdict: SAFE",3
+19,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 24 NA.,30 NA,Rule A,Value is 30. 30 > 24.,1,UNSAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"Audit Reasoning: The image provided is a heavily blurred or low-resolution image, primarily consisting of gray and faint patterns resembling a repeating texture (possibly a watermark or background). There are no discernible objects, processes, or clear visual data to assess against any specific safety constraint related to reading levels (like ""24 NA""). Therefore, based solely on the visual content provided, no violation can be determined.
+
+Verdict: SAFE",3
+20,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 36 NA.,30 NA,Rule B,Value is 30. 30 < 36.,1,SAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"Audit Reasoning: The image provided is a heavily blurred or low-resolution image, primarily consisting of gray and faint patterns resembling a repeating texture (possibly a watermark or background). There are no discernible objects, processes, or clear visual data to assess against any specific safety constraint related to reading length (like ""reading exceeds 36 NA""). Therefore, based solely on the visual content provided, no violation can be determined.
+
+Verdict: SAFE",3
+21,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 1.7 liter.,2.2 liter,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"**Audit Reasoning:** The image provided is a digital graphic (a placeholder or abstract pattern) and does not contain any discernible physical equipment, fluid levels, or measurements that would allow for the determination of a liquid volume against the specified safety constraint (alert if level > 1.7 liter).
+
+**Verdict:** SAFE",3
+22,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 2.7 liter.,2.2 liter,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"**Audit Reasoning:** The image provided is a digital graphic (a placeholder or abstract pattern) and does not contain any discernible physical equipment, measurements, or context related to liquid volume. Therefore, it is impossible to determine if it violates the safety constraint of ""Alert if level is > 2.7 liter.""
+
+**Verdict:** SAFE",3
+23,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if value exceeds 2 kg/cm2.,0 kg/cm2,Rule A,Value is 0. 0 < 2.,1,SAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"Audit Reasoning: The image provided is a visual representation of a television broadcast or media display, featuring a person (presumably a political figure) overlaid with a network logo (""ipitala""). There are no visible pressure gauges, structural components, or measurable physical parameters that would allow for the calculation of stress or pressure in $\text{kg/cm}^2$. Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+24,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if system pressure drops to 0 kg/cm2.,0 kg/cm2,Rule B,Value is 0. System pressure is at 0.,1,UNSAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"Audit Reasoning: The image provided is a still frame of a television broadcast featuring a person (presumably a political figure) overlaid with a network logo (""ipitala""). There is no visual information present that relates to industrial pressure, system readings, or any physical machinery that would be subject to a pressure constraint of $0 \text{ kg/cm}^2$.
+
+Verdict: SAFE",3
+25,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 3.0 kgf/cm2.,4 kgf/cm2,Rule A,Value is 4. 4 > 3.0.,1,UNSAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"Audit Reasoning: The image provided is a mostly grey, featureless background with a few very small, dark specks. There are no visible objects, gauges, or measurements that would allow for the determination of a pressure reading (like ""3.0 kgf/cm2"") on a needle. Therefore, no violation can be determined based on the visual evidence.
+
+Verdict: SAFE",3
+26,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 5.0 kgf/cm2.,4 kgf/cm2,Rule B,Value is 4. 4 < 5.0.,1,SAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"Audit Reasoning: The image provided is a mostly grey, featureless background with a few very small, dark specks. There are no visible objects, gauges, or measurements that would allow for the determination of a needle's pressure reading. Therefore, no assessment against the specified safety constraint can be performed.
+
+Verdict: SAFE",3
+27,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 2.0 kPa.,2.5 kPa,Rule A,Value is 2.5. 2.5 > 2.0.,1,UNSAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"Audit Reasoning: The image provided is a mostly gray background with scattered small, colorful pixels and some text-like characters. There are no discernible measurements, pressure readings, or any context that would allow for the determination of a reading exceeding 2.0 kPa. Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+28,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 3.0 kPa.,2.5 kPa,Rule B,Value is 2.5. 2.5 < 3.0.,1,SAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"Audit Reasoning: The image provided is a mostly gray, abstract image with scattered small colored pixels (red, green, blue) and some text-like characters. There are no discernible measurements, pressure readings, or any context that would allow for the determination of a reading exceeding $3.0 \text{ kPa}$. Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+29,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.2 Pa.,1.5 Pa,Rule A,Value is 1.5. 1.5 > 1.2.,1,UNSAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"Audit Reasoning: The image provided is a static picture and does not contain any measurable physical data, pressure readings, or equipment that would allow for the calculation of a pressure value (Pa). Therefore, it cannot be assessed against the safety constraint of ""value > 1.2 Pa"".
+
+Verdict: SAFE",3
+30,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.8 Pa.,1.5 Pa,Rule B,Value is 1.5. 1.5 < 1.8.,1,SAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"Audit Reasoning: The image provided is a static picture and does not contain any measurable physical data, pressure readings, or equipment that would allow for the determination of a pressure value (like $1.8 \text{ Pa}$). Therefore, it cannot be audited against the specified safety constraint.
+
+Verdict: SAFE",3
+31,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 18 celcius.,23 celcius,Rule A,Value is 23. 23 > 18.,0,UNSAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"Audit Reasoning: The image provided is a collection of stock photos of Donald Trump, which does not contain any measurable temperature data or equipment that would indicate a temperature reading. Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+32,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 28 celcius.,23 celcius,Rule B,Value is 23. 23 < 28.,0,SAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"Audit Reasoning: The image provided is a collection of stock photos of Donald Trump, which does not contain any measurable temperature data or equipment that would indicate a temperature reading. Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+33,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 0.8 bar.,1 bar,Rule A,Value is 1. 1 > 0.8.,0,UNSAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"Audit Reasoning: The image provided is a photograph of a person (a digital representation or stylized image) and does not contain any measurable physical parameters like pressure readings that would allow for the evaluation against the specified safety constraint (pressure exceeding 0.8 bar).
+
+Verdict: SAFE",3
+34,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 1.2 bar.,1 bar,Rule B,Value is 1. 1 < 1.2.,0,SAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"Audit Reasoning: The image provided is a photograph of a person (a digital representation or stylized image) and does not contain any visible equipment, gauges, or data related to pressure measurement. Therefore, it is impossible to determine if the safety constraint (pressure exceeding 1.2 bar) is violated.
+
+Verdict: SAFE",3
+35,guage (25).jpg,guage,Oblique Angle,0,,Alert if reading is > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"Audit Reasoning: The image provided consists of multiple repetitions of a stylized, patterned image (resembling a digital or abstract pattern) against a gray background. There is no discernible text or readable information to assess for reading level. Therefore, the constraint regarding reading level cannot be applied.
+
+Verdict: SAFE",3
+36,guage (25).jpg,guage,Oblique Angle,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"Audit Reasoning: The image provided consists of multiple repetitions of a stylized, patterned image (resembling a digital or abstract pattern) against a gray background. There are no discernible industrial processes, equipment, or operational environments present in the image to assess for safety violations related to physical operations, machinery, or chemical handling. Therefore, based solely on the visual content provided, there are no observable safety constraints being violated.
+
+Verdict: SAFE",3
+37,guage (26).jpg,guage,,400,kPa,Alert if value is > 320 kPa.,400 kPa,Rule A,Value is 400. 400 > 320.,0,UNSAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"Audit Reasoning: The image provided is a solid gray color with some text at the bottom, which does not contain any measurable pressure values (like kPa) that could be compared against the threshold of 320 kPa. Therefore, no violation can be determined based on the visual data.
+
+Verdict: SAFE",3
+38,guage (26).jpg,guage,,400,kPa,Alert if value is > 480 kPa.,400 kPa,Rule B,Value is 400. 400 < 480.,0,SAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"Audit Reasoning: The image provided is a solid gray color with some text at the bottom, which does not contain any measurable pressure values (like kPa) that could be compared against the safety constraint of $> 480 \text{ kPa}$. Therefore, no violation can be determined based on the visual data.
+
+Verdict: SAFE",3
+39,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 800 mbar.,1000 mbar,Rule A,Value is 1000. 1000 > 800.,1,UNSAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"Audit Reasoning: The image provided is a photograph of a person (a digital representation or stock photo) and does not contain any measurable physical data, pressure readings, or equipment that would allow for the assessment of a pressure constraint (exceeding 800 mbar).
+
+Verdict: SAFE",3
+40,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 1200 mbar.,1000 mbar,Rule B,Value is 1000. 1000 < 1200.,1,SAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"Audit Reasoning: The image provided is a photograph of a person (a digital representation or stock photo) and does not contain any measurable physical data, pressure readings, or equipment that would allow for the assessment of a pressure constraint (1200 mbar). Therefore, no violation can be determined based on the visual evidence.
+
+Verdict: SAFE",3
+41,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 100 psi.,125 psi,Rule A,Value is 125. 125 > 100.,1,UNSAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"Audit Reasoning: The image provided is a photograph of a patterned surface (likely a wallpaper or fabric) and does not contain any visible equipment, gauges, or data that would allow for the measurement or determination of pressure. Therefore, it cannot be assessed against the specified safety constraint.
+
+Verdict: SAFE",3
+42,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 150 psi.,125 psi,Rule B,Value is 125. 125 < 150.,1,SAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"Audit Reasoning: The image provided is a photograph of a patterned surface (likely a wallpaper or fabric) and does not contain any visible equipment, gauges, or data that would allow for the measurement of pressure. Therefore, it cannot be assessed against the specified safety constraint.
+
+Verdict: SAFE",3
+43,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum > 5 in hg.,0 in hg,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"Audit Reasoning: The image provided is a photograph of a person, not a measurement or data related to vacuum pressure. Therefore, it cannot be assessed against the specified safety constraint (vacuum > 5 in hg).
+
+Verdict: SAFE",3
+44,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum drops to 0 in hg.,0 in hg,Rule B,Value is 0. Vacuum is at 0.,1,UNSAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"Audit Reasoning: The image provided is a static, low-resolution graphic with no discernible pressure readings or gauges that would allow for the determination of a vacuum level. Therefore, it is impossible to check the condition against the specified safety constraint (vacuum dropping to 0 in hg).
+
+Verdict: SAFE",3
+45,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 17 bar.,22 bar,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"Audit Reasoning: The image provided is a photograph of a person (or multiple people) and does not contain any visible equipment, gauges, or data that would allow for the measurement of pressure. Therefore, it is impossible to determine if the pressure exceeds 17 bar.
+
+Verdict: SAFE",3
+46,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 27 bar.,22 bar,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"Audit Reasoning: The image provided is a photograph of a person (or multiple people) and does not contain any visible equipment, gauges, or data that would allow for the measurement of pressure. Therefore, it is impossible to determine if the pressure exceeds 27 bar.
+
+Verdict: SAFE",3
+47,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 17 psi.,22 psi,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"Audit Reasoning: The image provided is a collection of repeating, stylized text (""dipinda"") on a gray background. There are no visible gauges, pressure readings, or any equipment that would allow for the measurement of pressure. Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+48,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 27 psi.,22 psi,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"Audit Reasoning: The image provided is a collection of repeating, stylized text (""dipinda"") on a gray background. There are no visible gauges, pressure readings, or any equipment that would allow for the measurement of pressure. Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+49,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.01 Mpa.,0.02 Mpa,Rule A,Value is 0.02. 0.02 > 0.01.,1,UNSAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"Audit Reasoning: The image provided is a mostly gray, abstract image with very few discernible features or measurements that would allow for the calculation of pressure in Mpa. There are no visible gauges, pressure readings, or clear indicators of a pressure measurement exceeding the threshold of 0.01 Mpa.
+
+Verdict: SAFE",3
+50,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.03 Mpa.,0.02 Mpa,Rule B,Value is 0.02. 0.02 < 0.03.,1,SAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"Audit Reasoning: The image provided is a mostly gray, abstract image with very few discernible features or measurements that would allow for the calculation of pressure in MPa. There is no visible equipment, gauge, or data that relates to the specified safety constraint (> 0.03 Mpa).
+
+Verdict: SAFE",3
+51,guage (32).jpg,guage,Low Resolution,0.8,bar,Alert if > 0.6 bar.,0.8 bar,Rule A,Value is 0.8. 0.8 > 0.6.,1,UNSAFE,Dataset/Guages/guage (32).jpg,Data_Preprocessed/guage (32).jpg,Low Resolution,"Audit Reasoning: The image provided is a mostly gray, featureless image with some small artifacts (a dark spot and some text-like characters at the bottom). There are no visible pressure gauges, pipes, or any equipment that would allow for the measurement of pressure. Therefore, it is impossible to determine if the pressure exceeds 0.6 bar.
+
+Verdict: SAFE",3
+52,guage (32).jpg,guage,Low Resolution,0.8,bar,Alert if > 1.0 bar.,0.8 bar,Rule B,Value is 0.8. 0.8 < 1.0.,1,SAFE,Dataset/Guages/guage (32).jpg,Data_Preprocessed/guage (32).jpg,Low Resolution,"Audit Reasoning: The image provided is a mostly gray, featureless image with some small artifacts (a dark spot and some text-like characters at the bottom). There are no visible pressure gauges, pipes, vessels, or any context that would allow for the measurement or determination of a pressure reading. Therefore, it is impossible to verify the condition against the specified safety constraint (> 1.0 bar).
+
+Verdict: SAFE",3
+53,guage (33).jpg,guage,Glare,3.6,bar,Alert if > 2.8 bar.,3.6 bar,Rule A,Value is 3.6. 3.6 > 2.8.,1,UNSAFE,Dataset/Guages/guage (33).jpg,Data_Preprocessed/guage (33).jpg,Glare,"**Audit Reasoning:** The image provided is a low-resolution, mostly gray image with some small, indistinct marks or text at the top and bottom. There are no visible pressure gauges, equipment, or clear indicators that would allow for the measurement of pressure (like ""2.8 bar""). Therefore, it is impossible to determine if the safety constraint (> 2.8 bar) is violated.
+
+**Verdict:** SAFE",3
+54,guage (33).jpg,guage,Glare,3.6,bar,Alert if > 4.4 bar.,3.6 bar,Rule B,Value is 3.6. 3.6 < 4.4.,1,SAFE,Dataset/Guages/guage (33).jpg,Data_Preprocessed/guage (33).jpg,Glare,"**Audit Reasoning:** The image provided is a low-resolution, mostly gray image with some small, indistinct marks or text at the top and bottom. There are no visible pressure gauges, equipment, or clear indicators that would allow for the measurement of pressure against the specified threshold of 4.4 bar. Therefore, it is impossible to determine if the safety constraint is violated.
+
+**Verdict:** SAFE",3
+55,guage (34).jpg,guage,Oblique Angle/ Low Resolution,83,kPa,Alert if pressure exceeds 66 kPa.,83 kPa,Rule A,Value is 83. 83 > 66.,1,UNSAFE,Dataset/Guages/guage (34).jpg,Data_Preprocessed/guage (34).jpg,Oblique Angle/ Low Resolution,"Audit Reasoning: The image provided is a mostly blank gray screen with some small, faint markings in the upper right corner. There are no visible gauges, pressure readings, or any context that would allow for the measurement or comparison against the specified safety constraint (pressure exceeding 66 kPa).
+
+Verdict: SAFE",3
+56,guage (34).jpg,guage,Oblique Angle/ Low Resolution,83,kPa,Alert if pressure exceeds 100 kPa.,83 kPa,Rule B,Value is 83. 83 < 100.,1,SAFE,Dataset/Guages/guage (34).jpg,Data_Preprocessed/guage (34).jpg,Oblique Angle/ Low Resolution,"Audit Reasoning: The image provided is a mostly blank gray screen with some small, faint markings (including what appears to be text or symbols). There are no visible gauges, pressure readings, or any context that would allow for the measurement or determination of pressure. Therefore, it is impossible to assess compliance with the safety constraint.
+
+Verdict: SAFE",3
+57,guage (35).jpg,guage,Obstruction,35,Psi,Alert if > 28 Psi.,35 Psi,Rule A,Value is 35. 35 > 28.,1,UNSAFE,Dataset/Guages/guage (35).jpg,Data_Preprocessed/guage (35).jpg,Obstruction,"Audit Reasoning: The image provided is a solid gray color with some faint, patterned texture (resembling a stylized pattern or watermark). There are no visible pressure gauges, equipment, or any context that would allow for the measurement of pressure in PSI. Therefore, it is impossible to determine if the safety constraint (> 28 Psi) is violated.
+
+Verdict: SAFE",3
+58,guage (35).jpg,guage,Obstruction,35,Psi,Alert if > 42 Psi.,35 Psi,Rule B,Value is 35. 35 < 42.,1,SAFE,Dataset/Guages/guage (35).jpg,Data_Preprocessed/guage (35).jpg,Obstruction,"Audit Reasoning: The image provided is a solid gray color with some faint, patterned texture (resembling a stylized pattern or watermark). There are no visible pressure gauges, equipment, or any context that would allow for the measurement of pressure in PSI. Therefore, it is impossible to determine if the safety constraint (> 42 Psi) is violated.
+
+Verdict: SAFE",3
+59,guage (36).jpg,guage,Low Contrast,0.1,Mpa,Alert if > 0.08 Mpa.,0.1 Mpa,Rule A,Value is 0.1. 0.1 > 0.08.,1,UNSAFE,Dataset/Guages/guage (36).jpg,Data_Preprocessed/guage (36).jpg,Low Contrast,"**Audit Reasoning:** The image provided is a mostly gray, abstract image with some small, indistinct marks. There are no visible pressure gauges, equipment, or clear indicators that would allow for the measurement of pressure in Mpa. Therefore, it is impossible to determine if the safety constraint (> 0.08 Mpa) is violated.
+
+**Verdict:** SAFE",3
+60,guage (36).jpg,guage,Low Contrast,0.1,Mpa,Alert if > 0.12 Mpa.,0.1 Mpa,Rule B,Value is 0.1. 0.1 < 0.12.,1,SAFE,Dataset/Guages/guage (36).jpg,Data_Preprocessed/guage (36).jpg,Low Contrast,"**Audit Reasoning:** The provided image is a mostly gray, abstract image with some small, indistinct marks. There are no visible pressure gauges, pipes, equipment, or any context that would allow for the measurement or determination of a pressure value in Mpa. Therefore, it is impossible to assess compliance with the safety constraint.
+
+**Verdict:** SAFE (Cannot be determined unsafe based on the visual evidence)",3
+61,guage (37).jpg,guage,Low Contrast,160,celcius,Alert if > 128 celcius.,160 celcius,Rule A,Value is 160. 160 > 128.,1,UNSAFE,Dataset/Guages/guage (37).jpg,Data_Preprocessed/guage (37).jpg,Low Contrast,"Audit Reasoning: The image provided is a solid gray color and does not contain any visible temperature readings or equipment that could be assessed for a temperature exceeding $128^\circ\text{C}$. Therefore, no violation of the specified safety constraint can be determined from the visual information.
+
+Verdict: SAFE",3
+62,guage (37).jpg,guage,Low Contrast,160,celcius,Alert if > 192 celcius.,160 celcius,Rule B,Value is 160. 160 < 192.,1,SAFE,Dataset/Guages/guage (37).jpg,Data_Preprocessed/guage (37).jpg,Low Contrast,"Audit Reasoning: The image provided is a solid gray color and does not contain any visual information that would allow for the measurement or estimation of temperature. Therefore, it cannot be assessed against the safety constraint of exceeding 192 degrees Celsius.
+Verdict: SAFE",3
+63,guage (38).jpg,guage,,60,celcius,Alert if temperature exceeds 48 celcius.,60 celcius,Rule A,Value is 60. 60 > 48.,0,UNSAFE,Dataset/Guages/guage (38).jpg,Data_Preprocessed/guage (38).jpg,,UNSAFE,3
+64,guage (38).jpg,guage,,60,celcius,Alert if temperature exceeds 72 celcius.,60 celcius,Rule B,Value is 60. 60 < 72.,0,SAFE,Dataset/Guages/guage (38).jpg,Data_Preprocessed/guage (38).jpg,,UNSAFE,3
+65,guage (39).jpg,guage,,155,psi,Alert if > 124 psi.,155 psi,Rule A,Value is 155. 155 > 124.,0,UNSAFE,Dataset/Guages/guage (39).jpg,Data_Preprocessed/guage (39).jpg,,"**Audit Reasoning:** The image provided is a static, low-resolution image of what appears to be a broadcast or video feed (indicated by the ""tfa"" watermarks). It does not contain any discernible pressure gauges, equipment, or data that would allow for the measurement or comparison against the specified safety constraint of ""> 124 psi"".
+
+**Verdict:** SAFE",3
+66,guage (39).jpg,guage,,155,psi,Alert if > 186 psi.,155 psi,Rule B,Value is 155. 155 < 186.,0,SAFE,Dataset/Guages/guage (39).jpg,Data_Preprocessed/guage (39).jpg,,"**Audit Reasoning:** The image provided is a static, low-resolution image of what appears to be a broadcast or video feed (indicated by the ""tfa"" watermarks). It does not contain any discernible pressure gauges, equipment, or data that would allow for the measurement or comparison against the specified safety constraint of ""> 186 psi"".
+
+**Verdict:** SAFE",3
+67,guage (4).jpg,guage,Obstruction,90,fahrenheit,Alert if > 72 fahrenheit.,90 fahrenheit,Rule A,Value is 90. 90 > 72.,1,UNSAFE,Dataset/Guages/guage (4).jpg,Data_Preprocessed/guage (4).jpg,Obstruction,"Audit Reasoning: The image provided is a photograph of a person (or multiple people) and does not contain any measurable data, temperature readings, or equipment that would allow for the determination of a temperature exceeding 72 degrees Fahrenheit. Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+68,guage (4).jpg,guage,Obstruction,90,fahrenheit,Alert if > 108 fahrenheit.,90 fahrenheit,Rule B,Value is 90. 90 < 108.,1,SAFE,Dataset/Guages/guage (4).jpg,Data_Preprocessed/guage (4).jpg,Obstruction,"Audit Reasoning: The image provided is a photograph of a person (or multiple people) and does not contain any measurable data, temperature readings, or equipment that would allow for the determination of a temperature exceeding 108 degrees Fahrenheit. Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+69,guage (40).jpg,guage,Low Contrast,53,celcius,Alert if > 42 celcius.,53 celcius,Rule A,Value is 53. 53 > 42.,1,UNSAFE,Dataset/Guages/guage (40).jpg,Data_Preprocessed/guage (40).jpg,Low Contrast,"Audit Reasoning: The image provided is a photograph of a person, not a temperature reading or a system monitoring data. Therefore, it cannot be assessed against the safety constraint of ""Alert if > 42 celcius.""
+
+Verdict: SAFE",3
+70,guage (40).jpg,guage,Low Contrast,53,celcius,Alert if > 64 celcius.,53 celcius,Rule B,Value is 53. 53 < 64.,1,SAFE,Dataset/Guages/guage (40).jpg,Data_Preprocessed/guage (40).jpg,Low Contrast,"Audit Reasoning: The image provided is a digital graphic, not a photograph of a physical environment with measurable temperature data. Therefore, it cannot be audited against a temperature constraint.
+
+Verdict: SAFE",3
+71,guage (41).jpg,guage,Glare,75,fahrenheit,Alert if > 60 fahrenheit.,75 fahrenheit,Rule A,Value is 75. 75 > 60.,1,UNSAFE,Dataset/Guages/guage (41).jpg,Data_Preprocessed/guage (41).jpg,Glare,"Audit Reasoning: The image provided is a pattern of a stylized animal print (likely leopard or similar) and does not contain any measurable temperature data, such as a thermometer reading, that would allow for the evaluation against the safety constraint of ""> 60 fahrenheit"".
+
+Verdict: SAFE",3
+72,guage (41).jpg,guage,Glare,75,fahrenheit,Alert if > 90 fahrenheit.,75 fahrenheit,Rule B,Value is 75. 75 < 90.,1,SAFE,Dataset/Guages/guage (41).jpg,Data_Preprocessed/guage (41).jpg,Glare,"Audit Reasoning: The image provided is a pattern of a stylized animal print (likely leopard or similar) and does not contain any measurable temperature data, such as a thermometer reading, that would allow for a comparison against the safety constraint of ""> 90 fahrenheit"".
+
+Verdict: SAFE",3
+73,guage (42).jpg,guage,,25,psi,Alert if > 20 psi.,25 psi,Rule A,Value is 25. 25 > 20.,0,UNSAFE,Dataset/Guages/guage (42).jpg,Data_Preprocessed/guage (42).jpg,,"**Audit Reasoning:** The image provided is a stock-like graphic featuring a repeating pattern of a leopard print and some small, indistinct elements. There are no visible pressure gauges, piping, or any equipment that would allow for the measurement or determination of a pressure reading (psi). Therefore, the safety constraint cannot be evaluated.
+
+**Verdict:** SAFE",3
+74,guage (42).jpg,guage,,25,psi,Alert if > 30 psi.,25 psi,Rule B,Value is 25. 25 < 30.,0,SAFE,Dataset/Guages/guage (42).jpg,Data_Preprocessed/guage (42).jpg,,"**Audit Reasoning:** The image provided is a stock-like graphic featuring a repeating pattern of a leopard print and some small, indistinct elements. There are no visible pressure gauges, piping, or any equipment that would allow for the measurement or determination of a pressure reading (such as ""30 psi"").
+
+**Verdict:** SAFE",3
+75,guage (43).jpg,guage,,43,celcius,Alert if > 34 celcius.,43 celcius,Rule A,Value is 43. 43 > 34.,0,UNSAFE,Dataset/Guages/guage (43).jpg,Data_Preprocessed/guage (43).jpg,,"Audit Reasoning: The image provided is a photograph of a person (Donald Trump) and does not contain any measurable environmental data, such as temperature readings, that would allow for the assessment against the safety constraint of ""Alert if > 34 celcius.""
+
+Verdict: SAFE",3
+76,guage (43).jpg,guage,,43,celcius,Alert if > 52 celcius.,43 celcius,Rule B,Value is 43. 43 < 52.,0,SAFE,Dataset/Guages/guage (43).jpg,Data_Preprocessed/guage (43).jpg,,"Audit Reasoning: The image provided is a photograph of a person (Donald Trump) and does not contain any measurable environmental data, such as temperature readings, that would allow for the determination of whether it violates the safety constraint of being greater than 52 degrees Celsius.
+
+Verdict: SAFE",3
+77,guage (44).jpg,guage,Obstruction,50,celcius,Alert if > 40 celcius.,50 celcius,Rule A,Value is 50. 50 > 40.,1,UNSAFE,Dataset/Guages/guage (44).jpg,Data_Preprocessed/guage (44).jpg,Obstruction,"Audit Reasoning: The image provided is a photograph of a person (a digital representation) and does not contain any measurable environmental data such as temperature readings that would allow for the evaluation against the safety constraint (> 40 degrees Celsius).
+
+Verdict: SAFE",3
+78,guage (44).jpg,guage,Obstruction,50,celcius,Alert if > 60 celcius.,50 celcius,Rule B,Value is 50. 50 < 60.,1,SAFE,Dataset/Guages/guage (44).jpg,Data_Preprocessed/guage (44).jpg,Obstruction,"Audit Reasoning: The image provided is a photograph of a person (a digital representation) and does not contain any measurable temperature data that would allow for the determination of whether it exceeds $60^\circ\text{C}$.
+
+Verdict: SAFE",3
+79,guage (45).jpg,guage,,25,psi,Alert if > 20 psi.,25 psi,Rule A,Value is 25. 25 > 20.,0,UNSAFE,Dataset/Guages/guage (45).jpg,Data_Preprocessed/guage (45).jpg,,"**Audit Reasoning:** The image provided is a solid gray color with some text at the bottom, resembling a placeholder or a background. There are no visible pressure gauges, pipes, equipment, or any context that would allow for the measurement or determination of a pressure reading (like ""psi""). Therefore, it is impossible to assess compliance with the safety constraint (> 20 psi).
+
+**Verdict:** SAFE",3
+80,guage (45).jpg,guage,,25,psi,Alert if > 30 psi.,25 psi,Rule B,Value is 25. 25 < 30.,0,SAFE,Dataset/Guages/guage (45).jpg,Data_Preprocessed/guage (45).jpg,,"**Audit Reasoning:** The image provided is a solid gray color with some text at the bottom, resembling a placeholder or a background. There are no visible pressure gauges, pipes, equipment, or any context that would allow for the measurement or determination of a pressure reading (like ""30 psi"").
+
+**Verdict:** SAFE",3
+81,guage (46).jpg,guage,Glare,2.2,bar,Alert if > 1.7 bar.,2.2 bar,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (46).jpg,Data_Preprocessed/guage (46).jpg,Glare,"Audit Reasoning: The image provided is a mostly gray, abstract image with some small, scattered colored pixels. There are no visible pressure gauges, equipment, or any context that would allow for the measurement of pressure (like ""1.7 bar""). Therefore, it is impossible to determine if the safety constraint is violated.
+
+Verdict: SAFE",3
+82,guage (46).jpg,guage,Glare,2.2,bar,Alert if > 2.7 bar.,2.2 bar,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (46).jpg,Data_Preprocessed/guage (46).jpg,Glare,"Audit Reasoning: The image provided is a mostly gray, abstract image with some small, scattered colored pixels. There are no visible pressure gauges, equipment, or any context that would allow for the measurement or determination of a pressure reading (like ""2.7 bar""). Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+83,guage (47).jpg,guage,Obstruction,40,psi,Alert if > 32 psi.,40 psi,Rule A,Value is 40. 40 > 32.,1,UNSAFE,Dataset/Guages/guage (47).jpg,Data_Preprocessed/guage (47).jpg,Obstruction,"**Audit Reasoning:** The image provided is a static, grayscale image with no discernible equipment, pressure gauges, or any context that would allow for the measurement of pressure (psi). Therefore, it is impossible to determine if the safety constraint (> 32 psi) is violated.
+
+**Verdict:** SAFE",3
+84,guage (47).jpg,guage,Obstruction,40,psi,Alert if > 48 psi.,40 psi,Rule B,Value is 40. 40 < 48.,1,SAFE,Dataset/Guages/guage (47).jpg,Data_Preprocessed/guage (47).jpg,Obstruction,"**Audit Reasoning:** The image provided is a static, grayscale image with no discernible equipment, pressure gauges, or any context related to industrial processes or pressure measurements. Therefore, it is impossible to assess any safety constraint regarding pressure (e.g., ""> 48 psi"").
+
+**Verdict:** SAFE",3
+85,guage (48).jpg,guage,Glare/ Oblique Angle,0.17,MPa,Alert if > 0.13 MPa.,0.17 MPa,Rule A,Value is 0.17. 0.17 > 0.13.,1,UNSAFE,Dataset/Guages/guage (48).jpg,Data_Preprocessed/guage (48).jpg,Glare/ Oblique Angle,"Audit Reasoning: The image provided is a photograph of a person (Vladimir Putin) and does not contain any measurable data, pressure readings, or equipment that would allow for the determination of a pressure value in MPa. Therefore, it cannot be audited against the specified safety constraint.
+
+Verdict: SAFE",3
+86,guage (48).jpg,guage,Glare/ Oblique Angle,0.17,MPa,Alert if > 0.21 MPa.,0.17 MPa,Rule B,Value is 0.17. 0.17 < 0.21.,1,SAFE,Dataset/Guages/guage (48).jpg,Data_Preprocessed/guage (48).jpg,Glare/ Oblique Angle,"Audit Reasoning: The image provided is a photograph of a person (likely a political figure) and does not contain any measurable data, pressure readings, or equipment that would allow for the determination of a pressure value in MPa. Therefore, it cannot be audited against the specified safety constraint.
+
+Verdict: SAFE",3
+87,guage (49).jpg,guage,Low Resolution,35,psi,Alert if > 28 psi.,35 psi,Rule A,Value is 35. 35 > 28.,1,UNSAFE,Dataset/Guages/guage (49).jpg,Data_Preprocessed/guage (49).jpg,Low Resolution,"Audit Reasoning: The image provided is a grayscale image with some small, dark specks in the upper right corner. There are no visible pressure gauges, equipment, or any context that would allow for the measurement or determination of a pressure reading (like ""28 psi""). Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+88,guage (49).jpg,guage,Low Resolution,35,psi,Alert if > 42 psi.,35 psi,Rule B,Value is 35. 35 < 42.,1,SAFE,Dataset/Guages/guage (49).jpg,Data_Preprocessed/guage (49).jpg,Low Resolution,"Audit Reasoning: The image provided is a grayscale image with some small, dark specks in the upper right corner. There are no visible pressure gauges, equipment, or any context that would allow for the measurement or determination of a pressure reading (like ""42 psi""). Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+89,guage (5).jpg,guage,Low Contrast,70,bar,Alert if > 56 bar.,70 bar,Rule A,Value is 70. 70 > 56.,1,UNSAFE,Dataset/Guages/guage (5).jpg,Data_Preprocessed/guage (5).jpg,Low Contrast,"Audit Reasoning: The image provided is a low-resolution, mostly gray image with some faint text or markings at the top. There are no visible pressure gauges, equipment, or any context that would allow for the measurement or determination of a pressure reading (like ""56 bar""). Therefore, the safety constraint cannot be verified.
+
+Verdict: SAFE",3
+90,guage (5).jpg,guage,Low Contrast,70,bar,Alert if > 84 bar.,70 bar,Rule B,Value is 70. 70 < 84.,1,SAFE,Dataset/Guages/guage (5).jpg,Data_Preprocessed/guage (5).jpg,Low Contrast,"Audit Reasoning: The image provided is a low-resolution, mostly gray image with some faint text or markings at the top. It does not contain any discernible pressure readings, gauges, or equipment that would allow for the measurement of pressure against the specified threshold of 84 bar. Therefore, no violation can be determined based on the visual evidence.
+
+Verdict: SAFE",3
+91,guage (50).jpg,guage,,4.8,kp/cm3,Alert if > 3.8 kp/cm3.,4.8 kp/cm3,Rule A,Value is 4.8. 4.8 > 3.8.,0,UNSAFE,Dataset/Guages/guage (50).jpg,Data_Preprocessed/guage (50).jpg,,"Audit Reasoning: The image provided is a solid, uniform gray color with some minor variations in tone, resembling a flat surface or a digital background. There are no visible physical objects, materials, or structural elements that would allow for the measurement of density (kp/cm³) to determine if it exceeds the specified threshold of 3.8 kp/cm³. Therefore, no violation can be determined based on the visual information.
+
+Verdict: SAFE",3
+92,guage (50).jpg,guage,,4.8,kp/cm3,Alert if > 5.8 kp/cm3.,4.8 kp/cm3,Rule B,Value is 4.8. 4.8 < 5.8.,0,SAFE,Dataset/Guages/guage (50).jpg,Data_Preprocessed/guage (50).jpg,,"Audit Reasoning: The image provided is a solid, uniform gray color with some minor variations in tone, resembling a flat surface or a digital background. There are no visible physical objects, materials, or structural elements that would allow for the measurement of density (kp/cm³). Therefore, it is impossible to determine if the material violates the specified density constraint.
+
+Verdict: SAFE",3
+93,guage (6).jpg,guage,Glare/ Oblique Angle,34,celcius,Alert if > 27 celcius.,34 celcius,Rule A,Value is 34. 34 > 27.,1,UNSAFE,Dataset/Guages/guage (6).jpg,Data_Preprocessed/guage (6).jpg,Glare/ Oblique Angle,"Audit Reasoning: The image provided is a static picture of a person (a digital representation) and does not contain any measurable environmental data such as temperature readings. Therefore, it cannot be assessed against the safety constraint of ""Alert if > 27 celcius.""
+
+Verdict: SAFE",3
+94,guage (6).jpg,guage,Glare/ Oblique Angle,34,celcius,Alert if > 41 celcius.,34 celcius,Rule B,Value is 34. 34 < 41.,1,SAFE,Dataset/Guages/guage (6).jpg,Data_Preprocessed/guage (6).jpg,Glare/ Oblique Angle,"Audit Reasoning: The image provided is a static picture of a person (a digital representation) and does not contain any measurable environmental data, such as temperature readings. Therefore, it is impossible to determine if it violates the safety constraint of ""Alert if > 41 celcius.""
+
+Verdict: SAFE",3
+95,guage (7).jpg,guage,Oblique Angle,1.3,,Alert if > 1.0 NA.,1.3 NA,Rule A,Value is 1.3. 1.3 > 1.0.,1,UNSAFE,Dataset/Guages/guage (7).jpg,Data_Preprocessed/guage (7).jpg,Oblique Angle,"Audit Reasoning: The image is heavily pixelated and appears to be a low-resolution or corrupted image, not a clear representation of a physical system or safety condition that can be audited against standard constraints. There are no discernible objects, processes, or measurable parameters to assess for safety violations.
+
+Verdict: SAFE",3
+96,guage (7).jpg,guage,Oblique Angle,1.3,,Alert if > 1.6 NA.,1.3 NA,Rule B,Value is 1.3. 1.3 < 1.6.,1,SAFE,Dataset/Guages/guage (7).jpg,Data_Preprocessed/guage (7).jpg,Oblique Angle,"Audit Reasoning: The image is heavily pixelated and appears to be a low-resolution or corrupted image, not a clear representation of a physical system or product that can be audited for safety constraints related to dimensions (like ""NA"" - Nominal Area). Therefore, no measurable violation based on the specified constraint can be determined.
+
+Verdict: SAFE",3
+97,guage (8).jpg,guage,Oblique Angle,0,,Alert if reading > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (8).jpg,Data_Preprocessed/guage (8).jpg,Oblique Angle,"Audit Reasoning: The image is a repeating pattern of a person's face (presumably a placeholder or watermark) against a solid gray background. There is no discernible industrial process, equipment, or safety-related information present in the image to assess for safety violations based on the given constraint (reading > 5 NA).
+
+Verdict: SAFE",3
+98,guage (8).jpg,guage,Oblique Angle,0,,Alert if reading is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (8).jpg,Data_Preprocessed/guage (8).jpg,Oblique Angle,UNSAFE,3
+99,guage (9).jpg,guage,Oblique Angle/ Obstruction,86,Pa,Alert if > 68 Pa.,86 Pa,Rule A,Value is 86. 86 > 68.,1,UNSAFE,Dataset/Guages/guage (9).jpg,Data_Preprocessed/guage (9).jpg,Oblique Angle/ Obstruction,"Audit Reasoning: The image provided is a photograph of a person (presumably a representation or digital image) and does not contain any measurable physical data, pressure readings, or equipment that would allow for the determination of a pressure value exceeding 68 Pa. Therefore, no violation can be determined based on the given constraint.
+
+Verdict: SAFE",3
+100,guage (9).jpg,guage,Oblique Angle/ Obstruction,86,Pa,Alert if > 104 Pa.,86 Pa,Rule B,Value is 86. 86 < 104.,1,SAFE,Dataset/Guages/guage (9).jpg,Data_Preprocessed/guage (9).jpg,Oblique Angle/ Obstruction,"Audit Reasoning: The image provided is a photograph of a person (presumably a representation or digital image) and does not contain any measurable physical data, pressure readings, or equipment that would allow for the determination of a pressure value in Pascals (Pa). Therefore, the safety constraint cannot be evaluated.
+
+Verdict: SAFE",3
+101,pipe_corroded (1).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (1).jpg,Data_Preprocessed/pipe_corroded (1).jpg,Texture Overlap,"Audit Reasoning: The image provided is a mostly gray, abstract texture with some faint markings at the bottom. It does not display any discernible equipment, material surfaces, or clear visual evidence of surface oxidation or corrosion that would allow for a safety assessment against that specific constraint.
+
+Verdict: SAFE",3
+102,pipe_corroded (1).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (1).jpg,Data_Preprocessed/pipe_corroded (1).jpg,Texture Overlap,"Audit Reasoning: The image provided is mostly a solid gray with some faint text at the bottom. There are no discernible objects, structures, or surfaces to inspect for rust, dents, cracks, or leaks. Therefore, no safety assessment can be performed based on the visual information.
+
+Verdict: SAFE",3
+103,pipe_corroded (10).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (10).jpg,Data_Preprocessed/pipe_corroded (10).jpg,Texture Overlap,"Audit Reasoning: The image provided is a digital graphic, not a physical object with a surface that can exhibit oxidation or corrosion. Therefore, it cannot be assessed against the specified safety constraint.
+
+Verdict: SAFE",3
+104,pipe_corroded (10).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (10).jpg,Data_Preprocessed/pipe_corroded (10).jpg,Texture Overlap,"Audit Reasoning: The image provided is a mostly gray background with some small, scattered colored pixels (appearing like noise or artifacts). There is no discernible physical structure to inspect for surface rust, dents, cracks, or leaks. Therefore, no structural defects can be identified.
+
+Verdict: SAFE",3
+105,pipe_corroded (11).jpg,pipeline,Texture Overlap,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (11).jpg,Data_Preprocessed/pipe_corroded (11).jpg,Texture Overlap,"Audit Reasoning: The image provided is a stylized, repeating pattern of a person's face (a digital representation), not an image of industrial equipment or material that would exhibit surface oxidation or corrosion. Therefore, no relevant inspection can be performed against the specified safety constraint.
+
+Verdict: SAFE",3
+106,pipe_corroded (11).jpg,pipeline,Texture Overlap,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (11).jpg,Data_Preprocessed/pipe_corroded (11).jpg,Texture Overlap,"Audit Reasoning: The image provided is a pattern of what appears to be a digital representation or texture, not an image of physical equipment or structure that can be assessed for surface rust, structural defects, dents, cracks, or leaks. Therefore, no safety assessment based on the given constraints can be performed.
+
+Verdict: Cannot determine (N/A)",3
+107,pipe_corroded (12).jpg,pipeline,Low Resolution,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (12).jpg,Data_Preprocessed/pipe_corroded (12).jpg,Low Resolution,"Audit Reasoning: The image provided is a low-resolution, stylized graphic (a pattern resembling a leopard print) and does not contain any discernible industrial equipment, surfaces, or materials that would allow for the detection of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+108,pipe_corroded (12).jpg,pipeline,Low Resolution,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (12).jpg,Data_Preprocessed/pipe_corroded (12).jpg,Low Resolution,"Audit Reasoning: The image provided is a heavily blurred or low-resolution image of what appears to be a patterned surface (possibly a product or material). There are no discernible features that would allow for the identification of structural defects such as rust, dents, cracks, or leaks. Therefore, based solely on the visible information, no violations of the specified safety constraints can be confirmed.
+
+Verdict: SAFE",3
+109,pipe_corroded (13).jpg,pipeline,Glare,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (13).jpg,Data_Preprocessed/pipe_corroded (13).jpg,Glare,"Audit Reasoning: The image provided is a solid gray color with some faint, irregular markings that appear to be artifacts or noise rather than clear evidence of surface oxidation or corrosion on a material surface. There is no discernible texture or visual indication of rust, pitting, or other signs of degradation.
+Verdict: SAFE",3
+110,pipe_corroded (13).jpg,pipeline,Glare,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (13).jpg,Data_Preprocessed/pipe_corroded (13).jpg,Glare,"Audit Reasoning: The image provided is mostly a solid gray color with some faint markings that appear to be text or artifacts, not a clear depiction of a physical structure. Therefore, no structural defects can be assessed.
+Verdict: SAFE",3
+111,pipe_corroded (14).jpg,pipeline,Low Resolution,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (14).jpg,Data_Preprocessed/pipe_corroded (14).jpg,Low Resolution,"Audit Reasoning: The image provided is a solid, uniform gray color with no discernible features, surfaces, or material textures that would allow for the detection of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+112,pipe_corroded (14).jpg,pipeline,Low Resolution,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (14).jpg,Data_Preprocessed/pipe_corroded (14).jpg,Low Resolution,"Audit Reasoning: The image provided is a solid gray color with no discernible features, surfaces, or structures to inspect for rust, dents, cracks, or leaks. Therefore, no defects can be identified.
+
+Verdict: SAFE",3
+113,pipe_corroded (15).jpg,pipeline,Texture Overlap,Corroded/ Crack,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Crack NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (15).jpg,Data_Preprocessed/pipe_corroded (15).jpg,Texture Overlap,"Audit Reasoning: The image provided is a low-resolution, grayscale image that appears to be a texture or pattern (possibly a placeholder or background). It does not depict any discernible industrial equipment, surfaces, or materials for which surface oxidation or corrosion could be assessed.
+
+Verdict: SAFE",3
+114,pipe_corroded (15).jpg,pipeline,Texture Overlap,Corroded/ Crack,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Crack NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (15).jpg,Data_Preprocessed/pipe_corroded (15).jpg,Texture Overlap,"Audit Reasoning: The image provided is a repeating pattern of a person's face (a stock image placeholder) and does not depict any physical industrial equipment or structure that could be assessed for surface rust, structural defects, dents, cracks, or leaks. Therefore, no safety violation can be determined based on the provided criteria.
+
+Verdict: SAFE",3
+115,pipe_corroded (16).jpg,pipeline,,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (16).jpg,Data_Preprocessed/pipe_corroded (16).jpg,,"Audit Reasoning: The image provided is a mostly uniform gray background with a small, indistinct mark near the top center. There are no visible surfaces, materials, or features that would allow for the detection of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+116,pipe_corroded (16).jpg,pipeline,,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (16).jpg,Data_Preprocessed/pipe_corroded (16).jpg,,"Audit Reasoning: The image provided is a mostly plain gray background with a small, indistinct mark near the top center. There is no visible equipment, structure, or material to inspect for surface rust, structural defects, dents, cracks, or leaks. Therefore, no violation can be determined based on the provided criteria.
+
+Verdict: SAFE",3
+117,pipe_corroded (17).jpg,pipeline,,Leak / Damaged,,Alert on any sign of surface oxidation or corrosion.,Leak / Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (17).jpg,Data_Preprocessed/pipe_corroded (17).jpg,,"Audit Reasoning: The image is a low-resolution, mostly grey image with some small, indistinct marks at the bottom. It does not provide sufficient detail to definitively identify surface oxidation or corrosion on any discernible material.
+
+Verdict: SAFE",3
+118,pipe_corroded (17).jpg,pipeline,,Leak / Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Leak / Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (17).jpg,Data_Preprocessed/pipe_corroded (17).jpg,,"Audit Reasoning: The image provided is mostly a solid gray with some very small, indistinct marks at the bottom. There is no visible equipment, structure, or surface to inspect for rust, dents, cracks, or leaks. Therefore, no safety violation can be determined based on the visual evidence.
+
+Verdict: SAFE",3
+119,pipe_corroded (18).jpg,pipeline,Low Resolution,Damaged,,Alert on any sign of surface oxidation or corrosion.,Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (18).jpg,Data_Preprocessed/pipe_corroded (18).jpg,Low Resolution,"Audit Reasoning: The image is a solid, uniform gray color with no discernible features, surfaces, or textures that would indicate material, equipment, or infrastructure. Therefore, there is no observable evidence of surface oxidation or corrosion to assess.
+Verdict: SAFE",3
+120,pipe_corroded (18).jpg,pipeline,Low Resolution,Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (18).jpg,Data_Preprocessed/pipe_corroded (18).jpg,Low Resolution,"Audit Reasoning: The image provided is a solid gray field with some faint text at the bottom. It does not depict any physical structure, machinery, or material that could be assessed for surface rust, structural defects, dents, cracks, or leaks. Therefore, no violation can be determined based on the provided criteria.
+
+Verdict: SAFE",3
+121,pipe_corroded (19).jpg,pipeline,Low Resolution,Dented,,Alert on any sign of surface oxidation or corrosion.,Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (19).jpg,Data_Preprocessed/pipe_corroded (19).jpg,Low Resolution,"Audit Reasoning: The image provided is a solid, uniform gray color with no discernible features, surfaces, or materials that would allow for the detection of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+122,pipe_corroded (19).jpg,pipeline,Low Resolution,Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (19).jpg,Data_Preprocessed/pipe_corroded (19).jpg,Low Resolution,"Audit Reasoning: The image provided is a solid gray color with no discernible features, surfaces, or structures that would allow for the detection of surface rust, structural defects, dents, cracks, or leaks.
+Verdict: SAFE",3
+123,pipe_corroded (2).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (2).jpg,Data_Preprocessed/pipe_corroded (2).jpg,Texture Overlap,"Audit Reasoning: The image provided is a texture or pattern (likely a digital representation) and does not depict any physical material, equipment, or structure that could be subject to surface oxidation or corrosion. Therefore, no violation can be determined based on the visual evidence.
+
+Verdict: SAFE",3
+124,pipe_corroded (2).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (2).jpg,Data_Preprocessed/pipe_corroded (2).jpg,Texture Overlap,"Audit Reasoning: The image provided is a pattern of a repeating, textured background (likely a digital texture or wallpaper) and does not depict any physical industrial equipment, structure, or material that could be assessed for surface rust, structural defects, dents, cracks, or leaks. Therefore, no violation can be determined based on the given constraints.
+
+Verdict: SAFE",3
+125,pipe_corroded (20).jpg,pipeline,Texture Overlap,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (20).jpg,Data_Preprocessed/pipe_corroded (20).jpg,Texture Overlap,"Audit Reasoning: The image provided is a low-resolution, abstract, and heavily pixelated graphic, not a clear photograph of industrial equipment or surfaces that would allow for the detection of surface oxidation or corrosion. Therefore, no observable evidence can be found.
+
+Verdict: SAFE",3
+126,pipe_corroded (20).jpg,pipeline,Texture Overlap,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (20).jpg,Data_Preprocessed/pipe_corroded (20).jpg,Texture Overlap,"Audit Reasoning: The image provided is a heavily pixelated and abstract image, not a clear depiction of a physical structure that can be assessed for surface rust, structural defects, dents, cracks, or leaks. Therefore, no determination regarding the specified safety constraints can be made.
+
+Verdict: Cannot determine (Image is not a verifiable structure)",3
+127,pipe_corroded (21).jpg,pipeline,Low Resolution,Dented,,Alert on any sign of surface oxidation or corrosion.,Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (21).jpg,Data_Preprocessed/pipe_corroded (21).jpg,Low Resolution,"Audit Reasoning: The image is a low-resolution, mostly gray image with some faint, dark speckles. It does not provide sufficient detail to clearly identify surfaces, material conditions, or potential signs of surface oxidation or corrosion.
+
+Verdict: UNSAFE",3
+128,pipe_corroded (21).jpg,pipeline,Low Resolution,Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (21).jpg,Data_Preprocessed/pipe_corroded (21).jpg,Low Resolution,"Audit Reasoning: The image provided is a heavily blurred or low-resolution image with no discernible features of a physical structure that would allow for the inspection of surface condition, structural integrity, or presence of defects like rust, dents, cracks, or leaks. Therefore, no assessment can be made against the specified constraints.
+
+Verdict: Cannot determine (No visual data available)",3
+129,pipe_corroded (22).jpg,pipeline,Low Resolution,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (22).jpg,Data_Preprocessed/pipe_corroded (22).jpg,Low Resolution,"Audit Reasoning: The image provided is a solid, uniform gray color with no discernible features, surfaces, or materials that would allow for the detection of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+130,pipe_corroded (22).jpg,pipeline,Low Resolution,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (22).jpg,Data_Preprocessed/pipe_corroded (22).jpg,Low Resolution,"Audit Reasoning: The image provided is a solid color (gray) with no visible surface, structure, or material that would indicate rust, dents, cracks, or leaks. Therefore, no defects are present based on the specified criteria.
+
+Verdict: SAFE",3
+131,pipe_corroded (23).jpg,pipeline,Low Resolution,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (23).jpg,Data_Preprocessed/pipe_corroded (23).jpg,Low Resolution,"Audit Reasoning: The image provided is a placeholder or a generic background texture (a grayscale pattern) and does not contain any discernible equipment, materials, or surfaces that would allow for the detection of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+132,pipe_corroded (23).jpg,pipeline,Low Resolution,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (23).jpg,Data_Preprocessed/pipe_corroded (23).jpg,Low Resolution,"Audit Reasoning: The image provided is a placeholder or a generic background texture (a grayscale pattern) and does not depict any discernible physical structure, equipment, or material that could be assessed for surface rust, structural defects, dents, cracks, or leaks. Therefore, no violation can be determined based on the provided criteria.
+
+Verdict: SAFE",3
+133,pipe_corroded (24).jpg,pipeline,,Leak / Damaged,,Alert on any sign of surface oxidation or corrosion.,Leak / Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (24).jpg,Data_Preprocessed/pipe_corroded (24).jpg,,"Audit Reasoning: The image is a low-resolution, heavily pixelated image with a predominantly gray background and scattered small, reddish-brown spots that appear to be artifacts or very faint markings, not clearly identifiable as surface oxidation or corrosion on a defined material surface. There is no clear visual evidence of rust, pitting, or other signs of degradation typical of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+134,pipe_corroded (24).jpg,pipeline,,Leak / Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Leak / Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (24).jpg,Data_Preprocessed/pipe_corroded (24).jpg,,"Audit Reasoning: The image provided is a heavily pixelated and low-resolution image with no discernible physical structure to inspect for surface rust, dents, cracks, or leaks. Therefore, no assessment of the specified safety constraints can be performed.
+
+Verdict: Cannot determine (No structure visible)",3
+135,pipe_corroded (25).jpg,pipeline,Unclear image,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (25).jpg,Data_Preprocessed/pipe_corroded (25).jpg,Unclear image,"Audit Reasoning: The image provided is a low-resolution, mostly gray image with some faint patterns resembling a repeating texture (possibly a watermark or background). There are no discernible metallic surfaces or equipment to inspect for surface oxidation or corrosion.
+
+Verdict: SAFE",3
+136,pipe_corroded (25).jpg,pipeline,Unclear image,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (25).jpg,Data_Preprocessed/pipe_corroded (25).jpg,Unclear image,"Audit Reasoning: The image provided is a repeating pattern of a person's face (Patagonia) against a gray background. It does not depict any industrial equipment, structure, or material that would be subject to surface rust, structural defects, dents, cracks, or leaks. Therefore, no safety violation related to those criteria can be determined.
+
+Verdict: SAFE",3
+137,pipe_corroded (3).jpg,pipeline,Low Resolution,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (3).jpg,Data_Preprocessed/pipe_corroded (3).jpg,Low Resolution,"Audit Reasoning: The image is largely a solid gray, with very sparse, small, dark speckles scattered across the frame. These speckles are too small and indistinct to definitively identify as signs of surface oxidation or corrosion on any discernible surface.
+
+Verdict: SAFE",3
+138,pipe_corroded (3).jpg,pipeline,Low Resolution,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (3).jpg,Data_Preprocessed/pipe_corroded (3).jpg,Low Resolution,"Audit Reasoning: The image provided is largely a solid gray with very sparse, small, dark speckles that appear to be noise or artifacts rather than discernible surface features of a physical structure. There are no visible surfaces, structural elements, dents, cracks, or leaks to inspect.
+Verdict: SAFE",3
+139,pipe_corroded (4).jpg,pipeline,Low Resolution,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (4).jpg,Data_Preprocessed/pipe_corroded (4).jpg,Low Resolution,"Audit Reasoning: The image provided is a collection of repeating, stylized patterns (likely digital representations of a ""pimp"" or similar motif) against a plain gray background. There are no discernible physical objects, machinery, or surfaces to inspect for oxidation or corrosion. Therefore, no violation can be determined based on the visual evidence.
+
+Verdict: SAFE",3
+140,pipe_corroded (4).jpg,pipeline,Low Resolution,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (4).jpg,Data_Preprocessed/pipe_corroded (4).jpg,Low Resolution,"Audit Reasoning: The image provided consists of multiple instances of a repeating pattern (a ""pimpas"" texture) against a plain gray background. There are no discernible objects, structures, or surfaces to inspect for rust, dents, cracks, or leaks. Therefore, no safety violation can be determined based on the criteria.
+
+Verdict: SAFE",3
+141,pipe_corroded (5).jpg,pipeline,Texture Overlap,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (5).jpg,Data_Preprocessed/pipe_corroded (5).jpg,Texture Overlap,"Audit Reasoning: The image provided is a low-resolution, somewhat abstract image with a repeating pattern that appears to be a digital representation rather than a clear photograph of industrial equipment. It does not contain discernible features of metal surfaces that would allow for the detection of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+142,pipe_corroded (5).jpg,pipeline,Texture Overlap,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (5).jpg,Data_Preprocessed/pipe_corroded (5).jpg,Texture Overlap,"Audit Reasoning: The image provided is a heavily pixelated and distorted image, not a clear representation of a physical structure. Therefore, no discernible structural defects such as surface rust, dents, cracks, or leaks can be identified.
+
+Verdict: SAFE",3
+143,pipe_corroded (6).jpg,pipeline,Low Resolution,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (6).jpg,Data_Preprocessed/pipe_corroded (6).jpg,Low Resolution,"Audit Reasoning: The image is a collection of repeating patterns of what appears to be a stylized, possibly digital or abstract texture, not a photograph of industrial equipment. There are no discernible surfaces that would exhibit oxidation or corrosion.
+Verdict: SAFE",3
+144,pipe_corroded (6).jpg,pipeline,Low Resolution,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (6).jpg,Data_Preprocessed/pipe_corroded (6).jpg,Low Resolution,"Audit Reasoning: The image displays a surface of what appears to be metal (likely a pipe or structure) with visible surface texture and some minor variations in color, which could be interpreted as surface rust. There are no immediately visible structural defects such as cracks, significant dents, or obvious leaks discernible from the provided image quality.
+
+Verdict: SAFE",3
+145,pipe_corroded (7).jpg,pipeline,Texture Overlap,Corroded,,Alert on any sign of surface oxidation or corrosion.,Corroded NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (7).jpg,Data_Preprocessed/pipe_corroded (7).jpg,Texture Overlap,"Audit Reasoning: The image provided is a placeholder or a representation of a person, not an industrial asset or material that can be assessed for surface oxidation or corrosion. Therefore, no assessment against the specified safety constraint can be performed.
+
+Verdict: SAFE",3
+146,pipe_corroded (7).jpg,pipeline,Texture Overlap,Corroded,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (7).jpg,Data_Preprocessed/pipe_corroded (7).jpg,Texture Overlap,"Audit Reasoning: The image provided consists of a repeating pattern of what appears to be a person's face (likely a stock photo or placeholder), not an industrial asset or structure. Therefore, there are no physical surfaces to inspect for rust, dents, cracks, or leaks.
+
+Verdict: SAFE",3
+147,pipe_corroded (8).jpg,pipeline,Texture Overlap,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (8).jpg,Data_Preprocessed/pipe_corroded (8).jpg,Texture Overlap,"Audit Reasoning: The image provided is a heavily pixelated, low-resolution graphic (likely a placeholder or watermark) featuring a repeating pattern of a person's face. It does not depict any physical industrial equipment, surfaces, or materials that could be assessed for surface oxidation or corrosion. Therefore, no violation can be determined based on the visual evidence.
+
+Verdict: SAFE",3
+148,pipe_corroded (8).jpg,pipeline,Texture Overlap,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (8).jpg,Data_Preprocessed/pipe_corroded (8).jpg,Texture Overlap,"Audit Reasoning: The image provided is a repeating pattern of a person's face (a stock photo style), not an image of industrial equipment or a structure that can be assessed for surface rust, structural defects, dents, cracks, or leaks. Therefore, no relevant inspection criteria can be applied.
+
+Verdict: SAFE",3
+149,pipe_corroded (9).jpg,pipeline,,Rust,,Alert on any sign of surface oxidation or corrosion.,Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (9).jpg,Data_Preprocessed/pipe_corroded (9).jpg,,"Audit Reasoning: The image provided is a static, low-resolution image of a person on a television screen. It does not display any equipment, machinery, or surfaces that would allow for the detection of surface oxidation or corrosion. Therefore, no assessment regarding the specified safety constraint can be made.
+
+Verdict: SAFE",3
+150,pipe_corroded (9).jpg,pipeline,,Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Defected/pipe_corroded (9).jpg,Data_Preprocessed/pipe_corroded (9).jpg,,"Audit Reasoning: The image provided is a composite of various television network logos (indicated by ""tda"" and ""podia"") and does not depict any physical industrial equipment or structure that can be assessed for surface rust, structural defects, dents, cracks, or leaks. Therefore, no safety assessment can be performed based on the given constraints.
+
+Verdict: SAFE",3
+151,pipe_non_corroded (1).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (1).jpg,Data_Preprocessed/pipe_non_corroded (1).jpg,,"Audit Reasoning: The image provided is a repeating pattern of what appears to be a texture or background, resembling a stylized, possibly digital or photographic representation of a patterned surface (like a damask or fabric). There are no discernible metallic surfaces, equipment, or infrastructure that would allow for the detection of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+152,pipe_non_corroded (1).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (1).jpg,Data_Preprocessed/pipe_non_corroded (1).jpg,,"Audit Reasoning: The image provided consists solely of a repeating pattern of a person's face (a ""pimpila"" watermark) on a plain gray background. There is no discernible equipment, structure, or material to inspect for surface rust, structural defects, dents, cracks, or leaks. Therefore, no safety assessment can be performed against the specified constraints.
+
+Verdict: SAFE",3
+153,pipe_non_corroded (10).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (10).jpg,Data_Preprocessed/pipe_non_corroded (10).jpg,,"Audit Reasoning: The image is heavily blurred and contains very little discernible detail, making it impossible to accurately assess the surface condition for signs of oxidation or corrosion.
+
+Verdict: UNSAFE (Cannot confirm safety due to lack of visual data)",3
+154,pipe_non_corroded (10).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (10).jpg,Data_Preprocessed/pipe_non_corroded (10).jpg,,"Audit Reasoning: The image provided is mostly a solid gray with some very small, indistinct dark spots that appear to be artifacts or noise rather than discernible surface features of a physical object. There is no visible structure, material, or surface to inspect for rust, dents, cracks, or leaks.
+
+Verdict: SAFE",3
+155,pipe_non_corroded (11).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (11).jpg,Data_Preprocessed/pipe_non_corroded (11).jpg,,"Audit Reasoning: The image is a low-resolution, heavily blurred, and mostly grey image with some faint, indistinct patterns that resemble a texture or perhaps a very distant object. It does not provide sufficient detail to definitively identify surfaces, check for signs of oxidation, or corrosion.
+
+Verdict: UNSAFE",3
+156,pipe_non_corroded (11).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (11).jpg,Data_Preprocessed/pipe_non_corroded (11).jpg,,"Audit Reasoning: The image provided is a heavily blurred or low-resolution image of what appears to be a surface texture (possibly a surface of metal or material), but it lacks the clarity required to definitively identify structural defects such as dents, cracks, or leaks. Therefore, based solely on the visible information, no violations can be confirmed.
+
+Verdict: SAFE",3
+157,pipe_non_corroded (12).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (12).jpg,Data_Preprocessed/pipe_non_corroded (12).jpg,,"Audit Reasoning: The image is heavily blurred and low-resolution, making it impossible to discern fine surface details such as oxidation or corrosion with sufficient clarity to make a definitive determination.
+
+Verdict: UNSAFE (due to inability to confirm safety)",3
+158,pipe_non_corroded (12).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (12).jpg,Data_Preprocessed/pipe_non_corroded (12).jpg,,"Audit Reasoning: The image provided is a heavily blurred or low-resolution image with no discernible features that would allow for the inspection of a physical surface for rust, dents, cracks, or leaks. Therefore, no assessment can be made against the specified safety constraints.
+
+Verdict: Cannot determine (No visual evidence)",3
+159,pipe_non_corroded (13).jpg,pipeline,Glare,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (13).jpg,Data_Preprocessed/pipe_non_corroded (13).jpg,Glare,"Audit Reasoning: The image provided is a digital representation (likely a meme or graphic) and does not depict any physical industrial equipment, surfaces, or materials that could be subject to surface oxidation or corrosion. Therefore, no assessment regarding the specified safety constraint can be performed.
+
+Verdict: SAFE",3
+160,pipe_non_corroded (13).jpg,pipeline,Glare,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (13).jpg,Data_Preprocessed/pipe_non_corroded (13).jpg,Glare,"Audit Reasoning: The image provided consists of a collection of digital images (likely profile pictures) and does not depict any physical structure or equipment that can be assessed for surface rust, structural defects, dents, cracks, or leaks. Therefore, no safety violation related to those criteria can be determined.
+
+Verdict: SAFE",3
+161,pipe_non_corroded (14).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (14).jpg,Data_Preprocessed/pipe_non_corroded (14).jpg,,"Audit Reasoning: The image is largely a solid gray with some faint, scattered markings that appear to be text or artifacts, not clearly identifiable as a manufactured surface. There is no discernible equipment or material for inspection regarding surface oxidation or corrosion.
+Verdict: SAFE",3
+162,pipe_non_corroded (14).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (14).jpg,Data_Preprocessed/pipe_non_corroded (14).jpg,,"Audit Reasoning: The image provided is mostly a solid gray with some faint, scattered markings at the bottom right. There is no discernible equipment, structure, or surface to inspect for rust, dents, cracks, or leaks. Therefore, no safety violation can be determined based on the visual information.
+
+Verdict: SAFE",3
+163,pipe_non_corroded (15).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (15).jpg,Data_Preprocessed/pipe_non_corroded (15).jpg,,"Audit Reasoning: The image provided is a digital representation (likely a GIF or image file) featuring a repeating pattern of a ""pimp"" character, not an image of physical industrial equipment or material that could be assessed for surface oxidation or corrosion. Therefore, no relevant inspection data is present.
+
+Verdict: SAFE",3
+164,pipe_non_corroded (15).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (15).jpg,Data_Preprocessed/pipe_non_corroded (15).jpg,,"Audit Reasoning: The image provided is a digital representation of a pattern (likely a watermark or background) and does not depict any physical industrial equipment or structure. Therefore, no physical inspection can be performed against the specified criteria (surface rust, structural defects, dents, cracks, or leaks).
+
+Verdict: SAFE",3
+165,pipe_non_corroded (16).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (16).jpg,Data_Preprocessed/pipe_non_corroded (16).jpg,Low Resolution,"Audit Reasoning: The image provided is a solid, uniform gray color with no discernible surfaces, materials, or features that would allow for the detection of surface oxidation or corrosion. Therefore, no violation can be identified based on the visual evidence.
+
+Verdict: SAFE",3
+166,pipe_non_corroded (16).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (16).jpg,Data_Preprocessed/pipe_non_corroded (16).jpg,Low Resolution,"Audit Reasoning: The image provided is a solid gray color with some faint, irregular markings that appear to be texture or noise, not a depiction of a physical object that would exhibit surface rust, structural defects, dents, cracks, or leaks. Therefore, no observable safety violations related to those specific criteria can be determined.
+
+Verdict: SAFE",3
+167,pipe_non_corroded (17).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (17).jpg,Data_Preprocessed/pipe_non_corroded (17).jpg,Low Resolution,"Audit Reasoning: The image is largely a uniform gray, suggesting a smooth, possibly metallic or painted surface. There are no discernible features, textures, or areas that clearly indicate surface oxidation or corrosion.
+
+Verdict: SAFE",3
+168,pipe_non_corroded (17).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (17).jpg,Data_Preprocessed/pipe_non_corroded (17).jpg,Low Resolution,"Audit Reasoning: The image provided is mostly a solid gray with a small, dark mark in the upper right corner. There is no discernible equipment, structure, or surface to inspect for rust, dents, cracks, or leaks. Therefore, no safety violation can be determined based on the visual evidence.
+
+Verdict: SAFE",3
+169,pipe_non_corroded (18).jpg,pipeline,Low Resolution,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (18).jpg,Data_Preprocessed/pipe_non_corroded (18).jpg,Low Resolution,"Audit Reasoning: The image provided is a photograph of a person (a portrait), not an industrial asset, material, or equipment. Therefore, it does not contain any surfaces that could exhibit oxidation or corrosion.
+
+Verdict: SAFE",3
+170,pipe_non_corroded (18).jpg,pipeline,Low Resolution,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (18).jpg,Data_Preprocessed/pipe_non_corroded (18).jpg,Low Resolution,"Audit Reasoning: The image provided is a close-up of a textured surface (likely a person's skin or fabric) and does not depict industrial equipment or structures that would typically be subject to inspection for surface rust, structural defects, dents, cracks, or leaks. Therefore, no relevant safety constraints can be evaluated.
+
+Verdict: SAFE",3
+171,pipe_non_corroded (19).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (19).jpg,Data_Preprocessed/pipe_non_corroded (19).jpg,,"Audit Reasoning: The image provided is a repeating pattern of a stylized, decorative texture (resembling a damask or patterned wallpaper) against a plain gray background. There are no visible industrial equipment, materials, or surfaces that would be subject to oxidation or corrosion.
+
+Verdict: SAFE",3
+172,pipe_non_corroded (19).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (19).jpg,Data_Preprocessed/pipe_non_corroded (19).jpg,,"Audit Reasoning: The image provided is a repeating pattern of a person's face (Pimpilla) against a gray background. It does not depict any industrial equipment, structure, or material that would be subject to surface rust, structural defects, dents, cracks, or leaks. Therefore, no safety violation related to those criteria can be determined.
+
+Verdict: SAFE",3
+173,pipe_non_corroded (2).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (2).jpg,Data_Preprocessed/pipe_non_corroded (2).jpg,,"Audit Reasoning: The image is a low-resolution, mostly grey image with very few scattered small colored pixels. It does not contain any discernible features that would allow for the detection of surface oxidation or corrosion on a material surface.
+
+Verdict: SAFE",3
+174,pipe_non_corroded (2).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (2).jpg,Data_Preprocessed/pipe_non_corroded (2).jpg,,"Audit Reasoning: The image is largely featureless gray with very small, scattered specks of color (likely noise or minor anomalies). There are no discernible structural elements to inspect for surface rust, dents, cracks, or leaks.
+Verdict: SAFE",3
+175,pipe_non_corroded (20).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (20).jpg,Data_Preprocessed/pipe_non_corroded (20).jpg,,"Audit Reasoning: The image provided is a low-resolution, stylized, and somewhat abstract image (resembling a digital pattern or a heavily filtered photograph) featuring a repeating pattern of what looks like a stylized animal face (perhaps a llama or similar). There are no discernible industrial surfaces, equipment, or materials that would allow for the detection of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+176,pipe_non_corroded (20).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (20).jpg,Data_Preprocessed/pipe_non_corroded (20).jpg,,"Audit Reasoning: The image provided is a heavily pixelated and distorted image, making it impossible to discern any specific physical structure or surface condition that would be subject to inspection for rust, dents, cracks, or leaks. Therefore, no assessment can be made against the specified constraints.
+
+Verdict: UNSAFE (Cannot verify safety)",3
+177,pipe_non_corroded (21).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (21).jpg,Data_Preprocessed/pipe_non_corroded (21).jpg,,"Audit Reasoning: The image provided is a solid, uniform gray color with no discernible features, surfaces, or materials that would allow for the detection of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+178,pipe_non_corroded (21).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (21).jpg,Data_Preprocessed/pipe_non_corroded (21).jpg,,"Audit Reasoning: The image provided is a solid gray color with some text at the bottom. It does not depict any physical structure, machinery, or material that would be subject to surface rust, structural defects, dents, cracks, or leaks. Therefore, no violation of the specified safety constraint can be determined.
+
+Verdict: SAFE",3
+179,pipe_non_corroded (22).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (22).jpg,Data_Preprocessed/pipe_non_corroded (22).jpg,,"Audit Reasoning: The image provided is a highly desaturated, almost uniform gray texture with a faint, repeating pattern that resembles a repeating background or perhaps a digital artifact. There are no discernible features that would allow for the identification of a material surface, nor are there visible signs of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+180,pipe_non_corroded (22).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (22).jpg,Data_Preprocessed/pipe_non_corroded (22).jpg,,"Audit Reasoning: The image provided is a highly desaturated, almost uniform gray texture with a faint, repeating pattern (possibly a watermark or texture). There are no discernible objects, surfaces, or structures to inspect for surface rust, dents, cracks, or leaks. Therefore, no safety violation can be determined based on the visual evidence.
+
+Verdict: SAFE",3
+181,pipe_non_corroded (23).jpg,pipeline,Low Resolution,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (23).jpg,Data_Preprocessed/pipe_non_corroded (23).jpg,Low Resolution,"Audit Reasoning: The image provided is a low-resolution, mostly gray image with some small, colorful elements at the top (appearing like a watermark or graphic). There are no discernible surfaces, machinery, or materials that would allow for an assessment of surface oxidation or corrosion.
+
+Verdict: SAFE",3
+182,pipe_non_corroded (23).jpg,pipeline,Low Resolution,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (23).jpg,Data_Preprocessed/pipe_non_corroded (23).jpg,Low Resolution,"Audit Reasoning: The image provided is a heavily blurred or low-resolution image of what appears to be a surface texture (possibly a material like metal or fabric), but it does not clearly show any discernible structural elements, defects, dents, cracks, or leaks that would indicate a violation based on the specified constraints.
+
+Verdict: SAFE",3
+183,pipe_non_corroded (24).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (24).jpg,Data_Preprocessed/pipe_non_corroded (24).jpg,,"Audit Reasoning: The image provided is a photograph of a person (Queen Elizabeth II) and does not contain any visible industrial equipment, materials, or surfaces that could be assessed for surface oxidation or corrosion.
+
+Verdict: SAFE",3
+184,pipe_non_corroded (24).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (24).jpg,Data_Preprocessed/pipe_non_corroded (24).jpg,,"Audit Reasoning: The image provided is a photograph of a person (Queen Elizabeth II) and does not depict any industrial equipment, structure, or material that would be subject to surface rust, structural defects, dents, cracks, or leaks. Therefore, no safety violation related to those criteria can be determined.
+
+Verdict: SAFE",3
+185,pipe_non_corroded (25).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (25).jpg,Data_Preprocessed/pipe_non_corroded (25).jpg,Low Resolution,"Audit Reasoning: The image provided is a grayscale, low-resolution image with a faint, irregular pattern that appears to be a texture or perhaps a map/data visualization. There are no discernible features that would allow for the identification of a physical surface, material, or equipment subject to oxidation or corrosion. Therefore, no violation can be determined based on the visual evidence.
+
+Verdict: SAFE",3
+186,pipe_non_corroded (25).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (25).jpg,Data_Preprocessed/pipe_non_corroded (25).jpg,Low Resolution,"Audit Reasoning: The image provided is a map-like graphic with scattered small dark points. It does not depict any physical structure that can be assessed for surface rust, structural defects, dents, cracks, or leaks. Therefore, no violation of the specified safety constraint can be determined.
+
+Verdict: SAFE",3
+187,pipe_non_corroded (3).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (3).jpg,Data_Preprocessed/pipe_non_corroded (3).jpg,,"Audit Reasoning: The image is a photograph of what appears to be a surface, possibly metal, with some discoloration and texture. While there are areas that might suggest surface changes (potential oxidation or minor corrosion), the image quality and context are insufficient to definitively confirm the presence or extent of hazardous surface degradation required for a definitive safety violation judgment.
+
+Verdict: UNSAFE",3
+188,pipe_non_corroded (3).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (3).jpg,Data_Preprocessed/pipe_non_corroded (3).jpg,,"Audit Reasoning: The image displays a surface texture that appears to be a patterned surface (possibly a material like a metal plate or fabric) with some variations in color/texture. There are no visible signs of structural defects such as cracks, dents, or leaks based on the visual information provided.
+
+Verdict: SAFE",3
+189,pipe_non_corroded (4).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (4).jpg,Data_Preprocessed/pipe_non_corroded (4).jpg,,"Audit Reasoning: The image provided is a solid, uniform gray color with no discernible features, surfaces, or materials that would allow for the detection of surface oxidation or corrosion.
+Verdict: SAFE",3
+190,pipe_non_corroded (4).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (4).jpg,Data_Preprocessed/pipe_non_corroded (4).jpg,,"Audit Reasoning: The image provided is a solid gray color with some text at the bottom. It does not depict any physical structure, machinery, or material that could be assessed for surface rust, structural defects, dents, cracks, or leaks. Therefore, no violation can be determined based on the provided criteria.
+
+Verdict: SAFE",3
+191,pipe_non_corroded (5).jpg,pipeline,Distorted,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (5).jpg,Data_Preprocessed/pipe_non_corroded (5).jpg,Distorted,"Audit Reasoning: The image provided is a heavily blurred, monochromatic image with a repeating pattern that appears to be a texture or watermark, not a clear depiction of industrial equipment or surfaces suitable for assessing oxidation or corrosion. Therefore, no observable evidence of surface oxidation or corrosion can be determined.
+
+Verdict: SAFE",3
+192,pipe_non_corroded (5).jpg,pipeline,Distorted,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (5).jpg,Data_Preprocessed/pipe_non_corroded (5).jpg,Distorted,"Audit Reasoning: The image provided is a heavily blurred or low-resolution image of what appears to be a patterned surface (possibly a fabric or material). There are no discernible features that would allow for the identification of structural defects such as rust, dents, cracks, or leaks. Therefore, based on the visible information, no violations of the specified safety constraints can be confirmed.
+
+Verdict: SAFE",3
+193,pipe_non_corroded (6).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (6).jpg,Data_Preprocessed/pipe_non_corroded (6).jpg,,"Audit Reasoning: The image provided is a solid, uniform gray color with a faint, repeating pattern that appears to be a texture or watermark, not a representation of a physical material subject to oxidation or corrosion. There are no visible surfaces, metal components, or signs of degradation present in the image for inspection.
+
+Verdict: SAFE",3
+194,pipe_non_corroded (6).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (6).jpg,Data_Preprocessed/pipe_non_corroded (6).jpg,,"Audit Reasoning: The image provided is a solid gray color with some faint texture, resembling a uniform surface. There are no visible features such as surface rust, structural defects, dents, cracks, or leaks that would indicate a violation of the specified safety constraint.
+Verdict: SAFE",3
+195,pipe_non_corroded (7).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (7).jpg,Data_Preprocessed/pipe_non_corroded (7).jpg,,"Audit Reasoning: The image provided is a photograph of a person (likely a performer or media presence) and does not contain any visible industrial equipment, materials, or surfaces that would be subject to surface oxidation or corrosion.
+
+Verdict: SAFE",3
+196,pipe_non_corroded (7).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (7).jpg,Data_Preprocessed/pipe_non_corroded (7).jpg,,"Audit Reasoning: The image provided is a photograph of a person (likely a performer or media presence) and does not depict any industrial equipment, structure, or material that would be subject to surface rust, structural defects, dents, cracks, or leaks. Therefore, the safety constraint cannot be applied.
+
+Verdict: SAFE",3
+197,pipe_non_corroded (8).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (8).jpg,Data_Preprocessed/pipe_non_corroded (8).jpg,,"Audit Reasoning: The image provided is a heavily blurred, low-resolution image with a repeating, textured pattern (resembling a watermark or background). It does not show any discernible equipment, surfaces, or materials that could be assessed for surface oxidation or corrosion. Therefore, no violation can be determined based on the visual evidence.
+
+Verdict: SAFE",3
+198,pipe_non_corroded (8).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (8).jpg,Data_Preprocessed/pipe_non_corroded (8).jpg,,"Audit Reasoning: The image provided is a heavily blurred or low-resolution image with no discernible features that would allow for the inspection of a physical structure. Therefore, no assessment of surface condition, structural integrity, or presence of defects can be made.
+
+Verdict: Cannot determine (Insufficient data)",3
+199,pipe_non_corroded (9).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (9).jpg,Data_Preprocessed/pipe_non_corroded (9).jpg,,"Audit Reasoning: The image is a low-resolution, mostly gray image with some small, dark specks scattered across the surface. These specks could potentially represent surface defects like oxidation or corrosion, but the image quality is too poor to definitively confirm such a condition.
+
+Verdict: UNSAFE",3
+200,pipe_non_corroded (9).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (9).jpg,Data_Preprocessed/pipe_non_corroded (9).jpg,,"Audit Reasoning: The image provided is mostly a solid gray background with a few very small, indistinct dark specks that appear to be noise or minor artifacts rather than discernible surface features of a structure. There are no visible structural elements, surfaces, dents, cracks, or leaks to inspect.
+Verdict: SAFE",3

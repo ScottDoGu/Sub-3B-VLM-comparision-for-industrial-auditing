@@ -1,0 +1,1088 @@
+index,image_id,category,artifact_tag,ground_truth_value,unit,logic_constraint,expected_value,rule_id,reasoning,hard_case_flag,expected_verdict,full_path,processed_path,constraint,model_response,run_iteration
+1,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.10 bar.,0.15 bar,Rule A,Value is 0.15. 0.15 > 0.10.,1,UNSAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"STEP 1 - OBSERVATION: 0.10 bar is a pressure measurement, and the provided image is a static, low-resolution image of a patterned background (likely a placeholder or texture). There is no visible gauge, pressure reading, or any context that would allow for the measurement of pressure.
+STEP 2 - RULE APPLICATION: Since there is no measurable pressure indicated in the image, the condition ""pressure exceeds 0.10 bar"" cannot be verified. Therefore, the rule cannot be violated based on the visual evidence provided.
+STEP 3 - VERDICT: SAFE",3
+2,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.20 bar.,0.15 bar,Rule B,Value is 0.15. 0.15 < 0.20.,1,SAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"STEP 1 - OBSERVATION: 0.
+STEP 2 - RULE APPLICATION: The image provided is a static, low-resolution image of a repeating pattern (likely a watermark or background texture) and does not contain any discernible pressure readings or gauges that would allow for the measurement of pressure in bar. Therefore, the condition ""pressure exceeds 0.20 bar"" cannot be verified.
+STEP 3 - VERDICT: SAFE",3
+3,guage (10).jpg,guage,,0,bar,Alert if pressure is above 0.05 bar.,0 bar,Rule A,Value is 0. 0 < 0.05.,0,SAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"STEP 1 - OBSERVATION: The image provided is a low-resolution, somewhat distorted image featuring several instances of the ""pimp"" watermark and some scattered pixels/graphics. There are no discernible visual elements that represent a physical system, pressure gauge, or any measurable quantity in the context of industrial safety.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any pressure measurement, it is impossible to determine if the pressure is above 0.05 bar. Therefore, the rule cannot be violated based on the visual evidence present.
+
+STEP 3 - VERDICT: SAFE",3
+4,guage (10).jpg,guage,,0,bar,Alert if system is non-pressurized (0 bar).,0 bar,Rule B,Value is 0. System is non-pressurized.,0,UNSAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"STEP 1 - OBSERVATION: The image provided is a digital graphic, likely a meme or a collage of images, featuring various stylized figures and text. There are no visual elements present that represent a physical system, pressure gauges, or any indication of a pressurized container or system.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is: 'Alert if system is non-pressurized (0 bar).' Since the image does not depict any physical system or pressure measurement, it cannot be assessed for pressure. Therefore, the condition of being ""non-pressurized (0 bar)"" cannot be confirmed or denied based on the visual evidence. In the absence of a system, the rule cannot be violated in the context of the image itself.
+
+STEP 3 - VERDICT: SAFE",3
+5,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 20 kPa. Alert if over.,25 kPa,Rule A,Value is 25. 25 > 20.,1,UNSAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image is a mostly gray, abstract background with very small, faint, and scattered elements that resemble text or very low-resolution graphics. There are no discernible pressure readings (kPa) present in the image.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is: 'Normal range is < 20 kPa. Alert if over.' Since the image does not contain any measurable pressure data (kPa), it is impossible to determine if the condition is over the threshold of 20 kPa. Therefore, based solely on the visual content provided, there is no evidence of a violation.
+
+STEP 3 - VERDICT: SAFE",3
+6,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 30 kPa. Alert if over.,25 kPa,Rule B,Value is 25. 25 < 30.,1,SAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image is a mostly gray background with very small, faint, and scattered pixelated elements that resemble a person's face (a watermark/signature). There are no visible pressure gauges, readings, or any context that would allow for the measurement of pressure in kPa.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, it is impossible to determine if the ""Normal range is < 30 kPa"" is violated. The image does not contain any data points related to pressure.
+
+STEP 3 - VERDICT: 
+SAFE",3
+7,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 80 NA.,100 NA,Rule A,Value is 100. 100 > 80.,1,UNSAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person's face (likely a stock photo or similar) overlaid on a gray background. The text ""pipita"" appears in the bottom right corner, and there is some visual noise/artifacts. There is no discernible reading or measurement that can be interpreted as exceeding 80 NA.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not contain any measurable reading or data that corresponds to ""NA"" (which usually implies Not Applicable or a numerical value), the condition ""reading exceeds 80 NA"" cannot be evaluated. Therefore, the rule is not violated based on the content provided.
+
+STEP 3 - VERDICT: SAFE",3
+8,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 120 NA.,100 NA,Rule B,Value is 100. 100 < 120.,1,SAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image is a mosaic of faces, primarily resembling Donald Trump, with some small, scattered elements. There is no discernible text or numerical reading present in the image that could be measured against the ""120 NA"" threshold.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not contain any measurable reading (like a gauge, meter, or numerical display), it cannot violate the rule ""Alert if reading exceeds 120 NA.""
+
+STEP 3 - VERDICT: SAFE",3
+9,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 1.5 bar. Alert if over.,2 bar,Rule A,Value is 2. 2 > 1.5.,1,UNSAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"STEP 1 - OBSERVATION: The image provided is a heavily pixelated or distorted image, primarily showing a gray background with faint, repeated patterns of a face (likely Donald Trump) and some small colored pixels. There are no discernible elements that represent a pressure gauge, a vessel, or any physical system where an operating limit of 1.5 bar could be measured.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any equipment, pressure readings, or operational parameters related to a pressure limit of 1.5 bar, it is impossible to determine if the rule is being violated. The context required for the safety rule is absent.
+
+STEP 3 - VERDICT: SAFE",3
+10,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 3.0 bar. Alert if over.,2 bar,Rule B,Value is 2. 2 < 3.0.,1,SAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"STEP 1 - OBSERVATION: The image provided is a placeholder or a representation of a person (DAPPPY) and does not contain any visual data, gauges, pressure readings, or context that would allow for the measurement of operating pressure.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable operating limit (3.0 bar) or any indication of current pressure in the image, it is impossible to determine if the rule is being violated. Therefore, the condition ""over"" cannot be confirmed.
+
+STEP 3 - VERDICT: SAFE",3
+11,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 14 lbf/in2.,18 lbf/in2,Rule A,Value is 18. 18 > 14.,0,UNSAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"STEP 1 - OBSERVATION: The image provided is a mostly gray, blank image with some very small, faint specks that might be artifacts or very small objects. There are no visible gauges, pressure readings, or any context that would allow for the measurement of pressure.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure indicated in the image, it is impossible to determine if the pressure exceeds $14 \text{ lbf/in}^2$. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+12,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 22 lbf/in2.,18 lbf/in2,Rule B,Value is 18. 18 < 22.,0,SAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"STEP 1 - OBSERVATION: The image provided is a mostly plain gray background with a small, faint, purple/pink mark near the top center and a small green/blue mark slightly below it. There are no visible pressure gauges, equipment, or any context that would allow for the measurement of pressure in $\text{lbf/in}^2$.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, it is impossible to determine if the pressure exceeds $22 \text{ lbf/in}^2$. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+13,guage (15).jpg,guage,Low Resolution,0,,Alert if reading is above 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"STEP 1 - OBSERVATION: 4 instances of the pattern ""pipa"" (which appears to be a placeholder or watermark) are visible in the image, and there are no readings present that can be compared to the threshold of 5 NA.
+STEP 2 - RULE APPLICATION: The safety rule is 'Alert if reading is above 5 NA.' Since there are no numerical readings present in the image, the condition for violation (reading > 5 NA) cannot be met.
+STEP 3 - VERDICT: SAFE",3
+14,guage (15).jpg,guage,Low Resolution,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"STEP 1 - OBSERVATION: 0 NA
+STEP 2 - RULE APPLICATION: The image provided is a repeating pattern of a person's face (presumably a placeholder or watermark) and does not depict any industrial system, machinery, or operational state that would have a ""0 NA"" condition relevant to industrial safety. Therefore, the rule cannot be directly applied in a meaningful context related to industrial safety monitoring. However, strictly applying the rule to the visual content as a representation of a system state, it is ambiguous. Assuming the prompt implies the *image itself* represents a system state where '0 NA' means no hazard detected, then the image shows a static, non-hazardous graphic.
+STEP 3 - VERDICT: SAFE",3
+15,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 100 kN/m2.,125 kN/m2,Rule A,Value is 125. 125 > 100.,0,UNSAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"STEP 1 - OBSERVATION: The image provided is a mostly gray background with faint, repeating patterns that resemble a repeating texture or watermark (possibly ""dipinda"" text). There are no visible measurements, structural elements, or numerical values present in the image that would allow for the calculation of a pressure value in $\text{kN/m}^2$.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no quantifiable data points representing a pressure value, it is impossible to determine if any measured value exceeds $100 \text{ kN/m}^2$. Therefore, the rule cannot be violated based on the visual content alone.
+
+STEP 3 - VERDICT: SAFE",3
+16,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 150 kN/m2.,125 kN/m2,Rule B,Value is 125. 125 < 150.,0,SAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"STEP 1 - OBSERVATION: The image provided is a photograph of a patterned surface (likely a wall or floor) and does not contain any measurable physical data, such as stress, pressure, or material properties that would allow for the calculation of a value in $\text{kN/m}^2$ (kilonewtons per square meter).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no quantifiable measurement of stress or pressure present in the image, it is impossible to determine if any value exceeds $150 \text{ kN/m}^2$. Therefore, the rule cannot be violated based on the visual information provided.
+
+STEP 3 - VERDICT: SAFE",3
+17,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 160 psi.,200 psi,Rule A,Value is 200. 200 > 160.,1,UNSAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image provided is a composite of several faces (likely of political figures) and does not contain any visual information related to pressure measurements, gauges, or any context that would allow for the determination of a pressure value in psi.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no pressure reading visible in the image, the condition ""pressure is > 160 psi"" cannot be verified. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+18,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 240 psi.,200 psi,Rule B,Value is 200. 200 < 240.,1,SAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image provided is a composite of several faces (likely political figures) and does not contain any visual information related to pressure measurements, gauges, or any context that would allow for the measurement of pressure in psi.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no pressure reading visible in the image, the condition ""pressure is > 240 psi"" cannot be verified. Therefore, the rule cannot be violated based on the visual evidence present.
+
+STEP 3 - VERDICT: SAFE",3
+19,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 24 NA.,30 NA,Rule A,Value is 30. 30 > 24.,1,UNSAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image is a collage of various images of Donald Trump, which is a political figure, not an industrial safety scene. There is no discernible industrial equipment, workplace, or safety context to measure ""reading"" against a standard like ""24 NA.""
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any measurable reading related to industrial safety standards (like exposure levels, pressure readings, etc.), the rule cannot be applied meaningfully to determine compliance or violation based on the provided criteria.
+
+STEP 3 - VERDICT: SAFE",3
+20,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 36 NA.,30 NA,Rule B,Value is 30. 30 < 36.,1,SAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image is a collage of various images of Donald Trump, which is a political figure, not an industrial safety scene. There are no discernible industrial equipment, machinery, or work environments to assess for safety hazards related to reading levels.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is 'Alert if reading exceeds 36 NA.' Since the image does not contain any text or measurable reading levels, the condition for violation (reading exceeding 36 NA) cannot be met.
+
+STEP 3 - VERDICT: SAFE",3
+21,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 1.7 liter.,2.2 liter,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"STEP 1 - OBSERVATION: 0 liters of liquid is visible in the image.
+STEP 2 - RULE APPLICATION: The safety rule is to 'Alert if level is > 1.7 liter.' Since the observed level is 0 liters, it is not greater than 1.7 liters. Therefore, the rule is not violated.
+STEP 3 - VERDICT: SAFE",3
+22,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 2.7 liter.,2.2 liter,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"STEP 1 - OBSERVATION: 0 liters of liquid is visible in the image.
+STEP 2 - RULE APPLICATION: The safety rule is to ""Alert if level is > 2.7 liter."" Since the observed level is 0 liters, it is not greater than 2.7 liters. Therefore, the rule is not violated.
+STEP 3 - VERDICT: SAFE",3
+23,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if value exceeds 2 kg/cm2.,0 kg/cm2,Rule A,Value is 0. 0 < 2.,1,SAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image is a graphic overlay of a radio station logo (""radio 104.3"") and a repeating pattern of a person's face (presumably a placeholder or part of the broadcast graphic). There are no visible pressure gauges, stress indicators, or any physical objects that would allow for the measurement of a pressure value in $\text{kg/cm}^2$.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure value present in the image, the condition ""value exceeds $2 \text{ kg/cm}^2$"" cannot be evaluated. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+24,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if system pressure drops to 0 kg/cm2.,0 kg/cm2,Rule B,Value is 0. System pressure is at 0.,1,UNSAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image is a graphic overlay of a radio station logo (""radio 104.3"") and a placeholder for a video/broadcast, featuring a repeating pattern of a person's face (likely a stock image or placeholder) and a network logo (""ipital""). There are no visible gauges, pressure readings, or any indication of a system under pressure.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is: 'Alert if system pressure drops to 0 kg/cm2.' Since the image does not display any system pressure readings, it is impossible to determine if the condition (pressure dropping to 0 kg/cm2) has occurred. Therefore, based solely on the visual information provided, the rule cannot be violated.
+
+STEP 3 - VERDICT: SAFE",3
+25,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 3.0 kgf/cm2.,4 kgf/cm2,Rule A,Value is 4. 4 > 3.0.,1,UNSAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"STEP 1 - OBSERVATION: The image provided is a mostly gray background with some small, scattered dark specks and a signature-like mark at the bottom right. There are no visible objects that could be identified as a ""needle"" or any measurement related to pressure (kgf/cm2).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable object (needle) present in the image, it is impossible to determine if the condition ""needle is past 3.0 kgf/cm2"" is met or violated. Therefore, the rule cannot be applied to this image.
+
+STEP 3 - VERDICT: 
+SAFE",3
+26,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 5.0 kgf/cm2.,4 kgf/cm2,Rule B,Value is 4. 4 < 5.0.,1,SAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"STEP 1 - OBSERVATION: The image provided is a mostly gray background with some small, scattered dark specks and a signature-like mark at the bottom right. There are no visible objects that could be identified as a ""needle"" or any measurement related to pressure (kgf/cm2).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable object (needle) present in the image, it is impossible to determine if the condition ""needle is past 5.0 kgf/cm2"" is met. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+27,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 2.0 kPa.,2.5 kPa,Rule A,Value is 2.5. 2.5 > 2.0.,1,UNSAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"STEP 1 - OBSERVATION: The image is a low-resolution, mostly gray image with some faint, distorted text and patterns. There are no visible pressure readings (like kPa) in the image that could be compared against the safety rule.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no measurable pressure readings present in the image, it is impossible to determine if any reading exceeds 2.0 kPa. Therefore, the condition of the safety rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+28,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 3.0 kPa.,2.5 kPa,Rule B,Value is 2.5. 2.5 < 3.0.,1,SAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"STEP 1 - OBSERVATION: The image provided is a heavily pixelated and distorted image, primarily showing a gray background with some faint, scattered colored pixels (red, blue, green) and some recognizable shapes that resemble people or figures, but no clear industrial setting or pressure gauge readings are visible. There is no discernible measurement of pressure in the image.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is 'Alert if reading exceeds 3.0 kPa.' Since the image does not contain any measurable pressure reading (like a gauge or numerical display), it is impossible to determine if the condition specified in the rule has been met or violated. Therefore, the rule cannot be applied to the visual content.
+
+STEP 3 - VERDICT: SAFE",3
+29,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.2 Pa.,1.5 Pa,Rule A,Value is 1.5. 1.5 > 1.2.,1,UNSAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image is a heavily pixelated and distorted representation of a person (likely a meme format), not a clear image of a physical environment with measurable pressure values. There are no visible measurements, gauges, or data points that would allow for the comparison against the threshold of '1.2 Pa'.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not contain any quantifiable pressure values, it is impossible to determine if any part of the image violates the safety rule ('Alert if value > 1.2 Pa.').
+
+STEP 3 - VERDICT: 
+SAFE",3
+30,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.8 Pa.,1.5 Pa,Rule B,Value is 1.5. 1.5 < 1.8.,1,SAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image is a heavily pixelated and distorted representation of a person (likely a meme format), not a clear image of equipment or a measurable physical environment where pressure values could be determined. There are no visible pressure gauges, measurements, or any context that would allow for the measurement of a value in Pascals (Pa).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable value greater than 1.8 Pa present in the image to check against the safety rule, the rule cannot be applied to determine a violation.
+
+STEP 3 - VERDICT: SAFE",3
+31,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 18 celcius.,23 celcius,Rule A,Value is 23. 23 > 18.,0,UNSAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"STEP 1 - OBSERVATION: The image is a collage of various faces, primarily resembling Donald Trump, and does not contain any visual data that would allow for the measurement or determination of a temperature.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable temperature present in the image, the condition ""temperature exceeds 18 celcius"" cannot be evaluated. Therefore, the rule is not violated based on the content provided.
+
+STEP 3 - VERDICT: SAFE",3
+32,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 28 celcius.,23 celcius,Rule B,Value is 23. 23 < 28.,0,SAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"STEP 1 - OBSERVATION: The image is a collage of various faces, primarily of Donald Trump, and does not contain any visual information related to temperature readings or environmental conditions that would allow for the measurement of a temperature.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable temperature data present in the image, the condition ""temperature exceeds 28 celsius"" cannot be verified. Therefore, the rule cannot be violated based on the provided visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+33,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 0.8 bar.,1 bar,Rule A,Value is 1. 1 > 0.8.,0,UNSAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"STEP 1 - OBSERVATION: The image provided is a placeholder or a representation of a person (a ""pdp"" pattern) against a gray background. There are no visible gauges, pressure readings, or any context that would allow for the measurement of pressure in bar.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, it is impossible to determine if the pressure exceeds 0.8 bar. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+34,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 1.2 bar.,1 bar,Rule B,Value is 1. 1 < 1.2.,0,SAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"STEP 1 - OBSERVATION: The image provided is a photograph of a person (Donald Trump) and does not contain any visual information related to pressure, gauges, or any physical system that would allow for the measurement of pressure in bar.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, the condition ""pressure exceeds 1.2 bar"" cannot be verified. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+35,guage (25).jpg,guage,Oblique Angle,0,,Alert if reading is > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"STEP 1 - OBSERVATION: 0
+STEP 2 - RULE APPLICATION: The image provided consists of multiple instances of a ""pimp"" or similar character/image, which appears to be a placeholder or watermark rather than an industrial safety scene. There is no readable text or measurable reading present in the context of an industrial safety audit. Therefore, the condition ""reading is > 5 NA"" cannot be determined or violated based on the content.
+STEP 3 - VERDICT: SAFE",3
+36,guage (25).jpg,guage,Oblique Angle,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"STEP 1 - OBSERVATION: 0 NA
+STEP 2 - RULE APPLICATION: The image provided consists of multiple instances of a ""pimp"" or similar character/image, which does not represent a system state that can be evaluated against the safety rule 'Alert if system is at 0 NA'. Since there is no discernible system or operational context, the condition '0 NA' cannot be confirmed or denied in relation to an industrial safety system.
+STEP 3 - VERDICT: SAFE",3
+37,guage (26).jpg,guage,,400,kPa,Alert if value is > 320 kPa.,400 kPa,Rule A,Value is 400. 400 > 320.,0,UNSAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"STEP 1 - OBSERVATION: The image provided is mostly a solid gray color, with some very small, dark specks near the top center. There are no visible numerical values, pressure readings, or any context that would allow for the measurement of a value in kPa.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable value present in the image to compare against the threshold of 320 kPa, the rule cannot be applied. Therefore, it does not violate the rule based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+38,guage (26).jpg,guage,,400,kPa,Alert if value is > 480 kPa.,400 kPa,Rule B,Value is 400. 400 < 480.,0,SAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"STEP 1 - OBSERVATION: The image provided is mostly a solid gray color, with some very small, dark specks scattered across it. There are no visible numerical values, pressure readings, or any context that would allow for the measurement of a value in kilopascals (kPa).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable value present in the image to compare against the threshold of 480 kPa, the rule cannot be applied to determine a violation.
+
+STEP 3 - VERDICT: 
+SAFE",3
+39,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 800 mbar.,1000 mbar,Rule A,Value is 1000. 1000 > 800.,1,UNSAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image provided is a placeholder or a representation of a person (a stock photo style image) and does not contain any visual data, gauges, or measurements related to pressure.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no pressure reading visible in the image, it is impossible to determine if the pressure exceeds 800 mbar. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+40,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 1200 mbar.,1000 mbar,Rule B,Value is 1000. 1000 < 1200.,1,SAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image provided is a placeholder or a representation of a person (a stock photo style image) and does not contain any visual data, gauges, or measurements related to pressure.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure indicated in the image, it is impossible to determine if the pressure exceeds 1200 mbar. Therefore, the rule cannot be violated based on the visual evidence present.
+
+STEP 3 - VERDICT: SAFE",3
+41,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 100 psi.,125 psi,Rule A,Value is 125. 125 > 100.,1,UNSAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image provided is a distorted, low-resolution image of what appears to be a person (perhaps a watermark or background texture) and does not contain any discernible equipment, gauges, or pressure readings that would allow for the measurement of pressure in psi.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, it is impossible to determine if the pressure exceeds 100 psi. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+42,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 150 psi.,125 psi,Rule B,Value is 125. 125 < 150.,1,SAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image is a low-resolution, mostly gray image with faint, distorted patterns resembling a person's face (specifically, a pattern that looks like a stylized, pixelated representation of a face). There are no visible gauges, pressure readings, or any context related to industrial pressure.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is 'Alert if pressure exceeds 150 psi.' Since the image does not contain any measurable pressure data, it is impossible to determine if the condition (pressure exceeding 150 psi) is present. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+43,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum > 5 in hg.,0 in hg,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image provided is a mostly gray, abstract background with some very small, faint colored specks (one orange/yellow near the top left and a small blue/purple shape slightly to the right of center). There are no visible gauges, pressure readings, or any context that would allow measurement of a vacuum pressure.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable vacuum pressure displayed in the image, it is impossible to determine if the condition ""vacuum > 5 in hg"" is met. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+44,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum drops to 0 in hg.,0 in hg,Rule B,Value is 0. Vacuum is at 0.,1,UNSAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"STEP 1 - OBSERVATION: The image provided is a mostly gray, abstract background with some very small, faint, and indistinct elements that appear to be text or symbols (like ""pizdima"" at the bottom). There is no visible pressure gauge, vacuum reading, or any context that would allow for the measurement of a vacuum level in hg (hectopascals).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable vacuum pressure displayed in the image, it is impossible to determine if the vacuum has dropped to 0 in hg. Therefore, the condition specified by the safety rule cannot be verified.
+
+STEP 3 - VERDICT: 
+SAFE",3
+45,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 17 bar.,22 bar,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"STEP 1 - OBSERVATION: 0
+STEP 2 - RULE APPLICATION: The image provided is a placeholder or a generic image (a repeating pattern of a face) and does not contain any visible pressure readings or gauges that would allow for the measurement against the specified threshold of 17 bar. Therefore, the condition ""pressure > 17 bar"" cannot be verified.
+STEP 3 - VERDICT: SAFE",3
+46,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 27 bar.,22 bar,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"STEP 1 - OBSERVATION: The image provided is a placeholder or a representation of a person (a ""pimp"" image), and it does not contain any visual data, gauges, pressure readings, or any context related to industrial pressure.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure value present in the image, the condition ""pressure > 27 bar"" cannot be verified. Therefore, the rule cannot be violated based on the visual content.
+
+STEP 3 - VERDICT: SAFE",3
+47,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 17 psi.,22 psi,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"STEP 1 - OBSERVATION: 0
+STEP 2 - RULE APPLICATION: The image does not contain any visible pressure readings, so it is impossible to determine if the pressure exceeds 17 psi.
+STEP 3 - VERDICT: SAFE",3
+48,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 27 psi.,22 psi,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"STEP 1 - OBSERVATION: 0 instances of pressure readings are visible in the image. The image is a collage of various textures and patterns, not a depiction of a pressurized system with measurable pressure gauges.
+STEP 2 - RULE APPLICATION: Since no pressure readings are present, the condition ""pressure > 27 psi"" cannot be verified. Therefore, the rule is not violated based on the visual evidence provided.
+STEP 3 - VERDICT: SAFE",3
+49,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.01 Mpa.,0.02 Mpa,Rule A,Value is 0.02. 0.02 > 0.01.,1,UNSAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"STEP 1 - OBSERVATION: 0.01 Mpa is a pressure unit, and the image provided is a static visual representation (a pattern of pixels/text) without any measurable physical parameters like pressure.
+STEP 2 - RULE APPLICATION: Since there is no pressure measurement in the image to compare against the threshold of 0.01 Mpa, the rule cannot be applied or violated based on the visual content alone.
+STEP 3 - VERDICT: SAFE",3
+50,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.03 Mpa.,0.02 Mpa,Rule B,Value is 0.02. 0.02 < 0.03.,1,SAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"STEP 1 - OBSERVATION: 0.03 Mpa is a threshold for pressure. The image provided is a static, low-resolution image of what appears to be a patterned background (possibly a digital representation of a person or texture). There are no visible gauges, pressure readings, or any context that would allow measurement against the specified safety rule.
+STEP 2 - RULE APPLICATION: Since there is no measurable pressure data present in the image, the condition ""Alert if > 0.03 Mpa"" cannot be evaluated. Therefore, it does not violate the rule based on observable evidence.
+STEP 3 - VERDICT: SAFE",3
+51,guage (32).jpg,guage,Low Resolution,0.8,bar,Alert if > 0.6 bar.,0.8 bar,Rule A,Value is 0.8. 0.8 > 0.6.,1,UNSAFE,Dataset/Guages/guage (32).jpg,Data_Preprocessed/guage (32).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a mostly gray background with a small, dark object near the center-top. There are no visible pressure gauges, pipes, or any context that would allow for the measurement of pressure in bar.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure reading (no data provided), it is impossible to determine if the condition ""> 0.6 bar"" is met. Therefore, based solely on the visual information provided, the rule cannot be violated.
+
+STEP 3 - VERDICT: SAFE",3
+52,guage (32).jpg,guage,Low Resolution,0.8,bar,Alert if > 1.0 bar.,0.8 bar,Rule B,Value is 0.8. 0.8 < 1.0.,1,SAFE,Dataset/Guages/guage (32).jpg,Data_Preprocessed/guage (32).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image contains a watermark/signature that includes the text ""pizzapizza"" and a small graphic element, but there is no visible pressure gauge or measurement indicating a pressure reading in bars.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is to ""Alert if > 1.0 bar."" Since the image does not display any pressure reading, it is impossible to determine if the condition (pressure > 1.0 bar) is met. Therefore, based solely on the visual information provided, the rule cannot be violated.
+
+STEP 3 - VERDICT: SAFE",3
+53,guage (33).jpg,guage,Glare,3.6,bar,Alert if > 2.8 bar.,3.6 bar,Rule A,Value is 3.6. 3.6 > 2.8.,1,UNSAFE,Dataset/Guages/guage (33).jpg,Data_Preprocessed/guage (33).jpg,Glare,"STEP 1 - OBSERVATION: The image provided is a static picture, likely a screenshot or a still frame of a video/broadcast. It does not contain any visible pressure gauges, equipment, or any context that would allow for the measurement of a pressure reading in bars.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, it is impossible to determine if the condition ""> 2.8 bar"" is met. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+54,guage (33).jpg,guage,Glare,3.6,bar,Alert if > 4.4 bar.,3.6 bar,Rule B,Value is 3.6. 3.6 < 4.4.,1,SAFE,Dataset/Guages/guage (33).jpg,Data_Preprocessed/guage (33).jpg,Glare,"STEP 1 - OBSERVATION: The image provided is a static picture of people, likely from a video or event, and does not contain any visible pressure gauges, equipment, or numerical data related to pressure (like ""4.4 bar"").
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure information in the image, the condition ""Alert if > 4.4 bar"" cannot be evaluated. Therefore, the image does not violate the rule based on the visual evidence present.
+
+STEP 3 - VERDICT: SAFE",3
+55,guage (34).jpg,guage,Oblique Angle/ Low Resolution,83,kPa,Alert if pressure exceeds 66 kPa.,83 kPa,Rule A,Value is 83. 83 > 66.,1,UNSAFE,Dataset/Guages/guage (34).jpg,Data_Preprocessed/guage (34).jpg,Oblique Angle/ Low Resolution,"STEP 1 - OBSERVATION: The image provided is a mostly gray background with small, scattered, faint graphical elements that resemble text or symbols (e.g., ""p"" and some small shapes). There are no visible gauges, pressure readings, or any context that would allow for the measurement of pressure in kilopascals (kPa).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, it is impossible to determine if the pressure exceeds 66 kPa. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+56,guage (34).jpg,guage,Oblique Angle/ Low Resolution,83,kPa,Alert if pressure exceeds 100 kPa.,83 kPa,Rule B,Value is 83. 83 < 100.,1,SAFE,Dataset/Guages/guage (34).jpg,Data_Preprocessed/guage (34).jpg,Oblique Angle/ Low Resolution,"STEP 1 - OBSERVATION: The image provided is a mostly gray background with small, scattered graphical elements that resemble text or symbols (like ""p"" and some small icons). There are no visible gauges, pressure readings, or any context that would allow for the measurement of pressure in kilopascals (kPa).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, it is impossible to determine if the pressure exceeds 100 kPa. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+57,guage (35).jpg,guage,Obstruction,35,Psi,Alert if > 28 Psi.,35 Psi,Rule A,Value is 35. 35 > 28.,1,UNSAFE,Dataset/Guages/guage (35).jpg,Data_Preprocessed/guage (35).jpg,Obstruction,"STEP 1 - OBSERVATION: The image provided is a low-resolution, mostly gray image with some faint, patterned elements resembling a person's face (likely a placeholder or watermark). There are no visible pressure gauges, equipment, or any context that would allow for the measurement of pressure in PSI.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, it is impossible to determine if the condition ""> 28 Psi"" is met. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+58,guage (35).jpg,guage,Obstruction,35,Psi,Alert if > 42 Psi.,35 Psi,Rule B,Value is 35. 35 < 42.,1,SAFE,Dataset/Guages/guage (35).jpg,Data_Preprocessed/guage (35).jpg,Obstruction,"STEP 1 - OBSERVATION: The image provided is a low-resolution, mostly gray image with some faint, patterned elements that resemble a person's face (a placeholder or watermark). There are no visible pressure gauges, measurements, or any context that would allow for the measurement of pressure in PSI.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, it is impossible to determine if the condition ""> 42 Psi"" is met. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+59,guage (36).jpg,guage,Low Contrast,0.1,Mpa,Alert if > 0.08 Mpa.,0.1 Mpa,Rule A,Value is 0.1. 0.1 > 0.08.,1,UNSAFE,Dataset/Guages/guage (36).jpg,Data_Preprocessed/guage (36).jpg,Low Contrast,"STEP 1 - OBSERVATION: The image is mostly a solid gray color, with some very small, faint specks of color (darker and lighter) scattered across it. There are no visible pressure gauges, equipment, or any context that would allow for the measurement of pressure in MPa.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, the condition ""Alert if > 0.08 Mpa"" cannot be evaluated. Therefore, the image does not violate the rule based on the provided visual information.
+
+STEP 3 - VERDICT: SAFE",3
+60,guage (36).jpg,guage,Low Contrast,0.1,Mpa,Alert if > 0.12 Mpa.,0.1 Mpa,Rule B,Value is 0.1. 0.1 < 0.12.,1,SAFE,Dataset/Guages/guage (36).jpg,Data_Preprocessed/guage (36).jpg,Low Contrast,"STEP 1 - OBSERVATION: The image is mostly a solid gray color, with very small, scattered dark specks that appear to be noise or artifacts rather than physical objects or pressure indicators. There are no visible gauges, pressure readings, or any context that would allow for the measurement of pressure in MPa.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, it is impossible to determine if the condition ""> 0.12 Mpa"" is met. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+61,guage (37).jpg,guage,Low Contrast,160,celcius,Alert if > 128 celcius.,160 celcius,Rule A,Value is 160. 160 > 128.,1,UNSAFE,Dataset/Guages/guage (37).jpg,Data_Preprocessed/guage (37).jpg,Low Contrast,"STEP 1 - OBSERVATION: The image is a solid gray color, with a very small, faint, dark speck near the center. There are no visible temperature readings, gauges, or any context that would indicate a temperature measurement of 128 degrees Celsius.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable temperature data present in the image, it is impossible to determine if the condition ""> 128 celcius"" is met. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+62,guage (37).jpg,guage,Low Contrast,160,celcius,Alert if > 192 celcius.,160 celcius,Rule B,Value is 160. 160 < 192.,1,SAFE,Dataset/Guages/guage (37).jpg,Data_Preprocessed/guage (37).jpg,Low Contrast,"STEP 1 - OBSERVATION: The image is mostly a solid gray color, with a very small, faint, dark speck near the center. There are no visible temperature readings or objects that could be measured in Celsius.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable temperature data present in the image, it is impossible to determine if any part of the image is at a temperature greater than 192 degrees Celsius. Therefore, the condition for violation cannot be confirmed.
+
+STEP 3 - VERDICT: SAFE",3
+63,guage (38).jpg,guage,,60,celcius,Alert if temperature exceeds 48 celcius.,60 celcius,Rule A,Value is 60. 60 > 48.,0,UNSAFE,Dataset/Guages/guage (38).jpg,Data_Preprocessed/guage (38).jpg,,"STEP 1 - OBSERVATION: The image is a mostly gray, abstract background with some faint, small, dark speckles. There are no discernible objects, gauges, or measurements that would indicate a temperature reading.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no visual information present to measure a temperature, it is impossible to determine if the temperature exceeds 48 degrees Celsius. Therefore, the rule cannot be violated based on the provided image content.
+
+STEP 3 - VERDICT: SAFE",3
+64,guage (38).jpg,guage,,60,celcius,Alert if temperature exceeds 72 celcius.,60 celcius,Rule B,Value is 60. 60 < 72.,0,SAFE,Dataset/Guages/guage (38).jpg,Data_Preprocessed/guage (38).jpg,,"STEP 1 - OBSERVATION: The image provided is a mostly gray, abstract image with some faint, small dark specks that resemble noise or artifacts. There are no visible elements that can be definitively identified as a physical object with a measurable temperature.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no discernible equipment, environment, or measurement of temperature in the image, it is impossible to determine if any part of the system shown exceeds 72 degrees Celsius. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+65,guage (39).jpg,guage,,155,psi,Alert if > 124 psi.,155 psi,Rule A,Value is 155. 155 > 124.,0,UNSAFE,Dataset/Guages/guage (39).jpg,Data_Preprocessed/guage (39).jpg,,"STEP 1 - OBSERVATION: The image is a static, low-resolution screenshot of what appears to be a television broadcast or video feed, featuring multiple instances of a logo/watermark (""tD""). There are no visible pressure gauges, pipes, or any equipment that would allow for the measurement of pressure in PSI.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, it is impossible to determine if the condition ""> 124 psi"" is met. Therefore, the image does not provide sufficient information to violate the safety rule.
+
+STEP 3 - VERDICT: SAFE",3
+66,guage (39).jpg,guage,,155,psi,Alert if > 186 psi.,155 psi,Rule B,Value is 155. 155 < 186.,0,SAFE,Dataset/Guages/guage (39).jpg,Data_Preprocessed/guage (39).jpg,,"STEP 1 - OBSERVATION: 10 instances of a logo/watermark for ""tDA"" are visible across the image, but no pressure gauge or measurement reading is visible that would indicate a pressure of 186 psi or higher.
+STEP 2 - RULE APPLICATION: The image does not contain any measurable pressure data, so it is impossible to determine if the condition ""> 186 psi"" is met. Therefore, the rule cannot be violated based on the visual evidence provided.
+STEP 3 - VERDICT: SAFE",3
+67,guage (4).jpg,guage,Obstruction,90,fahrenheit,Alert if > 72 fahrenheit.,90 fahrenheit,Rule A,Value is 90. 90 > 72.,1,UNSAFE,Dataset/Guages/guage (4).jpg,Data_Preprocessed/guage (4).jpg,Obstruction,"STEP 1 - OBSERVATION: 0
+STEP 2 - RULE APPLICATION: The image does not contain any visual information that would allow for the measurement of temperature, specifically Fahrenheit. Therefore, the rule ""Alert if > 72 fahrenheit"" cannot be applied.
+STEP 3 - VERDICT: SAFE",3
+68,guage (4).jpg,guage,Obstruction,90,fahrenheit,Alert if > 108 fahrenheit.,90 fahrenheit,Rule B,Value is 90. 90 < 108.,1,SAFE,Dataset/Guages/guage (4).jpg,Data_Preprocessed/guage (4).jpg,Obstruction,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person's face (presumably a placeholder or watermark) against a gray background. There is no visible temperature reading, thermometer, or any context that would allow for the measurement of a temperature in Fahrenheit.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable temperature present in the image, the condition ""Alert if > 108 fahrenheit"" cannot be evaluated. Therefore, the image does not violate the rule based on the provided visual information.
+
+STEP 3 - VERDICT: SAFE",3
+69,guage (40).jpg,guage,Low Contrast,53,celcius,Alert if > 42 celcius.,53 celcius,Rule A,Value is 53. 53 > 42.,1,UNSAFE,Dataset/Guages/guage (40).jpg,Data_Preprocessed/guage (40).jpg,Low Contrast,"STEP 1 - OBSERVATION: 0
+STEP 2 - RULE APPLICATION: The image provided is a heavily pixelated, mostly gray image with some small colored specks. There are no visible temperature readings or objects that could be measured at $42^\circ\text{C}$. Therefore, the condition ""Alert if $> 42$ celcius"" cannot be verified as violated based on the visual content.
+STEP 3 - VERDICT: SAFE",3
+70,guage (40).jpg,guage,Low Contrast,53,celcius,Alert if > 64 celcius.,53 celcius,Rule B,Value is 53. 53 < 64.,1,SAFE,Dataset/Guages/guage (40).jpg,Data_Preprocessed/guage (40).jpg,Low Contrast,"STEP 1 - OBSERVATION: 0
+STEP 2 - RULE APPLICATION: The image provided is a stylized, mostly gray image with some small, scattered colored pixels/dots. There is no visual information present that would allow for the measurement or identification of a temperature reading (celcius). Therefore, the condition ""Alert if > 64 celcius"" cannot be evaluated.
+STEP 3 - VERDICT: SAFE",3
+71,guage (41).jpg,guage,Glare,75,fahrenheit,Alert if > 60 fahrenheit.,75 fahrenheit,Rule A,Value is 75. 75 > 60.,1,UNSAFE,Dataset/Guages/guage (41).jpg,Data_Preprocessed/guage (41).jpg,Glare,"STEP 1 - OBSERVATION: 0
+STEP 2 - RULE APPLICATION: The image does not contain any visual information that would allow for the measurement of temperature, so it cannot be assessed against the safety rule 'Alert if > 60 fahrenheit.'
+STEP 3 - VERDICT: SAFE",3
+72,guage (41).jpg,guage,Glare,75,fahrenheit,Alert if > 90 fahrenheit.,75 fahrenheit,Rule B,Value is 75. 75 < 90.,1,SAFE,Dataset/Guages/guage (41).jpg,Data_Preprocessed/guage (41).jpg,Glare,"STEP 1 - OBSERVATION: 0
+STEP 2 - RULE APPLICATION: The image does not contain any visual information that would allow for the measurement of temperature, specifically a reading greater than 90 degrees Fahrenheit.
+STEP 3 - VERDICT: SAFE",3
+73,guage (42).jpg,guage,,25,psi,Alert if > 20 psi.,25 psi,Rule A,Value is 25. 25 > 20.,0,UNSAFE,Dataset/Guages/guage (42).jpg,Data_Preprocessed/guage (42).jpg,,"STEP 1 - OBSERVATION: 0 instances of pressure readings are visible in the image. The image is a pattern of a person's face/pattern, not a physical system with measurable pressure.
+STEP 2 - RULE APPLICATION: Since there are no pressure readings present, the condition ""Alert if > 20 psi"" cannot be violated based on the visual evidence provided.
+STEP 3 - VERDICT: SAFE",3
+74,guage (42).jpg,guage,,25,psi,Alert if > 30 psi.,25 psi,Rule B,Value is 25. 25 < 30.,0,SAFE,Dataset/Guages/guage (42).jpg,Data_Preprocessed/guage (42).jpg,,"STEP 1 - OBSERVATION: 0 instances of pressure readings are visible in the image. The image is a pattern of a person's face (a ""patterned"" image) against a gray background, not a depiction of equipment or a gauge showing pressure.
+STEP 2 - RULE APPLICATION: Since no pressure reading is present, the condition ""> 30 psi"" cannot be met. Therefore, the rule is not violated.
+STEP 3 - VERDICT: SAFE",3
+75,guage (43).jpg,guage,,43,celcius,Alert if > 34 celcius.,43 celcius,Rule A,Value is 43. 43 > 34.,0,UNSAFE,Dataset/Guages/guage (43).jpg,Data_Preprocessed/guage (43).jpg,,"STEP 1 - OBSERVATION: The image is a heavily pixelated and distorted image, primarily showing shades of gray, black, and some reddish-brown/orange speckles (likely artifacts from compression or noise). There are no discernible objects that would allow for the measurement of a temperature in Celsius.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is 'Alert if > 34 celcius.' Since the image does not contain any measurable temperature data, it is impossible to determine if it violates the rule based on the provided visual information.
+
+STEP 3 - VERDICT: 
+SAFE",3
+76,guage (43).jpg,guage,,43,celcius,Alert if > 52 celcius.,43 celcius,Rule B,Value is 43. 43 < 52.,0,SAFE,Dataset/Guages/guage (43).jpg,Data_Preprocessed/guage (43).jpg,,"STEP 1 - OBSERVATION: The image is a heavily pixelated, mostly gray and black image with some small patches of color (red/orange and green). There is no discernible temperature reading in the image.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is 'Alert if > 52 celcius.' Since the image does not contain any measurable temperature data, it is impossible to determine if the condition is met. Therefore, based solely on the visual information provided, the rule cannot be violated.
+
+STEP 3 - VERDICT: SAFE",3
+77,guage (44).jpg,guage,Obstruction,50,celcius,Alert if > 40 celcius.,50 celcius,Rule A,Value is 50. 50 > 40.,1,UNSAFE,Dataset/Guages/guage (44).jpg,Data_Preprocessed/guage (44).jpg,Obstruction,"STEP 1 - OBSERVATION: The image is a low-resolution, mostly gray image featuring repeated instances of a person's face (likely a placeholder or watermark) and some small colored pixels. There are no discernible temperature readings or visual elements that can be measured in Celsius.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is 'Alert if > 40 celcius.' Since the image does not contain any measurable temperature data, it is impossible to determine if it violates the rule based on the provided information.
+
+STEP 3 - VERDICT: 
+SAFE",3
+78,guage (44).jpg,guage,Obstruction,50,celcius,Alert if > 60 celcius.,50 celcius,Rule B,Value is 50. 50 < 60.,1,SAFE,Dataset/Guages/guage (44).jpg,Data_Preprocessed/guage (44).jpg,Obstruction,"STEP 1 - OBSERVATION: The image is a low-resolution, mostly gray image featuring repeated instances of a person resembling Donald Trump (a stock photo/clip art). There are no visible temperature readings, gauges, or any context that would allow for the measurement of a temperature in Celsius.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is 'Alert if > 60 celcius.' Since the image does not contain any measurable temperature data, it is impossible to determine if the condition is met. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+79,guage (45).jpg,guage,,25,psi,Alert if > 20 psi.,25 psi,Rule A,Value is 25. 25 > 20.,0,UNSAFE,Dataset/Guages/guage (45).jpg,Data_Preprocessed/guage (45).jpg,,"STEP 1 - OBSERVATION: The image provided is a solid gray background with some faint, almost watermark-like text/patterns at the bottom. There are no visible pressure gauges, pipes, equipment, or any visual data that would allow for the measurement of pressure (psi).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure indicated in the image, it is impossible to determine if the pressure exceeds 20 psi. Therefore, the condition specified by the safety rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+80,guage (45).jpg,guage,,25,psi,Alert if > 30 psi.,25 psi,Rule B,Value is 25. 25 < 30.,0,SAFE,Dataset/Guages/guage (45).jpg,Data_Preprocessed/guage (45).jpg,,"STEP 1 - OBSERVATION: The image provided is a solid gray background with some faint, almost watermark-like text/symbols at the bottom. There are no visible pressure gauges, pipes, vessels, or any context that would allow for the measurement of pressure in psi.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure indicated in the image, it is impossible to determine if the pressure exceeds 30 psi. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+81,guage (46).jpg,guage,Glare,2.2,bar,Alert if > 1.7 bar.,2.2 bar,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (46).jpg,Data_Preprocessed/guage (46).jpg,Glare,"STEP 1 - OBSERVATION: 1.7 bar is not visible in the image. The image is a mostly gray background with some small, scattered pixelated elements that resemble a pattern, possibly a watermark or artifact. There are no discernible pressure gauges or indicators to measure pressure.
+STEP 2 - RULE APPLICATION: Since there is no measurable pressure reading (like ""1.7 bar"") present in the image, the condition of the safety rule cannot be evaluated based on the visual evidence provided.
+STEP 3 - VERDICT: SAFE",3
+82,guage (46).jpg,guage,Glare,2.2,bar,Alert if > 2.7 bar.,2.2 bar,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (46).jpg,Data_Preprocessed/guage (46).jpg,Glare,"STEP 1 - OBSERVATION: 0.0 bar (or no pressure reading is visible)
+STEP 2 - RULE APPLICATION: The image does not contain any measurable pressure readings, so it cannot violate the rule 'Alert if > 2.7 bar.'
+STEP 3 - VERDICT: SAFE",3
+83,guage (47).jpg,guage,Obstruction,40,psi,Alert if > 32 psi.,40 psi,Rule A,Value is 40. 40 > 32.,1,UNSAFE,Dataset/Guages/guage (47).jpg,Data_Preprocessed/guage (47).jpg,Obstruction,"STEP 1 - OBSERVATION: The image provided is a mostly gray, blank image with some faint, small markings that appear to be text or artifacts, but there are no visible pressure gauges, pipes, or any context from which a pressure reading (like ""32 psi"") could be determined.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure indicated in the image, the condition ""Alert if > 32 psi"" cannot be evaluated. Therefore, the rule is not violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+84,guage (47).jpg,guage,Obstruction,40,psi,Alert if > 48 psi.,40 psi,Rule B,Value is 40. 40 < 48.,1,SAFE,Dataset/Guages/guage (47).jpg,Data_Preprocessed/guage (47).jpg,Obstruction,"STEP 1 - OBSERVATION: The image provided is a mostly gray, blank image with some faint, small markings that do not depict any pressure gauge or measurement that could be compared to the threshold of 48 psi.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no visible pressure reading in the image, it is impossible to determine if the condition ""> 48 psi"" is met. Therefore, the image does not violate the rule based on observable data.
+
+STEP 3 - VERDICT: SAFE",3
+85,guage (48).jpg,guage,Glare/ Oblique Angle,0.17,MPa,Alert if > 0.13 MPa.,0.17 MPa,Rule A,Value is 0.17. 0.17 > 0.13.,1,UNSAFE,Dataset/Guages/guage (48).jpg,Data_Preprocessed/guage (48).jpg,Glare/ Oblique Angle,"STEP 1 - OBSERVATION: 0.13 MPa is not visible in the image. The image is a pattern of a manatee silhouette against a gray background, which does not contain any pressure readings or indicators related to the specified safety rule.
+STEP 2 - RULE APPLICATION: Since there is no measurement of pressure (MPa) present in the image, the condition ""Alert if > 0.13 MPa"" cannot be evaluated. Therefore, the rule is not violated based on the visual evidence provided.
+STEP 3 - VERDICT: SAFE",3
+86,guage (48).jpg,guage,Glare/ Oblique Angle,0.17,MPa,Alert if > 0.21 MPa.,0.17 MPa,Rule B,Value is 0.17. 0.17 < 0.21.,1,SAFE,Dataset/Guages/guage (48).jpg,Data_Preprocessed/guage (48).jpg,Glare/ Oblique Angle,"STEP 1 - OBSERVATION: 0.21 MPa is a pressure measurement, and the provided image is a static, low-resolution image of a person (a digital avatar) against a gray background. There is no visible pressure gauge, pipe, vessel, or any context that would allow for the measurement of a pressure value in MPa.
+STEP 2 - RULE APPLICATION: Since there is no measurable pressure value present in the image, the condition ""Alert if > 0.21 MPa"" cannot be evaluated. Therefore, the image does not violate the rule based on the visual evidence provided.
+STEP 3 - VERDICT: SAFE",3
+87,guage (49).jpg,guage,Low Resolution,35,psi,Alert if > 28 psi.,35 psi,Rule A,Value is 35. 35 > 28.,1,UNSAFE,Dataset/Guages/guage (49).jpg,Data_Preprocessed/guage (49).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a mostly gray background with scattered, faint, pixelated patterns that resemble a watermark or texture. There are no visible pressure gauges, pipes, or any context that would allow for the measurement of pressure in psi.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure indicated in the image, the condition ""Alert if > 28 psi"" cannot be evaluated. Therefore, the image does not violate the rule based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+88,guage (49).jpg,guage,Low Resolution,35,psi,Alert if > 42 psi.,35 psi,Rule B,Value is 35. 35 < 42.,1,SAFE,Dataset/Guages/guage (49).jpg,Data_Preprocessed/guage (49).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a heavily pixelated, mostly gray image with some faint, distorted patterns that resemble a person's face (repeatedly). There are no discernible pressure gauges, pipes, or any context that would allow for the measurement of pressure in psi.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure reading present in the image, the condition ""Alert if > 42 psi"" cannot be evaluated. Therefore, the image does not violate the rule based on the provided visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+89,guage (5).jpg,guage,Low Contrast,70,bar,Alert if > 56 bar.,70 bar,Rule A,Value is 70. 70 > 56.,1,UNSAFE,Dataset/Guages/guage (5).jpg,Data_Preprocessed/guage (5).jpg,Low Contrast,"STEP 1 - OBSERVATION: 204.0 bar is visible in the image.
+STEP 2 - RULE APPLICATION: The safety rule is to 'Alert if > 56 bar.' Since 204.0 bar is greater than 56 bar, the rule is violated.
+STEP 3 - VERDICT: UNSAFE",3
+90,guage (5).jpg,guage,Low Contrast,70,bar,Alert if > 84 bar.,70 bar,Rule B,Value is 70. 70 < 84.,1,SAFE,Dataset/Guages/guage (5).jpg,Data_Preprocessed/guage (5).jpg,Low Contrast,"STEP 1 - OBSERVATION: 10 instances of ""dipdia"" text are visible in the image, and there is no visual information related to pressure readings (like a gauge or numerical display) that would allow for the measurement against the threshold of 84 bar.
+STEP 2 - RULE APPLICATION: Since there is no measurable pressure data present in the image, the condition ""Alert if > 84 bar"" cannot be evaluated. Therefore, the rule is not violated based on the provided visual evidence.
+STEP 3 - VERDICT: SAFE",3
+91,guage (50).jpg,guage,,4.8,kp/cm3,Alert if > 3.8 kp/cm3.,4.8 kp/cm3,Rule A,Value is 4.8. 4.8 > 3.8.,0,UNSAFE,Dataset/Guages/guage (50).jpg,Data_Preprocessed/guage (50).jpg,,"STEP 1 - OBSERVATION: The image provided is a mostly gray, blank image with some very small, faint artifacts or text at the bottom edge (""$\text{}\text{}\text{}\text{}$""). There are no visible objects, materials, or measurements that would allow for the calculation of density ($\text{kp/cm}^3$).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable material present in the image to determine its density, the condition ""density > 3.8 $\text{kp/cm}^3$"" cannot be verified. Therefore, the rule cannot be violated based on the visual evidence.
+
+STEP 3 - VERDICT: SAFE",3
+92,guage (50).jpg,guage,,4.8,kp/cm3,Alert if > 5.8 kp/cm3.,4.8 kp/cm3,Rule B,Value is 4.8. 4.8 < 5.8.,0,SAFE,Dataset/Guages/guage (50).jpg,Data_Preprocessed/guage (50).jpg,,"STEP 1 - OBSERVATION: The image is mostly a solid gray color, with some very faint, small, dark specks or artifacts visible, particularly in the upper right quadrant. There are no discernible objects that would allow for the measurement of density (kp/cm³).
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not contain any measurable material or structure to which the density rule ('Alert if > 5.8 kp/cm3') can be applied, it cannot be determined to violate the rule based on the provided visual information.
+
+STEP 3 - VERDICT: SAFE",3
+93,guage (6).jpg,guage,Glare/ Oblique Angle,34,celcius,Alert if > 27 celcius.,34 celcius,Rule A,Value is 34. 34 > 27.,1,UNSAFE,Dataset/Guages/guage (6).jpg,Data_Preprocessed/guage (6).jpg,Glare/ Oblique Angle,"STEP 1 - OBSERVATION: The image is a mostly gray background with some small, scattered dark/colored pixels (appearing like noise or artifacts). There are no visible temperature readings or objects that could be measured for temperature.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable temperature data present in the image, it is impossible to determine if any part of the image is greater than 27 degrees Celsius. Therefore, the condition specified by the safety rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+94,guage (6).jpg,guage,Glare/ Oblique Angle,34,celcius,Alert if > 41 celcius.,34 celcius,Rule B,Value is 34. 34 < 41.,1,SAFE,Dataset/Guages/guage (6).jpg,Data_Preprocessed/guage (6).jpg,Glare/ Oblique Angle,"STEP 1 - OBSERVATION: The image is a mostly gray background with some small, scattered dark/colored pixels (appearing like noise or artifacts). There are no visible temperature readings or objects that could be measured for temperature.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable temperature data present in the image, it is impossible to determine if any part of the image exceeds 41 degrees Celsius. Therefore, the condition specified by the safety rule cannot be violated based on the visual information provided.
+
+STEP 3 - VERDICT: SAFE",3
+95,guage (7).jpg,guage,Oblique Angle,1.3,,Alert if > 1.0 NA.,1.3 NA,Rule A,Value is 1.3. 1.3 > 1.0.,1,UNSAFE,Dataset/Guages/guage (7).jpg,Data_Preprocessed/guage (7).jpg,Oblique Angle,"STEP 1 - OBSERVATION: 14 instances of what appears to be a person (likely Donald Trump) are visible, heavily pixelated and scattered across the image.
+STEP 2 - RULE APPLICATION: The rule is 'Alert if > 1.0 NA.' Since there are multiple instances of the subject present, this suggests a high density or presence that might be interpreted as a violation depending on the context of what constitutes ""1.0 NA."" Assuming the rule refers to the count of identifiable subjects exceeding a threshold, and given the visual evidence of numerous figures, it triggers the alert condition.
+STEP 3 - VERDICT: UNSAFE",3
+96,guage (7).jpg,guage,Oblique Angle,1.3,,Alert if > 1.6 NA.,1.3 NA,Rule B,Value is 1.3. 1.3 < 1.6.,1,SAFE,Dataset/Guages/guage (7).jpg,Data_Preprocessed/guage (7).jpg,Oblique Angle,"STEP 1 - OBSERVATION: 10 instances of what appears to be a person (likely Donald Trump) are visible in the image, heavily pixelated and scattered across the frame.
+STEP 2 - RULE APPLICATION: The rule is 'Alert if > 1.6 NA.' Since the image contains multiple instances of a person, this constitutes a presence/count that exceeds the threshold of 1.6.
+STEP 3 - VERDICT: UNSAFE",3
+97,guage (8).jpg,guage,Oblique Angle,0,,Alert if reading > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (8).jpg,Data_Preprocessed/guage (8).jpg,Oblique Angle,"STEP 1 - OBSERVATION: 4 instances of ""pdp"" are visible in the image, which is a pattern that might be interpreted as a reading. The text ""pdp"" appears multiple times across the image.
+STEP 2 - RULE APPLICATION: The rule is to ""Alert if reading > 5 NA."" Assuming ""NA"" refers to the count of the specific pattern being counted (e.g., the word/pattern ""pdp""), I need to count the occurrences. Counting the visible instances of ""pdp"" yields more than 5.
+STEP 3 - VERDICT: UNSAFE",3
+98,guage (8).jpg,guage,Oblique Angle,0,,Alert if reading is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (8).jpg,Data_Preprocessed/guage (8).jpg,Oblique Angle,"STEP 1 - OBSERVATION: 0 instances of text or readable content were found in the image, which is predominantly a gray background with faint, repeated patterns resembling ""pimp"" or similar text/logos.
+STEP 2 - RULE APPLICATION: The rule is to 'Alert if reading is at 0 NA.' Since there is no discernible reading (text) present, the condition for the alert (reading being 0) is met.
+STEP 3 - VERDICT: UNSAFE",3
+99,guage (9).jpg,guage,Oblique Angle/ Obstruction,86,Pa,Alert if > 68 Pa.,86 Pa,Rule A,Value is 86. 86 > 68.,1,UNSAFE,Dataset/Guages/guage (9).jpg,Data_Preprocessed/guage (9).jpg,Oblique Angle/ Obstruction,"STEP 1 - OBSERVATION: The image is a mostly gray background with several instances of a ""dizzy"" or pixelated pattern, which appears to be a watermark or artifact, not a representation of an industrial environment with measurable pressure readings. There are no visible gauges, pressure readings, or any context that would allow for the measurement of a pressure value in Pascals (Pa).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure reading present in the image, it is impossible to determine if the condition ""> 68 Pa"" is met. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+100,guage (9).jpg,guage,Oblique Angle/ Obstruction,86,Pa,Alert if > 104 Pa.,86 Pa,Rule B,Value is 86. 86 < 104.,1,SAFE,Dataset/Guages/guage (9).jpg,Data_Preprocessed/guage (9).jpg,Oblique Angle/ Obstruction,"STEP 1 - OBSERVATION: The image is a mostly gray background with several instances of a repeating pattern resembling a ""dizzy"" or pixelated texture, which appears to be a watermark or artifact rather than a physical environment with measurable pressure. There are no visible gauges, pressure readings, or any context that would allow for the measurement of pressure in Pascals (Pa).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no measurable pressure data present in the image, it is impossible to determine if the condition ""> 104 Pa"" is met. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+101,pipe_corroded (1).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (1).jpg,Data_Preprocessed/pipe_corroded (1).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a low-resolution, mostly gray image with some faint, small, colored specks (appearing like noise or artifacts) scattered across it. There are no discernible surfaces, machinery, or materials that would allow for the inspection of oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not display any identifiable surfaces, the condition of which cannot be assessed, there is no evidence of surface oxidation or corrosion to alert on. Therefore, the rule is not violated based on the visual information provided.
+
+STEP 3 - VERDICT: SAFE",3
+102,pipe_corroded (1).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (1).jpg,Data_Preprocessed/pipe_corroded (1).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a heavily pixelated and distorted representation of what appears to be a person (perhaps a face or body) against a gray background. There are no discernible objects that would allow for an assessment of surface condition like rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical structure or material subject to corrosion, damage, or leakage, the rule concerning ""Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks"" cannot be applied to determine compliance or violation.
+
+STEP 3 - VERDICT: SAFE",3
+103,pipe_corroded (10).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (10).jpg,Data_Preprocessed/pipe_corroded (10).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a heavily pixelated and low-resolution graphic, primarily showing a gray background with scattered small, dark, and colored (red/purple) specks. There are no discernible objects that would constitute a surface for inspection.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no identifiable surfaces, equipment, or materials present in the image, it is impossible to observe any signs of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+104,pipe_corroded (10).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (10).jpg,Data_Preprocessed/pipe_corroded (10).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a heavily pixelated and distorted image, primarily showing a gray background with scattered small, dark/colored pixels (some resembling faces or patterns). There are no discernible objects that would allow for an assessment of surface condition, structural integrity, rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical structure or equipment, it is impossible to assess the presence or absence of ""surface rust,"" ""structural defects, dents, cracks, or leaks."" Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+105,pipe_corroded (11).jpg,pipeline,Texture Overlap,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (11).jpg,Data_Preprocessed/pipe_corroded (11).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a composite of several people (likely stock photos) and does not show any discernible industrial equipment, surfaces, or materials that would be subject to oxidation or corrosion. The background is mostly gray.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no visible surfaces, the condition of which cannot be assessed, the rule ""Alert on any sign of surface oxidation or corrosion"" cannot be applied to the image content.
+
+STEP 3 - VERDICT: SAFE",3
+106,pipe_corroded (11).jpg,pipeline,Texture Overlap,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (11).jpg,Data_Preprocessed/pipe_corroded (11).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image consists primarily of a gray background with several instances of a ""drip"" or ""splatter"" graphic (represented by small colored dots/shapes) scattered across it. There are no discernible objects that would constitute a structure to inspect for surface rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule states: 'Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.' Since the image does not contain any physical structure, the condition described in the rule (surface rust, structural defects, dents, cracks, or leaks) cannot be observed or assessed. Therefore, the rule is not violated because there is nothing to check against the criteria.
+
+STEP 3 - VERDICT: SAFE",3
+107,pipe_corroded (12).jpg,pipeline,Low Resolution,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (12).jpg,Data_Preprocessed/pipe_corroded (12).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person's face (Dippa/Dippa) against a plain gray background. There are no visible surfaces, machinery, or materials that would be subject to oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical surfaces present in the image, it is impossible to observe any sign of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual content provided.
+
+STEP 3 - VERDICT: SAFE",3
+108,pipe_corroded (12).jpg,pipeline,Low Resolution,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (12).jpg,Data_Preprocessed/pipe_corroded (12).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person's face (Dippa/Dippa) overlaid on a gray background. There are no visible physical objects, structures, surfaces, rust, dents, cracks, or leaks to inspect.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule specifies conditions related to physical surfaces (""Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.""). Since the image is purely a digital graphic and contains no physical structure or material subject to corrosion or damage, it does not violate the rule because there are no observable defects.
+
+STEP 3 - VERDICT: SAFE",3
+109,pipe_corroded (13).jpg,pipeline,Glare,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (13).jpg,Data_Preprocessed/pipe_corroded (13).jpg,Glare,"STEP 1 - OBSERVATION: The image is largely a solid gray color, suggesting a uniform surface. There are very small, dark specks scattered across the image, particularly towards the right side. These specks are too indistinct to definitively identify as surface oxidation or corrosion based solely on this low-resolution, monochromatic representation.
+
+STEP 2 - RULE APPLICATION: 
+Since the image lacks clear visual evidence of surface texture changes indicative of rust, pitting, or chemical degradation (which are typical signs of oxidation/corrosion), it cannot be confirmed as violating the rule. However, without a clear inspection area, a definitive ""safe"" verdict is difficult, but based strictly on visible features, no obvious signs of corrosion are present.
+
+STEP 3 - VERDICT: SAFE",3
+110,pipe_corroded (13).jpg,pipeline,Glare,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (13).jpg,Data_Preprocessed/pipe_corroded (13).jpg,Glare,"STEP 1 - OBSERVATION: The image is mostly a solid gray color with some very small, dark speckles scattered across it. There are no discernible objects, surfaces, structures, or visible signs of material that would allow for an assessment of surface condition (rust, dents, cracks, leaks).
+
+STEP 2 - RULE APPLICATION: 
+Since there is no observable structure or surface to inspect, the rule concerning ""Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks"" cannot be applied. Therefore, the image does not violate the rule because there is nothing present to violate it.
+
+STEP 3 - VERDICT: SAFE",3
+111,pipe_corroded (14).jpg,pipeline,Low Resolution,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (14).jpg,Data_Preprocessed/pipe_corroded (14).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a solid, uniform gray color. There are no visible surfaces, materials, or textures that would indicate oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image is a uniform color field and does not depict any physical material subject to environmental degradation, there is no evidence of surface oxidation or corrosion present in the visual data. Therefore, the rule is not violated.
+
+STEP 3 - VERDICT: SAFE",3
+112,pipe_corroded (14).jpg,pipeline,Low Resolution,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (14).jpg,Data_Preprocessed/pipe_corroded (14).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image provided is a solid, uniform gray color with some faint, irregular markings or texture visible, but no discernible objects, surfaces, or structures are present to be inspected for surface rust, structural defects, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no physical object or structure in the image to inspect, it is impossible to determine if it violates the rule concerning surface rust, structural defects, dents, cracks, or leaks. The rule applies to physical assets.
+
+STEP 3 - VERDICT: 
+SAFE",3
+113,pipe_corroded (15).jpg,pipeline,Texture Overlap,Corroded/ Crack,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Crack NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (15).jpg,Data_Preprocessed/pipe_corroded (15).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a low-resolution, mostly gray image with faint, repeating patterns that resemble a stylized, possibly digital or abstract texture. There are no discernible objects, machinery, or surfaces to inspect for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not contain any identifiable surfaces that could be subject to surface oxidation or corrosion, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+114,pipe_corroded (15).jpg,pipeline,Texture Overlap,Corroded/ Crack,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Crack NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (15).jpg,Data_Preprocessed/pipe_corroded (15).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a placeholder or a very plain background (mostly gray) with some faint, small, patterned elements that resemble a stylized image of a person or pattern, but there are no discernible objects, structures, or surfaces to inspect for rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no visible surfaces, equipment, or structures present in the image, it is impossible to observe any surface rust or check for structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+115,pipe_corroded (16).jpg,pipeline,,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (16).jpg,Data_Preprocessed/pipe_corroded (16).jpg,,"STEP 1 - OBSERVATION: The image is a heavily pixelated, low-resolution graphic that appears to be a placeholder or corrupted image. It does not clearly depict any physical surface or material that could be assessed for oxidation or corrosion. The visual elements are abstract and distorted.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not show any discernible surface material (like metal, concrete, or other infrastructure) that would be subject to oxidation or corrosion, the rule cannot be violated based on the visible content.
+
+STEP 3 - VERDICT: SAFE",3
+116,pipe_corroded (16).jpg,pipeline,,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (16).jpg,Data_Preprocessed/pipe_corroded (16).jpg,,"STEP 1 - OBSERVATION: The image is a heavily pixelated and distorted representation of a person (likely a placeholder or artifact), not a clear image of a physical structure. There are no discernible surfaces, rust, structural defects, dents, cracks, or leaks visible.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical structure, it cannot violate the rule concerning surface rust, structural defects, dents, cracks, or leaks. The rule applies to physical objects.
+
+STEP 3 - VERDICT: SAFE",3
+117,pipe_corroded (17).jpg,pipeline,,Leak / Damaged,,Alert on any sign of surface oxidation or corrosion.,Leak / Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (17).jpg,Data_Preprocessed/pipe_corroded (17).jpg,,"STEP 1 - OBSERVATION: The image is a solid, uniform gray color with some very small, scattered dark/colored pixels (appearing like noise or artifacts) in the upper right quadrant. There are no discernible surfaces, materials, or structures visible that would be subject to oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical material or structure, it cannot exhibit surface oxidation or corrosion. Therefore, it does not violate the rule.
+
+STEP 3 - VERDICT: SAFE",3
+118,pipe_corroded (17).jpg,pipeline,,Leak / Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Leak / Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (17).jpg,Data_Preprocessed/pipe_corroded (17).jpg,,"STEP 1 - OBSERVATION: The image is a solid gray background with some very small, scattered dark/colored pixels (appearing like noise or artifacts) in the upper right and center-right areas. There is no discernible object or structure to inspect for surface rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no equipment, structure, or material present in the image, it is impossible to observe any condition related to surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+119,pipe_corroded (18).jpg,pipeline,Low Resolution,Damaged,,Alert on any sign of surface oxidation or corrosion.,Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (18).jpg,Data_Preprocessed/pipe_corroded (18).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a mostly gray, featureless background with a few very small, dark specks that appear to be noise or artifacts rather than physical material. There are no discernible surfaces, machinery, or materials present in the image for which oxidation or corrosion could be assessed.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no visible surfaces, equipment, or materials in the image, it is impossible to observe any sign of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+120,pipe_corroded (18).jpg,pipeline,Low Resolution,Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (18).jpg,Data_Preprocessed/pipe_corroded (18).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a mostly gray, featureless background with a small, dark speck near the top center and another very small speck near the bottom right. There are no discernible objects, surfaces, or structures visible in the image.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule specifies that ""Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks."" Since the image contains no visible structure, surface, rust, dents, cracks, or leaks, it cannot violate the rule, as there are no defects present to audit.
+
+STEP 3 - VERDICT: SAFE",3
+121,pipe_corroded (19).jpg,pipeline,Low Resolution,Dented,,Alert on any sign of surface oxidation or corrosion.,Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (19).jpg,Data_Preprocessed/pipe_corroded (19).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a mostly plain gray background with a very small, faint, dark speck near the center-top area. There are no discernible surfaces, machinery, or materials visible that would be subject to oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no identifiable surfaces present in the image, it is impossible to observe any sign of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+122,pipe_corroded (19).jpg,pipeline,Low Resolution,Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (19).jpg,Data_Preprocessed/pipe_corroded (19).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is mostly a solid gray color with a small, faint, dark speck near the center-top area. There are no discernible surfaces, structures, or visible defects like rust, dents, cracks, or leaks to inspect.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule states: 'Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.' Since the image does not depict any physical structure or material that could exhibit surface rust, dents, cracks, or leaks, it cannot violate the rule based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+123,pipe_corroded (2).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (2).jpg,Data_Preprocessed/pipe_corroded (2).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person's face (a pixelated/distorted representation) against a gray background. There are no visible surfaces, machinery, or materials that would be subject to oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical surfaces present in the image, it is impossible to observe any sign of surface oxidation or corrosion. Therefore, the rule cannot be violated by the content of the image itself.
+
+STEP 3 - VERDICT: SAFE",3
+124,pipe_corroded (2).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (2).jpg,Data_Preprocessed/pipe_corroded (2).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person (presumably a digital representation) against a gray background. There are no visible physical objects, structures, surfaces, rust, dents, cracks, or leaks to inspect.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical assets present in the image to be audited for surface rust, structural defects, dents, cracks, or leaks, the rule cannot be violated based on the visual content provided. The rule applies to physical structures, which are absent here.
+
+STEP 3 - VERDICT: SAFE",3
+125,pipe_corroded (20).jpg,pipeline,Texture Overlap,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (20).jpg,Data_Preprocessed/pipe_corroded (20).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a mostly gray, abstract background with very small, faint, and scattered colored pixels (some appearing like tiny figures or patterns). There are no discernible surfaces, machinery, or materials to assess for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no identifiable surfaces present in the image, it is impossible to observe any sign of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+126,pipe_corroded (20).jpg,pipeline,Texture Overlap,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (20).jpg,Data_Preprocessed/pipe_corroded (20).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a mostly gray, abstract, and low-resolution visual, resembling a digital artifact or a heavily degraded image. There are no discernible objects, surfaces, or structures to inspect for surface rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no identifiable physical structures present in the image, it is impossible to observe any condition related to surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visible content.
+
+STEP 3 - VERDICT: SAFE",3
+127,pipe_corroded (21).jpg,pipeline,Low Resolution,Dented,,Alert on any sign of surface oxidation or corrosion.,Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (21).jpg,Data_Preprocessed/pipe_corroded (21).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a highly stylized, abstract, and dark graphic pattern resembling a digital or pixelated texture. It does not depict any recognizable physical surfaces, machinery, or materials that would be subject to oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image is purely graphical and lacks any discernible physical material, it cannot exhibit surface oxidation or corrosion. Therefore, it does not violate the rule.
+
+STEP 3 - VERDICT: SAFE",3
+128,pipe_corroded (21).jpg,pipeline,Low Resolution,Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (21).jpg,Data_Preprocessed/pipe_corroded (21).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image provided is a pattern of stylized, dark, and light gray shapes resembling a digital or abstract texture. There are no discernible objects, structures, surfaces, rust, dents, cracks, or leaks visible in the image.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule states: 'Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.' Since the image does not depict any physical structure or material that could exhibit surface rust, dents, cracks, or leaks, it cannot violate the rule based on the criteria specified.
+
+STEP 3 - VERDICT: SAFE",3
+129,pipe_corroded (22).jpg,pipeline,Low Resolution,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (22).jpg,Data_Preprocessed/pipe_corroded (22).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a low-resolution, mostly gray image with scattered, faint, pixelated patterns that resemble a stylized or distorted representation of a face (possibly a meme or heavily processed image). There are no discernible physical surfaces, machinery, or materials to assess for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is 'Alert on any sign of surface oxidation or corrosion.' Since the image does not depict any physical material or structure, it cannot exhibit surface oxidation or corrosion. Therefore, it does not violate the rule based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+130,pipe_corroded (22).jpg,pipeline,Low Resolution,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (22).jpg,Data_Preprocessed/pipe_corroded (22).jpg,Low Resolution,"STEP 1 - OBSERVATION: 3D models of a person (presumably a digital representation) are visible, but there is no physical object present to inspect for surface rust, structural defects, dents, cracks, or leaks. The image appears to be a collection of digital assets or placeholders.
+STEP 2 - RULE APPLICATION: Since there is no physical structure present in the image, it is impossible to assess the presence or absence of surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visual evidence provided.
+STEP 3 - VERDICT: SAFE",3
+131,pipe_corroded (23).jpg,pipeline,Low Resolution,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (23).jpg,Data_Preprocessed/pipe_corroded (23).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a placeholder or a very plain, uniform gray background. There are no visible surfaces, equipment, or materials to inspect for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical objects present in the image, it is impossible to observe any signs of surface oxidation or corrosion. Therefore, the rule cannot be violated by the content of the image itself.
+
+STEP 3 - VERDICT: SAFE",3
+132,pipe_corroded (23).jpg,pipeline,Low Resolution,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (23).jpg,Data_Preprocessed/pipe_corroded (23).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image provided is a placeholder or a very plain background (mostly gray) with a small, faint watermark/signature in the bottom right corner. There is no discernible equipment, structure, or surface to inspect for rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no physical object present that could exhibit surface rust, dents, cracks, or leaks, the condition of the item cannot be assessed against the specified safety rule. Therefore, the rule cannot be violated by the content of the image itself.
+
+STEP 3 - VERDICT: SAFE",3
+133,pipe_corroded (24).jpg,pipeline,,Leak / Damaged,,Alert on any sign of surface oxidation or corrosion.,Leak / Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (24).jpg,Data_Preprocessed/pipe_corroded (24).jpg,,"STEP 1 - OBSERVATION: The image is mostly a solid gray background with some small, scattered red/dark spots that appear to be artifacts or very faint markings, not clearly identifiable as industrial surfaces. There are no discernible metal surfaces visible in the image.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no visible surfaces (like metal, machinery, pipes, etc.) present in the image for which oxidation or corrosion can be observed, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+134,pipe_corroded (24).jpg,pipeline,,Leak / Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Leak / Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (24).jpg,Data_Preprocessed/pipe_corroded (24).jpg,,"STEP 1 - OBSERVATION: The image is mostly a solid gray background with some small, scattered red/dark spots that appear to be artifacts or very small marks, not clearly identifiable as surface rust on a specific piece of equipment. There is no discernible machinery or structure to inspect for rust.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no visible equipment or structure present in the image to which the safety rule applies (i.e., no surface to check for rust), the rule cannot be violated based on the visual evidence provided. The rule only pertains to inspecting physical structures.
+
+STEP 3 - VERDICT: SAFE",3
+135,pipe_corroded (25).jpg,pipeline,Unclear image,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (25).jpg,Data_Preprocessed/pipe_corroded (25).jpg,Unclear image,"STEP 1 - OBSERVATION: The image is a heavily pixelated and low-resolution image, primarily showing a gray background with scattered dark pixels and some faint shapes that resemble people or patterns. There are no discernible surfaces, machinery, or materials to assess for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no identifiable surfaces present in the image, it is impossible to observe any sign of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+136,pipe_corroded (25).jpg,pipeline,Unclear image,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (25).jpg,Data_Preprocessed/pipe_corroded (25).jpg,Unclear image,"STEP 1 - OBSERVATION: The image is a heavily pixelated and low-resolution image, primarily showing a gray background with scattered small, dark, and light specks that resemble noise or artifacts rather than a clear physical object or surface. There is no discernible structure, material, or surface to inspect for rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no identifiable equipment, structure, or surface present in the image, it is impossible to assess whether surface rust is present, nor can any structural defects (dents, cracks, or leaks) be identified. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+137,pipe_corroded (3).jpg,pipeline,Low Resolution,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (3).jpg,Data_Preprocessed/pipe_corroded (3).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a video conference screen showing several individuals. There are no discernible surfaces, machinery, or materials visible that would be subject to oxidation or corrosion. The background is mostly blurred or featureless.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical objects present in the image for inspection, it is impossible to observe any signs of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+138,pipe_corroded (3).jpg,pipeline,Low Resolution,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (3).jpg,Data_Preprocessed/pipe_corroded (3).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a heavily blurred or pixelated representation of a person (likely a webcam feed) against a gray background. There are no discernible objects, surfaces, structures, or physical conditions visible that would allow for an assessment of surface rust, structural defects, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no observable surfaces or structures in the image to inspect for rust, dents, cracks, or leaks, the condition described by the safety rule cannot be assessed. Therefore, the rule is not violated because the required elements for violation are absent.
+
+STEP 3 - VERDICT: SAFE",3
+139,pipe_corroded (4).jpg,pipeline,Low Resolution,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (4).jpg,Data_Preprocessed/pipe_corroded (4).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a collage of various images, primarily featuring a person (perhaps a political figure) overlaid with small, scattered, pixelated elements. There are no discernible surfaces, machinery, or materials to assess for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical surfaces that could be subject to oxidation or corrosion, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+140,pipe_corroded (4).jpg,pipeline,Low Resolution,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (4).jpg,Data_Preprocessed/pipe_corroded (4).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image consists primarily of a gray background with several instances of a ""drip"" or ""water drop"" graphic overlaying it. There are no visible physical objects, machinery, or surfaces to inspect for rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule specifies that ""Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks."" Since the image contains no physical structure or equipment, there is nothing to check for surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visual content provided.
+
+STEP 3 - VERDICT: SAFE",3
+141,pipe_corroded (5).jpg,pipeline,Texture Overlap,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (5).jpg,Data_Preprocessed/pipe_corroded (5).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a mosaic of what appears to be a person (perhaps a digital representation or pattern) overlaid on a gray background. There are no discernible surfaces, machinery, or materials that would exhibit oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical surfaces, it cannot show any signs of surface oxidation or corrosion. Therefore, the rule is not violated by the content of the image itself.
+
+STEP 3 - VERDICT: SAFE",3
+142,pipe_corroded (5).jpg,pipeline,Texture Overlap,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (5).jpg,Data_Preprocessed/pipe_corroded (5).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a mosaic of what appears to be a person (perhaps a digital representation or pattern) overlaid on a gray background. There are no discernible objects that would constitute a physical structure requiring inspection for surface rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical structure, it cannot violate the rule concerning surface rust, structural defects, dents, cracks, or leaks. The rule applies to physical assets, which are absent here.
+
+STEP 3 - VERDICT: SAFE",3
+143,pipe_corroded (6).jpg,pipeline,Low Resolution,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (6).jpg,Data_Preprocessed/pipe_corroded (6).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person's face (presumably a placeholder or watermark) against a gray background. There are no discernible surfaces, machinery, or materials to check for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical surfaces present in the image that could exhibit surface oxidation or corrosion, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+144,pipe_corroded (6).jpg,pipeline,Low Resolution,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (6).jpg,Data_Preprocessed/pipe_corroded (6).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a repeating pattern of a ""pimpian"" or similar stylized face/figure against a gray background. There are no discernible objects that would constitute a physical structure requiring inspection for surface rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical structure, it cannot have surface rust, dents, cracks, or leaks. Therefore, the condition specified in the safety rule (surface rust is acceptable; alert only for structural defects, dents, cracks, or leaks) is not applicable to the visual content provided.
+
+STEP 3 - VERDICT: SAFE",3
+145,pipe_corroded (7).jpg,pipeline,Texture Overlap,Corroded,,Alert on any sign of surface oxidation or corrosion.,Corroded NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (7).jpg,Data_Preprocessed/pipe_corroded (7).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a composite of several images, primarily featuring a person (Donald Trump) and various patterned backgrounds. There are no discernible industrial surfaces, machinery, or materials that would be subject to oxidation or corrosion. The visible elements are digital images/graphics.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not contain any identifiable industrial surfaces, there is no evidence of surface oxidation or corrosion to check against the safety rule. Therefore, the rule cannot be violated based on the content provided.
+
+STEP 3 - VERDICT: SAFE",3
+146,pipe_corroded (7).jpg,pipeline,Texture Overlap,Corroded,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (7).jpg,Data_Preprocessed/pipe_corroded (7).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a composite of several images of Donald Trump and a generic, dark, patterned background (resembling a zebra print). There are no discernible industrial equipment, structures, or surfaces to inspect for rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any industrial equipment or structure, it cannot violate the rule concerning surface rust, structural defects, dents, cracks, or leaks. The rule is inapplicable to the content provided.
+
+STEP 3 - VERDICT: SAFE",3
+147,pipe_corroded (8).jpg,pipeline,Texture Overlap,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (8).jpg,Data_Preprocessed/pipe_corroded (8).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person's face (a digital watermark/pattern) against a solid gray background. There are no visible surfaces, machinery, or materials to check for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical surfaces present in the image that could exhibit surface oxidation or corrosion, the rule cannot be violated based on the visual content provided.
+
+STEP 3 - VERDICT: SAFE",3
+148,pipe_corroded (8).jpg,pipeline,Texture Overlap,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (8).jpg,Data_Preprocessed/pipe_corroded (8).jpg,Texture Overlap,"STEP 1 - OBSERVATION: The image provided is a pattern of a person's face (a repeating background texture) and does not depict any physical structure, equipment, or surface that could be assessed for rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since the image contains no discernible physical object or structure, it cannot violate the safety rule concerning surface rust, structural defects, dents, cracks, or leaks. The rule applies to physical assets, which are absent in this image.
+
+STEP 3 - VERDICT: SAFE",3
+149,pipe_corroded (9).jpg,pipeline,,Rust,,Alert on any sign of surface oxidation or corrosion.,Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (9).jpg,Data_Preprocessed/pipe_corroded (9).jpg,,"STEP 1 - OBSERVATION: The image is a collage of various people, primarily featuring a woman in a red and black patterned outfit, and several instances of the ""radia"" logo/watermark. There are no visible industrial equipment, surfaces, or materials that would typically be subject to oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any industrial surfaces, it cannot violate the rule concerning surface oxidation or corrosion.
+
+STEP 3 - VERDICT: SAFE",3
+150,pipe_corroded (9).jpg,pipeline,,Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Defected/pipe_corroded (9).jpg,Data_Preprocessed/pipe_corroded (9).jpg,,"STEP 1 - OBSERVATION: The image displays several individuals in what appears to be a studio or broadcast setting. There are no visible industrial equipment, structures, or surfaces that would typically be subject to rust, dents, cracks, or leaks. The visual content is primarily people and branding/logos (Ritz, ITV, etc.).
+
+STEP 2 - RULE APPLICATION: 
+The safety rule specifies conditions related to ""Surface rust,"" ""structural defects, dents, cracks, or leaks."" Since the image does not depict any physical industrial structure, it cannot violate the rule concerning surface rust or structural integrity of equipment.
+
+STEP 3 - VERDICT: SAFE",3
+151,pipe_non_corroded (1).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (1).jpg,Data_Preprocessed/pipe_non_corroded (1).jpg,,"STEP 1 - OBSERVATION: The image is a low-resolution, repeating pattern of a person's face (likely a placeholder or watermark) against a gray background. There are no discernible surfaces, machinery, or materials to assess for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical objects or surfaces present in the image that could exhibit surface oxidation or corrosion, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+152,pipe_non_corroded (1).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (1).jpg,Data_Preprocessed/pipe_non_corroded (1).jpg,,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person's face (a ""pimp"" or similar stylized representation) against a gray background. There are no visible objects that would constitute a physical structure to inspect for surface rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical structure, it cannot have surface rust, dents, cracks, or leaks. Therefore, the condition specified in the safety rule (""Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks."") is not applicable in a literal sense to the visual content provided. As there are no defects present, the condition is met by default.
+
+STEP 3 - VERDICT: SAFE",3
+153,pipe_non_corroded (10).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (10).jpg,Data_Preprocessed/pipe_non_corroded (10).jpg,,"STEP 1 - OBSERVATION: The image is a mostly uniform gray color, which suggests a surface, but there are very small, faint specks (some appearing slightly darker or textured) scattered across the image. These specks are too indistinct to definitively identify as surface oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image quality and resolution do not allow for clear identification of surface defects like oxidation or corrosion, it cannot be confirmed that the rule is violated. However, based strictly on the visual evidence provided, no obvious signs of rust, pitting, or discoloration indicative of corrosion are present.
+
+STEP 3 - VERDICT: SAFE",3
+154,pipe_non_corroded (10).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (10).jpg,Data_Preprocessed/pipe_non_corroded (10).jpg,,"STEP 1 - OBSERVATION: The image is a mostly plain gray background with a few very small, faint specks that appear to be noise or artifacts, not discernible objects or surfaces of an industrial item. There are no visible structures, surfaces, rust, dents, cracks, or leaks present in the image.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no identifiable equipment or structure in the image, it is impossible to assess its condition regarding surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+155,pipe_non_corroded (11).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (11).jpg,Data_Preprocessed/pipe_non_corroded (11).jpg,,"STEP 1 - OBSERVATION: The image is a low-resolution, mostly gray background with faint, repeating patterns that resemble a texture or pattern (possibly a watermark or background graphic). There are no discernible surfaces, machinery, or materials to assess for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no visible surfaces, equipment, or materials present in the image, it is impossible to observe any signs of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+156,pipe_non_corroded (11).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (11).jpg,Data_Preprocessed/pipe_non_corroded (11).jpg,,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person's face (presumably a stock photo placeholder) against a solid gray background. There are no visible objects that would constitute a physical structure to inspect for surface rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule specifies conditions for alerting: ""Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks."" Since the image does not depict any physical structure, it cannot violate the rule concerning those specific defects.
+
+STEP 3 - VERDICT: SAFE",3
+157,pipe_non_corroded (12).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (12).jpg,Data_Preprocessed/pipe_non_corroded (12).jpg,,"STEP 1 - OBSERVATION: The image is a heavily pixelated, low-resolution graphic that appears to be a pattern or texture, not a clear depiction of industrial equipment or surfaces. It consists primarily of shades of gray and black, with some faint, scattered elements that resemble distorted figures or patterns. There are no discernible surfaces to check for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any identifiable industrial surfaces, it is impossible to observe any signs of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+158,pipe_non_corroded (12).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (12).jpg,Data_Preprocessed/pipe_non_corroded (12).jpg,,"STEP 1 - OBSERVATION: The image is a heavily pixelated and distorted representation of what appears to be a person (likely a face) against a gray background. There are no discernible objects that would allow for an assessment of surface condition, structural integrity, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule specifies: 'Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.' Since the image does not depict any physical structure or object whose surface condition can be assessed for rust, dents, cracks, or leaks, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+159,pipe_non_corroded (13).jpg,pipeline,Glare,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (13).jpg,Data_Preprocessed/pipe_non_corroded (13).jpg,Glare,"STEP 1 - OBSERVATION: The image is a screenshot of a video call interface, featuring several blurred or pixelated faces and a dark gray background. There are no visible surfaces, machinery, or materials that would be subject to oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical surfaces, it cannot show any signs of surface oxidation or corrosion. Therefore, the rule is not violated because there is nothing to inspect.
+
+STEP 3 - VERDICT: SAFE",3
+160,pipe_non_corroded (13).jpg,pipeline,Glare,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (13).jpg,Data_Preprocessed/pipe_non_corroded (13).jpg,Glare,"STEP 1 - OBSERVATION: The image provided is a heavily pixelated and distorted graphic, not a clear photograph of any physical structure. It consists primarily of dark/black areas, some faint colored pixels (suggesting a pattern or abstract art), and several instances of a ""drip"" or ""water drop"" graphic element near the top left. There are no discernible surfaces, structures, rust, dents, cracks, or leaks to inspect.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical object or structure, it is impossible to assess the presence or absence of surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visual evidence presented.
+
+STEP 3 - VERDICT: SAFE",3
+161,pipe_non_corroded (14).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (14).jpg,Data_Preprocessed/pipe_non_corroded (14).jpg,,"STEP 1 - OBSERVATION: The image is a mostly gray, abstract background with faint, small dark specks scattered across it. There are no discernible surfaces, machinery, or materials to assess for oxidation or corrosion. The text ""pdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdpdp",3
+162,pipe_non_corroded (14).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (14).jpg,Data_Preprocessed/pipe_non_corroded (14).jpg,,"STEP 1 - OBSERVATION: The image is a mostly gray, abstract background with faint, small black specks scattered across it. There are no discernible objects that would constitute a structure to inspect for surface rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no identifiable equipment or structure present in the image, it is impossible to assess for surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+163,pipe_non_corroded (15).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (15).jpg,Data_Preprocessed/pipe_non_corroded (15).jpg,,"STEP 1 - OBSERVATION: The image is a composite of multiple small, somewhat blurry images, primarily featuring what appears to be a person (perhaps a digital avatar or placeholder) overlaid on a gray background. There are no discernible surfaces, machinery, or materials that would allow for an assessment of surface oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical material subject to oxidation or corrosion, the rule cannot be applied to determine compliance or violation.
+
+STEP 3 - VERDICT: SAFE",3
+164,pipe_non_corroded (15).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (15).jpg,Data_Preprocessed/pipe_non_corroded (15).jpg,,"STEP 1 - OBSERVATION: The image consists of multiple instances of the ""drip"" or ""dip"" watermark overlaid on a gray background. There are no visible physical objects, structures, surfaces, rust, dents, cracks, or leaks to inspect.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule specifies that ""Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks."" Since the image provided is purely a digital graphic/watermark and does not depict any physical structure, it cannot be assessed against the criteria of surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule is not violated because there is no subject matter to audit.
+
+STEP 3 - VERDICT: SAFE",3
+165,pipe_non_corroded (16).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (16).jpg,Data_Preprocessed/pipe_non_corroded (16).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a placeholder or a representation of a person (a ""drip"" or avatar) against a solid gray background. There are no visible surfaces, machinery, or materials to check for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical surfaces present in the image that could exhibit surface oxidation or corrosion, the condition cannot be observed. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+166,pipe_non_corroded (16).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (16).jpg,Data_Preprocessed/pipe_non_corroded (16).jpg,Low Resolution,"STEP 1 - OBSERVATION: 3D rendered image of a person (presumably a digital avatar) against a plain gray background. There are no visible physical surfaces to inspect for rust, dents, cracks, or leaks.
+STEP 2 - RULE APPLICATION: The rule specifies conditions related to physical surfaces (""Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.""). Since the image is a digital rendering and does not depict a physical structure, it cannot violate the rule concerning physical surface integrity.
+STEP 3 - VERDICT: SAFE",3
+167,pipe_non_corroded (17).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (17).jpg,Data_Preprocessed/pipe_non_corroded (17).jpg,Low Resolution,"STEP 1 - OBSERVATION: 3D model of a person is visible, but the image is a low-resolution, heavily pixelated/distorted representation, not a photograph of a physical surface. There are no discernible surfaces to check for oxidation or corrosion.
+STEP 2 - RULE APPLICATION: The rule requires an inspection of a physical surface for signs of surface oxidation or corrosion. Since the input is a digital rendering (a 3D model) and not a photograph of a material object, it cannot be audited against this specific safety rule.
+STEP 3 - VERDICT: SAFE",3
+168,pipe_non_corroded (17).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (17).jpg,Data_Preprocessed/pipe_non_corroded (17).jpg,Low Resolution,"STEP 1 - OBSERVATION: 3D model of a person (dipital/dizzy pattern) is visible, but there is no discernible physical object or structure to inspect for surface rust, dents, cracks, or leaks. The image appears to be a digital rendering or abstract pattern.
+STEP 2 - RULE APPLICATION: Since there is no physical structure present in the image to check for surface rust, dents, cracks, or leaks, the condition cannot be assessed against the rule. Therefore, the rule is not violated because the required elements for inspection are absent.
+STEP 3 - VERDICT: SAFE",3
+169,pipe_non_corroded (18).jpg,pipeline,Low Resolution,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (18).jpg,Data_Preprocessed/pipe_non_corroded (18).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person's face (a ""drip"" or watermark) overlaid on a solid gray background. There are no visible surfaces, materials, or equipment that would be subject to oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+The rule requires alerting on any sign of surface oxidation or corrosion. Since the image consists only of a digital graphic/watermark and lacks any physical material, it cannot exhibit surface oxidation or corrosion. Therefore, it does not violate the rule.
+
+STEP 3 - VERDICT: SAFE",3
+170,pipe_non_corroded (18).jpg,pipeline,Low Resolution,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (18).jpg,Data_Preprocessed/pipe_non_corroded (18).jpg,Low Resolution,"STEP 1 - OBSERVATION: 3D model of a person's face (a texture map) is displayed against a plain gray background. There are no visible physical objects, structures, or surfaces to inspect for rust, dents, cracks, or leaks.
+STEP 2 - RULE APPLICATION: The safety rule pertains to physical surfaces (rust, dents, cracks, leaks). Since the image is a digital rendering/texture and contains no physical structure, it cannot violate the rule in the context of physical inspection.
+STEP 3 - VERDICT: SAFE",3
+171,pipe_non_corroded (19).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (19).jpg,Data_Preprocessed/pipe_non_corroded (19).jpg,,"STEP 1 - OBSERVATION: The image is a placeholder or a representation of a digital background (likely a ""dribble"" or similar pattern) and does not contain any discernible physical objects, surfaces, or materials that could be assessed for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical surfaces present in the image to inspect, the condition of surface oxidation or corrosion cannot be determined. Therefore, the rule cannot be violated based on the visual content provided.
+
+STEP 3 - VERDICT: SAFE",3
+172,pipe_non_corroded (19).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (19).jpg,Data_Preprocessed/pipe_non_corroded (19).jpg,,"STEP 1 - OBSERVATION: The image provided is a placeholder or a heavily watermarked/distorted image (showing ""pimpas"" text) and does not depict any physical structure, machinery, or surface that could be assessed for rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no observable physical object to inspect, the rule concerning surface rust (""Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks."") cannot be applied to determine compliance or violation.
+
+STEP 3 - VERDICT: 
+SAFE",3
+173,pipe_non_corroded (2).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (2).jpg,Data_Preprocessed/pipe_non_corroded (2).jpg,,"STEP 1 - OBSERVATION: The image is a mostly gray, abstract pattern with scattered small dark specks and some faint, irregular shapes that resemble a stylized or distorted human face/figure in the background (resembling a digital watermark or texture). There are no discernible surfaces, machinery, or materials to check for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical surfaces, equipment, or materials, it is impossible to observe any signs of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual content provided.
+
+STEP 3 - VERDICT: SAFE",3
+174,pipe_non_corroded (2).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (2).jpg,Data_Preprocessed/pipe_non_corroded (2).jpg,,"STEP 1 - OBSERVATION: The image is a mostly gray, abstract pattern with scattered small dark/light speckles. There are no discernible objects that would constitute a structure to inspect for surface rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no visible equipment, structure, or material present in the image, it is impossible to assess for surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+175,pipe_non_corroded (20).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (20).jpg,Data_Preprocessed/pipe_non_corroded (20).jpg,,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person's face (a placeholder or watermark) against a solid gray background. There are no visible surfaces, machinery, or materials that would be subject to oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image consists only of a digital graphic/pattern and lacks any physical material surfaces, it cannot exhibit surface oxidation or corrosion. Therefore, it does not violate the rule.
+
+STEP 3 - VERDICT: SAFE",3
+176,pipe_non_corroded (20).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (20).jpg,Data_Preprocessed/pipe_non_corroded (20).jpg,,"STEP 1 - OBSERVATION: The image is a repeating pattern of a person's face (a placeholder/watermark) on a gray background. There are no visible objects that would constitute a physical structure to inspect for surface rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no physical structure present in the image, it is impossible to observe any condition related to surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visual content provided.
+
+STEP 3 - VERDICT: SAFE",3
+177,pipe_non_corroded (21).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (21).jpg,Data_Preprocessed/pipe_non_corroded (21).jpg,,"STEP 1 - OBSERVATION: The image is a mostly uniform gray color, which suggests a surface, but there are very small, dark specks visible, particularly in the upper right quadrant and scattered elsewhere. These specks could potentially be signs of surface defects like oxidation or corrosion, although the resolution is low for definitive identification.
+
+STEP 2 - RULE APPLICATION: 
+The rule is to ""Alert on any sign of surface oxidation or corrosion."" Since the image is largely featureless gray, it does not clearly display obvious signs of rust, pitting, or significant discoloration typically associated with oxidation or corrosion. However, the presence of small dark spots raises a potential flag that requires closer inspection in a real-world scenario. Based *only* on the provided image quality, definitive proof of corrosion cannot be established.
+
+STEP 3 - VERDICT: SAFE",3
+178,pipe_non_corroded (21).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (21).jpg,Data_Preprocessed/pipe_non_corroded (21).jpg,,"STEP 1 - OBSERVATION: The image is mostly a solid gray color with a small, dark speck near the center-right, and some faint, very small patterns that resemble a texture or perhaps a watermark/artifact. There are no discernible objects, structures, or surfaces to inspect for rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no visible equipment, structure, or surface present in the image, it is impossible to observe any condition related to surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+179,pipe_non_corroded (22).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (22).jpg,Data_Preprocessed/pipe_non_corroded (22).jpg,,"STEP 1 - OBSERVATION: The image is a heavily pixelated, low-resolution image, primarily showing a gray background with scattered, distorted shapes that resemble a person (perhaps a face or figure). There are no discernible surfaces, materials, or structures to assess for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical material or structure, it is impossible to observe any sign of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+180,pipe_non_corroded (22).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (22).jpg,Data_Preprocessed/pipe_non_corroded (22).jpg,,"STEP 1 - OBSERVATION: The image is a heavily pixelated and distorted representation of a person (Dippinda/Dipinda) against a gray background. There are no discernible objects that would constitute a physical structure to inspect for surface rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical structure, it cannot be assessed against the safety rule concerning surface rust, structural defects, dents, cracks, or leaks. The rule applies to physical assets, which are absent here. Therefore, the rule is not violated because there is nothing to check.
+
+STEP 3 - VERDICT: SAFE",3
+181,pipe_non_corroded (23).jpg,pipeline,Low Resolution,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (23).jpg,Data_Preprocessed/pipe_non_corroded (23).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a low-resolution, heavily pixelated image featuring a repeating pattern of a person's face (likely a meme format) against a gray background. There are no discernible surfaces, machinery, or materials that would be subject to oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical surfaces, equipment, or materials, it cannot exhibit surface oxidation or corrosion. Therefore, it does not violate the rule.
+
+STEP 3 - VERDICT: SAFE",3
+182,pipe_non_corroded (23).jpg,pipeline,Low Resolution,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (23).jpg,Data_Preprocessed/pipe_non_corroded (23).jpg,Low Resolution,"STEP 1 - OBSERVATION: 3D models of Donald Trump are visible in the image. There is no physical structure present to inspect for surface rust, dents, cracks, or leaks.
+STEP 2 - RULE APPLICATION: The safety rule pertains to physical structures and their condition (surface rust, structural defects, dents, cracks, leaks). Since the image contains digital representations (models) and not a physical object, the rule cannot be applied to determine its compliance or violation based on the specified criteria.
+STEP 3 - VERDICT: SAFE",3
+183,pipe_non_corroded (24).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (24).jpg,Data_Preprocessed/pipe_non_corroded (24).jpg,,"STEP 1 - OBSERVATION: The image is a mostly gray background with some small, scattered orange/brown pixels near the top center and right. There are no discernible surfaces, machinery, or materials to check for oxidation or corrosion. The image appears to be a digital graphic or a heavily processed image, not a photograph of physical equipment.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no visible surfaces, equipment, or materials present in the image, it is impossible to observe any sign of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+184,pipe_non_corroded (24).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (24).jpg,Data_Preprocessed/pipe_non_corroded (24).jpg,,"STEP 1 - OBSERVATION: The image is a mostly gray background with a small patch of orange/brown near the top center that appears to be a texture or artifact, and a faint, repeated pattern resembling a person (perhaps a watermark or repeating graphic). There are no discernible objects that would constitute a structure requiring inspection for surface rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+The rule states: 'Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.' Since the image does not depict any physical structure, it cannot violate the rule concerning surface rust, dents, cracks, or leaks.
+
+STEP 3 - VERDICT: SAFE",3
+185,pipe_non_corroded (25).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (25).jpg,Data_Preprocessed/pipe_non_corroded (25).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a low-resolution, mostly gray image with faint, repeating patterns that resemble a texture or perhaps a watermark/pattern overlay. There are no discernible surfaces, machinery, or materials to assess for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not depict any physical surfaces, equipment, or materials, it is impossible to observe any sign of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+186,pipe_non_corroded (25).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (25).jpg,Data_Preprocessed/pipe_non_corroded (25).jpg,Low Resolution,"STEP 1 - OBSERVATION: The image is a low-resolution, mostly gray image with faint, repeating patterns that resemble a texture or perhaps a watermark/pattern overlay. There are no discernible objects, structures, or surfaces to inspect for rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no visible physical structures or surfaces in the image, it is impossible to observe surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+187,pipe_non_corroded (3).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (3).jpg,Data_Preprocessed/pipe_non_corroded (3).jpg,,"STEP 1 - OBSERVATION: The image is a collage of various ""dildas"" (a type of sex toy) overlaid on a gray background. There are no discernible surfaces, metal objects, or materials that would exhibit oxidation or corrosion. The image consists primarily of digital representations of objects.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule is to 'Alert on any sign of surface oxidation or corrosion.' Since the image does not depict any physical material subject to environmental degradation (like metal, rust, or rust-like discoloration), it cannot violate this rule.
+
+STEP 3 - VERDICT: SAFE",3
+188,pipe_non_corroded (3).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (3).jpg,Data_Preprocessed/pipe_non_corroded (3).jpg,,"STEP 1 - OBSERVATION: The image consists of a repeating pattern of what appears to be a stylized, textured surface (like a damask or patterned fabric) overlaid with text (""dipinda"") and small, scattered colored pixels/dots. There are no discernible objects that would typically be assessed for structural integrity like metal, machinery, or infrastructure.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule applies to physical structures (""Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.""). Since the image is purely a graphic pattern and does not depict any physical structure, it cannot have surface rust, dents, cracks, or leaks in the context of industrial safety auditing. Therefore, the rule is not applicable to the content provided.
+
+STEP 3 - VERDICT: SAFE",3
+189,pipe_non_corroded (4).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (4).jpg,Data_Preprocessed/pipe_non_corroded (4).jpg,,"STEP 1 - OBSERVATION: The image is a solid, uniform gray color. There are no visible surfaces, metal objects, or textures that would indicate oxidation or corrosion. The image appears to be a plain background or a digital representation lacking physical material subject to degradation.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no surfaces present in the image, it is impossible to observe any signs of surface oxidation or corrosion. Therefore, the image does not violate the rule because the condition (oxidation/corrosion) cannot be observed.
+
+STEP 3 - VERDICT: SAFE",3
+190,pipe_non_corroded (4).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (4).jpg,Data_Preprocessed/pipe_non_corroded (4).jpg,,"STEP 1 - OBSERVATION: The image is mostly a solid gray color with very small, faint, scattered markings that appear to be text or symbols (like ""p"" and some other characters) in the upper portion. There are no discernible objects, structures, or surfaces visible to assess for rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there is no physical structure present in the image to inspect for surface rust, dents, cracks, or leaks, the condition of the object cannot be determined. Therefore, the rule regarding surface rust is not violated because there is no observable surface to check against the criteria.
+
+STEP 3 - VERDICT: SAFE",3
+191,pipe_non_corroded (5).jpg,pipeline,Distorted,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (5).jpg,Data_Preprocessed/pipe_non_corroded (5).jpg,Distorted,"STEP 1 - OBSERVATION: The image is a composite of several images of a person (likely a digital avatar) against a plain gray background. There are no discernible surfaces, machinery, or materials that would be subject to oxidation or corrosion visible in the provided frame.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical surfaces present in the image for inspection, the condition of surface oxidation or corrosion cannot be assessed. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+192,pipe_non_corroded (5).jpg,pipeline,Distorted,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (5).jpg,Data_Preprocessed/pipe_non_corroded (5).jpg,Distorted,"STEP 1 - OBSERVATION: The image is a composite of several images of a person (likely a stock photo or avatar) and does not depict any physical structure, machinery, or surface that could exhibit rust, dents, cracks, or leaks. It is primarily a portrait/figure representation.
+
+STEP 2 - RULE APPLICATION: 
+Since the image does not contain any discernible physical structure, the condition specified in the safety rule ('Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.') cannot be observed or violated. The rule applies to physical objects, which are absent here.
+
+STEP 3 - VERDICT: SAFE",3
+193,pipe_non_corroded (6).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (6).jpg,Data_Preprocessed/pipe_non_corroded (6).jpg,,"STEP 1 - OBSERVATION: 3D model of a person's head/face is visible, but there is no discernible surface material to check for oxidation or corrosion. The image primarily consists of a gray background and a 3D rendering.
+STEP 2 - RULE APPLICATION: Since there is no physical surface present in the image that could exhibit oxidation or corrosion, the rule cannot be violated based on the visual evidence provided.
+STEP 3 - VERDICT: SAFE",3
+194,pipe_non_corroded (6).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (6).jpg,Data_Preprocessed/pipe_non_corroded (6).jpg,,"STEP 1 - OBSERVATION: 3D model of a person's head/face is visible, which is not a physical structure subject to surface rust, dents, cracks, or leaks. The image primarily consists of a gray background and a digital rendering.
+STEP 2 - RULE APPLICATION: The rule applies to physical structures. Since the image is a digital representation and does not depict a physical object with material surfaces, the rule cannot be violated in the context of physical inspection.
+STEP 3 - VERDICT: SAFE",3
+195,pipe_non_corroded (7).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (7).jpg,Data_Preprocessed/pipe_non_corroded (7).jpg,,"STEP 1 - OBSERVATION: The image is a promotional graphic featuring several people (presumably athletes) and a logo/broadcast graphic. There are no visible surfaces, machinery, or equipment that would be subject to oxidation or corrosion. The image is primarily composed of digital graphics and photographs.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical surfaces present in the image for inspection, the condition of surface oxidation or corrosion cannot be assessed. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+196,pipe_non_corroded (7).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (7).jpg,Data_Preprocessed/pipe_non_corroded (7).jpg,,"STEP 1 - OBSERVATION: The image displays a person (likely a performer or guest) in front of a screen showing a logo/broadcast graphic. There are no visible surfaces that would be subject to rust, dents, cracks, or leaks, as the image primarily features people and digital graphics.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no discernible physical structures present in the image that could exhibit surface rust, dents, cracks, or leaks, the condition described by the safety rule cannot be observed or violated. The rule only applies to physical structures.
+
+STEP 3 - VERDICT: SAFE",3
+197,pipe_non_corroded (8).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (8).jpg,Data_Preprocessed/pipe_non_corroded (8).jpg,,"STEP 1 - OBSERVATION: The image is a low-resolution, mostly gray image with faint, repeating patterns that resemble a texture or pattern (possibly a watermark or background). There are no discernible surfaces, machinery, or materials to assess for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no visible surfaces, equipment, or materials present in the image, it is impossible to observe any sign of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+198,pipe_non_corroded (8).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (8).jpg,Data_Preprocessed/pipe_non_corroded (8).jpg,,"STEP 1 - OBSERVATION: The image is a highly pixelated, low-resolution graphic that appears to be a repeating pattern of a face (likely a placeholder or watermark) on a gray background. There are no discernible physical objects, surfaces, structures, rust, dents, cracks, or leaks present in the image.
+
+STEP 2 - RULE APPLICATION: 
+The safety rule states: 'Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.' Since the image does not depict any physical structure or material subject to rust, dents, cracks, or leaks, it cannot violate the rule based on the criteria provided.
+
+STEP 3 - VERDICT: SAFE",3
+199,pipe_non_corroded (9).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (9).jpg,Data_Preprocessed/pipe_non_corroded (9).jpg,,"STEP 1 - OBSERVATION: The image is a mostly gray, abstract pattern with faint, small, dark speckles scattered across it. There are no discernible surfaces, machinery, or materials to assess for oxidation or corrosion.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no visible surfaces, equipment, or materials in the image, it is impossible to observe any sign of surface oxidation or corrosion. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3
+200,pipe_non_corroded (9).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (9).jpg,Data_Preprocessed/pipe_non_corroded (9).jpg,,"STEP 1 - OBSERVATION: The image is a heavily blurred or pixelated graphic, primarily showing a gray background with faint, repeating patterns that resemble a stylized, low-resolution image of a face (possibly a placeholder or watermark). There are no discernible objects, structures, or surfaces to inspect for rust, dents, cracks, or leaks.
+
+STEP 2 - RULE APPLICATION: 
+Since there are no physical structures present in the image, it is impossible to observe surface rust, structural defects, dents, cracks, or leaks. Therefore, the rule cannot be violated based on the visual evidence provided.
+
+STEP 3 - VERDICT: SAFE",3

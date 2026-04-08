@@ -1,0 +1,2 @@
+model,images_profiled,avg_peak_vram_gb,max_peak_vram_gb,avg_inference_time_sec,images_per_minute
+gemma4_e2b,50,6.913,6.914,5.31,11.29

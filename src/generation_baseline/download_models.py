@@ -109,6 +109,26 @@ def download_qwen2_vl(models_dir):
     else:
         print("Qwen2-VL already exists.")
 
+def download_gemma4_e2b(models_dir):
+    \"\"\"Download Gemma-4-E2B-it for multimodal processing.\"\"\"
+    model_id = "google/gemma-4-E2B-it"
+    save_path = os.path.join(models_dir, "Gemma4E2B")
+    if not os.path.exists(save_path):
+        print(f"Downloading {model_id}...")
+        # Make sure to import AutoModelForMultimodalLM inside or globally
+        from transformers import AutoProcessor, AutoModelForMultimodalLM
+        processor = AutoProcessor.from_pretrained(model_id)
+        model = AutoModelForMultimodalLM.from_pretrained(
+            model_id, 
+            torch_dtype=torch.float16, 
+            trust_remote_code=True
+        )
+        processor.save_pretrained(save_path)
+        model.save_pretrained(save_path)
+        print(f"Saved to {save_path}")
+    else:
+        print("Gemma-4-E2B already exists.")
+
 if __name__ == "__main__":
     # 1. Setup repository dependencies
     ensure_janus_repo()
@@ -123,4 +143,5 @@ if __name__ == "__main__":
     download_minicpm(base_models_dir)
     download_janus(base_models_dir)
     download_qwen2_vl(base_models_dir) # Added call for Qwen2-VL
+    download_gemma4_e2b(base_models_dir) # Added call for Gemma-4-E2B-it
     print("All models prepared.")

@@ -29,13 +29,14 @@ def main():
     parser.add_argument("--mode", choices=["baseline", "cot", "decomp", "contrast", "contrast_cot"], default="baseline")
     args = parser.parse_args()
 
-    models = ["smolvlm", "internvl2", "janus", "qwen2_vl", "minicpm"]
+    models = ["smolvlm", "internvl2", "janus", "qwen2_vl", "minicpm", "gemma4_e2b"]
     model_display_names = {
         "smolvlm": "SmolVLM",
         "internvl2": "InternVL2",
         "janus": "Janus",
         "qwen2_vl": "Qwen2-VL",
-        "minicpm": "MiniCPM"
+        "minicpm": "MiniCPM",
+        "gemma4_e2b": "Gemma 4"
     }
 
     # Mode-aware directory and filename resolution

@@ -1,0 +1,1028 @@
+index,image_id,category,artifact_tag,ground_truth_value,unit,logic_constraint,expected_value,rule_id,reasoning,hard_case_flag,expected_verdict,full_path,processed_path,constraint,model_response,run_iteration
+1,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.10 bar.,0.15 bar,Rule A,Value is 0.15. 0.15 > 0.10.,1,UNSAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"Q1: Observation: No pressure reading or physical condition related to pressure is visible in the image. The image is a pattern of a repeating texture (a stylized animal print).
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+2,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.20 bar.,0.15 bar,Rule B,Value is 0.15. 0.15 < 0.20.,1,SAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"Q1: Observation: No pressure reading or physical condition related to pressure is visible in the image. The image is a pattern of a repeating background texture (a stylized animal print).
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+3,guage (10).jpg,guage,,0,bar,Alert if pressure is above 0.05 bar.,0 bar,Rule A,Value is 0. 0 < 0.05.,0,SAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"Q1: Observation: No pressure reading or physical condition related to pressure is visible in the image. The image is a pattern of a person's face and some scattered pixels/graphics.
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+4,guage (10).jpg,guage,,0,bar,Alert if system is non-pressurized (0 bar).,0 bar,Rule B,Value is 0. System is non-pressurized.,0,UNSAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"Q1: 0 bar
+Q2: Yes
+Q3: UNSAFE",3
+5,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 20 kPa. Alert if over.,25 kPa,Rule A,Value is 25. 25 > 20.,1,UNSAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"Q1: Observation: The image is a mostly gray background with very faint, scattered, and distorted text/patterns that do not clearly display any numerical reading or physical condition related to pressure (kPa).
+
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+6,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 30 kPa. Alert if over.,25 kPa,Rule B,Value is 25. 25 < 30.,1,SAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"Q1: Observation: The image is a mostly gray background with some faint, scattered, low-resolution text/symbols that do not clearly represent a measurable pressure reading. There is no discernible numerical value for pressure.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+7,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 80 NA.,100 NA,Rule A,Value is 100. 100 > 80.,1,UNSAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"Q1: 0
+Q2: No
+Q3: SAFE",3
+8,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 120 NA.,100 NA,Rule B,Value is 100. 100 < 120.,1,SAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"Q1: 0
+Q2: No
+Q3: SAFE",3
+9,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 1.5 bar. Alert if over.,2 bar,Rule A,Value is 2. 2 > 1.5.,1,UNSAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"Q1: 0.0 bar
+Q2: No
+Q3: SAFE",3
+10,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 3.0 bar. Alert if over.,2 bar,Rule B,Value is 2. 2 < 3.0.,1,SAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"Q1: 3.0 bar
+Q2: No
+Q3: SAFE",3
+11,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 14 lbf/in2.,18 lbf/in2,Rule A,Value is 18. 18 > 14.,0,UNSAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"Q1: 0
+Q2: No
+Q3: SAFE",3
+12,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 22 lbf/in2.,18 lbf/in2,Rule B,Value is 18. 18 < 22.,0,SAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"Q1: 0
+Q2: No
+Q3: SAFE",3
+13,guage (15).jpg,guage,Low Resolution,0,,Alert if reading is above 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"Q1: 0
+Q2: No
+Q3: SAFE",3
+14,guage (15).jpg,guage,Low Resolution,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"Q1: 0 NA
+Q2: Yes
+Q3: UNSAFE",3
+15,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 100 kN/m2.,125 kN/m2,Rule A,Value is 125. 125 > 100.,0,UNSAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"Q1: 0
+Q2: No
+Q3: SAFE",3
+16,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 150 kN/m2.,125 kN/m2,Rule B,Value is 125. 125 < 150.,0,SAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"Q1: 150 kN/m2
+Q2: Yes
+Q3: UNSAFE",3
+17,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 160 psi.,200 psi,Rule A,Value is 200. 200 > 160.,1,UNSAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"Q1: Observation: No pressure reading or physical condition related to pressure is visible in the image. The image is a placeholder/blank gray screen with some faint, small pixel artifacts that do not represent a measurable pressure reading.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+18,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 240 psi.,200 psi,Rule B,Value is 200. 200 < 240.,1,SAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"Q1: Observation: No pressure reading or physical condition related to pressure is visible in the image. The image appears to be a placeholder or a graphic with no discernible industrial equipment or gauges.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+19,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 24 NA.,30 NA,Rule A,Value is 30. 30 > 24.,1,UNSAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"Q1: 0
+Q2: No
+Q3: SAFE",3
+20,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 36 NA.,30 NA,Rule B,Value is 30. 30 < 36.,1,SAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"Q1: 0
+Q2: No
+Q3: SAFE",3
+21,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 1.7 liter.,2.2 liter,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"Q1: 0.00 liters
+Q2: No
+Q3: SAFE",3
+22,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 2.7 liter.,2.2 liter,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"Q1: 0.00 liter
+Q2: No
+Q3: SAFE",3
+23,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if value exceeds 2 kg/cm2.,0 kg/cm2,Rule A,Value is 0. 0 < 2.,1,SAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"Q1: 0
+Q2: No
+Q3: SAFE",3
+24,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if system pressure drops to 0 kg/cm2.,0 kg/cm2,Rule B,Value is 0. System pressure is at 0.,1,UNSAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"Q1: 0 kg/cm2
+Q2: Yes
+Q3: UNSAFE",3
+25,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 3.0 kgf/cm2.,4 kgf/cm2,Rule A,Value is 4. 4 > 3.0.,1,UNSAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"Q1: Observation: No measurable pressure reading or physical condition related to a needle weight can be determined from the provided image, which appears to be a mostly blank or distorted image with some small artifacts.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+26,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 5.0 kgf/cm2.,4 kgf/cm2,Rule B,Value is 4. 4 < 5.0.,1,SAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"Q1: Observation: The image provided is a mostly gray background with some very small, indistinct dark specks that resemble noise or artifacts, not a clear measurement of a pressure reading. There is no discernible needle or gauge to read.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+27,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 2.0 kPa.,2.5 kPa,Rule A,Value is 2.5. 2.5 > 2.0.,1,UNSAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"Q1: 0.0 kPa
+Q2: No
+Q3: SAFE",3
+28,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 3.0 kPa.,2.5 kPa,Rule B,Value is 2.5. 2.5 < 3.0.,1,SAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"Q1: 0.0 kPa
+Q2: No
+Q3: SAFE",3
+29,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.2 Pa.,1.5 Pa,Rule A,Value is 1.5. 1.5 > 1.2.,1,UNSAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"Q1: 0.0 Pa
+Q2: No
+Q3: SAFE",3
+30,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.8 Pa.,1.5 Pa,Rule B,Value is 1.5. 1.5 < 1.8.,1,SAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"Q1: 0.0 Pa
+Q2: No
+Q3: SAFE",3
+31,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 18 celcius.,23 celcius,Rule A,Value is 23. 23 > 18.,0,UNSAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"Q1: Observation: No temperature reading or physical condition related to temperature is visible in the image. The image is a collage of various faces/images.
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+32,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 28 celcius.,23 celcius,Rule B,Value is 23. 23 < 28.,0,SAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"Q1: Observation: No temperature reading or physical condition related to temperature is visible in the image. The image is a collage of various faces/avatars.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+33,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 0.8 bar.,1 bar,Rule A,Value is 1. 1 > 0.8.,0,UNSAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"Q1: 0.8 bar
+Q2: No
+Q3: SAFE",3
+34,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 1.2 bar.,1 bar,Rule B,Value is 1. 1 < 1.2.,0,SAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"Q1: ປະເມີນ: No numeric reading or visible physical condition related to pressure is shown in the image. The image is a placeholder/pattern.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+35,guage (25).jpg,guage,Oblique Angle,0,,Alert if reading is > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"Q1: 0
+Q2: No
+Q3: SAFE",3
+36,guage (25).jpg,guage,Oblique Angle,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"Q1: 0
+Q2: Yes
+Q3: UNSAFE",3
+37,guage (26).jpg,guage,,400,kPa,Alert if value is > 320 kPa.,400 kPa,Rule A,Value is 400. 400 > 320.,0,UNSAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"Q1: 0 kPa
+Q2: No
+Q3: SAFE",3
+38,guage (26).jpg,guage,,400,kPa,Alert if value is > 480 kPa.,400 kPa,Rule B,Value is 400. 400 < 480.,0,SAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"Q1: 0 kPa
+Q2: No
+Q3: SAFE",3
+39,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 800 mbar.,1000 mbar,Rule A,Value is 1000. 1000 > 800.,1,UNSAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"Q1: Observation: No pressure reading or physical condition related to pressure is visible in the image. The image is a placeholder/pattern.
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+40,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 1200 mbar.,1000 mbar,Rule B,Value is 1000. 1000 < 1200.,1,SAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"Q1: Observation: The image provided is a placeholder or a generic image of a person's face and does not contain any measurable pressure reading or physical condition related to pressure measurement.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+41,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 100 psi.,125 psi,Rule A,Value is 125. 125 > 100.,1,UNSAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"Q1: 0 psi
+Q2: No
+Q3: SAFE",3
+42,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 150 psi.,125 psi,Rule B,Value is 125. 125 < 150.,1,SAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"Q1: 0 psi
+Q2: No
+Q3: SAFE",3
+43,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum > 5 in hg.,0 in hg,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"Q1: 0
+Q2: No
+Q3: SAFE",3
+44,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum drops to 0 in hg.,0 in hg,Rule B,Value is 0. Vacuum is at 0.,1,UNSAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"Q1: 0
+Q2: Yes
+Q3: UNSAFE",3
+45,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 17 bar.,22 bar,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"Q1: Observation: No pressure reading or physical condition related to pressure is visible in the image. The image is a placeholder/blank gray screen with a repeating pattern of a person's face.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+46,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 27 bar.,22 bar,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"Q1: Observation: No pressure reading or physical condition related to pressure is visible in the image. The image is a placeholder or a generic pattern.
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+47,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 17 psi.,22 psi,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"Q1: 17 psi
+Q2: No
+Q3: SAFE",3
+48,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 27 psi.,22 psi,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"Q1: 27 psi
+Q2: No
+Q3: SAFE",3
+49,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.01 Mpa.,0.02 Mpa,Rule A,Value is 0.02. 0.02 > 0.01.,1,UNSAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"Q1: 0.01 Mpa.
+Q2: No
+Q3: SAFE",3
+50,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.03 Mpa.,0.02 Mpa,Rule B,Value is 0.02. 0.02 < 0.03.,1,SAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"Q1: 0.03 Mpa
+Q2: No
+Q3: SAFE",3
+51,guage (32).jpg,guage,Low Resolution,0.8,bar,Alert if > 0.6 bar.,0.8 bar,Rule A,Value is 0.8. 0.8 > 0.6.,1,UNSAFE,Dataset/Guages/guage (32).jpg,Data_Preprocessed/guage (32).jpg,Low Resolution,"Q1: 0.6 bar
+Q2: No
+Q3: SAFE",3
+52,guage (32).jpg,guage,Low Resolution,0.8,bar,Alert if > 1.0 bar.,0.8 bar,Rule B,Value is 0.8. 0.8 < 1.0.,1,SAFE,Dataset/Guages/guage (32).jpg,Data_Preprocessed/guage (32).jpg,Low Resolution,"Q1: 0.0 bar
+Q2: No
+Q3: SAFE",3
+53,guage (33).jpg,guage,Glare,3.6,bar,Alert if > 2.8 bar.,3.6 bar,Rule A,Value is 3.6. 3.6 > 2.8.,1,UNSAFE,Dataset/Guages/guage (33).jpg,Data_Preprocessed/guage (33).jpg,Glare,"Q1: 2.8 bar
+Q2: No
+Q3: SAFE",3
+54,guage (33).jpg,guage,Glare,3.6,bar,Alert if > 4.4 bar.,3.6 bar,Rule B,Value is 3.6. 3.6 < 4.4.,1,SAFE,Dataset/Guages/guage (33).jpg,Data_Preprocessed/guage (33).jpg,Glare,"Q1: 2.0 bar
+Q2: No
+Q3: SAFE",3
+55,guage (34).jpg,guage,Oblique Angle/ Low Resolution,83,kPa,Alert if pressure exceeds 66 kPa.,83 kPa,Rule A,Value is 83. 83 > 66.,1,UNSAFE,Dataset/Guages/guage (34).jpg,Data_Preprocessed/guage (34).jpg,Oblique Angle/ Low Resolution,"Q1: Observation: No pressure reading or physical condition related to pressure is visible in the image. The image is mostly a gray background with some small, faint graphical elements that appear to be text or symbols, not a gauge or measurement.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+56,guage (34).jpg,guage,Oblique Angle/ Low Resolution,83,kPa,Alert if pressure exceeds 100 kPa.,83 kPa,Rule B,Value is 83. 83 < 100.,1,SAFE,Dataset/Guages/guage (34).jpg,Data_Preprocessed/guage (34).jpg,Oblique Angle/ Low Resolution,"Q1: Observation: No pressure reading or physical condition related to pressure is visible in the image. The image is mostly a gray background with some small, faint symbols that appear to be text or graphical elements, not a gauge or sensor reading.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+57,guage (35).jpg,guage,Obstruction,35,Psi,Alert if > 28 Psi.,35 Psi,Rule A,Value is 35. 35 > 28.,1,UNSAFE,Dataset/Guages/guage (35).jpg,Data_Preprocessed/guage (35).jpg,Obstruction,"Q1: 28 psi
+Q2: No
+Q3: SAFE",3
+58,guage (35).jpg,guage,Obstruction,35,Psi,Alert if > 42 Psi.,35 Psi,Rule B,Value is 35. 35 < 42.,1,SAFE,Dataset/Guages/guage (35).jpg,Data_Preprocessed/guage (35).jpg,Obstruction,"Q1: 20
+Q2: No
+Q3: SAFE",3
+59,guage (36).jpg,guage,Low Contrast,0.1,Mpa,Alert if > 0.08 Mpa.,0.1 Mpa,Rule A,Value is 0.1. 0.1 > 0.08.,1,UNSAFE,Dataset/Guages/guage (36).jpg,Data_Preprocessed/guage (36).jpg,Low Contrast,"Q1: 0.08 Mpa
+Q2: No
+Q3: SAFE",3
+60,guage (36).jpg,guage,Low Contrast,0.1,Mpa,Alert if > 0.12 Mpa.,0.1 Mpa,Rule B,Value is 0.1. 0.1 < 0.12.,1,SAFE,Dataset/Guages/guage (36).jpg,Data_Preprocessed/guage (36).jpg,Low Contrast,"Q1: 0.12 Mpa.
+Q2: No
+Q3: SAFE",3
+61,guage (37).jpg,guage,Low Contrast,160,celcius,Alert if > 128 celcius.,160 celcius,Rule A,Value is 160. 160 > 128.,1,UNSAFE,Dataset/Guages/guage (37).jpg,Data_Preprocessed/guage (37).jpg,Low Contrast,"Q1: 20
+Q2: No
+Q3: SAFE",3
+62,guage (37).jpg,guage,Low Contrast,160,celcius,Alert if > 192 celcius.,160 celcius,Rule B,Value is 160. 160 < 192.,1,SAFE,Dataset/Guages/guage (37).jpg,Data_Preprocessed/guage (37).jpg,Low Contrast,"Q1: 0
+Q2: No
+Q3: SAFE",3
+63,guage (38).jpg,guage,,60,celcius,Alert if temperature exceeds 48 celcius.,60 celcius,Rule A,Value is 60. 60 > 48.,0,UNSAFE,Dataset/Guages/guage (38).jpg,Data_Preprocessed/guage (38).jpg,,"Q1: 20°C
+Q2: No
+Q3: SAFE",3
+64,guage (38).jpg,guage,,60,celcius,Alert if temperature exceeds 72 celcius.,60 celcius,Rule B,Value is 60. 60 < 72.,0,SAFE,Dataset/Guages/guage (38).jpg,Data_Preprocessed/guage (38).jpg,,"Q1: 20
+Q2: No
+Q3: SAFE",3
+65,guage (39).jpg,guage,,155,psi,Alert if > 124 psi.,155 psi,Rule A,Value is 155. 155 > 124.,0,UNSAFE,Dataset/Guages/guage (39).jpg,Data_Preprocessed/guage (39).jpg,,"Q1: Observation: No pressure reading or physical condition related to a pressure gauge is visible in the image. The image is mostly a static background with watermarks/logos of ""tDA"" and a small icon that looks like a logo.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+66,guage (39).jpg,guage,,155,psi,Alert if > 186 psi.,155 psi,Rule B,Value is 155. 155 < 186.,0,SAFE,Dataset/Guages/guage (39).jpg,Data_Preprocessed/guage (39).jpg,,"Q1: Observation: No pressure reading or physical condition related to pressure is visible in the image. The image is mostly a static background with watermarks/logos of ""tda"" and a small icon that looks like a logo.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+67,guage (4).jpg,guage,Obstruction,90,fahrenheit,Alert if > 72 fahrenheit.,90 fahrenheit,Rule A,Value is 90. 90 > 72.,1,UNSAFE,Dataset/Guages/guage (4).jpg,Data_Preprocessed/guage (4).jpg,Obstruction,"Q1: Observation: No numeric reading or visible physical condition related to temperature is present in the image. The image is a placeholder/pattern of a person's face.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+68,guage (4).jpg,guage,Obstruction,90,fahrenheit,Alert if > 108 fahrenheit.,90 fahrenheit,Rule B,Value is 90. 90 < 108.,1,SAFE,Dataset/Guages/guage (4).jpg,Data_Preprocessed/guage (4).jpg,Obstruction,"Q1: Observation: No numeric reading or visible physical condition indicating a temperature is present in the image. The image is a placeholder/pattern of a person's face.
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+69,guage (40).jpg,guage,Low Contrast,53,celcius,Alert if > 42 celcius.,53 celcius,Rule A,Value is 53. 53 > 42.,1,UNSAFE,Dataset/Guages/guage (40).jpg,Data_Preprocessed/guage (40).jpg,Low Contrast,"Q1: Observation: No temperature reading or physical condition is visible in the image. The image is a pattern of a person's face (Pimpilla) on a gray background with some small colored specks.
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+70,guage (40).jpg,guage,Low Contrast,53,celcius,Alert if > 64 celcius.,53 celcius,Rule B,Value is 53. 53 < 64.,1,SAFE,Dataset/Guages/guage (40).jpg,Data_Preprocessed/guage (40).jpg,Low Contrast,"Q1: Observation: No temperature reading or physical condition is visible in the image. The image is a placeholder/pattern with a faint, dark, speckled texture on a gray background.
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+71,guage (41).jpg,guage,Glare,75,fahrenheit,Alert if > 60 fahrenheit.,75 fahrenheit,Rule A,Value is 75. 75 > 60.,1,UNSAFE,Dataset/Guages/guage (41).jpg,Data_Preprocessed/guage (41).jpg,Glare,"Q1: 21
+Q2: No
+Q3: SAFE",3
+72,guage (41).jpg,guage,Glare,75,fahrenheit,Alert if > 90 fahrenheit.,75 fahrenheit,Rule B,Value is 75. 75 < 90.,1,SAFE,Dataset/Guages/guage (41).jpg,Data_Preprocessed/guage (41).jpg,Glare,"Q1: 21
+Q2: No
+Q3: SAFE",3
+73,guage (42).jpg,guage,,25,psi,Alert if > 20 psi.,25 psi,Rule A,Value is 25. 25 > 20.,0,UNSAFE,Dataset/Guages/guage (42).jpg,Data_Preprocessed/guage (42).jpg,,"Q1: 20 psi
+Q2: No
+Q3: SAFE",3
+74,guage (42).jpg,guage,,25,psi,Alert if > 30 psi.,25 psi,Rule B,Value is 25. 25 < 30.,0,SAFE,Dataset/Guages/guage (42).jpg,Data_Preprocessed/guage (42).jpg,,"Q1: 0 psi
+Q2: No
+Q3: SAFE",3
+75,guage (43).jpg,guage,,43,celcius,Alert if > 34 celcius.,43 celcius,Rule A,Value is 43. 43 > 34.,0,UNSAFE,Dataset/Guages/guage (43).jpg,Data_Preprocessed/guage (43).jpg,,"Q1: 0
+Q2: No
+Q3: SAFE",3
+76,guage (43).jpg,guage,,43,celcius,Alert if > 52 celcius.,43 celcius,Rule B,Value is 43. 43 < 52.,0,SAFE,Dataset/Guages/guage (43).jpg,Data_Preprocessed/guage (43).jpg,,"Q1: 20
+Q2: No
+Q3: SAFE",3
+77,guage (44).jpg,guage,Obstruction,50,celcius,Alert if > 40 celcius.,50 celcius,Rule A,Value is 50. 50 > 40.,1,UNSAFE,Dataset/Guages/guage (44).jpg,Data_Preprocessed/guage (44).jpg,Obstruction,"Q1: Observation: No temperature reading is visible in the image. The image is a placeholder/patterned background.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+78,guage (44).jpg,guage,Obstruction,50,celcius,Alert if > 60 celcius.,50 celcius,Rule B,Value is 50. 50 < 60.,1,SAFE,Dataset/Guages/guage (44).jpg,Data_Preprocessed/guage (44).jpg,Obstruction,"Q1: Observation: No temperature reading or physical condition related to temperature is visible in the image. The image is a placeholder/pattern of a person's face.
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+79,guage (45).jpg,guage,,25,psi,Alert if > 20 psi.,25 psi,Rule A,Value is 25. 25 > 20.,0,UNSAFE,Dataset/Guages/guage (45).jpg,Data_Preprocessed/guage (45).jpg,,"Q1: 0 psi
+Q2: No
+Q3: SAFE",3
+80,guage (45).jpg,guage,,25,psi,Alert if > 30 psi.,25 psi,Rule B,Value is 25. 25 < 30.,0,SAFE,Dataset/Guages/guage (45).jpg,Data_Preprocessed/guage (45).jpg,,"Q1: 0 psi
+Q2: No
+Q3: SAFE",3
+81,guage (46).jpg,guage,Glare,2.2,bar,Alert if > 1.7 bar.,2.2 bar,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (46).jpg,Data_Preprocessed/guage (46).jpg,Glare,"Q1: 0.0 bar
+Q2: No
+Q3: SAFE",3
+82,guage (46).jpg,guage,Glare,2.2,bar,Alert if > 2.7 bar.,2.2 bar,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (46).jpg,Data_Preprocessed/guage (46).jpg,Glare,"Q1: 0.0 bar
+Q2: No
+Q3: SAFE",3
+83,guage (47).jpg,guage,Obstruction,40,psi,Alert if > 32 psi.,40 psi,Rule A,Value is 40. 40 > 32.,1,UNSAFE,Dataset/Guages/guage (47).jpg,Data_Preprocessed/guage (47).jpg,Obstruction,"Q1: 20
+Q2: No
+Q3: SAFE",3
+84,guage (47).jpg,guage,Obstruction,40,psi,Alert if > 48 psi.,40 psi,Rule B,Value is 40. 40 < 48.,1,SAFE,Dataset/Guages/guage (47).jpg,Data_Preprocessed/guage (47).jpg,Obstruction,"Q1: 200 psi
+Q2: Yes
+Q3: UNSAFE",3
+85,guage (48).jpg,guage,Glare/ Oblique Angle,0.17,MPa,Alert if > 0.13 MPa.,0.17 MPa,Rule A,Value is 0.17. 0.17 > 0.13.,1,UNSAFE,Dataset/Guages/guage (48).jpg,Data_Preprocessed/guage (48).jpg,Glare/ Oblique Angle,"Q1: 0.13 MPa
+Q2: No
+Q3: SAFE",3
+86,guage (48).jpg,guage,Glare/ Oblique Angle,0.17,MPa,Alert if > 0.21 MPa.,0.17 MPa,Rule B,Value is 0.17. 0.17 < 0.21.,1,SAFE,Dataset/Guages/guage (48).jpg,Data_Preprocessed/guage (48).jpg,Glare/ Oblique Angle,"Q1: 0.21 MPa
+Q2: No
+Q3: SAFE",3
+87,guage (49).jpg,guage,Low Resolution,35,psi,Alert if > 28 psi.,35 psi,Rule A,Value is 35. 35 > 28.,1,UNSAFE,Dataset/Guages/guage (49).jpg,Data_Preprocessed/guage (49).jpg,Low Resolution,"Q1: 28 psi
+Q2: No
+Q3: SAFE",3
+88,guage (49).jpg,guage,Low Resolution,35,psi,Alert if > 42 psi.,35 psi,Rule B,Value is 35. 35 < 42.,1,SAFE,Dataset/Guages/guage (49).jpg,Data_Preprocessed/guage (49).jpg,Low Resolution,"Q1: 0 psi
+Q2: No
+Q3: SAFE",3
+89,guage (5).jpg,guage,Low Contrast,70,bar,Alert if > 56 bar.,70 bar,Rule A,Value is 70. 70 > 56.,1,UNSAFE,Dataset/Guages/guage (5).jpg,Data_Preprocessed/guage (5).jpg,Low Contrast,"Q1: 0 bar
+Q2: No
+Q3: SAFE",3
+90,guage (5).jpg,guage,Low Contrast,70,bar,Alert if > 84 bar.,70 bar,Rule B,Value is 70. 70 < 84.,1,SAFE,Dataset/Guages/guage (5).jpg,Data_Preprocessed/guage (5).jpg,Low Contrast,"Q1: 0 bar
+Q2: No
+Q3: SAFE",3
+91,guage (50).jpg,guage,,4.8,kp/cm3,Alert if > 3.8 kp/cm3.,4.8 kp/cm3,Rule A,Value is 4.8. 4.8 > 3.8.,0,UNSAFE,Dataset/Guages/guage (50).jpg,Data_Preprocessed/guage (50).jpg,,"Q1: 0.0
+Q2: No
+Q3: SAFE",3
+92,guage (50).jpg,guage,,4.8,kp/cm3,Alert if > 5.8 kp/cm3.,4.8 kp/cm3,Rule B,Value is 4.8. 4.8 < 5.8.,0,SAFE,Dataset/Guages/guage (50).jpg,Data_Preprocessed/guage (50).jpg,,"Q1: 0.0
+Q2: No
+Q3: SAFE",3
+93,guage (6).jpg,guage,Glare/ Oblique Angle,34,celcius,Alert if > 27 celcius.,34 celcius,Rule A,Value is 34. 34 > 27.,1,UNSAFE,Dataset/Guages/guage (6).jpg,Data_Preprocessed/guage (6).jpg,Glare/ Oblique Angle,"Q1: 27 celcius
+Q2: No
+Q3: SAFE",3
+94,guage (6).jpg,guage,Glare/ Oblique Angle,34,celcius,Alert if > 41 celcius.,34 celcius,Rule B,Value is 34. 34 < 41.,1,SAFE,Dataset/Guages/guage (6).jpg,Data_Preprocessed/guage (6).jpg,Glare/ Oblique Angle,"Q1: 22
+Q2: No
+Q3: SAFE",3
+95,guage (7).jpg,guage,Oblique Angle,1.3,,Alert if > 1.0 NA.,1.3 NA,Rule A,Value is 1.3. 1.3 > 1.0.,1,UNSAFE,Dataset/Guages/guage (7).jpg,Data_Preprocessed/guage (7).jpg,Oblique Angle,"Q1: 1.0
+Q2: No
+Q3: SAFE",3
+96,guage (7).jpg,guage,Oblique Angle,1.3,,Alert if > 1.6 NA.,1.3 NA,Rule B,Value is 1.3. 1.3 < 1.6.,1,SAFE,Dataset/Guages/guage (7).jpg,Data_Preprocessed/guage (7).jpg,Oblique Angle,"Q1: 1
+Q2: No
+Q3: SAFE",3
+97,guage (8).jpg,guage,Oblique Angle,0,,Alert if reading > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (8).jpg,Data_Preprocessed/guage (8).jpg,Oblique Angle,"Q1: 0
+Q2: No
+Q3: SAFE",3
+98,guage (8).jpg,guage,Oblique Angle,0,,Alert if reading is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (8).jpg,Data_Preprocessed/guage (8).jpg,Oblique Angle,"Q1: 0 NA
+Q2: Yes
+Q3: UNSAFE",3
+99,guage (9).jpg,guage,Oblique Angle/ Obstruction,86,Pa,Alert if > 68 Pa.,86 Pa,Rule A,Value is 86. 86 > 68.,1,UNSAFE,Dataset/Guages/guage (9).jpg,Data_Preprocessed/guage (9).jpg,Oblique Angle/ Obstruction,"Q1: Observation: The image is a placeholder or background image with no discernible measurement or physical condition related to pressure. It consists of a gray background and repeating patterns of ""dizzy"" or pixelated text/images.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+100,guage (9).jpg,guage,Oblique Angle/ Obstruction,86,Pa,Alert if > 104 Pa.,86 Pa,Rule B,Value is 86. 86 < 104.,1,SAFE,Dataset/Guages/guage (9).jpg,Data_Preprocessed/guage (9).jpg,Oblique Angle/ Obstruction,"Q1: Observation: The image does not contain any discernible measurement, pressure reading, or physical condition that can be quantified to determine a value in Pascals (Pa). It is a static image of a background pattern.
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+101,pipe_corroded (1).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (1).jpg,Data_Preprocessed/pipe_corroded (1).jpg,Texture Overlap,"Q1: Observation: The image is a heavily pixelated and mostly gray image with some faint, scattered patterns that resemble a texture or perhaps a very low-resolution representation of a surface. There is no clear, identifiable metallic surface to assess for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+102,pipe_corroded (1).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (1).jpg,Data_Preprocessed/pipe_corroded (1).jpg,Texture Overlap,"Q1: Observation: The image is a heavily pixelated and mostly gray image with some faint, small, colored artifacts scattered, resembling a low-resolution or corrupted image rather than a clear depiction of a physical surface. There is no discernible object to inspect for rust or structural defects.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+103,pipe_corroded (10).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (10).jpg,Data_Preprocessed/pipe_corroded (10).jpg,Texture Overlap,"Q1: Observation: The image is a heavily pixelated and distorted image with no discernible industrial equipment or surfaces to inspect for oxidation or corrosion. It primarily shows a gray background with scattered small colored pixels.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+104,pipe_corroded (10).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (10).jpg,Data_Preprocessed/pipe_corroded (10).jpg,Texture Overlap,"Q1: Observation: The image is a heavily pixelated and distorted image with no discernible physical object or structure to audit. It appears to be a placeholder or corrupted image.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+105,pipe_corroded (11).jpg,pipeline,Texture Overlap,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (11).jpg,Data_Preprocessed/pipe_corroded (11).jpg,Texture Overlap,"Q1: Observation: The image is a heavily pixelated and distorted representation of what appears to be a person's face, not a clear image of a physical surface for inspection. There is no discernible surface material to check for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+106,pipe_corroded (11).jpg,pipeline,Texture Overlap,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (11).jpg,Data_Preprocessed/pipe_corroded (11).jpg,Texture Overlap,"Q1: Observation: The image displays a pattern of a person's face (a digital avatar/placeholder) against a gray background. There is no discernible industrial equipment, structure, or surface to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+107,pipe_corroded (12).jpg,pipeline,Low Resolution,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (12).jpg,Data_Preprocessed/pipe_corroded (12).jpg,Low Resolution,"Q1: Q2: No
+Q3: SAFE",3
+108,pipe_corroded (12).jpg,pipeline,Low Resolution,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (12).jpg,Data_Preprocessed/pipe_corroded (12).jpg,Low Resolution,"Q1: Q2: No
+Q3: SAFE",3
+109,pipe_corroded (13).jpg,pipeline,Glare,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (13).jpg,Data_Preprocessed/pipe_corroded (13).jpg,Glare,"Q1: 2
+Q2: No
+Q3: SAFE",3
+110,pipe_corroded (13).jpg,pipeline,Glare,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (13).jpg,Data_Preprocessed/pipe_corroded (13).jpg,Glare,"Q1: Observation: The image is mostly a solid gray color with some very small, dark speckles, suggesting a texture or perhaps a low-resolution scan of a surface. There are no discernible features like rust, dents, cracks, or leaks visible.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+111,pipe_corroded (14).jpg,pipeline,Low Resolution,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (14).jpg,Data_Preprocessed/pipe_corroded (14).jpg,Low Resolution,"Q1: Observation: The image is a solid, uniform gray color with no discernible features that would indicate a surface.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+112,pipe_corroded (14).jpg,pipeline,Low Resolution,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (14).jpg,Data_Preprocessed/pipe_corroded (14).jpg,Low Resolution,"Q1: 0
+Q2: No
+Q3: SAFE",3
+113,pipe_corroded (15).jpg,pipeline,Texture Overlap,Corroded/ Crack,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Crack NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (15).jpg,Data_Preprocessed/pipe_corroded (15).jpg,Texture Overlap,"Q1: Observation: The image is a placeholder or a very low-resolution image with no discernible industrial equipment or surfaces to inspect for oxidation or corrosion. It primarily shows a gray background with faint, stylized patterns resembling a ""pips"" or pixelated texture.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+114,pipe_corroded (15).jpg,pipeline,Texture Overlap,Corroded/ Crack,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Crack NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (15).jpg,Data_Preprocessed/pipe_corroded (15).jpg,Texture Overlap,"Q1: Observation: The image is a placeholder or a very plain background with no discernible equipment or structure to inspect. There is a small, faint speck near the center-right.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+115,pipe_corroded (16).jpg,pipeline,,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (16).jpg,Data_Preprocessed/pipe_corroded (16).jpg,,"Q1: Observation: The image is a heavily pixelated and distorted representation of a person's face, not an image of a physical surface that can be assessed for oxidation or corrosion. There is no discernible material or structure to audit.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+116,pipe_corroded (16).jpg,pipeline,,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (16).jpg,Data_Preprocessed/pipe_corroded (16).jpg,,"Q1: Observation: The image is a heavily pixelated and distorted representation of a person's face (a placeholder image), not an industrial object with a measurable surface condition like rust, dents, or cracks. There is no discernible equipment or structure to audit.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+117,pipe_corroded (17).jpg,pipeline,,Leak / Damaged,,Alert on any sign of surface oxidation or corrosion.,Leak / Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (17).jpg,Data_Preprocessed/pipe_corroded (17).jpg,,"Q1: Observation: The image is a solid gray color with some very small, scattered dark/colored pixels, which do not represent a recognizable piece of equipment or surface that can be assessed for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+118,pipe_corroded (17).jpg,pipeline,,Leak / Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Leak / Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (17).jpg,Data_Preprocessed/pipe_corroded (17).jpg,,"Q1: Observation: The image is a solid gray field with some very small, scattered dark/colored speckles, resembling noise or artifacts, but no discernible surface of equipment or structure is visible.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+119,pipe_corroded (18).jpg,pipeline,Low Resolution,Damaged,,Alert on any sign of surface oxidation or corrosion.,Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (18).jpg,Data_Preprocessed/pipe_corroded (18).jpg,Low Resolution,"Q1: Observation: The image is a solid gray field with some very small, dark speckles scattered across it. There is no discernible surface material to assess for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+120,pipe_corroded (18).jpg,pipeline,Low Resolution,Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (18).jpg,Data_Preprocessed/pipe_corroded (18).jpg,Low Resolution,"Q1: Observation: The image is mostly a solid gray color with a few very small, dark specks scattered across it. There is no discernible object or surface to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+121,pipe_corroded (19).jpg,pipeline,Low Resolution,Dented,,Alert on any sign of surface oxidation or corrosion.,Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (19).jpg,Data_Preprocessed/pipe_corroded (19).jpg,Low Resolution,"Q1: Observation: The image is a solid gray field with a small, faint, dark speck near the center-top area. There is no discernible surface material to assess for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+122,pipe_corroded (19).jpg,pipeline,Low Resolution,Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (19).jpg,Data_Preprocessed/pipe_corroded (19).jpg,Low Resolution,"Q1: Observation: The image is mostly a solid gray color with a small, faint, dark speck near the center-top. There is no discernible object or structure to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+123,pipe_corroded (2).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (2).jpg,Data_Preprocessed/pipe_corroded (2).jpg,Texture Overlap,"Q1: Observation: The image is a repeating pattern of a person's face (a pixelated/distorted representation), which does not show any industrial equipment, surface, or material that could be subject to oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+124,pipe_corroded (2).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (2).jpg,Data_Preprocessed/pipe_corroded (2).jpg,Texture Overlap,"Q1: Observation: The image is a repeating pattern of a person's face (a pixelated/distorted representation), which does not depict any industrial equipment or structure. There is no discernible surface to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+125,pipe_corroded (20).jpg,pipeline,Texture Overlap,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (20).jpg,Data_Preprocessed/pipe_corroded (20).jpg,Texture Overlap,"Q1: Observation: The image is a heavily blurred, mostly gray background with some faint, scattered colored pixels that resemble a very low-resolution or corrupted image. There are no discernible surfaces to inspect for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+126,pipe_corroded (20).jpg,pipeline,Texture Overlap,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (20).jpg,Data_Preprocessed/pipe_corroded (20).jpg,Texture Overlap,"Q1: Observation: The image is mostly a gray, featureless background with some very small, faint, and indistinct colored specks/patterns that resemble noise or artifacts, not discernible equipment or structure.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+127,pipe_corroded (21).jpg,pipeline,Low Resolution,Dented,,Alert on any sign of surface oxidation or corrosion.,Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (21).jpg,Data_Preprocessed/pipe_corroded (21).jpg,Low Resolution,"Q1: Observation: The image provided is a placeholder or a graphic with no discernible industrial equipment, surfaces, or visual data related to oxidation or corrosion. It consists primarily of a gray background and some small, faint, stylized patterns resembling a ""patterned"" texture, not actual material inspection data.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+128,pipe_corroded (21).jpg,pipeline,Low Resolution,Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (21).jpg,Data_Preprocessed/pipe_corroded (21).jpg,Low Resolution,"Q1: Observation: The image is a black and white, low-resolution image of what appears to be a patterned background, possibly a digital representation of a person or texture, with no discernible industrial equipment or structure to inspect.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+129,pipe_corroded (22).jpg,pipeline,Low Resolution,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (22).jpg,Data_Preprocessed/pipe_corroded (22).jpg,Low Resolution,"Q1: Observation: The image is a low-resolution, mostly gray image with scattered, faint, pixelated patterns that resemble a texture or perhaps a very degraded image. There is no discernible physical object or surface to inspect for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+130,pipe_corroded (22).jpg,pipeline,Low Resolution,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (22).jpg,Data_Preprocessed/pipe_corroded (22).jpg,Low Resolution,"Q1: Observation: The image is a heavily pixelated and distorted representation of what appears to be a person's face or a pattern, not a clear depiction of a physical structure with surface conditions like rust, dents, or cracks. There is no discernible equipment or structure to audit.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+131,pipe_corroded (23).jpg,pipeline,Low Resolution,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (23).jpg,Data_Preprocessed/pipe_corroded (23).jpg,Low Resolution,"Q1: Q2: No
+Q3: SAFE",3
+132,pipe_corroded (23).jpg,pipeline,Low Resolution,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (23).jpg,Data_Preprocessed/pipe_corroded (23).jpg,Low Resolution,"Q1: Q2: No
+Q3: SAFE",3
+133,pipe_corroded (24).jpg,pipeline,,Leak / Damaged,,Alert on any sign of surface oxidation or corrosion.,Leak / Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (24).jpg,Data_Preprocessed/pipe_corroded (24).jpg,,"Q1: Observation: The image is a mostly gray background with scattered small red/dark spots that appear to be artifacts or very faint markings, not clearly identifiable as surface oxidation or corrosion on a specific piece of equipment.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+134,pipe_corroded (24).jpg,pipeline,,Leak / Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Leak / Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (24).jpg,Data_Preprocessed/pipe_corroded (24).jpg,,"Q1: Observation: The image is mostly a solid gray color with some small, scattered red/dark spots that appear to be artifacts or very minor surface marks, but no discernible equipment or structure is visible enough to assess structural integrity.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+135,pipe_corroded (25).jpg,pipeline,Unclear image,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (25).jpg,Data_Preprocessed/pipe_corroded (25).jpg,Unclear image,"Q1: Observation: The image is a heavily pixelated and low-resolution image, primarily showing a gray background with faint, distorted patterns that resemble a person's face or texture. There is no discernible equipment, surface, or material to assess for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+136,pipe_corroded (25).jpg,pipeline,Unclear image,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (25).jpg,Data_Preprocessed/pipe_corroded (25).jpg,Unclear image,"Q1: Observation: The image is a heavily pixelated and low-resolution image, primarily showing a gray background with scattered small, dark, and colored specks that resemble noise or artifacts rather than a clear physical object or surface. There is no discernible structure to inspect.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+137,pipe_corroded (3).jpg,pipeline,Low Resolution,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (3).jpg,Data_Preprocessed/pipe_corroded (3).jpg,Low Resolution,"Q1: Observation: The image is a heavily blurred or low-resolution image with no discernible physical structure or material that could be assessed for oxidation or corrosion. It appears to be a placeholder or a very abstract visual.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+138,pipe_corroded (3).jpg,pipeline,Low Resolution,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (3).jpg,Data_Preprocessed/pipe_corroded (3).jpg,Low Resolution,"Q1: Observation: The image is a heavily blurred or pixelated image with no discernible physical object or surface to inspect. It appears to be a placeholder or corrupted image data.
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+139,pipe_corroded (4).jpg,pipeline,Low Resolution,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (4).jpg,Data_Preprocessed/pipe_corroded (4).jpg,Low Resolution,"Q1: Observation: The image displays a pattern of what appears to be a digital or photographic texture, resembling a repeating pattern of a person's face (perhaps a watermark or background), with no discernible industrial equipment or surface material for inspection.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+140,pipe_corroded (4).jpg,pipeline,Low Resolution,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (4).jpg,Data_Preprocessed/pipe_corroded (4).jpg,Low Resolution,"Q1: Observation: The image displays a pattern of repeating, somewhat distorted images of a person (likely a placeholder or watermark), with no discernible industrial equipment or structure to inspect. There is no observable surface condition like rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+141,pipe_corroded (5).jpg,pipeline,Texture Overlap,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (5).jpg,Data_Preprocessed/pipe_corroded (5).jpg,Texture Overlap,"Q1: Observation: The image is a heavily pixelated and distorted image, primarily showing a gray background with scattered small colored pixels that resemble a texture or noise. There are no discernible surfaces, metal, or clear indicators of oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+142,pipe_corroded (5).jpg,pipeline,Texture Overlap,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (5).jpg,Data_Preprocessed/pipe_corroded (5).jpg,Texture Overlap,"Q1: Observation: The image is a heavily pixelated and distorted representation of what appears to be a surface texture, possibly resembling a patterned surface or a digital artifact, with no discernible industrial equipment or structure.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+143,pipe_corroded (6).jpg,pipeline,Low Resolution,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (6).jpg,Data_Preprocessed/pipe_corroded (6).jpg,Low Resolution,"Q1: Observation: The image displays a pattern of what appears to be a digital or graphical representation, not a physical surface that can be assessed for oxidation or corrosion. There are no discernible surfaces, materials, or readings related to industrial equipment.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+144,pipe_corroded (6).jpg,pipeline,Low Resolution,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (6).jpg,Data_Preprocessed/pipe_corroded (6).jpg,Low Resolution,"Q1: Observation: The image displays a pattern of repeating ""pimpapipipipipipipipip"" text overlaid on a background that appears to be a collage or texture made up of various ""pimpapipipipipipipipip"" images/patterns. There are no discernible physical objects, surfaces, or structural elements to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+145,pipe_corroded (7).jpg,pipeline,Texture Overlap,Corroded,,Alert on any sign of surface oxidation or corrosion.,Corroded NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (7).jpg,Data_Preprocessed/pipe_corroded (7).jpg,Texture Overlap,"Q1: Observation: The image displays a pattern of what appears to be a digital or photographic representation of a person (likely a watermark or background), not an industrial surface that can be assessed for oxidation or corrosion. There are no discernible surfaces present.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+146,pipe_corroded (7).jpg,pipeline,Texture Overlap,Corroded,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (7).jpg,Data_Preprocessed/pipe_corroded (7).jpg,Texture Overlap,"Q1: Observation: The image displays a pattern of what appears to be a digital watermark or texture overlaid on a gray background, featuring silhouettes of people and a faint, repeating pattern resembling a stylized person/figure. There is no discernible physical object or structure to inspect for surface rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+147,pipe_corroded (8).jpg,pipeline,Texture Overlap,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (8).jpg,Data_Preprocessed/pipe_corroded (8).jpg,Texture Overlap,"Q1: Observation: The image displays a pattern of a person's face (a digital watermark/pattern), not an industrial surface. There is no discernible surface to inspect for oxidation or corrosion.
+Q2: 
+Evaluation: No
+Q3: 
+Final Verdict: SAFE",3
+148,pipe_corroded (8).jpg,pipeline,Texture Overlap,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (8).jpg,Data_Preprocessed/pipe_corroded (8).jpg,Texture Overlap,"Q1: Observation: The image displays a pattern of a person's face (a digital watermark/pattern) on a solid gray background. There is no discernible equipment, structure, or surface to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+149,pipe_corroded (9).jpg,pipeline,,Rust,,Alert on any sign of surface oxidation or corrosion.,Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (9).jpg,Data_Preprocessed/pipe_corroded (9).jpg,,"Q1: Observation: The image displays a repeating pattern of a person (likely a model or stock image) overlaid with the text ""radia"" and the logo/watermark ""radia"". There is no discernible industrial equipment or surface to inspect for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+150,pipe_corroded (9).jpg,pipeline,,Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Defected/pipe_corroded (9).jpg,Data_Preprocessed/pipe_corroded (9).jpg,,"Q1: Observation: The image displays a repeating pattern of what appears to be a person (likely a model or representation) overlaid with the text ""radia"" and the logo/watermark ""radia"". There is no discernible industrial equipment or surface to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+151,pipe_non_corroded (1).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (1).jpg,Data_Preprocessed/pipe_non_corroded (1).jpg,,"Q1: Observation: The image displays a texture resembling a piece of material, likely a digital representation or a photograph of a surface, but there is no discernible evidence of surface oxidation or corrosion. The image is predominantly gray with some faint, scattered patterns that look like noise or texture, not structural defects.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+152,pipe_non_corroded (1).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (1).jpg,Data_Preprocessed/pipe_non_corroded (1).jpg,,"Q1: Observation: The image displays a texture resembling a person's skin or a surface with a mottled, slightly rough appearance, consistent with a ""pimp"" or textured pattern. There are no discernible mechanical components or structures to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+153,pipe_non_corroded (10).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (10).jpg,Data_Preprocessed/pipe_non_corroded (10).jpg,,"Q1: Observation: The image is a solid gray background with a few very small, faint specks that appear to be minor visual artifacts or potential signs of surface variation, but no clear evidence of significant surface oxidation or corrosion is discernible.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+154,pipe_non_corroded (10).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (10).jpg,Data_Preprocessed/pipe_non_corroded (10).jpg,,"Q1: Observation: The image is a solid gray color with a few very small, faint dark specks scattered across it. There is no discernible object or surface to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+155,pipe_non_corroded (11).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (11).jpg,Data_Preprocessed/pipe_non_corroded (11).jpg,,"Q1: Observation: The image displays a texture resembling a patterned surface, possibly a digital representation of a material, but there is no clear visual evidence of surface oxidation or corrosion that can be definitively identified as such based on the provided image quality and content.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+156,pipe_non_corroded (11).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (11).jpg,Data_Preprocessed/pipe_non_corroded (11).jpg,,"Q1: Observation: The image displays a texture resembling a patterned surface (like a damask or fabric), but there are no discernible structural defects such as rust, dents, cracks, or leaks visible.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+157,pipe_non_corroded (12).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (12).jpg,Data_Preprocessed/pipe_non_corroded (12).jpg,,"Q1: Observation: The image is a heavily pixelated and blurred representation, making it impossible to discern any specific surface material or condition that would indicate oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+158,pipe_non_corroded (12).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (12).jpg,Data_Preprocessed/pipe_non_corroded (12).jpg,,"Q1: Observation: The image is a heavily pixelated and distorted representation of what appears to be a surface texture, possibly a photograph of a metal surface, but no clear, discernible structural defects like dents, cracks, or leaks can be identified due to the extreme distortion/pixelation.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+159,pipe_non_corroded (13).jpg,pipeline,Glare,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (13).jpg,Data_Preprocessed/pipe_non_corroded (13).jpg,Glare,"Q1: Observation: The image provided is a stock image/placeholder graphic and does not display any physical equipment, surfaces, or readings that could be assessed for surface oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+160,pipe_non_corroded (13).jpg,pipeline,Glare,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (13).jpg,Data_Preprocessed/pipe_non_corroded (13).jpg,Glare,"Q1: Observation: The image displays a pattern of small, colored pixels/dots across a gray background, resembling digital noise or a low-resolution image, not a physical object that can be inspected for surface rust or structural defects.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+161,pipe_non_corroded (14).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (14).jpg,Data_Preprocessed/pipe_non_corroded (14).jpg,,"Q1: Observation: The image is a mostly grey, featureless background with some very small, dark specks scattered across it. There are no discernible surfaces to check for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+162,pipe_non_corroded (14).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (14).jpg,Data_Preprocessed/pipe_non_corroded (14).jpg,,"Q1: Observation: The image is mostly a solid gray color with some very small, dark specks scattered across it. There is no discernible equipment or structure to inspect.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+163,pipe_non_corroded (15).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (15).jpg,Data_Preprocessed/pipe_non_corroded (15).jpg,,"Q1: Observation: The image provided is a collage of various images of people (likely avatars or profile pictures), not an image of a surface that could be assessed for oxidation or corrosion. There is no discernible industrial surface present.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+164,pipe_non_corroded (15).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (15).jpg,Data_Preprocessed/pipe_non_corroded (15).jpg,,"Q1: Observation: The image displays a collection of various digital avatars/images of ""dripa"" and ""pimp"" characters, not a physical object or structure. There is no discernible physical surface to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+165,pipe_non_corroded (16).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (16).jpg,Data_Preprocessed/pipe_non_corroded (16).jpg,Low Resolution,"Q1: Observation: The image is a placeholder or a heavily blurred/low-resolution image that does not clearly show any industrial equipment or surface material for inspection. It appears to be a gray background with some faint, distorted patterns resembling a person's face or texture, but no discernible surface condition like oxidation or corrosion is visible.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+166,pipe_non_corroded (16).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (16).jpg,Data_Preprocessed/pipe_non_corroded (16).jpg,Low Resolution,"Q1: Observation: The image is a placeholder or a very low-resolution image of a person (presumably a digital avatar), not an industrial object with a surface to inspect for rust, dents, cracks, or leaks. There is no discernible industrial equipment present.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+167,pipe_non_corroded (17).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (17).jpg,Data_Preprocessed/pipe_non_corroded (17).jpg,Low Resolution,"Q1: Observation: The image is a heavily pixelated and distorted image with no discernible physical structure or material that would allow for the identification of surface oxidation or corrosion. It appears to be a digital artifact rather than a photograph of a physical surface.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+168,pipe_non_corroded (17).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (17).jpg,Data_Preprocessed/pipe_non_corroded (17).jpg,Low Resolution,"Q1: Observation: The image is a heavily pixelated, mostly gray background with faint, scattered patterns resembling a person's face (specifically, a pattern of ""dipinda"" text/texture). There is no discernible equipment, structure, or surface to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+169,pipe_non_corroded (18).jpg,pipeline,Low Resolution,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (18).jpg,Data_Preprocessed/pipe_non_corroded (18).jpg,Low Resolution,"Q1: Observation: The image is a heavily pixelated, low-resolution pattern, resembling a texture or watermark, not a clear image of a physical surface. There is no discernible surface material to check for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+170,pipe_non_corroded (18).jpg,pipeline,Low Resolution,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (18).jpg,Data_Preprocessed/pipe_non_corroded (18).jpg,Low Resolution,"Q1: Observation: The image is a repeating pattern of a person's face (a watermark/texture), not an industrial object with a surface to inspect for rust or defects. There is no discernible industrial equipment present.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+171,pipe_non_corroded (19).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (19).jpg,Data_Preprocessed/pipe_non_corroded (19).jpg,,"Q1: Observation: The image is a placeholder or a background texture (likely a pattern resembling a person or abstract shapes), not an image of equipment or a surface that can be assessed for oxidation or corrosion. There is no discernible industrial surface present.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+172,pipe_non_corroded (19).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (19).jpg,Data_Preprocessed/pipe_non_corroded (19).jpg,,"Q1: Observation: The image is a placeholder or a heavily filtered/abstract image with no discernible industrial equipment or surface to inspect. It primarily shows a gray background with faint, abstract patterns resembling a ""dithered"" or pixelated texture.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+173,pipe_non_corroded (2).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (2).jpg,Data_Preprocessed/pipe_non_corroded (2).jpg,,"Q1: Observation: The image is a heavily pixelated and mostly gray/dark image with some faint, dark spots that resemble noise or potential defects, but no clear visual evidence of surface oxidation or corrosion on a recognizable material surface.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+174,pipe_non_corroded (2).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (2).jpg,Data_Preprocessed/pipe_non_corroded (2).jpg,,"Q1: Observation: The image is a mostly grey, abstract pattern with some small dark specks and faint, distorted text/patterns that do not clearly depict a physical structure or surface. There is no discernible equipment or structure to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+175,pipe_non_corroded (20).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (20).jpg,Data_Preprocessed/pipe_non_corroded (20).jpg,,"Q1: Q2: No
+Q3: SAFE",3
+176,pipe_non_corroded (20).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (20).jpg,Data_Preprocessed/pipe_non_corroded (20).jpg,,"Q1: Q2: No
+Q3: SAFE",3
+177,pipe_non_corroded (21).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (21).jpg,Data_Preprocessed/pipe_non_corroded (21).jpg,,"Q1: Observation: The image is a solid gray color with some very small, dark specks scattered across it, resembling noise or minor imperfections on a surface. There is no discernible metallic surface to assess for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+178,pipe_non_corroded (21).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (21).jpg,Data_Preprocessed/pipe_non_corroded (21).jpg,,"Q1: Observation: The image is mostly a solid gray color with a very small, dark speck near the center-right, and some faint, faint markings that resemble a pattern or texture on the right side. There is no discernible equipment or structure to inspect for surface rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+179,pipe_non_corroded (22).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (22).jpg,Data_Preprocessed/pipe_non_corroded (22).jpg,,"Q1: Observation: The image is a heavily pixelated and distorted representation of what appears to be a texture or pattern, not a clear image of a physical surface that can be assessed for oxidation or corrosion. There are no discernible features resembling metal or material surfaces.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+180,pipe_non_corroded (22).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (22).jpg,Data_Preprocessed/pipe_non_corroded (22).jpg,,"Q1: Observation: The image is a heavily pixelated and distorted representation of what appears to be a person's face, with no discernible industrial equipment or structure visible. There is no measurable physical condition like rust, dents, cracks, or leaks to assess.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+181,pipe_non_corroded (23).jpg,pipeline,Low Resolution,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (23).jpg,Data_Preprocessed/pipe_non_corroded (23).jpg,Low Resolution,"Q1: Observation: The image is a heavily pixelated and distorted representation of a person's face (likely Donald Trump), not a clear image of a physical surface that could be assessed for oxidation or corrosion. There is no discernible material or surface to inspect.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+182,pipe_non_corroded (23).jpg,pipeline,Low Resolution,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (23).jpg,Data_Preprocessed/pipe_non_corroded (23).jpg,Low Resolution,"Q1: Observation: The image displays a pattern of what appears to be a person's face (specifically, a repeated pattern of a face) overlaid on a gray background. There is no discernible equipment, structure, or surface to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+183,pipe_non_corroded (24).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (24).jpg,Data_Preprocessed/pipe_non_corroded (24).jpg,,"Q1: Observation: The image is a placeholder or a very low-resolution image with no discernible industrial equipment or surfaces to inspect for oxidation or corrosion. It primarily shows a gray background with some small, scattered colored pixels (orange/yellow).
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+184,pipe_non_corroded (24).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (24).jpg,Data_Preprocessed/pipe_non_corroded (24).jpg,,"Q1: Observation: The image is a placeholder or a very low-resolution image with no discernible industrial equipment or surface to inspect. It primarily shows a gray background with some small, scattered colored pixels (orange/yellow).
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+185,pipe_non_corroded (25).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (25).jpg,Data_Preprocessed/pipe_non_corroded (25).jpg,Low Resolution,"Q1: Observation: The image is a low-resolution, mostly gray image with faint, repeating patterns that resemble a texture or pattern, but no discernible surface material is present to check for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+186,pipe_non_corroded (25).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (25).jpg,Data_Preprocessed/pipe_non_corroded (25).jpg,Low Resolution,"Q1: Observation: The image is a highly pixelated, mostly gray image with faint, repeating patterns that resemble a texture or pattern, but no discernible physical object or structure is present to be audited for surface rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+187,pipe_non_corroded (3).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (3).jpg,Data_Preprocessed/pipe_non_corroded (3).jpg,,"Q1: Observation: The image displays a pattern of what appears to be a texture or pattern, resembling a repeating, somewhat granular or speckled surface, with some color variations (like orange/red and blue/green specks). There is no clear indication of metallic surfaces that would typically show oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+188,pipe_non_corroded (3).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (3).jpg,Data_Preprocessed/pipe_non_corroded (3).jpg,,"Q1: Observation: The image consists of multiple repeating patterns of a ""dildidipiza"" texture/pattern, which appears to be a digital or abstract representation rather than a physical object with surface conditions like rust, dents, or cracks. There is no discernible equipment or structure to audit for structural defects.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+189,pipe_non_corroded (4).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (4).jpg,Data_Preprocessed/pipe_non_corroded (4).jpg,,"Q1: Observation: The image is a solid gray color with some very faint, small, scattered markings that resemble text or symbols, but no discernible surface material is present to check for oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+190,pipe_non_corroded (4).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (4).jpg,Data_Preprocessed/pipe_non_corroded (4).jpg,,"Q1: Observation: The image is mostly a solid gray color with some very small, faint markings that resemble text or symbols scattered across it. There is no discernible equipment, structure, or surface to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+191,pipe_non_corroded (5).jpg,pipeline,Distorted,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (5).jpg,Data_Preprocessed/pipe_non_corroded (5).jpg,Distorted,"Q1: Observation: The image displays a pattern of what appears to be a digital or stylized representation of a person (perhaps a placeholder or watermark), not an industrial surface that can be assessed for oxidation or corrosion. There is no discernible surface material present.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+192,pipe_non_corroded (5).jpg,pipeline,Distorted,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (5).jpg,Data_Preprocessed/pipe_non_corroded (5).jpg,Distorted,"Q1: Observation: The image displays a pattern of a person's face (Dippa/Dippa) overlaid on a gray background. There is no discernible equipment, structure, or surface to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+193,pipe_non_corroded (6).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (6).jpg,Data_Preprocessed/pipe_non_corroded (6).jpg,,"Q1: Observation: The image is a mostly gray background with some faint, small, irregular patches of color (blue/light blue and dark spots), which could be interpreted as minor surface variations or potential signs of discoloration/oxidation if this were a material surface being inspected. There is also a signature watermark present.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+194,pipe_non_corroded (6).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (6).jpg,Data_Preprocessed/pipe_non_corroded (6).jpg,,"Q1: Observation: The image is a mostly grey, featureless background with some faint, small, irregular patches of color (blue/cyan). There is no discernible object or surface to inspect for rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+195,pipe_non_corroded (7).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (7).jpg,Data_Preprocessed/pipe_non_corroded (7).jpg,,"Q1: Observation: The image provided is a graphic overlay with text and images of people, not an image of equipment or a surface that could be assessed for oxidation or corrosion. There is no discernible industrial surface present.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+196,pipe_non_corroded (7).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (7).jpg,Data_Preprocessed/pipe_non_corroded (7).jpg,,"Q1: Observation: The image displays a digital broadcast screen with a logo/graphic and several people in the background. There is no discernible industrial equipment or structure to audit for surface rust, dents, cracks, or leaks.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+197,pipe_non_corroded (8).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (8).jpg,Data_Preprocessed/pipe_non_corroded (8).jpg,,"Q1: Observation: The image displays a texture resembling a patterned surface, likely a digital representation or a photograph of a material with some surface variation, but no clear indication of oxidation or corrosion.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+198,pipe_non_corroded (8).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (8).jpg,Data_Preprocessed/pipe_non_corroded (8).jpg,,"Q1: Observation: The image is a texture/pattern of what appears to be a digital representation of skin or a surface, not a physical object with measurable structural defects like rust, dents, or cracks. There is no discernible equipment or structure to audit.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+199,pipe_non_corroded (9).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (9).jpg,Data_Preprocessed/pipe_non_corroded (9).jpg,,"Q1: Observation: The image is a heavily blurred or pixelated image with a gray background and faint, repeating patterns that resemble a texture or pattern, but no discernible surface material is visible for inspection.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3
+200,pipe_non_corroded (9).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (9).jpg,Data_Preprocessed/pipe_non_corroded (9).jpg,,"Q1: Observation: The image is a heavily blurred or pixelated image with no discernible physical object or surface to inspect. It appears to be a placeholder or corrupted image data.
+
+Q2: 
+Evaluation: No
+
+Q3: 
+Final Verdict: SAFE",3

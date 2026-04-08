@@ -44,13 +44,14 @@ def main():
     parser.add_argument("--intervention", choices=["cot", "decomp", "contrast", "contrast_cot"], required=True)
     args = parser.parse_args()
 
-    models = ["smolvlm", "internvl2", "janus", "qwen2_vl", "minicpm"]
+    models = ["smolvlm", "internvl2", "janus", "qwen2_vl", "minicpm", "gemma4_e2b"]
     model_display_names = {
         "smolvlm": "SmolVLM",
         "internvl2": "InternVL2",
         "janus": "Janus",
         "qwen2_vl": "Qwen2-VL",
-        "minicpm": "MiniCPM"
+        "minicpm": "MiniCPM",
+        "gemma4_e2b": "Gemma 4"
     }
 
     # Output formatting logic mimicking multi_run_metrics.py

@@ -1,6 +1,7 @@
 # Environments
 minicpm_env/
 ragenv/
+gemma_env/
 .env
 .venv/
 env/
@@ -11,6 +12,7 @@ minicpm/
 # Large Model Files and Secondary Repos
 models/
 Janus/
+error.txt
 
 
 
@@ -30,3 +32,8 @@ GEMINI.md
 .idea/
 .DS_Store
 Thumbs.db
+
+# Agent skills & local agent settings
+.agents/
+.claude/
+.gemini/

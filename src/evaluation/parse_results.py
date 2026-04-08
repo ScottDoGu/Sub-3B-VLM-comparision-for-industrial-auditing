@@ -194,6 +194,7 @@ if args.mode == "cot":
         "janus_cot_results.csv",
         "qwen2_vl_cot_results.csv",
         "minicpm_cot_results.csv",
+        "gemma4_e2b_cot_results.csv",
     ]
 elif args.mode == "decomp":
     INPUT_DIR = "results/innovation/decomposition"
@@ -204,6 +205,7 @@ elif args.mode == "decomp":
         "janus_decomp_results.csv",
         "qwen2_vl_decomp_results.csv",
         "minicpm_decomp_results.csv",
+        "gemma4_e2b_decomp_results.csv",
     ]
 elif args.mode == "multiturn":
     INPUT_DIR = "results/innovation/multiturn"
@@ -214,6 +216,7 @@ elif args.mode == "multiturn":
         "janus_multiturn_results.csv",
         "qwen2_vl_multiturn_results.csv",
         "minicpm_multiturn_results.csv",
+        "gemma4_e2b_multiturn_results.csv",
     ]
 elif args.mode == "contrast":
     INPUT_DIR = "results/innovation/contrast"
@@ -224,6 +227,7 @@ elif args.mode == "contrast":
         "janus_contrast_results.csv",
         "qwen2_vl_contrast_results.csv",
         "minicpm_contrast_results.csv",
+        "gemma4_e2b_contrast_results.csv",
     ]
 elif args.mode == "contrast_cot":
     INPUT_DIR = "results/innovation/contrast_cot"
@@ -234,6 +238,7 @@ elif args.mode == "contrast_cot":
         "janus_contrast_cot_results.csv",
         "qwen2_vl_contrast_cot_results.csv",
         "minicpm_contrast_cot_results.csv",
+        "gemma4_e2b_contrast_cot_results.csv",
     ]
 else:
     INPUT_DIR = "results/baseline"
@@ -244,6 +249,7 @@ else:
         "janus_results.csv",
         "qwen2_vl_results.csv",
         "minicpm_results.csv",
+        "gemma4_e2b_results.csv",
     ]
 
 
