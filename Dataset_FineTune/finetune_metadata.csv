@@ -1,0 +1,101 @@
+image_id,ground_truth_value,unit,artifact_tag,hard_case_flag
+ft_gauge (1).jpg,0,psi,none,0
+ft_gauge (2).jpg,0,bar,none,0
+ft_gauge (3).jpg,85,bar,Oblique Angle,1
+ft_gauge (4).jpg,1.6,bar,none,0
+ft_gauge (5).jpg,0,kg/cm,Low Contrast,1
+ft_gauge (6).jpg,2.2,NA,Oblique Angle,0
+ft_gauge (7).jpg,0,bar,Glare/ Oblique Angle,0
+ft_gauge (8).jpg,12,celcius,none,0
+ft_gauge (9).jpg,35,celcius,Low Contrast,1
+ft_gauge (10).jpg,0.1,na,none,0
+ft_gauge (11).jpg,3.7,bar,Oblique Angle,0
+ft_gauge (12).jpg,400,kpa,none,1
+ft_gauge (13).jpg,1.2,bar,none,0
+ft_gauge (14).jpg,10,NA,Low Contrast,0
+ft_gauge (15).jpg,15,psi,none,1
+ft_gauge (16).jpg,0,bar,Oblique Angle,1
+ft_gauge (17).jpg,0,NA,Low Contrast,1
+ft_gauge (18).jpg,120,NA,Oblique Angle/ Low Contrast,1
+ft_gauge (19).jpg,28,celcius,none,0
+ft_gauge (20).jpg,0,bar,none,0
+ft_gauge (21).jpg,67,psi,none,1
+ft_gauge (22).jpg,0,psi,none,1
+ft_gauge (23).jpg,100,psi,none,1
+ft_gauge (24).jpg,18,NA,none,0
+ft_gauge (25).jpg,25,psi,Oblique Angle,1
+ft_gauge (26).jpg,0,psi,Low Contrast/ Oblique Angle,1
+ft_gauge (27).jpg,9,psi,Glare,1
+ft_gauge (28).jpg,5,NA,none,1
+ft_gauge (29).jpg,0.1,bar,Low Contrast,1
+ft_gauge (30).jpg,30,NA,Low Contrast/ Oblique Angle,1
+ft_gauge (31).jpg,300,kpa,Low Contrast,1
+ft_gauge (32).jpg,0,kg/cm3,Low Contrast,1
+ft_gauge (33).jpg,110,psi,Low Contrast,1
+ft_gauge (34).jpg,55,NA,Low Contrast/ Oblique Angle,1
+ft_gauge (35).jpg,0.2,NA,Low Contrast,1
+ft_gauge (36).jpg,25,kpa,Oblique Angle,1
+ft_gauge (37).jpg,0,bar,none,1
+ft_gauge (38).jpg,0,bar,none,1
+ft_gauge (39).jpg,0,bar,none,1
+ft_gauge (40).jpg,0,bar,none,1
+ft_gauge (41).jpg,0.5,bar,Glare,1
+ft_gauge (42).jpg,9,NA,Low Contrast,1
+ft_gauge (43).jpg,7,bar,none,1
+ft_gauge (44).jpg,7,bar,none,1
+ft_gauge (45).jpg,3,bar,none,1
+ft_gauge (46).jpg,4.8,bar,none,1
+ft_gauge (47).jpg,5.5,bar,Low Contrast/ Oblique Angle,1
+ft_gauge (48).jpg,5.5,bar,none,1
+ft_gauge (49).jpg,5.7,bar,Glare,1
+ft_gauge (50).jpg,5.5,bar,Glare,1
+ft_gauge (51).jpg,0,NA,Low Contrast,1
+ft_gauge (52).jpg,3,NA,Low Contrast,1
+ft_gauge (53).jpg,100,NA,Low Contrast,1
+ft_gauge (54).jpg,0,NA,Low Contrast,1
+ft_gauge (55).jpg,1,NA,Glare,1
+ft_gauge (56).jpg,2,NA,Low Contrast,1
+ft_gauge (57).jpg,500,kpa,Low Contrast,1
+ft_gauge (58).jpg,0,NA,Low Contrast,1
+ft_gauge (59).jpg,0,NA,Low Contrast,1
+ft_gauge (60).jpg,2500,kpa,Low Contrast,1
+ft_gauge (61).jpg,0,NA,Glare,1
+ft_gauge (62).jpg,0,NA,Low Contrast/ Oblique Angle,1
+ft_gauge (63).jpg,60,NA,Low Contrast,1
+ft_gauge (64).jpg,0.2,NA,Low Contrast,1
+ft_gauge (65).jpg,0,mbar,none,0
+ft_gauge (66).jpg,28,celcius,none,0
+ft_gauge (67).jpg,0.1,NA,none,0
+ft_gauge (68).jpg,500,kpa,Oblique Angle,1
+ft_gauge (69).jpg,1,bar,none,1
+ft_gauge (70).jpg,0.3,bar,Low Contrast,1
+ft_gauge (71).jpg,1.1,bar,none,1
+ft_gauge (72).jpg,160,Psi,none,1
+ft_gauge (73).jpg,0,bar,Glare,1
+ft_gauge (74).jpg,15,NA,Low Contrast,0
+ft_gauge (75).jpg,150,NA,Oblique Angle,1
+ft_gauge (76).jpg,3,bar,Low Contrast,1
+ft_gauge (77).jpg,200,NA,Oblique Angle/ Low Contrast,1
+ft_gauge (78).jpg,7,NA,none,0
+ft_gauge (79).jpg,0,NA,Low Contrast,1
+ft_gauge (80).jpg,1,NA,Glare,1
+ft_gauge (81).jpg,0,NA,Oblique Angle,0
+ft_gauge (82).jpg,10,Mpa,Oblique Angle,1
+ft_gauge (83).jpg,10,bar,Oblique Angle,1
+ft_gauge (84).jpg,0,NA,Oblique Angle,1
+ft_gauge (85).jpg,1.5,bar,Oblique Angle,1
+ft_gauge (86).jpg,180,psi,Oblique Angle,1
+ft_gauge (87).jpg,1.6,bar,none,0
+ft_gauge (88).jpg,10,NA,Low Contrast,1
+ft_gauge (89).jpg,15,NA,Low Contrast,1
+ft_gauge (90).jpg,2.5,NA,Low Contrast,1
+ft_gauge (91).jpg,108,psi,Low Contrast,1
+ft_gauge (92).jpg,68,psi,none,1
+ft_gauge (93).jpg,25,psi,Oblique Angle,1
+ft_gauge (94).jpg,0,NA,Glare,0
+ft_gauge (95).jpg,1,Kpa,Low Contrast,1
+ft_gauge (96).jpg,2,NA,Glare,1
+ft_gauge (97).jpg,30,NA,Low Contrast,1
+ft_gauge (98).jpg,2,NA,Oblique Angle,1
+ft_gauge (99).jpg,0,NA,Low Contrast,1
+ft_gauge (100).jpg,0,NA,Low Contrast,1
