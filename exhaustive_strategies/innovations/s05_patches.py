@@ -1,5 +1,5 @@
-from qwen_extended.innovations.base import Strategy, base_prompt, label_from_text, conf_from_text
-from qwen_extended.preprocessing.image_backend import top_patches
+from exhaustive_strategies.innovations.base import Strategy, base_prompt, label_from_text, conf_from_text
+from exhaustive_strategies.preprocessing.image_backend import top_patches
 class MultiScalePatch(Strategy):
     name = "multi_scale_patch"
     def run(self, engine, img, cat):

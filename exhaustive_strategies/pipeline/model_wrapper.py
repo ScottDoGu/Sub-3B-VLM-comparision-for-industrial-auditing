@@ -1,6 +1,6 @@
 import time
 from PIL import Image
-from qwen_extended.config import MODEL_ID, MAX_TOKENS, MIN_PIXELS, MAX_PIXELS
+from exhaustive_strategies.config import MODEL_ID, MAX_TOKENS, MIN_PIXELS, MAX_PIXELS
 
 class Qwen2VLEngine:
     def __init__(self, model_id=None, dry_run=False):

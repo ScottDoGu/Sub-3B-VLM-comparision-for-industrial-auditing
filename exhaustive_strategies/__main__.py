@@ -1,2 +1,2 @@
-from qwen_extended.run_pipeline import main
+from exhaustive_strategies.run_pipeline import main
 main()

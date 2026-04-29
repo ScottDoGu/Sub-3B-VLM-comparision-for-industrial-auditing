@@ -1,16 +1,16 @@
-from qwen_extended.innovations.s01_clahe import CLAHEContrast
-from qwen_extended.innovations.s02_cot import ChainOfThought
-from qwen_extended.innovations.s03_contrast_cot import ContrastCoT
-from qwen_extended.innovations.s04_decomposition import TaskDecomposition
-from qwen_extended.innovations.s05_patches import MultiScalePatch
-from qwen_extended.innovations.s06_dual_pass import DualPassVerification
-from qwen_extended.innovations.s07_calibration import ConfidenceCalibration
-from qwen_extended.innovations.s08_negative import NegativePrompting
-from qwen_extended.innovations.s09_roi import ROICropping
-from qwen_extended.innovations.s10_structured import StructuredOutput
-from qwen_extended.innovations.s11_few_shot import FewShotGrounding
-from qwen_extended.innovations.s12_ensemble import AdaptiveEnsembleRouter
-from qwen_extended.innovations.s13_grid import GridOverlay
+from exhaustive_strategies.innovations.s01_clahe import CLAHEContrast
+from exhaustive_strategies.innovations.s02_cot import ChainOfThought
+from exhaustive_strategies.innovations.s03_contrast_cot import ContrastCoT
+from exhaustive_strategies.innovations.s04_decomposition import TaskDecomposition
+from exhaustive_strategies.innovations.s05_patches import MultiScalePatch
+from exhaustive_strategies.innovations.s06_dual_pass import DualPassVerification
+from exhaustive_strategies.innovations.s07_calibration import ConfidenceCalibration
+from exhaustive_strategies.innovations.s08_negative import NegativePrompting
+from exhaustive_strategies.innovations.s09_roi import ROICropping
+from exhaustive_strategies.innovations.s10_structured import StructuredOutput
+from exhaustive_strategies.innovations.s11_few_shot import FewShotGrounding
+from exhaustive_strategies.innovations.s12_ensemble import AdaptiveEnsembleRouter
+from exhaustive_strategies.innovations.s13_grid import GridOverlay
 
 STRATEGY_REGISTRY = {
     "clahe_contrast": CLAHEContrast, "chain_of_thought": ChainOfThought, "contrast_cot": ContrastCoT,

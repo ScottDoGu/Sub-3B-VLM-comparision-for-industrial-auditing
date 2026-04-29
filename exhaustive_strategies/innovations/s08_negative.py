@@ -1,4 +1,4 @@
-from qwen_extended.innovations.base import Strategy, base_prompt
+from exhaustive_strategies.innovations.base import Strategy, base_prompt
 class NegativePrompting(Strategy):
     name = "negative_prompting"
     def run(self, engine, img, cat):

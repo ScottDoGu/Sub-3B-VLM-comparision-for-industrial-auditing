@@ -1,4 +1,4 @@
-from qwen_extended.config import FN_WEIGHT, FP_WEIGHT
+from exhaustive_strategies.config import FN_WEIGHT, FP_WEIGHT
 def score_single(predicted, ground_truth, confidence=0.5, category="gauge"):
     if ground_truth is None: return {"scored": False, "penalty": 0.0}
     pred, gt = predicted.lower().strip(), ground_truth.lower().strip()

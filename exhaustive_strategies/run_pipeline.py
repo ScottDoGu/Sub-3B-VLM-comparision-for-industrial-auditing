@@ -1,7 +1,7 @@
 import argparse, sys
-from qwen_extended.pipeline.model_wrapper import Qwen2VLEngine
-from qwen_extended.pipeline.image_loader import load_subset
-from qwen_extended.pipeline.orchestrator import run_sweep
+from exhaustive_strategies.pipeline.model_wrapper import Qwen2VLEngine
+from exhaustive_strategies.pipeline.image_loader import load_subset
+from exhaustive_strategies.pipeline.orchestrator import run_sweep
 
 def main():
     ap = argparse.ArgumentParser()

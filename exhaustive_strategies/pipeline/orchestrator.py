@@ -1,10 +1,10 @@
 import os, json, time, traceback
-from qwen_extended.config import SWEEP_STRATEGIES, OUTPUT_DIR
-from qwen_extended.innovations.registry import STRATEGY_REGISTRY
-from qwen_extended.innovations.s12_ensemble import AdaptiveEnsembleRouter
-from qwen_extended.pipeline.checkpoint import Checkpoint
-from qwen_extended.pipeline.image_loader import load_image, ground_truth
-from qwen_extended.evaluation.catastrophic_metric import score_batch, confusion_matrix
+from exhaustive_strategies.config import SWEEP_STRATEGIES, OUTPUT_DIR
+from exhaustive_strategies.innovations.registry import STRATEGY_REGISTRY
+from exhaustive_strategies.innovations.s12_ensemble import AdaptiveEnsembleRouter
+from exhaustive_strategies.pipeline.checkpoint import Checkpoint
+from exhaustive_strategies.pipeline.image_loader import load_image, ground_truth
+from exhaustive_strategies.evaluation.catastrophic_metric import score_batch, confusion_matrix
 
 def run_sweep(engine, images, out_dir=None, resume=False):
     out = out_dir or OUTPUT_DIR

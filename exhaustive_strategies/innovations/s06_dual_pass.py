@@ -1,4 +1,4 @@
-from qwen_extended.innovations.base import Strategy, base_prompt, label_from_text, conf_from_text
+from exhaustive_strategies.innovations.base import Strategy, base_prompt, label_from_text, conf_from_text
 class DualPassVerification(Strategy):
     name = "dual_pass_verification"
     def run(self, engine, img, cat):

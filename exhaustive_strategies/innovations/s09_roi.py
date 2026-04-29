@@ -1,5 +1,5 @@
-from qwen_extended.innovations.base import Strategy, base_prompt
-from qwen_extended.preprocessing.image_backend import extract_gauge_roi, extract_pipe_roi
+from exhaustive_strategies.innovations.base import Strategy, base_prompt
+from exhaustive_strategies.preprocessing.image_backend import extract_gauge_roi, extract_pipe_roi
 class ROICropping(Strategy):
     name = "roi_cropping"
     def run(self, engine, img, cat):

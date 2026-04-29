@@ -1,6 +1,6 @@
 import os
 DATA_DIR   = os.getenv("QE_DATA",   "Data_Preprocessed")
-OUTPUT_DIR = os.getenv("QE_OUTPUT", "results/innovation/qwen_extended")
+OUTPUT_DIR = os.getenv("QE_OUTPUT", "results/innovation/exhaustive_strategies")
 MODEL_ID    = "Qwen/Qwen2-VL-2B-Instruct-AWQ"
 MAX_TOKENS  = 512
 TEMPERATURE = 0.1

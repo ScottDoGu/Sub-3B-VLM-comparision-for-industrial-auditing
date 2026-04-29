@@ -1,6 +1,6 @@
 import re
-from qwen_extended.innovations.base import Strategy, base_prompt
-from qwen_extended.preprocessing.image_backend import draw_grid
+from exhaustive_strategies.innovations.base import Strategy, base_prompt
+from exhaustive_strategies.preprocessing.image_backend import draw_grid
 class GridOverlay(Strategy):
     name = "grid_overlay"
     def run(self, engine, img, cat):

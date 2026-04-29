@@ -1,4 +1,4 @@
-from qwen_extended.innovations.base import Strategy, base_prompt, label_from_text, conf_from_text
+from exhaustive_strategies.innovations.base import Strategy, base_prompt, label_from_text, conf_from_text
 class ConfidenceCalibration(Strategy):
     name = "confidence_calibration"
     def run(self, engine, img, cat):
