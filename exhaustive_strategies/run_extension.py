@@ -1,36 +1,61 @@
 import json
-import os
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Dict, Any, List
 
 from src.generation_baseline.inference_utils import (
     load_image_and_preprocess,
     run_model_inference,
     parse_model_output,
 )
-from src.generation_baseline.download_models import load_model  # whatever the actual name is
-from src.ingestion.load_metadata import load_clean_metadata    # or direct json.load
+from src.generation_baseline.download_models import (
+    load_qwen2_vl,
+    load_internvl2,
+    load_minicpm,
+    load_janus,
+    load_smolvlm,
+    load_gemma4_e2b,
+)
+from src.ingestion.clean_metadata import load_clean_metadata  # adjust if different
 
 from exhaustive_strategies.base_strategy import Strategy
-from exhaustive_strategies.generation_cot.cot_simple import CoTSimple
-from exhaustive_strategies.generation_contrast.contrast_dual_prompt import ContrastDual
-# add more strategies here
+from exhaustive_strategies.generation_cot.cot_verify import CoTVerify
+from exhaustive_strategies.generation_contrast.contrast_dual import ContrastDual
 
+
+MODEL_LOADERS = {
+    "Qwen2-VL": load_qwen2_vl,
+    "InternVL2": load_internvl2,
+    "MiniCPM": load_minicpm,
+    "Janus": load_janus,
+    "SmolVLM": load_smolvlm,
+    "Gemma4-E2B": load_gemma4_e2b,
+}
 
 STRATEGIES: List[Strategy] = [
-    CoTSimple(),
+    CoTVerify(),
     ContrastDual(),
-    # ...
+    # add more here
 ]
 
-MODELS: List[str] = [
-    "Qwen2-VL",
-    "MiniCPM",
-    "InternVL2",
-    "Janus",
-    "SmolVLM",
-    "Gemma4-E2B",
-]
+
+def build_baseline_prompt(metadata: Dict[str, Any], model_name: str) -> str:
+    """
+    Reproduce the exact baseline prompt logic you have now.
+    For now, you can literally copy the prompt construction
+    from run_qwen2_vl.py / run_internvl2.py / etc. and branch
+    on model_name.
+    """
+    # Pseudocode – you’ll paste your real templates here:
+    if model_name == "Qwen2-VL":
+        # build Qwen prompt exactly as in run_qwen2_vl.py
+        ...
+    elif model_name == "InternVL2":
+        ...
+    elif model_name == "Gemma4-E2B":
+        ...
+    else:
+        ...
+    return prompt
 
 
 def run_extension(
@@ -42,8 +67,8 @@ def run_extension(
     config = config or {}
     metadata = json.load(open(metadata_path, "r", encoding="utf-8"))
 
-    for model_name in MODELS:
-        model = load_model(model_name)  # must use baseline loader
+    for model_name, loader in MODEL_LOADERS.items():
+        model, processor = loader()
 
         for strategy in STRATEGIES:
             for run_idx in range(num_runs):
@@ -54,38 +79,36 @@ def run_extension(
 
                 for sample in metadata:
                     image_path = sample["processed_path"]
-                    image = load_image_and_preprocess(image_path, model_name)
+                    image_inputs = load_image_and_preprocess(image_path, processor)
 
-                    raw_output = run_model_inference(model, image, sample, config)
+                    base_prompt = build_baseline_prompt(sample, model_name)
+                    prompt = strategy.build_prompt(base_prompt, sample, model_name)
+
+                    raw_output = run_model_inference(model, processor, image_inputs, prompt)
                     parsed = parse_model_output(raw_output)
+
+                    post = strategy.postprocess(raw_output, parsed, sample, model_name)
 
                     result = {
                         "image_id": sample["image_id"],
                         "artifact_tag": sample["artifact_tag"],
                         "category": sample["category"],
                         "ground_truth": sample["expected_verdict"],
-                        "model_output": raw_output,
-                        "parsed_output": parsed,
-                        # strategy-specific fields:
-                        **strategy.run(model, image, sample, config),
+                        "model_output": post["model_output"],
+                        "parsed_output": post["parsed_output"],
+                        "is_correct": post["is_correct"],
+                        "is_wrong": post["is_wrong"],
+                        "is_no_verdict": post["is_no_verdict"],
                     }
-
-                    # ensure correctness flags exist
-                    assert all(
-                        k in result
-                        for k in ["is_correct", "is_wrong", "is_no_verdict"]
-                    )
+                    # carry any extra fields (e.g., traces)
+                    for k, v in post.items():
+                        if k not in result:
+                            result[k] = v
 
                     predictions.append(result)
 
                 with open(out_dir / "predictions.json", "w", encoding="utf-8") as f:
                     json.dump(predictions, f, indent=2)
 
-                # you can call the same metric computation used in baseline here
-                # e.g. compute_metrics(predictions, out_dir)
-
-    # Evaluate results
-    evaluate_results(args.results)
-
-if __name__ == "__main__":
-    main()
+                # call your existing metric computation here if it’s a function
+                # compute_metrics(predictions, out_dir)
