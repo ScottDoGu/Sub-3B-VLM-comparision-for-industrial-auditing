@@ -10,19 +10,19 @@ This extension supports the project’s final research paper, to be published on
 📦 Folder Structure
 
 .
-└── exhaustive_strategies/
+└── exhaustive_strategies
     ├── config.py
     ├── run_extension.py
-    ├── preprocessing/
-    ├── pipeline/
-    ├── innovations/
-    └── evaluation/
-├── scripts/
-├── results/
-├── figures/
-├── analysis/
-├── models/
-└── Dataset/
+    ├── preprocessing
+    ├── pipeline
+    ├── innovations
+    └── evaluation
+├── scripts
+├── results
+├── figures
+├── analysis
+├── models
+└── Dataset
 
 🧠 Models Covered
 
@@ -77,29 +77,30 @@ This ensures the extension’s results are directly comparable to the original m
 | Vision‑Only Baseline   | s16_vision_only.py     | Tests reliance on visual vs textual cues               |
 
 🚀 Running the Extension
-
-python -m exhaustive_strategies.run_extension \
- --model <model_name> \
- --dataset Dataset/ \
+```
+python -m exhaustive_strategies.run_extension 
+ --model <model_name> 
+ --dataset Dataset/ 
  --results <output_dir>
- 
+ ```
 
 Example:
-
-python -m exhaustive_strategies.run_extension \
-    --model Qwen/Qwen2-VL-2B-Instruct \
-    --dataset Dataset/ \
+```
+python -m exhaustive_strategies.run_extension 
+    --model Qwen/Qwen2-VL-2B-Instruct 
+    --dataset Dataset/ 
     --results results/qwen2vl/
-
+```
 🔁 Reproducibility Protocol (3× Runs)
-
+```
 for i in 1 2 3 \
 do \
-    python -m exhaustive_strategies.run_extension \
-        --model Qwen/Qwen2-VL-2B-Instruct \
-        --dataset Dataset/ \
-        --results results/qwen2vl/run_$i/ \
+    python -m exhaustive_strategies.run_extension 
+        --model Qwen/Qwen2-VL-2B-Instruct 
+        --dataset Dataset/ 
+        --results results/qwen2vl/run_$i/ 
 done
+```
 
 This matches the reproducibility protocol used in the first ensembles.
 
@@ -116,23 +117,24 @@ catastrophic_summary.json
 Evaluation uses the same catastrophic‑failure‑focused metrics as the original project, ensuring continuity and comparability.
 
 🧪 Dataset
-
+```
 Dataset/
  image_001.jpg
  image_002.jpg
  …
-
+```
 The extension automatically loads all images.
 
 🛠️ Checkpointing
 
 Resume an interrupted run:
-
+```
 python -m exhaustive_strategies.run_extension --resume
+```
 
 📜 Note
 
-This extension is designed to exhaustively probe inference‑time behavior in air‑gapped industrial auditing scenarios, addressing failure modes observed in the first five model runs.
+This extension is designed to exhaustively probe inference‑time behavior in air‑gapped industrial auditing scenarios, addressing failure modes observed in the first five method runs.
 It expands the project’s experimental depth.
 
 📄 Publication
