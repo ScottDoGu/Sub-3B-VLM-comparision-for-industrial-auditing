@@ -8,21 +8,22 @@ It applies uniformly across all six models in the project and uses the same exec
 This extension supports the project’s final research paper, to be published on or before May 1, 2026.
 
 📦 Folder Structure
-
-└── exhaustive_strategies
-    ├── config.py
-    ├── run_extension.py
-    ├── preprocessing
-    ├── pipeline
-    ├── innovations
-    └── evaluation
-├── scripts
-├── results
-├── figures
-├── analysis
-├── models
-└── Dataset
-
+```
+.
+├── exhaustive_strategies/
+│   ├── preprocessing/
+│   ├── pipeline/
+│   ├── innovations/
+│   ├── evaluation/
+│   ├── config.py
+│   └── run_extension.py
+├── scripts/
+├── results/
+├── figures/
+├── analysis/
+├── models/
+└── Dataset/
+```
 🧠 Models Covered
 
 This extension applies to the six models used in the main project:
