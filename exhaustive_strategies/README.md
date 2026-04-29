@@ -9,22 +9,23 @@ This extension supports the project’s final research paper, to be published on
 
 📦 Folder Structure
 
-exhaustive_strategies/
- config.py
- run_extension.py
- preprocessing/
- pipeline/
- innovations/
- evaluation/
-
-scripts/
-results/
-figures/
-analysis/
-models/
-Dataset/
+.
+└── exhaustive_strategies/
+    ├── config.py
+    ├── run_extension.py
+    ├── preprocessing/
+    ├── pipeline/
+    ├── innovations/
+    └── evaluation/
+├── scripts/
+├── results/
+├── figures/
+├── analysis/
+├── models/
+└── Dataset/
 
 🧠 Models Covered
+
 This extension applies to the six models used in the main project:
 
 SmolVLM‑2.2B
@@ -77,34 +78,27 @@ This ensures the extension’s results are directly comparable to the original m
 
 🚀 Running the Extension
 
-python -m exhaustive_strategies.run_extension
-
- --model <model_name>
- 
- --dataset Dataset/
- 
- --results <output_dir>
+python -m exhaustive_strategies.run_extension \
+ --model <model_name> \
+ --dataset Dataset/ \
+ --results <output_dir>
  
 
 Example:
 
-python -m exhaustive_strategies.run_extension
-
- --model Qwen/Qwen2-VL-2B-Instruct
- 
- --dataset Dataset/
- 
- --results results/qwen2vl/
- 
+python -m exhaustive_strategies.run_extension \
+    --model Qwen/Qwen2-VL-2B-Instruct \
+    --dataset Dataset/ \
+    --results results/qwen2vl/
 
 🔁 Reproducibility Protocol (3× Runs)
 
-for i in 1 2 3
-do
- python -m exhaustive_strategies.run_extension
-  --model Qwen/Qwen2-VL-2B-Instruct
-  --dataset Dataset/
-  --results results/qwen2vl/run_$i/
+for i in 1 2 3 \
+do \
+    python -m exhaustive_strategies.run_extension \
+        --model Qwen/Qwen2-VL-2B-Instruct \
+        --dataset Dataset/ \
+        --results results/qwen2vl/run_$i/ \
 done
 
 This matches the reproducibility protocol used in the first ensembles.
