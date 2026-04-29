@@ -9,7 +9,6 @@ This extension supports the project’s final research paper, to be published on
 
 📦 Folder Structure
 
-.
 └── exhaustive_strategies
     ├── config.py
     ├── run_extension.py
