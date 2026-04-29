@@ -1,11 +1,14 @@
 🧩 Exhaustive Strategies Extension
+
 Inference‑Time Strategy Suite for Sub‑3B VLMs in Industrial Auditing
+
 This module, exhaustive_strategies, extends the original Sub‑3B VLM benchmarking project by introducing a comprehensive suite of inference‑time strategies designed to probe, stress, and mitigate the failure modes observed in the first five ensemble runs.
 It applies uniformly across all six models in the project and uses the same execution setup as the original ensembles to ensure strict comparability.
 
-This extension supports the project’s final paper, to be published on or before May 1, 2026.
+This extension supports the project’s final research paper, to be published on or before May 1, 2026.
 
 📦 Folder Structure
+
 exhaustive_strategies/
  config.py
  run_extension.py
@@ -50,7 +53,7 @@ identical evaluation loop
 
 identical output structure
 
-This ensures the extension’s results are directly comparable to the original five‑model runs.
+This ensures the extension’s results are directly comparable to the original method's runs.
 
 🧩 Strategy Index (File Mapping)
 | Strategy Name          | File                   | Purpose                                                |
@@ -73,19 +76,29 @@ This ensures the extension’s results are directly comparable to the original f
 | Vision‑Only Baseline   | s16_vision_only.py     | Tests reliance on visual vs textual cues               |
 
 🚀 Running the Extension
+
 python -m exhaustive_strategies.run_extension
+
  --model <model_name>
+ 
  --dataset Dataset/
+ 
  --results <output_dir>
+ 
 
 Example:
 
 python -m exhaustive_strategies.run_extension
+
  --model Qwen/Qwen2-VL-2B-Instruct
+ 
  --dataset Dataset/
+ 
  --results results/qwen2vl/
+ 
 
 🔁 Reproducibility Protocol (3× Runs)
+
 for i in 1 2 3
 do
  python -m exhaustive_strategies.run_extension
@@ -97,6 +110,7 @@ done
 This matches the reproducibility protocol used in the first ensembles.
 
 📊 Evaluation
+
 Each run produces:
 
 predictions.json
@@ -108,6 +122,7 @@ catastrophic_summary.json
 Evaluation uses the same catastrophic‑failure‑focused metrics as the original project, ensuring continuity and comparability.
 
 🧪 Dataset
+
 Dataset/
  image_001.jpg
  image_002.jpg
@@ -116,16 +131,20 @@ Dataset/
 The extension automatically loads all images.
 
 🛠️ Checkpointing
+
 Resume an interrupted run:
 
 python -m exhaustive_strategies.run_extension --resume
 
-📬 Notes
+📜 Note
+
 This extension is designed to exhaustively probe inference‑time behavior in air‑gapped industrial auditing scenarios, addressing failure modes observed in the first five model runs.
 It expands the project’s experimental depth.
 
 📄 Publication
-This extension supports the project’s final paper, to be published on or before May 1, 2026.
+
+This extension supports the project’s final research paper, to be published on or before May 1, 2026.
 
 📬 Contact
+
 For replication support, open an issue in this repository.
