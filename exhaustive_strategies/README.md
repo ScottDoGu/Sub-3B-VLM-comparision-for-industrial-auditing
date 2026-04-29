@@ -94,7 +94,7 @@ python -m exhaustive_strategies.run_extension
 🔁 Reproducibility Protocol (3× Runs)
 ```
 for i in 1 2 3 \
-do \
+do
     python -m exhaustive_strategies.run_extension 
         --model Qwen/Qwen2-VL-2B-Instruct 
         --dataset Dataset/ 
