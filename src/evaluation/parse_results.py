@@ -182,7 +182,7 @@ def extract_reasoning(text):
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--mode", choices=["baseline", "cot", "decomp", "multiturn", "contrast", "contrast_cot"], default="baseline")
+parser.add_argument("--mode", choices=["baseline", "cot", "decomp", "multiturn", "contrast", "contrast_cot", "lora", "cot_foveation", "decomp_foveation"], default="baseline")
 args = parser.parse_args()
 
 if args.mode == "cot":
@@ -239,6 +239,27 @@ elif args.mode == "contrast_cot":
         "qwen2_vl_contrast_cot_results.csv",
         "minicpm_contrast_cot_results.csv",
         "gemma4_e2b_contrast_cot_results.csv",
+    ]
+elif args.mode == "lora":
+    INPUT_DIR = "results/innovation/lora"
+    OUTPUT_DIR = "results/innovation/lora/parsed"
+    MODEL_FILES = [
+        "qwen2_vl_lora_baseline_results.csv",
+        "qwen2_vl_lora_clahe_results.csv",
+        "qwen2_vl_lora_contrast_results.csv",
+        "qwen2_vl_lora_decomp_results.csv",
+    ]
+elif args.mode == "cot_foveation":
+    INPUT_DIR = "results/innovation/cot_foveation"
+    OUTPUT_DIR = "results/innovation/cot_foveation/parsed"
+    MODEL_FILES = [
+        "qwen2_vl_cot_foveation_results.csv",
+    ]
+elif args.mode == "decomp_foveation":
+    INPUT_DIR = "results/innovation/decomp_foveation"
+    OUTPUT_DIR = "results/innovation/decomp_foveation/parsed"
+    MODEL_FILES = [
+        "qwen2_vl_decomp_foveation_results.csv",
     ]
 else:
     INPUT_DIR = "results/baseline"

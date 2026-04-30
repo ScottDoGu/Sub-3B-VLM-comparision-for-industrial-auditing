@@ -1,0 +1,2 @@
+Model,N (Pairs),Base LCR %,Inv LCR %,Regressed(b),Improved(c),p-value
+Qwen2-VL,300,40.0%,35.0%,54,39,0.1462

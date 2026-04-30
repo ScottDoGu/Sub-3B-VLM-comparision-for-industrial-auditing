@@ -118,7 +118,11 @@ lora_config = LoraConfig(
     r=16,
     lora_alpha=32,
     target_modules=[
-        # Last 2 vision encoder blocks - attention layers
+        # Last 3 vision encoder blocks - attention & MLP layers
+        "visual.blocks.21.attn.qkv",
+        "visual.blocks.21.attn.proj",
+        "visual.blocks.21.mlp.fc1",
+        "visual.blocks.21.mlp.fc2",
         "visual.blocks.22.attn.qkv",
         "visual.blocks.22.attn.proj",
         "visual.blocks.22.mlp.fc1",
@@ -127,6 +131,9 @@ lora_config = LoraConfig(
         "visual.blocks.23.attn.proj",
         "visual.blocks.23.mlp.fc1",
         "visual.blocks.23.mlp.fc2",
+        # Merger (Projector) layers to map visual features to text
+        "visual.merger.mlp.0",
+        "visual.merger.mlp.2",
     ],
     lora_dropout=0.1,
     bias="none",
@@ -259,6 +266,21 @@ def collate_fn(examples):
     # Set labels = input_ids for causal LM training
     labels = batch["input_ids"].clone()
     labels[labels == processor.tokenizer.pad_token_id] = -100
+    
+    # Mask prompt tokens (SFT masking bug fix)
+    # The assistant response starts after the '<|im_start|>assistant\n' tokens
+    target_seq = processor.tokenizer.encode("<|im_start|>assistant\n", add_special_tokens=False)
+    seq_len = len(target_seq)
+    
+    for i in range(labels.shape[0]):
+        label_row = labels[i].tolist()
+        # Find the start of the response sequence
+        for j in range(len(label_row) - seq_len):
+            if label_row[j:j+seq_len] == target_seq:
+                # Mask everything up to and including the assistant tag
+                labels[i, :j + seq_len] = -100
+                break
+                
     batch["labels"] = labels
     
     return batch
@@ -274,7 +296,7 @@ training_args = SFTConfig(
     gradient_accumulation_steps=2,       # Effective batch = 8
     
     # Optimizer
-    learning_rate=1e-4,
+    learning_rate=2e-5,
     weight_decay=0.01,
     lr_scheduler_type="cosine",
     warmup_ratio=0.1,

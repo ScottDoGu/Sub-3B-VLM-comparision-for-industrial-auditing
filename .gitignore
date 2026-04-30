@@ -50,7 +50,8 @@ Industrial_VLM_Presentation.pptx
 scripts/generate_gallery.py
 src/evaluation/generate_latex_table.py
 
-# Fine-tuning data and notebooks
-!notebooks/qwen2vl_lora_finetune.ipynb
-!notebooks/qwen2vl_lora_finetune.py
-
+
+
+# Demos
+demo_agentic_foveation.py
+demo_cropped_*.jpg

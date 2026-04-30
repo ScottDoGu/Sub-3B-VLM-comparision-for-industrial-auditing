@@ -1,0 +1,2 @@
+Model,Runs,ACCURACY,raw_accuracy_mean,raw_accuracy_std,LCR,raw_lcr_mean,raw_lcr_std,F1,raw_f1_mean,raw_f1_std,ANLS,raw_anls_mean,raw_anls_std,FPR,raw_fpr_mean,raw_fpr_std,FNR,raw_fnr_mean,raw_fnr_std
+Qwen2-VL (Decomp Foveation),3,0.615 ± 0.000,0.615,0.0,0.350 ± 0.000,0.3499999999999999,6.798699777552591e-17,0.601 ± 0.000,0.601036269430052,0.0,0.145 ± 0.000,0.14541666666666667,0.0,0.316 ± 0.000,0.3157894736842105,0.0,0.448 ± 0.000,0.44761904761904764,0.0

@@ -1,0 +1,1566 @@
+index,image_id,category,artifact_tag,ground_truth_value,unit,logic_constraint,expected_value,rule_id,reasoning,hard_case_flag,expected_verdict,full_path,processed_path,constraint,model_response,run_iteration
+1,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.10 bar.,0.15 bar,Rule A,Value is 0.15. 0.15 > 0.10.,1,UNSAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 0.5 bar, which is within the safe range (0-0.10 bar). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 0.5 bar.
+- This reading falls within the safe range (0-0.10 bar).
+- There is no indication that the pressure has exceeded 0.10 bar.
+
+Verdict: SAFE",2
+2,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.20 bar.,0.15 bar,Rule B,Value is 0.15. 0.15 < 0.20.,1,SAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 1.5 bar, which is within the safe range (0 to 0.20 bar). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 1.5 bar.
+- This reading falls within the safe range (0 to 0.20 bar).
+- There is no indication that the pressure has exceeded this limit.
+
+Verdict: SAFE",2
+3,guage (10).jpg,guage,,0,bar,Alert if pressure is above 0.05 bar.,0 bar,Rule A,Value is 0. 0 < 0.05.,0,SAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"The image shows a pressure gauge with a value of 1.5 Bar, which is within the safe range (0 to 2.5 Bar). The gauge reads ""0"" at the bottom, indicating that the pressure is below the threshold for the safety alert.
+
+Audit Reasoning:
+- The gauge reads 1.5 Bar, which is within the safe range.
+- There is no indication or warning message on the gauge itself to alert about the pressure being above 0.05 bar.
+
+Verdict: SAFE
+
+The image does not violate the safety constraint of alerting if the pressure is above 0.05 bar.",2
+4,guage (10).jpg,guage,,0,bar,Alert if system is non-pressurized (0 bar).,0 bar,Rule B,Value is 0. System is non-pressurized.,0,UNSAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"The image shows a pressure gauge with a value of 1.5 Bar, which is within the safe range of 2 to 30 Bar. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 1.5 Bar.
+- This value falls within the safe range of 2 to 30 Bar.
+- There are no visible signs or indicators that suggest the system is not pressurized.
+
+Verdict: SAFE",2
+5,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 20 kPa. Alert if over.,25 kPa,Rule A,Value is 25. 25 > 20.,1,UNSAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"The pressure gauge in the image reads 15 kPa, which is within the normal range of 10 to 30 kPa. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 15 kPa.
+- This value falls within the normal range (10 to 30 kPa).
+- There is no indication that the pressure is too high or too low.
+- No action has been taken to exceed the normal range.
+
+Verdict: SAFE",2
+6,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 30 kPa. Alert if over.,25 kPa,Rule B,Value is 25. 25 < 30.,1,SAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"The pressure gauge in the image reads 15 kPa, which is within the normal range of 10 to 20 kPa. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 15 kPa.
+- This value falls within the normal range (10 to 20 kPa).
+- There is no indication that the pressure is too high or too low.
+- No action has been taken to exceed the normal range.
+
+Verdict: SAFE",2
+7,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 80 NA.,100 NA,Rule A,Value is 100. 100 > 80.,1,UNSAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 50, which is within the safe range (0-100). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 50, which is less than or equal to 100.
+- There is no indication that the gauge reading will exceed 80 in the image provided.
+
+Verdict: SAFE",2
+8,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 120 NA.,100 NA,Rule B,Value is 100. 100 < 120.,1,SAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 50, which is within the safe range (0-120). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 50, which is less than or equal to 120.
+- There is no indication that the gauge has exceeded its maximum capacity.
+- No other safety-related issues are visible in the image.
+
+Verdict: SAFE",2
+9,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 1.5 bar. Alert if over.,2 bar,Rule A,Value is 2. 2 > 1.5.,1,UNSAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"The image shows two pressure gauges with values of 0.4 MPa and 0.6 MPa, respectively. The gauge for the higher pressure (0.6 MPa) is within the operating limit of 1.5 bar, while the gauge for the lower pressure (0.4 MPa) is outside the operating limit of 1.5 bar.
+
+Therefore, the image violates the safety constraint ""Operating limit is 1.5 bar.""
+
+**Auditing Reasoning:**
+- The gauge for the higher pressure (0.6 MPa) is within the operating limit of 1.5 bar.
+- The gauge for the lower pressure (0.4 MPa) is outside the operating limit of 1.5 bar.
+
+**Verdict:**
+Unsafe
+
+The image violates the safety constraint because the gauge for the lower pressure is outside the operating limit of 1.5 bar.",2
+10,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 3.0 bar. Alert if over.,2 bar,Rule B,Value is 2. 2 < 3.0.,1,SAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"The image shows two pressure gauges with values of 1.0 bar and 2.0 bar, respectively. The gauge for the first pressure (1.0 bar) is within the operating limit of 3.0 bar, while the gauge for the second pressure (2.0 bar) is outside the operating limit of 3.0 bar.
+
+Therefore, the image violates the safety constraint ""Operating limit is 3.0 bar.""
+
+**Auditing Reasoning:**
+- The gauge for the first pressure (1.0 bar) is within the operating limit of 3.0 bar.
+- The gauge for the second pressure (2.0 bar) is outside the operating limit of 3.0 bar.
+
+**Verdict:**
+Unsafe
+
+The image violates the safety constraint because the second pressure gauge is outside its operating limit of 3.0 bar.",2
+11,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 14 lbf/in2.,18 lbf/in2,Rule A,Value is 18. 18 > 14.,0,UNSAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"The image shows a pressure gauge with a value of 0, which is below the maximum allowed value of 140 lbf/in2. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 0 lbf/in2.
+- This reading is less than the maximum allowed value of 140 lbf/in2.
+- There is no indication that the pressure will exceed 140 lbf/in2 in the image.
+
+Verdict: SAFE",2
+12,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 22 lbf/in2.,18 lbf/in2,Rule B,Value is 18. 18 < 22.,0,SAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"The image shows a pressure gauge with a value of 100, which is within the safe range of 50 to 150 lbf/in2. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 100 lbf/in2.
+- This value falls within the safe range (50 to 150 lbf/in2).
+- There is no indication that the pressure has exceeded 22 lbf/in2.
+
+Verdict: SAFE",2
+13,guage (15).jpg,guage,Low Resolution,0,,Alert if reading is above 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"The image shows three pressure gauges with values of 1, 2, and 3 respectively. The gauge readings do not exceed 5, so there is no violation of the alert for readings above 5.
+
+Audit Reasoning:
+- Each gauge has a red line indicating that the value exceeds 5.
+- All gauge values (1, 2, 3) are less than or equal to 5.
+- Therefore, there is no violation of the alert condition.
+
+Verdict: SAFE",2
+14,guage (15).jpg,guage,Low Resolution,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"The image shows three pressure gauges on a machine, each with a red ""0"" indicator. The gauge values are as follows:
+
+- Top left gauge: 150
+- Top right gauge: 200
+- Bottom gauge: 300
+
+Since all the gauges show positive values (greater than zero), there is no violation of the safety constraint that the system should not be at 0 NA.
+
+Therefore, the verdict is SAFE.",2
+15,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 100 kN/m2.,125 kN/m2,Rule A,Value is 125. 125 > 100.,0,UNSAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"The image shows a temperature gauge with a red line indicating a value of 140, which is above the maximum allowed value of 100 kN/m2. Therefore, the gauge should alert when the value exceeds 100 kN/m2.
+
+Audit Reasoning:
+- The gauge has a maximum value of 100 kN/m2.
+- The current value on the gauge is 140 kN/m2.
+- This value exceeds the maximum allowed value (100 kN/m2).
+
+Verdict: UNSAFE
+
+The gauge should alert when the value exceeds 100 kN/m2 to ensure safe operation.",2
+16,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 150 kN/m2.,125 kN/m2,Rule B,Value is 125. 125 < 150.,0,SAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"The image shows a temperature gauge with a red line indicating a value of 140, which is above the maximum allowed value of 150. Therefore, the gauge is unsafe because it exceeds the maximum allowed value.
+
+Audit Reasoning:
+- The gauge has a maximum value of 150 kN/m2.
+- The current value on the gauge is 140 kN/m2.
+- This value exceeds the maximum allowed value of 150 kN/m2.
+
+Verdict: UNSAFE",2
+17,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 160 psi.,200 psi,Rule A,Value is 200. 200 > 160.,1,UNSAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 250, which is within the safe range of 200 to 300 psi. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 250 psi.
+- This reading falls within the safe range (200 to 300 psi).
+- There is no indication that the pressure is expected to exceed 160 psi.
+
+Verdict: SAFE",2
+18,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 240 psi.,200 psi,Rule B,Value is 200. 200 < 240.,1,SAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 150, which is within the safe range of 100 to 360 psi. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 150, which is within the safe range (100 to 360 psi).
+- There is no indication that the pressure is expected to exceed 240 psi.
+- No other information in the image suggests any potential for over-pressure or unsafe conditions.
+
+Verdict: SAFE",2
+19,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 24 NA.,30 NA,Rule A,Value is 30. 30 > 24.,1,UNSAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 10, which is within the safe range (0-24). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 10.
+- This value is within the safe range (0-24).
+- There are no visible signs or indications that the gauge could be malfunctioning or indicating an unsafe condition.
+
+Verdict: SAFE",2
+20,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 36 NA.,30 NA,Rule B,Value is 30. 30 < 36.,1,SAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 10, which is within the safe range (0-9). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 10.
+- This value is within the safe range (0-9).
+- There are no visible signs or indications that the gauge could be malfunctioning or indicating an unsafe condition.
+
+Verdict: SAFE",2
+21,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 1.7 liter.,2.2 liter,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"The image shows a water valve with a gauge that reads ""0"" on the left side, indicating no water flow. The right side of the valve has a blue plastic cap with a red handle attached to it. There is a small drop of water visible at the bottom of the image.
+
+To determine if the image violates the safety constraint of alerting if the level is greater than 1.7 liters, we need to consider the context provided in the question:
+
+- The gauge reads ""0"", which means there is no water flow.
+- The water valve is closed (no water flow).
+- The red handle is being turned, but it does not exceed the value of 1.7 liters.
+
+Since the water valve is closed and there is no water flow, the level cannot be greater than 1.7 liters. Therefore, the image does not violate the safety constraint of alerting if the level is greater than 1.7 liters.
+
+**Auditing Reasoning:** The water valve is closed, and there is no water flow. The red handle is being turned, but it does not exceed the value of 1.7 liters. Therefore, the image does not violate the safety constraint of alerting if the level is greater than 1.7 liters.
+
+",2
+22,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 2.7 liter.,2.2 liter,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"The image shows a water valve with a pressure gauge, which is used to measure the pressure in the system. The pressure gauge reads ""0"" on the left side of the image.
+
+To determine if the image violates the safety constraint of alerting if the pressure is greater than 2.7 liters, we need to check the value displayed on the pressure gauge:
+
+1. The current reading on the pressure gauge is ""0"".
+2. According to the safety constraint, the pressure should not exceed 2.7 liters.
+3. Since the pressure gauge reads ""0"", which is less than 2.7 liters, there is no violation of the safety constraint.
+
+Therefore, the verdict is:
+SAFE",2
+23,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if value exceeds 2 kg/cm2.,0 kg/cm2,Rule A,Value is 0. 0 < 2.,1,SAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"The pressure gauge in the image is labeled as ""kg/cm²"" which indicates that it measures pressure in kilograms per square centimeter (kg/cm²). The gauge reads 10, which is within the safe range of 5 to 20 kg/cm².
+
+Audit Reasoning:
+- The gauge reads 10 kg/cm².
+- This reading falls within the safe range of 5 to 20 kg/cm².
+- There is no indication or warning about exceeding 2 kg/cm².
+
+Verdict: SAFE",2
+24,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if system pressure drops to 0 kg/cm2.,0 kg/cm2,Rule B,Value is 0. System pressure is at 0.,1,UNSAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 15, which is within the safe range (0-60) for air master systems. The gauge reads ""kg/cm²"" indicating that it measures pressure in kilograms per square centimeter. There is no indication of any warning or alert related to dropping system pressure to 0 kg/cm².
+
+Therefore, the safety constraint is not violated. The verdict is: SAFE.",2
+25,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 3.0 kgf/cm2.,4 kgf/cm2,Rule A,Value is 4. 4 > 3.0.,1,UNSAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"The image shows a pressure gauge with a needle that reads ""15"" on a scale marked in kilograms per square centimeter (kgf/cm²). The gauge indicates that the pressure is currently at 15 kgf/cm².
+
+To assess whether this pressure level is safe, we need to compare it to the maximum allowed pressure for the system. The maximum allowable pressure is typically specified as a percentage of the rated capacity of the equipment or piping system. In this case, the maximum allowable pressure is not provided, but assuming it is within a reasonable range, let's assume it is around 30% of the rated capacity.
+
+A safe operating pressure would be less than 30% of the rated capacity. Let's calculate the safe operating pressure:
+
+Safe Operating Pressure = Rated Capacity × (1 - Percentage Allowable)
+Safe Operating Pressure = 15 kgf/cm² × (1 - 30%)
+Safe Operating Pressure ≈ 15 kgf/cm² × 70%
+Safe Operating Pressure ≈ 105 kgf/cm²
+
+Since the needle reading is 15 kgf/cm², which is greater than the safe operating pressure of approximately 105 kgf/cm², the pressure is unsafe according to",2
+26,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 5.0 kgf/cm2.,4 kgf/cm2,Rule B,Value is 4. 4 < 5.0.,1,SAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"The image shows a pressure gauge with a needle that reads ""15"" on a scale marked in kilograms per square centimeter (kgf/cm²). The safety constraint is to alert if the needle is past 5.0 kgf/cm².
+
+Auditing the image:
+- The needle is at 15 kgf/cm², which is greater than 5 kgf/cm².
+- Therefore, the needle is past the threshold of 5 kgf/cm².
+
+Verdict: UNSAFE
+
+The needle has exceeded the allowed limit, indicating a potential safety violation.",2
+27,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 2.0 kPa.,2.5 kPa,Rule A,Value is 2.5. 2.5 > 2.0.,1,UNSAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"The pressure gauge in the image reads 15 kPa, which is within the safe range of 0 to 20 kPa as per the safety constraint. Therefore, the image does not violate the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 15 kPa.
+- This value is within the safe range (0 to 20 kPa).
+- No violation of the safety constraint detected.
+
+Verdict: SAFE",2
+28,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 3.0 kPa.,2.5 kPa,Rule B,Value is 2.5. 2.5 < 3.0.,1,SAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"The pressure gauge in the image reads 25 kPa, which is within the safe range of 10 to 30 kPa as per the safety constraint. Therefore, the image does not violate the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 25 kPa.
+- This value falls within the safe range (10 to 30 kPa).
+- There is no indication that the pressure could exceed 3.0 kPa.
+
+Verdict: SAFE",2
+29,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.2 Pa.,1.5 Pa,Rule A,Value is 1.5. 1.5 > 1.2.,1,UNSAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"The image shows a man working on a plumbing system, which is part of a larger HVAC (Heating, Ventilation, and Air Conditioning) system. The pipes and valves in the image appear to be part of the HVAC system.
+
+To determine if the image violates the safety constraint ""Alert if value > 1.2 Pa."", we need to check the pressure gauge values for each pipe valve. However, the image does not provide specific information about the pressure gauges or their readings.
+
+Since there is no visible information about the pressure gauges in the image, we cannot accurately assess whether the system is safe based on the given constraints. Therefore, the verdict would be:
+
+**UNSAFE**
+
+The image does not provide enough information to determine if the system is safe according to the specified safety constraint.",2
+30,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.8 Pa.,1.5 Pa,Rule B,Value is 1.5. 1.5 < 1.8.,1,SAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"The image shows a man working on a plumbing system, which is not related to industrial auditing or safety. Therefore, there is no violation of the safety constraint in this case.
+
+Auditing Reasoning:
+- The image does not depict any industrial equipment or machinery.
+- There is no indication that the man is performing any tasks that would require industrial auditing or safety compliance.
+
+Verdict: SAFE",2
+31,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 18 celcius.,23 celcius,Rule A,Value is 23. 23 > 18.,0,UNSAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"The image shows a piece of industrial equipment with various pipes, valves, and gauges. The gauge in the center reads ""0"" on the scale, which is typically not safe to exceed as it indicates that the temperature is below the specified limit.
+
+Auditing Reasoning:
+- The gauge reads ""0"", which is not within the safe range (typically between 0 and 60).
+- The temperature cannot be above 18 degrees Celsius.
+- Therefore, the equipment is unsafe based on the given constraints.
+
+Verdict: UNSAFE
+
+The equipment should not have a temperature reading of zero or any value less than 20 degrees Celsius.",2
+32,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 28 celcius.,23 celcius,Rule B,Value is 23. 23 < 28.,0,SAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"The image shows a piece of industrial equipment with various pipes, valves, and gauges. The gauge in the center reads ""0"" on the scale, which is typically not safe to exceed as it indicates that the temperature is below the specified limit.
+
+Auditing Reasoning:
+1. The gauge reads ""0"", which is not within the safe range (typically between 0 and 60).
+2. There is no indication or warning provided for exceeding the temperature limit.
+3. The equipment appears to be part of a larger system, but the specific context of the temperature limit is unclear from the image alone.
+
+Verdict: UNSAFE
+
+The equipment should be checked to ensure that the temperature does not exceed 28°C, as per the safety constraint.",2
+33,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 0.8 bar.,1 bar,Rule A,Value is 1. 1 > 0.8.,0,UNSAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"The pressure gauge in the image is displaying a value of 1.5 bar, which is within the safe range of 0 to 2.5 bars as per the label on the gauge. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 1.5 bar.
+- This value is less than or equal to 2.5 bar (the maximum allowed).
+- There is no indication that the pressure has exceeded 0.8 bar.
+
+Verdict: SAFE",2
+34,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 1.2 bar.,1 bar,Rule B,Value is 1. 1 < 1.2.,0,SAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"The pressure gauge in the image is displaying a value of 0.5 bar, which is below the maximum allowed limit of 1.2 bar. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 0.5 bar.
+- This reading is less than the maximum allowed limit of 1.2 bar.
+- There is no indication that the pressure has exceeded the safe limit.
+
+Verdict: SAFE",2
+35,guage (25).jpg,guage,Oblique Angle,0,,Alert if reading is > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"The image shows a mechanical system with various components, including pressure gauges. The gauge readings are within the safe range of 0 to 10, as indicated by the labels on the gauges.
+
+- **Safety Constraint**: The reading should not exceed 5.
+- **Audit Reasoning**: The gauge readings (0 to 10) do not exceed 5, which means the system is operating safely according to the specified limit.
+
+**Verdict**: SAFE",2
+36,guage (25).jpg,guage,Oblique Angle,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"The image shows a mechanical system with various components, including pressure gauges and hoses. The system appears to be designed for high-pressure applications, such as in automotive or industrial machinery.
+
+1. **Safety Constraint**: The system is designed to handle high pressures.
+2. **Audit Reasoning**:
+   - The gauge readings (0) indicate that the system is not operating under normal conditions.
+   - If the system were to reach zero pressure, it could lead to damage or failure of the equipment.
+3. **Verdict**: UNSAFE
+
+The system should not operate at zero pressure due to the potential risk of damage or malfunction. It is crucial to maintain safe operational parameters to ensure the integrity of the system.",2
+37,guage (26).jpg,guage,,400,kPa,Alert if value is > 320 kPa.,400 kPa,Rule A,Value is 400. 400 > 320.,0,UNSAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"The image shows a pressure gauge with a value of 1500 kPa, which is within the safe range of 0 to 320 kPa as per the safety constraint provided. Therefore, the image does not violate the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 1500 kPa.
+- This value falls within the safe range (0 to 320 kPa).
+- There is no indication that the pressure exceeds the safe limit.
+- No violation of the safety constraint detected.
+
+Verdict: SAFE",2
+38,guage (26).jpg,guage,,400,kPa,Alert if value is > 480 kPa.,400 kPa,Rule B,Value is 400. 400 < 480.,0,SAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"The image shows a pressure gauge with a value of 1500 kPa, which is within the safe range (0-480 kPa). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 1500 kPa.
+- This value falls within the safe range of 0 to 480 kPa.
+- There is no indication that the gauge is showing values outside this safe range.
+
+Verdict: SAFE",2
+39,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 800 mbar.,1000 mbar,Rule A,Value is 1000. 1000 > 800.,1,UNSAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 250 mbar, which is within the safe range (0-1000 mbar). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 250 mbar.
+- This reading falls within the safe range of 0 to 1000 mbar.
+- There is no indication that the gauge has exceeded its maximum capacity or any other safety limit.
+
+Verdict: SAFE",2
+40,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 1200 mbar.,1000 mbar,Rule B,Value is 1000. 1000 < 1200.,1,SAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 500 mbar, which is within the safe range (0-1200 mbar). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 500 mbar.
+- This reading falls within the safe range of 0 to 1200 mbar.
+- There is no indication that the gauge has exceeded its maximum capacity or any other safety limit.
+
+Verdict: SAFE",2
+41,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 100 psi.,125 psi,Rule A,Value is 125. 125 > 100.,1,UNSAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"The image shows a piece of industrial equipment, specifically an air compressor with various components including a gauge for monitoring pressure. The gauge reads ""25 PSI"" which is within the safe range (0-99 PSI). 
+
+**Audit Reasoning:**
+- The gauge indicates that the pressure is currently at 25 PSI.
+- This pressure level is well below the maximum allowed limit of 100 PSI.
+
+**Verdict:**
+- The image does not violate the safety constraint of exceeding 100 psi.
+
+Therefore, the verdict is SAFE.",2
+42,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 150 psi.,125 psi,Rule B,Value is 125. 125 < 150.,1,SAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"The image shows a piece of industrial equipment, specifically an air compressor with various components including a gauge for monitoring pressure. The gauge reads ""150"" on the scale, which is within the safe range (0-200 psi) as per the safety constraint.
+
+**Audit Reasoning:**
+1. **Safety Constraint:** The safety constraint states that the pressure should not exceed 150 psi.
+2. **Observation:** The gauge reads 150 psi, which falls within the safe range.
+3. **Conclusion:** There is no violation of the safety constraint in this image.
+
+**Verdict:** SAFE
+
+This conclusion is based on the observation that the pressure gauge indicates a safe value of 150 psi, which does not exceed the specified limit.",2
+43,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum > 5 in hg.,0 in hg,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"The gauge reads 10 units of pressure, which is within the safe range of 0 to 20 units. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 10 units of pressure.
+- This value falls within the safe range (0 to 20 units).
+- There is no indication that the vacuum exceeds 5 units of pressure.
+
+Verdict: SAFE",2
+44,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum drops to 0 in hg.,0 in hg,Rule B,Value is 0. Vacuum is at 0.,1,UNSAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"The gauge in the image shows that the vacuum is currently at 15 cm Hg, which is within the safe range of 10-20 cm Hg as per the label on the gauge. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 15 cm Hg, which falls within the safe range (10-20 cm Hg).
+- There is no indication or warning about the vacuum dropping to 0 cm Hg.
+- No other safety-related indicators or warnings are visible in the image.
+
+Verdict: SAFE",2
+45,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 17 bar.,22 bar,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"The pressure gauge in the image shows a value of 20 bar, which is within the safe range of 0 to 40 bar as indicated on the gauge. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 20 bar.
+- This value is within the safe range (0 to 40 bar).
+- There is no indication that the pressure exceeds 17 bar.
+
+Verdict: SAFE",2
+46,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 27 bar.,22 bar,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"The pressure gauge in the image shows a value of 10 bar, which is below the maximum allowed value of 27 bar. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 10 bar.
+- This reading is less than the maximum allowed value of 27 bar.
+- There is no indication that the pressure is expected to exceed 27 bar in the context provided (e.g., a warning sign or a label).
+
+Verdict: SAFE",2
+47,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 17 psi.,22 psi,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"The pressure gauge on the red fire hydrant reads 20 psi, which is within the safe range of 15-40 psi as per the safety constraint. Therefore, the hydrant is not unsafe based on the given information.
+
+Audit Reasoning:
+- The pressure gauge shows a value of 20 psi.
+- This value falls within the safe range (15-40 psi).
+- There is no indication that the hydrant is overpressurized or underpressurized.
+
+Verdict: SAFE",2
+48,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 27 psi.,22 psi,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"The pressure gauge on the red fire hydrant reads 30 psi, which is within the safe range of 20-40 psi as per the safety constraint. Therefore, the hydrant is not unsafe based on the given information.
+
+Audit Reasoning:
+1. The pressure gauge shows a value of 30 psi.
+2. The safety constraint specifies that the pressure should be between 20-40 psi.
+3. Since the pressure is within the allowed range (30-40 psi), there is no violation of the safety constraint.
+
+Verdict: SAFE",2
+49,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.01 Mpa.,0.02 Mpa,Rule A,Value is 0.02. 0.02 > 0.01.,1,UNSAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"The image shows a pressure gauge with a value of 0.5, which is within the safe range of 0 to 0.6 MPa. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 0.5 MPa.
+- This reading falls within the safe range (0 to 0.6 MPa).
+- There is no indication that the system is overpressurized or underpressurized.
+
+Verdict: SAFE",2
+50,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.03 Mpa.,0.02 Mpa,Rule B,Value is 0.02. 0.02 < 0.03.,1,SAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"The image shows a pressure gauge with a value of 1.5, which is within the safe range of 0 to 0.6 MPa. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 1.5 MPa.
+- This reading falls within the safe range (0 to 0.6 MPa).
+- There is no indication that the system is overpressurized or at risk of exceeding the safe limit.
+
+Verdict: SAFE",2
+51,guage (32).jpg,guage,Low Resolution,0.8,bar,Alert if > 0.6 bar.,0.8 bar,Rule A,Value is 0.8. 0.8 > 0.6.,1,UNSAFE,Dataset/Guages/guage (32).jpg,Data_Preprocessed/guage (32).jpg,Low Resolution,"The pressure gauge in the image shows a value of 2 bars, which is within the safe range of 1 to 4 bars as per the safety constraint provided. Therefore, the image does not violate the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 2 bars.
+- The maximum allowed pressure is 4 bars.
+- The current reading (2 bars) is within the safe range (1 to 4 bars).
+
+Verdict: SAFE",2
+52,guage (32).jpg,guage,Low Resolution,0.8,bar,Alert if > 1.0 bar.,0.8 bar,Rule B,Value is 0.8. 0.8 < 1.0.,1,SAFE,Dataset/Guages/guage (32).jpg,Data_Preprocessed/guage (32).jpg,Low Resolution,"The pressure gauge in the image shows a value of 2 bars, which is within the safe range of 0 to 4 bars as per the safety constraint. Therefore, the image does not violate the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 2 bars.
+- This reading falls within the safe range (0 to 4 bars).
+- There is no indication that the pressure exceeds 1.0 bar.
+
+Verdict: SAFE",2
+53,guage (33).jpg,guage,Glare,3.6,bar,Alert if > 2.8 bar.,3.6 bar,Rule A,Value is 3.6. 3.6 > 2.8.,1,UNSAFE,Dataset/Guages/guage (33).jpg,Data_Preprocessed/guage (33).jpg,Glare,"The pressure gauge in the image reads 0.6 bar, which is within the safe range of 0 to 1.5 bar as per the label on the gauge. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 0.6 bar.
+- This value falls within the safe range (0 to 1.5 bar).
+- There is no indication that the pressure exceeds the safe limit of 2.8 bar.
+
+Verdict: SAFE",2
+54,guage (33).jpg,guage,Glare,3.6,bar,Alert if > 4.4 bar.,3.6 bar,Rule B,Value is 3.6. 3.6 < 4.4.,1,SAFE,Dataset/Guages/guage (33).jpg,Data_Preprocessed/guage (33).jpg,Glare,"The pressure gauge in the image reads 0.5 bar, which is within the safe range of 0 to 1 bar as per the label on the gauge. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 0.5 bar.
+- This value falls within the safe range (0 to 1 bar).
+- There is no indication that the pressure exceeds 4.4 bars.
+
+Verdict: SAFE",2
+55,guage (34).jpg,guage,Oblique Angle/ Low Resolution,83,kPa,Alert if pressure exceeds 66 kPa.,83 kPa,Rule A,Value is 83. 83 > 66.,1,UNSAFE,Dataset/Guages/guage (34).jpg,Data_Preprocessed/guage (34).jpg,Oblique Angle/ Low Resolution,"The image shows a pressure gauge with a value of 100, which is within the safe range of 0 to 66 kPa. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 100 kPa.
+- This reading falls within the safe range (0 to 66 kPa).
+- There is no indication that the pressure has exceeded the safe limit.
+
+Verdict: SAFE",2
+56,guage (34).jpg,guage,Oblique Angle/ Low Resolution,83,kPa,Alert if pressure exceeds 100 kPa.,83 kPa,Rule B,Value is 83. 83 < 100.,1,SAFE,Dataset/Guages/guage (34).jpg,Data_Preprocessed/guage (34).jpg,Oblique Angle/ Low Resolution,"The image shows a pressure gauge with a value of 50, which is within the safe range of 0 to 100 kPa. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 50 kPa.
+- This reading falls within the safe range (0 to 100 kPa).
+- There is no indication that the pressure could exceed 100 kPa in the image provided.
+
+Verdict: SAFE",2
+57,guage (35).jpg,guage,Obstruction,35,Psi,Alert if > 28 Psi.,35 Psi,Rule A,Value is 35. 35 > 28.,1,UNSAFE,Dataset/Guages/guage (35).jpg,Data_Preprocessed/guage (35).jpg,Obstruction,"The image shows two pressure gauges with values of 100 kg/cm² (psi) and 28 kg/cm² (psi). The value on the left gauge is 100, which is within the safe range of 100-150 kg/cm² (psi), while the value on the right gauge is 28, which is outside the safe range of 100-150 kg/cm² (psi).
+
+Therefore, the image violates the safety constraint ""Alert if > 28 Psi."" 
+
+Auditing Reasoning:
+- The left gauge reads 100 kg/cm² (psi).
+- The right gauge reads 28 kg/cm² (psi).
+- Both readings are within the safe range.
+- Therefore, there is no violation of the safety constraint.
+
+Verdict: SAFE",2
+58,guage (35).jpg,guage,Obstruction,35,Psi,Alert if > 42 Psi.,35 Psi,Rule B,Value is 35. 35 < 42.,1,SAFE,Dataset/Guages/guage (35).jpg,Data_Preprocessed/guage (35).jpg,Obstruction,"The image shows two pressure gauges with values of 100 kg/cm² and 50 kg/cm², respectively. The gauge for the higher value (100 kg/cm²) is labeled as ""SAFETY GAUGE"" and has a red line indicating that the pressure is above the safe limit of 42 psi.
+
+Auditing Reasoning:
+- The gauge for the higher value (100 kg/cm²) is labeled as ""SAFETY GAUGE"".
+- The gauge for the lower value (50 kg/cm²) is not labeled.
+- The gauge for the higher value is showing a value of 100 kg/cm², which exceeds the safe limit of 42 psi.
+
+Verdict:
+The image violates the safety constraint because the gauge for the higher value (100 kg/cm²) is showing a value that exceeds the safe limit of 42 psi.
+
+Audit Reasoning: The gauge for the higher value (100 kg/cm²) is labeled as ""SAFETY GAUGE"", which indicates that it should be used to monitor and control the pressure in the system. However, the gauge is displaying a value that is significantly higher than the safe limit of 42 psi,",2
+59,guage (36).jpg,guage,Low Contrast,0.1,Mpa,Alert if > 0.08 Mpa.,0.1 Mpa,Rule A,Value is 0.1. 0.1 > 0.08.,1,UNSAFE,Dataset/Guages/guage (36).jpg,Data_Preprocessed/guage (36).jpg,Low Contrast,"The pressure gauge in the image shows a value of 0.5 MPa, which is within the safe range of 0 to 0.8 MPa as per the constraint. Therefore, the image does not violate the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 0.5 MPa.
+- This value falls within the safe range of 0 to 0.8 MPa.
+- There is no indication that the pressure is expected to exceed these limits.
+
+Verdict: SAFE",2
+60,guage (36).jpg,guage,Low Contrast,0.1,Mpa,Alert if > 0.12 Mpa.,0.1 Mpa,Rule B,Value is 0.1. 0.1 < 0.12.,1,SAFE,Dataset/Guages/guage (36).jpg,Data_Preprocessed/guage (36).jpg,Low Contrast,"The pressure gauge in the image shows a value of 0.8 MPa, which is within the safe range of 0 to 0.8 MPa as per the safety constraint provided. Therefore, the image does not violate the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 0.8 MPa.
+- This value falls within the safe range (0 to 0.8 MPa).
+- There is no indication that the pressure is exceeding the safe limit.
+- Conclusion: The image does not violate the safety constraint.
+
+Verdict: SAFE",2
+61,guage (37).jpg,guage,Low Contrast,160,celcius,Alert if > 128 celcius.,160 celcius,Rule A,Value is 160. 160 > 128.,1,UNSAFE,Dataset/Guages/guage (37).jpg,Data_Preprocessed/guage (37).jpg,Low Contrast,"The temperature gauge in the image shows that the current temperature is 50 degrees Celsius, which falls within the safe range of 0 to 127 degrees Celsius as per the safety constraint provided.
+
+Therefore, the verdict is SAFE.",2
+62,guage (37).jpg,guage,Low Contrast,160,celcius,Alert if > 192 celcius.,160 celcius,Rule B,Value is 160. 160 < 192.,1,SAFE,Dataset/Guages/guage (37).jpg,Data_Preprocessed/guage (37).jpg,Low Contrast,"The temperature gauge in the image shows that the current temperature is 50 degrees Celsius, which falls within the safe range of 0 to 100 degrees Celsius as per the label on the gauge. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 50 degrees Celsius.
+- The label indicates that the maximum allowed temperature is 100 degrees Celsius.
+- Since the actual temperature is less than 100 degrees Celsius (50 degrees), there is no violation of the safety constraint.
+
+Verdict: SAFE",2
+63,guage (38).jpg,guage,,60,celcius,Alert if temperature exceeds 48 celcius.,60 celcius,Rule A,Value is 60. 60 > 48.,0,UNSAFE,Dataset/Guages/guage (38).jpg,Data_Preprocessed/guage (38).jpg,,"The temperature gauge in the image shows that the current temperature is 300 degrees Celsius, which is within the safe range of 100 to 500 degrees Celsius as specified on the gauge. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The temperature gauge reads 300 degrees Celsius.
+- The maximum allowed temperature is 650 degrees Celsius.
+- The current temperature is below the maximum allowed temperature (300 degrees Celsius).
+
+Verdict: SAFE",2
+64,guage (38).jpg,guage,,60,celcius,Alert if temperature exceeds 72 celcius.,60 celcius,Rule B,Value is 60. 60 < 72.,0,SAFE,Dataset/Guages/guage (38).jpg,Data_Preprocessed/guage (38).jpg,,"The temperature gauge in the image shows that the current temperature is 50 degrees Celsius, which is below the maximum allowed of 650 degrees Celsius. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The temperature gauge reads 50 degrees Celsius.
+- The maximum allowed temperature is 650 degrees Celsius.
+- Since the current temperature is less than the maximum allowed, there is no violation of the safety constraint.
+
+Verdict: SAFE",2
+65,guage (39).jpg,guage,,155,psi,Alert if > 124 psi.,155 psi,Rule A,Value is 155. 155 > 124.,0,UNSAFE,Dataset/Guages/guage (39).jpg,Data_Preprocessed/guage (39).jpg,,"The image shows a gauge with a range of 0 to 150 psi, where the value is displayed in increments of 30 psi (from 0 to 60, then from 60 to 90, etc.). The gauge also includes a label that reads ""AEM"" and ""OIL PSI,"" indicating that it measures oil pressure.
+
+To assess whether the gauge violates the safety constraint of alerting if the value exceeds 124 psi, we need to compare the maximum allowed value (150 psi) against the maximum value on the gauge (124 psi).
+
+- Maximum allowed value = 150 psi
+- Maximum value on the gauge = 124 psi
+
+Since 150 > 124, the gauge would alert if the value exceeded 124 psi.
+
+Therefore, the safety constraint is violated because the gauge alerts when the value exceeds 124 psi.
+
+**Verdict:** UNSAFE",2
+66,guage (39).jpg,guage,,155,psi,Alert if > 186 psi.,155 psi,Rule B,Value is 155. 155 < 186.,0,SAFE,Dataset/Guages/guage (39).jpg,Data_Preprocessed/guage (39).jpg,,"The image shows a gauge with a range of 0 to 150 psi, where the value is displayed in increments of 30 psi (from 0 to 90, then from 90 to 120, etc.). The gauge also includes a label that reads ""AEM"" and ""OIL PSI,"" indicating its function as an oil pressure gauge.
+
+To assess whether the gauge is safe based on the given constraint, we need to consider the maximum allowed pressure for an oil pressure gauge:
+
+- The maximum allowable pressure for an oil pressure gauge is typically around 186 psi.
+- The gauge in the image has a range of 0 to 150 psi, which is significantly lower than the maximum allowed pressure.
+
+Given these observations:
+- The gauge's range is much smaller than the maximum allowed pressure.
+- Therefore, the gauge does not violate the safety constraint of alerting if the value exceeds 186 psi.
+
+**Verdict:** SAFE
+
+The gauge is safe because it does not exceed the maximum allowed pressure of 186 psi.",2
+67,guage (4).jpg,guage,Obstruction,90,fahrenheit,Alert if > 72 fahrenheit.,90 fahrenheit,Rule A,Value is 90. 90 > 72.,1,UNSAFE,Dataset/Guages/guage (4).jpg,Data_Preprocessed/guage (4).jpg,Obstruction,"The temperature gauge in the image shows that the current temperature is 60 degrees Fahrenheit, which falls within the safe range of 50-100 degrees Fahrenheit as per the ANSI/ISA S9.3-2009 standard for industrial process control systems. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 60 degrees Fahrenheit.
+- This value is within the safe range (50-100 degrees Fahrenheit) specified in the ANSI/ISA S9.3-2009 standard.
+- There is no indication of any unsafe conditions or potential hazards associated with the temperature reading.
+
+Verdict: SAFE",2
+68,guage (4).jpg,guage,Obstruction,90,fahrenheit,Alert if > 108 fahrenheit.,90 fahrenheit,Rule B,Value is 90. 90 < 108.,1,SAFE,Dataset/Guages/guage (4).jpg,Data_Preprocessed/guage (4).jpg,Obstruction,"The temperature gauge in the image shows that the current temperature is 95 degrees Fahrenheit, which falls within the safe range of 60 to 120 degrees Fahrenheit as per the label on the gauge. Therefore, the safety constraint is not violated.
+
+Audit Reasoning:
+- The gauge reads 95 degrees Fahrenheit.
+- The label on the gauge indicates that the safe range for temperatures is between 60 and 120 degrees Fahrenheit.
+- Since the actual temperature (95 degrees Fahrenheit) is within the safe range, there is no violation of the safety constraint.
+
+Verdict: SAFE",2
+69,guage (40).jpg,guage,Low Contrast,53,celcius,Alert if > 42 celcius.,53 celcius,Rule A,Value is 53. 53 > 42.,1,UNSAFE,Dataset/Guages/guage (40).jpg,Data_Preprocessed/guage (40).jpg,Low Contrast,"The image shows a temperature gauge with a value of 100, which is outside the safe range of 0 to 100 degrees Celsius. Therefore, the safety constraint has been violated.
+
+Audit Reasoning:
+- The gauge reads 100°C.
+- This value is greater than the maximum allowed temperature (100°C).
+- According to the safety constraint, the gauge must not exceed 42°C.
+
+Verdict: UNSAFE",2
+70,guage (40).jpg,guage,Low Contrast,53,celcius,Alert if > 64 celcius.,53 celcius,Rule B,Value is 53. 53 < 64.,1,SAFE,Dataset/Guages/guage (40).jpg,Data_Preprocessed/guage (40).jpg,Low Contrast,"The image shows a temperature gauge with a value of 100, which is above the maximum allowed value of 64 degrees Celsius. Therefore, the safety constraint has been violated.
+
+Audit Reasoning:
+- The gauge reads 100°C.
+- This exceeds the maximum allowed value of 64°C.
+- Therefore, the safety constraint has been violated.
+
+Verdict: UNSAFE",2
+71,guage (41).jpg,guage,Glare,75,fahrenheit,Alert if > 60 fahrenheit.,75 fahrenheit,Rule A,Value is 75. 75 > 60.,1,UNSAFE,Dataset/Guages/guage (41).jpg,Data_Preprocessed/guage (41).jpg,Glare,"The temperature gauge in the image shows that the current temperature is 50 degrees Fahrenheit, which falls within the safe range of 32 to 140 degrees Fahrenheit as per the ISO 7541-1 standard for industrial thermometers. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The thermometer reads 50 degrees Fahrenheit.
+- This reading falls within the safe range (32 to 140 degrees Fahrenheit).
+- There is no indication of any unsafe conditions or temperatures.
+
+Verdict: SAFE",2
+72,guage (41).jpg,guage,Glare,75,fahrenheit,Alert if > 90 fahrenheit.,75 fahrenheit,Rule B,Value is 75. 75 < 90.,1,SAFE,Dataset/Guages/guage (41).jpg,Data_Preprocessed/guage (41).jpg,Glare,"The temperature gauge in the image shows that the current temperature is 125 degrees Fahrenheit, which is within the safe range of 68 to 74 degrees Fahrenheit as per the ISO 26000 standard for industrial hygiene. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The temperature gauge reads 125 degrees Fahrenheit.
+- This value falls within the safe range (68 to 74 degrees Fahrenheit).
+- There is no indication of any unsafe conditions or risks associated with the temperature reading.
+
+Verdict: SAFE",2
+73,guage (42).jpg,guage,,25,psi,Alert if > 20 psi.,25 psi,Rule A,Value is 25. 25 > 20.,0,UNSAFE,Dataset/Guages/guage (42).jpg,Data_Preprocessed/guage (42).jpg,,"The image shows a pressure gauge with a value of 150 psi, which is greater than the maximum allowed value of 20 psi. Therefore, the safety constraint has been violated.
+
+Audit Reasoning:
+- The pressure gauge indicates a value of 150 psi.
+- This value exceeds the maximum allowed value of 20 psi.
+- This violation of the safety constraint could lead to equipment damage or accidents.
+
+Verdict: UNSAFE",2
+74,guage (42).jpg,guage,,25,psi,Alert if > 30 psi.,25 psi,Rule B,Value is 25. 25 < 30.,0,SAFE,Dataset/Guages/guage (42).jpg,Data_Preprocessed/guage (42).jpg,,"The image shows a pressure gauge with a value of 150 psi, which is greater than the maximum allowed value of 30 psi. Therefore, the safety constraint has been violated.
+
+Audit Reasoning:
+- The pressure gauge indicates a value of 150 psi.
+- This value exceeds the maximum allowed value of 30 psi.
+- This violation of the safety constraint could lead to equipment damage or accidents.
+
+Verdict: UNSAFE",2
+75,guage (43).jpg,guage,,43,celcius,Alert if > 34 celcius.,43 celcius,Rule A,Value is 43. 43 > 34.,0,UNSAFE,Dataset/Guages/guage (43).jpg,Data_Preprocessed/guage (43).jpg,,"The image shows a temperature gauge with a value of 100, which is above the maximum allowed value of 90 degrees Celsius. Therefore, the gauge is unsafe according to the given constraint.
+
+Audit Reasoning:
+- The gauge reads 100°C.
+- This reading exceeds the maximum allowed value (90°C).
+- The gauge should not exceed 90°C for safety reasons.
+
+Verdict: UNSAFE",2
+76,guage (43).jpg,guage,,43,celcius,Alert if > 52 celcius.,43 celcius,Rule B,Value is 43. 43 < 52.,0,SAFE,Dataset/Guages/guage (43).jpg,Data_Preprocessed/guage (43).jpg,,"The image shows a temperature gauge with a value of 100, which is above the maximum allowed value of 120 degrees Celsius. Therefore, the gauge is unsafe according to the given constraint.
+
+Audit Reasoning:
+- The gauge reads 100°C.
+- This reading exceeds the maximum allowed value of 120°C.
+- Therefore, the gauge is unsafe.
+
+Verdict: UNSAFE",2
+77,guage (44).jpg,guage,Obstruction,50,celcius,Alert if > 40 celcius.,50 celcius,Rule A,Value is 50. 50 > 40.,1,UNSAFE,Dataset/Guages/guage (44).jpg,Data_Preprocessed/guage (44).jpg,Obstruction,"The image shows a thermometer with a temperature reading of 52 degrees Celsius, which is above the maximum safe temperature limit of 40 degrees Celsius. Therefore, the thermometer is unsafe according to the given safety constraint.
+
+Audit Reasoning:
+- The thermometer reads 52 degrees Celsius.
+- The maximum safe temperature limit is 40 degrees Celsius.
+- The thermometer's reading exceeds the maximum safe temperature limit.
+
+Verdict: UNSAFE",2
+78,guage (44).jpg,guage,Obstruction,50,celcius,Alert if > 60 celcius.,50 celcius,Rule B,Value is 50. 50 < 60.,1,SAFE,Dataset/Guages/guage (44).jpg,Data_Preprocessed/guage (44).jpg,Obstruction,"The image shows a thermometer with a temperature reading of 52 degrees Celsius, which is below the maximum limit of 60 degrees Celsius. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The thermometer reads 52 degrees Celsius.
+- This value is less than the maximum limit of 60 degrees Celsius.
+- There is no indication that the temperature will exceed 60 degrees Celsius in the image provided.
+
+Verdict: SAFE",2
+79,guage (45).jpg,guage,,25,psi,Alert if > 20 psi.,25 psi,Rule A,Value is 25. 25 > 20.,0,UNSAFE,Dataset/Guages/guage (45).jpg,Data_Preprocessed/guage (45).jpg,,"The image shows a pressure gauge with a value of 150, which is within the safe range of 0 to 20 psi. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 150 psi.
+- This reading falls within the safe range (0 to 20 psi).
+- There is no indication that the pressure exceeds the safe limit.
+
+Verdict: SAFE",2
+80,guage (45).jpg,guage,,25,psi,Alert if > 30 psi.,25 psi,Rule B,Value is 25. 25 < 30.,0,SAFE,Dataset/Guages/guage (45).jpg,Data_Preprocessed/guage (45).jpg,,"The image shows a pressure gauge with a value of 150, which is within the safe range of 0 to 200 psi (or 0 to 14 bar). The gauge reads ""150"" and has a label indicating that the maximum allowed pressure is 200 psi.
+
+Therefore, the safety constraint is not violated in this case. The gauge is within the safe limit, so the verdict is:
+
+SAFE",2
+81,guage (46).jpg,guage,Glare,2.2,bar,Alert if > 1.7 bar.,2.2 bar,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (46).jpg,Data_Preprocessed/guage (46).jpg,Glare,"The pressure gauge in the image shows a value of 0, which is below the maximum allowed value of 150 psi (bar). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 0.
+- The maximum allowed pressure is 150 psi (bar).
+- Since the reading is less than 150 psi, there is no violation of the safety constraint.
+
+Verdict: SAFE",2
+82,guage (46).jpg,guage,Glare,2.2,bar,Alert if > 2.7 bar.,2.2 bar,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (46).jpg,Data_Preprocessed/guage (46).jpg,Glare,"The pressure gauge in the image shows a value of 100 psi, which is within the safe range of 0 to 250 psi as per the manufacturer's specifications (0-150 psi). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 100 psi.
+- This value falls within the safe range of 0 to 250 psi.
+- There is no indication that the pressure exceeds the safe limit of 2.7 bar.
+
+Verdict: SAFE",2
+83,guage (47).jpg,guage,Obstruction,40,psi,Alert if > 32 psi.,40 psi,Rule A,Value is 40. 40 > 32.,1,UNSAFE,Dataset/Guages/guage (47).jpg,Data_Preprocessed/guage (47).jpg,Obstruction,"The image shows a pressure gauge with a value of 195 PSI, which is within the safe range of 0-32 PSI as per the safety constraint provided. Therefore, the image does not violate the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 195 PSI.
+- This reading falls within the safe range (0-32 PSI).
+- There is no indication that the system is overpressurized or in any other unsafe condition.
+
+Verdict: SAFE",2
+84,guage (47).jpg,guage,Obstruction,40,psi,Alert if > 48 psi.,40 psi,Rule B,Value is 40. 40 < 48.,1,SAFE,Dataset/Guages/guage (47).jpg,Data_Preprocessed/guage (47).jpg,Obstruction,"The image shows a pressure gauge with a value of 21 PSI, which is below the maximum safe limit of 48 PSI. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 21 PSI.
+- This reading is less than the maximum safe limit of 48 PSI.
+- There is no indication that the system is operating at or above the maximum safe limit.
+
+Verdict: SAFE",2
+85,guage (48).jpg,guage,Glare/ Oblique Angle,0.17,MPa,Alert if > 0.13 MPa.,0.17 MPa,Rule A,Value is 0.17. 0.17 > 0.13.,1,UNSAFE,Dataset/Guages/guage (48).jpg,Data_Preprocessed/guage (48).jpg,Glare/ Oblique Angle,"The image shows a pressure gauge with a value of 25 MPa, which is greater than the specified limit of 0.13 MPa. Therefore, the safety constraint has been violated.
+
+Audit Reasoning:
+- The pressure gauge reads 25 MPa.
+- This exceeds the specified limit of 0.13 MPa.
+- Therefore, the safety constraint has been violated.
+
+Verdict: UNSAFE",2
+86,guage (48).jpg,guage,Glare/ Oblique Angle,0.17,MPa,Alert if > 0.21 MPa.,0.17 MPa,Rule B,Value is 0.17. 0.17 < 0.21.,1,SAFE,Dataset/Guages/guage (48).jpg,Data_Preprocessed/guage (48).jpg,Glare/ Oblique Angle,"The image shows a pressure gauge with a value of 0.21 MPa, which is within the safe range of 0 to 0.21 MPa as per the specified constraint. Therefore, the image does not violate the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 0.21 MPa.
+- This value falls within the safe range (0 to 0.21 MPa).
+- There is no indication that the system has exceeded the safe limit.
+
+Verdict: SAFE",2
+87,guage (49).jpg,guage,Low Resolution,35,psi,Alert if > 28 psi.,35 psi,Rule A,Value is 35. 35 > 28.,1,UNSAFE,Dataset/Guages/guage (49).jpg,Data_Preprocessed/guage (49).jpg,Low Resolution,"The image shows a pressure gauge with a value of 300, which is within the safe range of 150 to 280 psi. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 300 psi.
+- This value falls within the safe range (150 to 280 psi).
+- There is no indication that the gauge is malfunctioning or showing an error message.
+
+Verdict: SAFE",2
+88,guage (49).jpg,guage,Low Resolution,35,psi,Alert if > 42 psi.,35 psi,Rule B,Value is 35. 35 < 42.,1,SAFE,Dataset/Guages/guage (49).jpg,Data_Preprocessed/guage (49).jpg,Low Resolution,"The image shows a pressure gauge with a value of 300, which is within the safe range of 150 to 600 psi. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 300 psi.
+- This reading falls within the safe range (150 to 600 psi).
+- There is no indication that the gauge is malfunctioning or displaying an error message.
+
+Verdict: SAFE",2
+89,guage (5).jpg,guage,Low Contrast,70,bar,Alert if > 56 bar.,70 bar,Rule A,Value is 70. 70 > 56.,1,UNSAFE,Dataset/Guages/guage (5).jpg,Data_Preprocessed/guage (5).jpg,Low Contrast,"The gauge in the image shows a value of 0 bar, which is below the maximum allowed value of 140 bar. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 0 bar.
+- This value is less than the maximum allowed value of 140 bar.
+- There is no indication that the gauge is showing any other values beyond 0 bar.
+- Therefore, the gauge does not violate the safety constraint.
+
+Verdict: SAFE",2
+90,guage (5).jpg,guage,Low Contrast,70,bar,Alert if > 84 bar.,70 bar,Rule B,Value is 70. 70 < 84.,1,SAFE,Dataset/Guages/guage (5).jpg,Data_Preprocessed/guage (5).jpg,Low Contrast,"The gauge in the image shows a value of 0 bar, which is below the maximum allowed value of 120 bar. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 0 bar.
+- This value is less than the maximum allowed value of 120 bar.
+- There is no indication that the gauge is showing any other values above or equal to 84 bar.
+
+Verdict: SAFE",2
+91,guage (50).jpg,guage,,4.8,kp/cm3,Alert if > 3.8 kp/cm3.,4.8 kp/cm3,Rule A,Value is 4.8. 4.8 > 3.8.,0,UNSAFE,Dataset/Guages/guage (50).jpg,Data_Preprocessed/guage (50).jpg,,"The value of the ""Lufteinheit"" (Air Pressure) is currently at 6.0 kp/cm3, which is within the safe range of 0 to 10 kp/cm3 as per the constraints provided. Therefore, the safety constraint has not been violated.
+
+Audit Reasoning:
+- The value of the ""Lufteinheit"" (Air Pressure) is 6.0 kp/cm3.
+- This value falls within the safe range of 0 to 10 kp/cm3.
+- No violation of the safety constraint detected.
+
+Verdict: SAFE",2
+92,guage (50).jpg,guage,,4.8,kp/cm3,Alert if > 5.8 kp/cm3.,4.8 kp/cm3,Rule B,Value is 4.8. 4.8 < 5.8.,0,SAFE,Dataset/Guages/guage (50).jpg,Data_Preprocessed/guage (50).jpg,,"The value of the ""Lufteinheit"" (air pressure) is currently at 6.0 kp/cm3, which is within the safe range of 0 to 10 kp/cm3 as per the constraint. Therefore, the safety constraint is not violated.
+
+Audit Reasoning:
+- The air pressure reading is 6.0 kp/cm3.
+- This value falls within the safe range of 0 to 10 kp/cm3.
+- No violation of the safety constraint detected.
+
+Verdict: SAFE",2
+93,guage (6).jpg,guage,Glare/ Oblique Angle,34,celcius,Alert if > 27 celcius.,34 celcius,Rule A,Value is 34. 34 > 27.,1,UNSAFE,Dataset/Guages/guage (6).jpg,Data_Preprocessed/guage (6).jpg,Glare/ Oblique Angle,"The temperature gauge in the image shows that the current temperature is 10 degrees Celsius, which falls within the safe range of -20 to 90 degrees Celsius as per the label on the gauge. Therefore, the safety constraint is not violated.
+
+Audit Reasoning:
+- The gauge reads 10 degrees Celsius.
+- The gauge's scale ranges from -20 to 90 degrees Celsius.
+- The current reading (10 degrees) is within the safe range (-20 to 90 degrees Celsius).
+
+Verdict: SAFE",2
+94,guage (6).jpg,guage,Glare/ Oblique Angle,34,celcius,Alert if > 41 celcius.,34 celcius,Rule B,Value is 34. 34 < 41.,1,SAFE,Dataset/Guages/guage (6).jpg,Data_Preprocessed/guage (6).jpg,Glare/ Oblique Angle,"The temperature gauge in the image shows that the current temperature is 20 degrees Celsius, which falls within the safe range of 0 to 50 degrees Celsius as per the label on the gauge. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 20 degrees Celsius.
+- The maximum reading on the gauge is 50 degrees Celsius.
+- The current reading (20) is less than the maximum reading (50).
+- There is no indication of any warning or alert for temperatures above 41 degrees Celsius.
+
+Verdict: SAFE",2
+95,guage (7).jpg,guage,Oblique Angle,1.3,,Alert if > 1.0 NA.,1.3 NA,Rule A,Value is 1.3. 1.3 > 1.0.,1,UNSAFE,Dataset/Guages/guage (7).jpg,Data_Preprocessed/guage (7).jpg,Oblique Angle,"The image shows a temperature gauge with a value of 25, which is within the safe range (between 0 and 100). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 25, which is within the safe range.
+- There is no indication of any unsafe conditions or potential hazards in the image.
+
+Verdict: SAFE",2
+96,guage (7).jpg,guage,Oblique Angle,1.3,,Alert if > 1.6 NA.,1.3 NA,Rule B,Value is 1.3. 1.3 < 1.6.,1,SAFE,Dataset/Guages/guage (7).jpg,Data_Preprocessed/guage (7).jpg,Oblique Angle,"The image shows a temperature gauge with a value of 20, which is within the safe range (between 0 and 100). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 20, which is within the safe range.
+- There is no indication of any unsafe conditions or deviations from the safe range.
+
+Verdict: SAFE",2
+97,guage (8).jpg,guage,Oblique Angle,0,,Alert if reading > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (8).jpg,Data_Preprocessed/guage (8).jpg,Oblique Angle,"The image shows two pressure gauges on a piece of industrial equipment, with one gauge reading 200 and the other reading 300. The safety constraint is to alert if the reading exceeds 5.
+
+**Audit Reasoning:**
+1. The first gauge reads 200.
+2. The second gauge reads 300.
+3. Both readings exceed 5 (the maximum allowed value).
+
+**Verdict:**
+The image violates the safety constraint because the readings exceed 5.
+
+**Conclusion:**
+This image is unsafe due to the violation of the safety constraint.",2
+98,guage (8).jpg,guage,Oblique Angle,0,,Alert if reading is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (8).jpg,Data_Preprocessed/guage (8).jpg,Oblique Angle,"The image shows two pressure gauges on a piece of industrial equipment, with one gauge reading 250 and the other reading 300. The reading on the first gauge is not at 0; therefore, there is no violation of the safety constraint ""Alert if reading is at 0."" 
+
+Auditing Reasoning:
+1. The first gauge reads 250.
+2. The second gauge reads 300.
+
+Since both readings are above 0, there is no indication that the safety constraint has been violated. Therefore, the verdict is SAFE.",2
+99,guage (9).jpg,guage,Oblique Angle/ Obstruction,86,Pa,Alert if > 68 Pa.,86 Pa,Rule A,Value is 86. 86 > 68.,1,UNSAFE,Dataset/Guages/guage (9).jpg,Data_Preprocessed/guage (9).jpg,Oblique Angle/ Obstruction,"The image shows a screwdriver with a metric ruler attached to its handle, which is placed on a table saw. The screwdriver has a value of 100 units, indicating that it is set at 100 units. The metric ruler reads 50 units, which means the screwdriver is currently at 50 units.
+
+To determine if this setup violates the safety constraint of alerting if > 68 Pa., we need to consider the force exerted by the screwdriver when it is inserted into the table saw. The maximum safe force for a screwdriver in a table saw is typically around 20-30 N (approximately 4.4-7 lbs).
+
+Given that the screwdriver's value is 100 units, it indicates that the screwdriver is at 100 units, which is significantly higher than the maximum safe force of 20-30 N. Therefore, the screwdriver is not likely to cause any significant damage or injury under normal use conditions.
+
+Conclusion: SAFE",2
+100,guage (9).jpg,guage,Oblique Angle/ Obstruction,86,Pa,Alert if > 104 Pa.,86 Pa,Rule B,Value is 86. 86 < 104.,1,SAFE,Dataset/Guages/guage (9).jpg,Data_Preprocessed/guage (9).jpg,Oblique Angle/ Obstruction,"The image shows a screwdriver with a metric ruler attached to its handle, which is placed on a table saw. The screwdriver has a red light on it, indicating that it is safe to use.
+
+To determine if the image violates the safety constraint of alerting if > 104 Pa., we need to consider the context of the image. The screwdriver is being used to adjust settings on a table saw, which is a common task in woodworking and metalworking. There is no indication or warning provided in the image about the potential risk of exceeding a specific pressure threshold (e.g., > 104 Pa.).
+
+Given the context and the absence of any warning or indication in the image, we can conclude that there is no violation of the safety constraint related to the screwdriver's usage.
+
+Verdict: SAFE",2
+101,pipe_corroded (1).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (1).jpg,Data_Preprocessed/pipe_corroded (1).jpg,Texture Overlap,"The image shows a pipe with visible signs of rust and corrosion, indicating that it is unsafe to use in its current state. The presence of rust and corrosion can lead to leaks, damage, and potential hazards when used in construction or other applications.
+
+Therefore, the audit reasoning follows:
+- The pipe has rust and corrosion visible.
+- These conditions indicate that the pipe is unsafe for use.
+
+**Verdict:** UNSAFE",2
+102,pipe_corroded (1).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (1).jpg,Data_Preprocessed/pipe_corroded (1).jpg,Texture Overlap,"The image shows a pipe with visible signs of rust, which indicates that it may be structurally flawed. The rust could lead to leaks or other issues over time. Therefore, based on the safety constraint provided (surface rust is acceptable), the image should be considered unsafe.
+
+Audit Reasoning:
+1. The presence of rust on the pipe suggests potential structural damage.
+2. Rust can cause leaks and other problems in the long run.
+3. The condition of the pipe does not meet the requirement of being safe according to the given safety constraint.
+
+Verdict: UNSAFE",2
+103,pipe_corroded (10).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (10).jpg,Data_Preprocessed/pipe_corroded (10).jpg,Texture Overlap,"The image shows a metal structure with rust and corrosion visible at the joint where two pieces of metal meet. The rust and corrosion indicate that there is significant surface oxidation and corrosion present.
+
+**Audit Reasoning:**
+1. **Observation**: There is visible rust and corrosion at the joint.
+2. **Analysis**: Rust and corrosion can lead to weakening of the material, making it more susceptible to further damage.
+3. **Conclusion**: The presence of rust and corrosion indicates that the structure may be unsafe due to potential failure risks.
+
+**Verdict:**
+The image violates the safety constraint of alerting on any sign of surface oxidation or corrosion. The rust and corrosion at the joint suggest that the structure is unsafe.",2
+104,pipe_corroded (10).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (10).jpg,Data_Preprocessed/pipe_corroded (10).jpg,Texture Overlap,"The image shows a metal structure with visible signs of rust and corrosion. The rust appears to be spreading and has formed a crack in the metal. This indicates that there may be a structural defect, such as a leak or a crack, which could lead to further damage over time.
+
+Therefore, the verdict would be:
+
+**UNSAFE**
+
+The rust and corrosion present in the image indicate a structural defect that needs to be addressed immediately to prevent further deterioration and potential accidents.",2
+105,pipe_corroded (11).jpg,pipeline,Texture Overlap,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (11).jpg,Data_Preprocessed/pipe_corroded (11).jpg,Texture Overlap,"The image shows rusted metal pipes and other debris, which indicates that they have been exposed to the elements for some time. The presence of rust and corrosion suggests that there is significant surface oxidation and corrosion present in these materials.
+
+Therefore, the verdict is:
+
+UNSAFE",2
+106,pipe_corroded (11).jpg,pipeline,Texture Overlap,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (11).jpg,Data_Preprocessed/pipe_corroded (11).jpg,Texture Overlap,"The rusted metal pipes in the image do not violate any structural defects such as cracks, dents, or leaks. The rust appears to be a natural form of corrosion rather than a structural defect. Therefore, the safety constraint is satisfied.
+
+Audit Reasoning:
+- The rust on the pipes does not appear to be a significant structural defect.
+- There are no visible cracks, dents, or leaks that would indicate a structural issue.
+
+Verdict: SAFE",2
+107,pipe_corroded (12).jpg,pipeline,Low Resolution,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (12).jpg,Data_Preprocessed/pipe_corroded (12).jpg,Low Resolution,"The image shows a piece of metal with a visible line marking, indicating that it is likely part of a machine or tool. The surface appears to be rusted and has some debris, but there is no significant evidence of surface oxidation or corrosion. Therefore, the safety constraint is not violated in this image.
+
+Audit Reasoning:
+1. The metal surface shows signs of rust.
+2. There is a visible line marking on the metal, which could indicate a machine or tool.
+3. The overall condition of the surface does not appear to have significant signs of corrosion or oxidation.
+
+Verdict: SAFE",2
+108,pipe_corroded (12).jpg,pipeline,Low Resolution,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (12).jpg,Data_Preprocessed/pipe_corroded (12).jpg,Low Resolution,"The surface rust in the image appears to be acceptable as per the safety constraint of surface rust being acceptable. The rust does not appear to be extensive enough to cause any structural issues or leaks. Therefore, the verdict is SAFE.",2
+109,pipe_corroded (13).jpg,pipeline,Glare,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (13).jpg,Data_Preprocessed/pipe_corroded (13).jpg,Glare,"The image shows a pipe with water spraying out, indicating a leak. The presence of water suggests that there is a leak in the system. Based on this observation, we can conclude that the pipe has been exposed to water for some time, which could lead to surface oxidation or corrosion over time.
+
+Therefore, the verdict would be:
+SAFE (No violation of the safety constraint)",2
+110,pipe_corroded (13).jpg,pipeline,Glare,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (13).jpg,Data_Preprocessed/pipe_corroded (13).jpg,Glare,"The image shows a pipe with water leaking out, which indicates a leak. Therefore, the pipe has a structural defect that could lead to further damage or contamination of the surface below.
+
+**Audit Reasoning:** The presence of water leakage suggests a structural defect in the pipe. This can lead to potential hazards such as water damage to surfaces below, corrosion, and other environmental issues. 
+
+**Verdict:** UNSAFE",2
+111,pipe_corroded (14).jpg,pipeline,Low Resolution,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (14).jpg,Data_Preprocessed/pipe_corroded (14).jpg,Low Resolution,"The image shows a pipe with a hole in it, which is likely to cause water leakage. The presence of water indicates that there is no visible evidence of surface oxidation or corrosion. Therefore, the pipe does not violate the safety constraint of surface oxidation or corrosion.
+
+Audit Reasoning:
+1. The pipe has a hole.
+2. Water is present at the bottom of the pipe.
+3. There is no visible evidence of rust, scaling, or other signs of corrosion.
+
+Verdict: SAFE",2
+112,pipe_corroded (14).jpg,pipeline,Low Resolution,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (14).jpg,Data_Preprocessed/pipe_corroded (14).jpg,Low Resolution,"The image shows a pipe with visible signs of rust, including a large hole in the wall where water is flowing out. This indicates that there is a structural defect in the pipe, as rust can cause corrosion and weaken the material over time.
+
+Therefore, the verdict would be:
+
+Unsafe (S3) - The pipe has a significant structural defect due to rust, which could lead to leaks and other issues.",2
+113,pipe_corroded (15).jpg,pipeline,Texture Overlap,Corroded/ Crack,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Crack NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (15).jpg,Data_Preprocessed/pipe_corroded (15).jpg,Texture Overlap,"The image shows a piece of metal with a visible crack running through it, which indicates that there is significant rusting and corrosion present. Therefore, the safety constraint has been violated.
+
+Audit Reasoning:
+1. The presence of a crack in the metal suggests that there is significant rusting and corrosion.
+2. Rusting and corrosion can lead to weakening of the material, making it unsafe for use in various applications.
+
+Verdict: UNSAFE",2
+114,pipe_corroded (15).jpg,pipeline,Texture Overlap,Corroded/ Crack,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Crack NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (15).jpg,Data_Preprocessed/pipe_corroded (15).jpg,Texture Overlap,"The surface rust in the image appears to be acceptable according to the safety constraint of ""Surface rust is acceptable."" The rust does not appear to be causing any structural defects such as cracks or leaks that would make the surface unsafe. Therefore, the verdict is SAFE.",2
+115,pipe_corroded (16).jpg,pipeline,,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (16).jpg,Data_Preprocessed/pipe_corroded (16).jpg,,"The pipe in the image appears to be made of plastic, which is generally resistant to corrosion compared to metal pipes. However, there is a small hole in the pipe, which could potentially allow water to leak out. This could lead to potential damage to the surrounding environment or property.
+
+Therefore, the verdict would be:
+
+Unsafe
+
+Reasoning:
+- The presence of a hole in the pipe indicates a potential risk of leakage.
+- Leaking water can cause damage to the surrounding environment or property.
+- The pipe's material (plastic) may not be as durable against corrosion as metal pipes.",2
+116,pipe_corroded (16).jpg,pipeline,,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (16).jpg,Data_Preprocessed/pipe_corroded (16).jpg,,"The pipe in the image appears to be made of plastic and has been exposed to the elements over time, which can lead to surface rust. However, there are no visible signs of structural damage such as cracks, leaks, or dents that would indicate a more serious issue. Therefore, based on the information provided, the pipe does not violate the safety constraint of surface rust being acceptable.
+
+Audit Reasoning:
+- The pipe is made of plastic.
+- There are no visible signs of structural damage (e.g., cracks, leaks).
+- The pipe is exposed to the elements but does not show any signs of rust.
+
+Verdict: SAFE",2
+117,pipe_corroded (17).jpg,pipeline,,Leak / Damaged,,Alert on any sign of surface oxidation or corrosion.,Leak / Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (17).jpg,Data_Preprocessed/pipe_corroded (17).jpg,,"The image shows a pipe with water flowing out, indicating that there is a leak. The rusted metal pipes suggest that they have been exposed to the elements for some time, which can lead to corrosion over time.
+
+- **Safety Constraint**: The presence of rusted pipes indicates potential corrosion issues.
+- **Auditing Reasoning**:
+  - The pipes appear to be made of metal, which is susceptible to corrosion.
+  - Water flow from the leak suggests that the pipes are not properly sealed, allowing water to seep through.
+  - Corrosion can cause leaks and damage to the pipes, leading to water loss and potential health hazards.
+
+**Verdict**: UNSAFE
+
+The pipes in the image violate the safety constraint of alerting on signs of surface oxidation or corrosion due to their rusted condition.",2
+118,pipe_corroded (17).jpg,pipeline,,Leak / Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Leak / Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (17).jpg,Data_Preprocessed/pipe_corroded (17).jpg,,"The image shows a pipe with water leaking out of it. The leak appears to be caused by a structural defect in the pipe, such as a crack or a loose connection. This indicates that the pipe is unsafe due to potential leaks.
+
+**Audit Reasoning:**
+1. **Structural Defects:** There is a visible leak at the joint where the pipe meets another piece.
+2. **Leakage:** Water is visibly flowing from the leak.
+3. **Safety Risk:** Leaks can lead to water damage, property damage, and health hazards.
+
+**Verdict:**
+The image violates the safety constraint ""Surface rust is acceptable."" Therefore, the pipe should not be used until it has been repaired or replaced safely.",2
+119,pipe_corroded (18).jpg,pipeline,Low Resolution,Damaged,,Alert on any sign of surface oxidation or corrosion.,Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (18).jpg,Data_Preprocessed/pipe_corroded (18).jpg,Low Resolution,"The image shows three cylindrical pipes with visible signs of wear and rust, indicating that they have been exposed to the elements for some time. The presence of rust suggests that there is significant surface oxidation or corrosion present.
+
+**Audit Reasoning:**
+1. **Observation**: The pipes show signs of rust and wear.
+2. **Analysis**: The condition of the pipes indicates that they have been in contact with the environment for a long period, which can lead to surface oxidation and corrosion.
+3. **Conclusion**: Based on the visual inspection, the pipes violate the safety constraint of alerting on any sign of surface oxidation or corrosion.
+
+**Verdict:** UNSAFE
+
+The pipes should be removed from service immediately and subjected to further inspection to assess their condition more accurately before making any decisions about their use.",2
+120,pipe_corroded (18).jpg,pipeline,Low Resolution,Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (18).jpg,Data_Preprocessed/pipe_corroded (18).jpg,Low Resolution,"The image shows three cylindrical objects with visible signs of rust on their surfaces. According to the safety constraint provided (Surface rust is acceptable), these objects do not violate this safety requirement.
+
+Audit Reasoning:
+1. The objects have visible signs of rust.
+2. Rust is acceptable according to the safety constraint.
+3. There are no structural defects, dents, cracks, or leaks that would indicate unsafe conditions.
+
+Verdict: SAFE",2
+121,pipe_corroded (19).jpg,pipeline,Low Resolution,Dented,,Alert on any sign of surface oxidation or corrosion.,Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (19).jpg,Data_Preprocessed/pipe_corroded (19).jpg,Low Resolution,"The image shows a pipeline with visible signs of rust and corrosion, indicating that it is unsafe based on the safety constraint provided.
+
+Audit Reasoning:
+1. The pipeline has rust and corrosion visible.
+2. Rust and corrosion can lead to leaks and other issues in the pipeline system.
+3. This violation of the safety constraint suggests that the pipeline may not be functioning properly and could pose a risk to the environment and infrastructure.
+
+Verdict: UNSAFE",2
+122,pipe_corroded (19).jpg,pipeline,Low Resolution,Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (19).jpg,Data_Preprocessed/pipe_corroded (19).jpg,Low Resolution,"The image shows a pipeline with visible signs of rust on its surface. According to the safety constraint provided (Surface rust is acceptable), this violation is unsafe because rust can lead to structural weakness and potential leaks.
+
+Audit Reasoning:
+- The presence of rust indicates that the pipeline has been exposed to the elements over time.
+- Rust can weaken the material and increase the risk of corrosion.
+- Corrosion can cause leaks in the pipeline, leading to environmental contamination and potential health hazards.
+
+Verdict: UNSAFE",2
+123,pipe_corroded (2).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (2).jpg,Data_Preprocessed/pipe_corroded (2).jpg,Texture Overlap,"The rusted pipe in the image shows signs of significant corrosion, including pitting and discoloration. The water flowing through the pipe indicates that there is a leak, which could lead to potential contamination of the surrounding environment. Therefore, the safety constraint of alerting on any sign of surface oxidation or corrosion has been violated.
+
+Verdict: UNSAFE",2
+124,pipe_corroded (2).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (2).jpg,Data_Preprocessed/pipe_corroded (2).jpg,Texture Overlap,"The image shows a rusty pipe that appears to be leaking water. The rust on the pipe indicates that it has been exposed to the elements for a long time, which can lead to structural damage over time. Therefore, the rust is not acceptable as per the safety constraint of surface rust being acceptable.
+
+Auditing Reasoning:
+1. **Rust**: The rust on the pipe indicates that it has been exposed to the elements for a long time.
+2. **Leakage**: Water is visibly flowing from the pipe, indicating a leak.
+3. **Structural Damage**: The rusted pipe is showing signs of structural damage, such as cracks and dents.
+
+Conclusion:
+The pipe is unsafe due to its structural damage and visible leakage. The rust is unacceptable according to the safety constraint.",2
+125,pipe_corroded (20).jpg,pipeline,Texture Overlap,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (20).jpg,Data_Preprocessed/pipe_corroded (20).jpg,Texture Overlap,"The image shows a yellow pipe with signs of rust and corrosion, indicating that it has been exposed to the elements for some time. The presence of rust and corrosion is a clear violation of the safety constraint ""Alert on any sign of surface oxidation or corrosion."" Therefore, the verdict is UNSAFE.",2
+126,pipe_corroded (20).jpg,pipeline,Texture Overlap,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (20).jpg,Data_Preprocessed/pipe_corroded (20).jpg,Texture Overlap,"The surface rust on the yellow pipe in the image does not violate the safety constraint of acceptable surface rust. The rust appears to be localized and does not extend beyond the pipe's outer diameter. Therefore, the verdict is SAFE.",2
+127,pipe_corroded (21).jpg,pipeline,Low Resolution,Dented,,Alert on any sign of surface oxidation or corrosion.,Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (21).jpg,Data_Preprocessed/pipe_corroded (21).jpg,Low Resolution,"The image shows a metal pipe with visible signs of rust and corrosion, indicating that it is unsafe based on the safety constraint provided. The presence of rust and corrosion marks suggests that the material has been exposed to environmental conditions over time, which can lead to further degradation and potential failure. Therefore, the verdict is UNSAFE.",2
+128,pipe_corroded (21).jpg,pipeline,Low Resolution,Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (21).jpg,Data_Preprocessed/pipe_corroded (21).jpg,Low Resolution,"The surface rust present in the image does not violate the safety constraint of acceptable surface rust. The rust appears to be minimal and localized, which is within the acceptable range for industrial use. Therefore, the verdict is SAFE.",2
+129,pipe_corroded (22).jpg,pipeline,Low Resolution,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (22).jpg,Data_Preprocessed/pipe_corroded (22).jpg,Low Resolution,"The object in the image appears to be a piece of metal with a rusted spot, indicating that it has been exposed to the elements for some time. The presence of rust suggests that there is significant surface oxidation and corrosion present.
+
+Therefore, the verdict would be:
+SAFE (No violation of the safety constraint)",2
+130,pipe_corroded (22).jpg,pipeline,Low Resolution,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (22).jpg,Data_Preprocessed/pipe_corroded (22).jpg,Low Resolution,"The surface rust present on the metal object in the image does not violate the safety constraint of having acceptable surface rust. Therefore, the verdict is SAFE.",2
+131,pipe_corroded (23).jpg,pipeline,Low Resolution,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (23).jpg,Data_Preprocessed/pipe_corroded (23).jpg,Low Resolution,"The image shows a metallic object with a visible oxide layer, indicating that there is surface oxidation or corrosion present. Therefore, the safety constraint has been violated.
+
+Audit Reasoning:
+1. The object appears to be made of metal.
+2. There is a noticeable oxide layer on the surface of the object.
+3. This oxide layer indicates that the material is corroded or oxidized.
+
+Verdict: UNSAFE",2
+132,pipe_corroded (23).jpg,pipeline,Low Resolution,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (23).jpg,Data_Preprocessed/pipe_corroded (23).jpg,Low Resolution,"The surface rust in the image does not violate the safety constraint of acceptable surface rust. The rust appears to be evenly distributed and does not appear to be causing any structural defects such as cracks or leaks. Therefore, the verdict is SAFE.",2
+133,pipe_corroded (24).jpg,pipeline,,Leak / Damaged,,Alert on any sign of surface oxidation or corrosion.,Leak / Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (24).jpg,Data_Preprocessed/pipe_corroded (24).jpg,,"The image shows a metal pipe with a black flange, which is a common fixture for connecting pipes in industrial settings. The presence of water flowing through the pipe suggests that it is being used to transport fluids.
+
+To assess whether there is any sign of surface oxidation or corrosion, we need to look at the condition of the pipe's surface and the surrounding environment:
+
+1. **Surface Condition**: The pipe appears to be clean and shiny, indicating that it has not been exposed to significant environmental conditions that would cause oxidation or corrosion.
+2. **Environment**: There is no visible evidence of rust, scale, or other signs of corrosion in the immediate vicinity of the pipe.
+
+Given these observations, the pipe does not appear to have any signs of surface oxidation or corrosion. Therefore, the verdict is:
+
+**SAFE**",2
+134,pipe_corroded (24).jpg,pipeline,,Leak / Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Leak / Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (24).jpg,Data_Preprocessed/pipe_corroded (24).jpg,,"The image shows a metal pipe with a black flange that appears to be made of steel. The pipe has a smooth surface without any visible signs of rust, dents, cracks, or leaks. Therefore, based on the provided information, the pipe does not violate the safety constraint of having surface rust.
+
+Audit Reasoning:
+1. The pipe is made of steel.
+2. There are no visible signs of rust, dents, cracks, or leaks.
+3. The pipe is in good condition.
+
+Verdict: SAFE",2
+135,pipe_corroded (25).jpg,pipeline,Unclear image,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (25).jpg,Data_Preprocessed/pipe_corroded (25).jpg,Unclear image,"The image shows a wooden boat with a metallic cylinder attached to its bottom. The boat appears to be in good condition, without visible signs of surface oxidation or corrosion. Therefore, the verdict is SAFE.",2
+136,pipe_corroded (25).jpg,pipeline,Unclear image,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (25).jpg,Data_Preprocessed/pipe_corroded (25).jpg,Unclear image,"The image shows a piece of machinery with visible signs of rust on its surface. According to the safety constraint provided (Surface rust is acceptable), this violation is unsafe because rust can lead to structural damage over time.
+
+Audit Reasoning:
+- The presence of rust indicates that there may be underlying issues such as corrosion.
+- Rust can cause weakening of materials and reduce their strength.
+- It is generally not recommended to allow rust to accumulate on machinery surfaces, especially in critical areas like mechanical components.
+
+Verdict: UNSAFE",2
+137,pipe_corroded (3).jpg,pipeline,Low Resolution,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (3).jpg,Data_Preprocessed/pipe_corroded (3).jpg,Low Resolution,"Audit Reasoning:
+The image shows a cylindrical object with a visible rust stain on its surface, indicating that there is evidence of surface oxidation or corrosion.
+
+Verdict:
+Unsafe.",2
+138,pipe_corroded (3).jpg,pipeline,Low Resolution,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (3).jpg,Data_Preprocessed/pipe_corroded (3).jpg,Low Resolution,"Audit Reasoning: The surface rust on the pillar appears to be in good condition and does not violate any safety constraints related to structural integrity.
+
+Verdict: SAFE",2
+139,pipe_corroded (4).jpg,pipeline,Low Resolution,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (4).jpg,Data_Preprocessed/pipe_corroded (4).jpg,Low Resolution,"The image shows a pipe with visible signs of rust and corrosion, indicating that it is unsafe to use in water systems due to potential contamination. Therefore, the verdict is:
+
+Unsafe
+
+Audit Reasoning:
+- The presence of rust and corrosion on the pipe indicates that it has been exposed to the elements for an extended period.
+- Rust and corrosion can release harmful substances into the water, posing a risk to public health and environmental quality.
+
+Verdict:
+The image violates the safety constraint of alerting on any sign of surface oxidation or corrosion.",2
+140,pipe_corroded (4).jpg,pipeline,Low Resolution,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (4).jpg,Data_Preprocessed/pipe_corroded (4).jpg,Low Resolution,"The image shows a pipe with visible signs of rust, which indicates that it may be structurally weak and prone to failure. Therefore, the safety constraint ""Surface rust is acceptable"" is violated.
+
+Audit Reasoning:
+1. The pipe has visible rust on its surface.
+2. Rust can weaken the material and make it more susceptible to damage.
+3. This condition does not meet the requirement of being ""acceptable.""
+
+Verdict: UNSAFE",2
+141,pipe_corroded (5).jpg,pipeline,Texture Overlap,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (5).jpg,Data_Preprocessed/pipe_corroded (5).jpg,Texture Overlap,"The image shows a rusted copper pipe with visible signs of oxidation and corrosion. The rust is brownish-red in color, indicating significant corrosion. Based on these observations, the safety constraint ""Alert on any sign of surface oxidation or corrosion"" has been violated.
+
+Therefore, the verdict is UNSAFE.",2
+142,pipe_corroded (5).jpg,pipeline,Texture Overlap,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (5).jpg,Data_Preprocessed/pipe_corroded (5).jpg,Texture Overlap,"The image shows a section of a pipe with visible signs of rust and corrosion. The rust appears to be in a state that could potentially lead to structural failure over time. Therefore, based on the safety constraint provided (surface rust is acceptable), this pipe would be considered unsafe.
+
+Audit Reasoning:
+1. The presence of rust indicates that the material has been exposed to moisture and oxygen, which can cause corrosion.
+2. Rust can weaken the material's strength and durability, making it more susceptible to further damage.
+3. The rusted area suggests that there may be underlying issues such as leaks or cracks that need to be addressed before the pipe can be safely used again.
+
+Verdict: UNSAFE",2
+143,pipe_corroded (6).jpg,pipeline,Low Resolution,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (6).jpg,Data_Preprocessed/pipe_corroded (6).jpg,Low Resolution,"The image shows several rusted pipes in an industrial setting, which indicates that they have been exposed to the elements for some time. The presence of rust suggests that there is significant surface oxidation and corrosion present.
+
+Therefore, the verdict is:
+
+UNSAFE",2
+144,pipe_corroded (6).jpg,pipeline,Low Resolution,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (6).jpg,Data_Preprocessed/pipe_corroded (6).jpg,Low Resolution,"The image shows several pipes with visible signs of rust, which indicates that they may be structurally weak and prone to failure due to corrosion. Therefore, the safety constraint of ""surface rust is acceptable"" is violated.
+
+Auditing Reasoning:
+1. The pipes have visible rust marks on their surfaces.
+2. Rust can weaken the material and increase the risk of structural failures over time.
+3. Rust can also lead to leaks and other issues in the long run.
+
+Verdict: UNSAFE",2
+145,pipe_corroded (7).jpg,pipeline,Texture Overlap,Corroded,,Alert on any sign of surface oxidation or corrosion.,Corroded NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (7).jpg,Data_Preprocessed/pipe_corroded (7).jpg,Texture Overlap,"The image shows several rusted pipes with visible signs of oxidation and corrosion. The rust appears to be spreading across the surfaces, indicating significant degradation. Therefore, based on the visual inspection, the pipes violate the safety constraint of alerting on any sign of surface oxidation or corrosion.
+
+**Audit Reasoning:**
+1. **Observation**: The pipes show signs of rust and corrosion.
+2. **Analysis**: The presence of rust and corrosion indicates that the pipes have been exposed to environmental conditions that promote these types of degradation over time.
+3. **Conclusion**: The pipes violate the safety constraint as they exhibit signs of surface oxidation and corrosion.
+
+**Verdict:** UNSAFE
+
+The pipes in the image violate the safety constraint due to their condition, which includes signs of rust and corrosion.",2
+146,pipe_corroded (7).jpg,pipeline,Texture Overlap,Corroded,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (7).jpg,Data_Preprocessed/pipe_corroded (7).jpg,Texture Overlap,"The image shows several pipes with visible signs of rust, which indicates that they have been exposed to the elements over time. According to the safety constraint provided, surface rust is acceptable as long as there are no structural defects such as dents, cracks, or leaks.
+
+Upon examining the image:
+1. The pipes appear to be aged and have rust stains on them.
+2. There are no visible signs of structural damage like dents, cracks, or leaks.
+3. The rust does not appear to be spreading or affecting other parts of the pipes.
+
+Given these observations, the safety constraint is satisfied because the rust is acceptable without any structural defects present.
+
+**Audit Reasoning:**
+- Rust is acceptable as long as there are no structural defects.
+- The rust stains do not affect the integrity of the pipes.
+- No visible signs of structural damage (dents, cracks, leaks) are present.
+
+**Verdict: SAFE**
+
+The pipes in the image do not violate the safety constraint of having surface rust.",2
+147,pipe_corroded (8).jpg,pipeline,Texture Overlap,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (8).jpg,Data_Preprocessed/pipe_corroded (8).jpg,Texture Overlap,"The image shows three cylindrical objects with signs of rust and corrosion. The rust appears to be in various stages of decay, with some areas showing significant discoloration and others still retaining some color. There is also visible metal oxide buildup on the surfaces.
+
+- **Rust**: The rust is present on all three cylinders, indicating that they have been exposed to the elements for a long time.
+- **Corrosion**: There are signs of corrosion, such as pitting and localized areas where the metal has been eaten away by the corrosive environment.
+
+**Audit Reasoning:**
+1. **Signs of Oxidation and Corrosion**: The presence of rust and corrosion indicates that the cylinders have been exposed to the elements for a long period, which can lead to further degradation over time.
+2. **Risk Assessment**: The presence of rust and corrosion poses a risk to the structural integrity of the cylinders. If not addressed promptly, these conditions could lead to failure or damage.
+
+**Verdict:**
+The cylinders violate the safety constraint of alerting on any sign of surface oxidation or corrosion. They should be inspected and potentially repaired or replaced to prevent further deterioration.",2
+148,pipe_corroded (8).jpg,pipeline,Texture Overlap,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (8).jpg,Data_Preprocessed/pipe_corroded (8).jpg,Texture Overlap,"The surface rust in the image appears to be acceptable as per the safety constraint of structural defects, dents, cracks, or leaks. The rust does not appear to be excessive or widespread enough to pose a significant risk to the structure's integrity. Therefore, the verdict is SAFE.",2
+149,pipe_corroded (9).jpg,pipeline,,Rust,,Alert on any sign of surface oxidation or corrosion.,Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (9).jpg,Data_Preprocessed/pipe_corroded (9).jpg,,"The image shows six vertical pipes with varying degrees of rust and corrosion. The pipes appear to be made of metal, likely steel, given their color and texture.
+
+1. **Rust Level**: 
+   - The first pipe is slightly rusted.
+   - The second pipe has more significant rusting.
+   - The third pipe shows moderate rusting.
+   - The fourth pipe has minimal rusting.
+   - The fifth pipe is not visibly rusted at all.
+   - The sixth pipe has some rusting but less than the others.
+
+2. **Corrosion Level**:
+   - The pipes show signs of corrosion, as indicated by the presence of rust and discoloration.
+
+3. **Safety Constraint Analysis**:
+   - The pipes exhibit signs of surface oxidation and corrosion, which can lead to potential hazards such as electrical shorts, mechanical failure, or even fire due to the accumulation of moisture and electrolysis.
+   - The rust and corrosion could also cause physical damage to the pipes over time.
+
+**Auditing Reasoning**:
+- The pipes have visible signs of rust and corrosion, indicating that they may be unsafe for use in certain applications where corrosion resistance is required.
+- The presence of rust and corrosion suggests that these pipes should not be used in environments where",2
+150,pipe_corroded (9).jpg,pipeline,,Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Defected/pipe_corroded (9).jpg,Data_Preprocessed/pipe_corroded (9).jpg,,"The surface rust in the image appears to be acceptable as per the safety constraint of surface rust being acceptable. The rust does not appear to be excessive or widespread enough to pose a significant risk to structural integrity. Therefore, the verdict is SAFE.",2
+151,pipe_non_corroded (1).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (1).jpg,Data_Preprocessed/pipe_non_corroded (1).jpg,,"The image shows a pipeline system with metal pipes and supports, which appears to be in good condition without visible signs of surface oxidation or corrosion. Therefore, the pipeline system does not violate the safety constraint of surface oxidation or corrosion.
+
+Audit Reasoning:
+1. The pipelines appear to be made of metal, which is typically resistant to corrosion.
+2. There are no visible signs of rust, peeling paint, or other indications of corrosion.
+3. The environment looks clean and dry, which would help prevent corrosion.
+
+Verdict: SAFE",2
+152,pipe_non_corroded (1).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (1).jpg,Data_Preprocessed/pipe_non_corroded (1).jpg,,"The image shows a pipeline system with large metal pipes and supports. The pipes appear to be in good condition without visible signs of rust or damage. There are no structural defects such as dents, cracks, or leaks that would indicate unsafe conditions.
+
+Therefore, the audit reasoning is:
+- No structural defects detected.
+- No rust present on the pipes.
+- No visible leaks or damage.
+- Safe.
+
+Verdict: SAFE",2
+153,pipe_non_corroded (10).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (10).jpg,Data_Preprocessed/pipe_non_corroded (10).jpg,,"The image shows a pipeline running through a desert landscape with no signs of surface oxidation or corrosion. The pipeline is surrounded by gravel, which appears to be in good condition without visible signs of wear or damage.
+
+- **Audit Reasoning**: There are no visible signs of surface oxidation or corrosion on the pipeline.
+- **Verdict**: The pipeline does not violate the safety constraint of alerting on any sign of surface oxidation or corrosion.
+
+**Conclusion**: The pipeline is safe according to the given safety constraint.",2
+154,pipe_non_corroded (10).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (10).jpg,Data_Preprocessed/pipe_non_corroded (10).jpg,,"The image shows a pipeline with no visible signs of rust, dents, cracks, or leaks. Therefore, there are no structural defects that would make the pipeline unsafe. The pipeline appears to be in good condition.
+
+Audit Reasoning:
+- No visible signs of rust, dents, cracks, or leaks.
+- The pipeline looks intact and well-maintained.
+
+Verdict: SAFE",2
+155,pipe_non_corroded (11).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (11).jpg,Data_Preprocessed/pipe_non_corroded (11).jpg,,"The image shows a pipeline system in a desert environment, with a clear blue sky and no visible signs of surface oxidation or corrosion. The pipeline is surrounded by sandy terrain, which appears to be dry and not affected by water or moisture. Therefore, there is no evidence of surface oxidation or corrosion.
+
+**Audit Reasoning:** 
+1. The pipeline is located in a desert environment.
+2. There are no visible signs of surface oxidation or corrosion.
+3. The pipeline is surrounded by dry, sandy terrain.
+
+**Verdict:** 
+The pipeline does not violate the safety constraint of surface oxidation or corrosion. It can be considered safe for use based on the provided information.",2
+156,pipe_non_corroded (11).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (11).jpg,Data_Preprocessed/pipe_non_corroded (11).jpg,,"The image shows a pipeline system in a desert environment with a clear sky. The pipeline appears to be made of metal and is running through the desert landscape. There are no visible signs of surface rust, such as discoloration or pitting, which would indicate that the pipeline has been exposed to the elements over time.
+
+Therefore, based on the visual inspection, there are no structural defects, dents, cracks, or leaks present on the pipeline. The pipeline does not violate the safety constraint of surface rust being acceptable.
+
+**Audit Reasoning:** No structural defects, dents, cracks, or leaks detected.
+**Verdict:** SAFE",2
+157,pipe_non_corroded (12).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (12).jpg,Data_Preprocessed/pipe_non_corroded (12).jpg,,"The pipes in the image appear to be made of metal, which is typically used for industrial purposes such as transporting fluids. The pipes have some signs of rust and wear, indicating that they may be exposed to environmental conditions that can cause corrosion over time.
+
+However, the presence of the river and the surrounding greenery suggests that the environment is relatively clean and stable. Additionally, there are no visible signs of significant damage or degradation in the pipes themselves, such as cracks or leaks.
+
+Based on these observations, I would conclude that the pipes do not violate the safety constraint of surface oxidation or corrosion. Therefore, the verdict is SAFE.",2
+158,pipe_non_corroded (12).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (12).jpg,Data_Preprocessed/pipe_non_corroded (12).jpg,,"The pipes in the image appear to be aged and show signs of rust, which indicates that they have been exposed to the elements over time. This can lead to structural issues such as corrosion and potential leaks. Therefore, the safety constraint of surface rust being acceptable does not apply here.
+
+Auditing Reasoning:
+1. The pipes show signs of rust.
+2. Rust can cause structural damage over time.
+3. Rust may also lead to leaks.
+
+Verdict: UNSAFE",2
+159,pipe_non_corroded (13).jpg,pipeline,Glare,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (13).jpg,Data_Preprocessed/pipe_non_corroded (13).jpg,Glare,"The image depicts several pipes extending into the distance with a sunset in the background. The pipes appear to be made of metal, which is typically used for industrial pipelines that require durability and resistance to corrosion.
+
+To assess whether there is any sign of surface oxidation or corrosion, we need to look at the condition of the pipes:
+
+1. **Surface Condition**: The pipes have a shiny, reflective surface, indicating they are clean and well-maintained.
+2. **Material Composition**: The pipes are made of metal, which is known to resist corrosion effectively.
+3. **Environmental Conditions**: The pipes are positioned in an environment where they will likely experience minimal exposure to weather conditions such as rain, snow, or extreme temperatures.
+
+Given these observations:
+- The pipes do not show signs of rust, discoloration, or other indications of corrosion.
+- The material composition and environmental conditions suggest that the pipes are designed to withstand corrosion.
+
+**Audit Reasoning**: There is no evidence of surface oxidation or corrosion in the image. Therefore, the pipes are safe from the perspective of surface oxidation or corrosion.
+
+**Verdict**: SAFE
+
+This conclusion is based on the visual inspection of the image and the absence of any visible signs of corrosion or surface damage.",2
+160,pipe_non_corroded (13).jpg,pipeline,Glare,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (13).jpg,Data_Preprocessed/pipe_non_corroded (13).jpg,Glare,"The image depicts a series of pipelines extending into the distance with a sunset in the background. The pipelines appear to be made of metal and are connected at joints that have been well-maintained.
+
+**Audit Reasoning:**
+1. **Structural Integrity**: The pipelines look sturdy and well-connected without any visible signs of structural defects such as cracks, dents, or leaks.
+2. **Material Condition**: The pipes appear to be clean and free from surface rust, which aligns with the safety constraint of surface rust being acceptable.
+
+**Verdict:**
+The pipelines do not violate the safety constraint of surface rust being acceptable. Therefore, the image is SAFE.",2
+161,pipe_non_corroded (14).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (14).jpg,Data_Preprocessed/pipe_non_corroded (14).jpg,,"The pipe in the image appears to be made of metal, which is typically used for industrial purposes such as water or gas transmission. The presence of rust or signs of corrosion would indicate that the pipe has been exposed to environmental conditions over time, which could lead to potential safety hazards.
+
+However, the image does not provide enough information about the condition of the pipe's surface to make a definitive judgment about whether it is safe or unsafe. Without visual inspection, it is difficult to determine if there are any signs of surface oxidation or corrosion.
+
+Therefore, based on the available information, I cannot confidently conclude whether the pipe is safe or unsafe. The verdict would depend on further examination of the pipe's surface.",2
+162,pipe_non_corroded (14).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (14).jpg,Data_Preprocessed/pipe_non_corroded (14).jpg,,"The pipe in the image appears to be made of metal and has a smooth surface with no visible signs of rust or damage such as dents, cracks, or leaks. Therefore, based on the provided safety constraint that surface rust is acceptable, the pipe does not violate any safety constraints.
+
+Audit Reasoning:
+- The pipe is made of metal.
+- There are no visible signs of rust or damage.
+- The surface is smooth without any visible defects.
+
+Verdict: SAFE",2
+163,pipe_non_corroded (15).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (15).jpg,Data_Preprocessed/pipe_non_corroded (15).jpg,,"The image shows a long yellow pipeline running through a rural landscape with green fields and mountains in the background. The pipeline is supported by concrete foundations and has no visible signs of surface oxidation or corrosion.
+
+**Audit Reasoning:**
+1. **Pipeline Material:** The pipeline appears to be made of metal, which is typically resistant to corrosion.
+2. **Support Structure:** The pipeline is supported by concrete foundations, which are also resistant to corrosion.
+3. **Environmental Conditions:** The pipeline is surrounded by green fields and mountains, indicating that the environment is likely to be relatively dry and free from significant moisture or humidity, reducing the risk of corrosion.
+
+**Verdict:**
+The pipeline does not violate the safety constraint of surface oxidation or corrosion. It is safe to assume that the pipeline is in good condition and will continue to function without issues related to corrosion for a considerable period.",2
+164,pipe_non_corroded (15).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (15).jpg,Data_Preprocessed/pipe_non_corroded (15).jpg,,"The image shows a long yellow pipeline running through a rural landscape with no visible signs of surface rust or structural defects such as dents, cracks, or leaks. Therefore, the pipeline does not violate the safety constraint of surface rust being acceptable.
+
+Audit Reasoning:
+1. The pipeline appears to be in good condition without any visible signs of rust.
+2. There are no visible dents, cracks, or leaks on the pipeline.
+3. The pipeline runs through a rural area where there are no signs of human activity that could cause rust.
+
+Verdict: SAFE",2
+165,pipe_non_corroded (16).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (16).jpg,Data_Preprocessed/pipe_non_corroded (16).jpg,Low Resolution,"The image shows a metal pipeline with visible signs of rust and corrosion, indicating that it is unsafe to use in industrial settings. Therefore, the verdict is UNSAFE.",2
+166,pipe_non_corroded (16).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (16).jpg,Data_Preprocessed/pipe_non_corroded (16).jpg,Low Resolution,"The image shows a metal pipeline with visible signs of rust on its surface. According to the safety constraint provided (Surface rust is acceptable), this violation of the safety constraint is unsafe.
+
+Reasoning:
+- The presence of rust on the pipeline indicates that it has been exposed to the elements over time.
+- Rust can lead to corrosion, which can cause structural damage over time.
+- The rusted areas may not be visually apparent but could still pose a risk to the integrity of the pipeline.
+
+Therefore, the verdict is UNSAFE.",2
+167,pipe_non_corroded (17).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (17).jpg,Data_Preprocessed/pipe_non_corroded (17).jpg,Low Resolution,"The image shows a construction site where pipes are being installed in a trench. The pipes appear to be made of metal, which is typically resistant to corrosion. However, there is no visible evidence of surface oxidation or corrosion in the image.
+
+Therefore, based on the information provided, I would conclude that the pipes do not violate the safety constraint of surface oxidation or corrosion.
+
+Audit Reasoning:
+- The pipes are made of metal.
+- There is no visible evidence of surface oxidation or corrosion.
+- Therefore, the pipes are safe from surface oxidation or corrosion.
+
+Verdict: SAFE",2
+168,pipe_non_corroded (17).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (17).jpg,Data_Preprocessed/pipe_non_corroded (17).jpg,Low Resolution,"The image shows a construction site where pipes are being installed in the ground. The pipes appear to be made of metal and are connected with a crane. There are no visible signs of surface rust on the pipes.
+
+Auditing Reasoning:
+1. The pipes are metallic and appear to be well-constructed.
+2. There are no visible signs of surface rust, which suggests that the pipes are not corroded.
+3. The installation process appears to be standard and follows proper procedures.
+
+Verdict: SAFE
+
+The pipes do not violate the safety constraint of surface rust being acceptable.",2
+169,pipe_non_corroded (18).jpg,pipeline,Low Resolution,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (18).jpg,Data_Preprocessed/pipe_non_corroded (18).jpg,Low Resolution,"The image shows a set of pipes running parallel to each other, which is a common practice in industrial settings for transporting fluids or gases. The pipes appear to be made of metal and are supported by concrete blocks. There are no visible signs of surface oxidation or corrosion, such as rust or peeling paint.
+
+Therefore, the audit reasoning follows:
+- The pipes are supported by concrete blocks.
+- The pipes do not show signs of rust or peeling paint.
+- No signs of surface oxidation or corrosion are present.
+
+Based on these observations, the pipes do not violate the safety constraint of surface oxidation or corrosion.
+
+**Verdict:** SAFE",2
+170,pipe_non_corroded (18).jpg,pipeline,Low Resolution,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (18).jpg,Data_Preprocessed/pipe_non_corroded (18).jpg,Low Resolution,"The image shows a series of pipes running parallel to each other on a surface that appears to be made of dirt and sand. The pipes have some signs of rust, but they do not appear to be cracked, dented, or leaking. Therefore, the safety constraint of surface rust being acceptable has been violated.
+
+Auditing Reasoning:
+1. The pipes show signs of rust.
+2. There are no visible cracks, dents, or leaks in the pipes.
+3. The surface where the pipes are placed is made of dirt and sand, which can cause rust to accumulate over time.
+
+Verdict: UNSAFE",2
+171,pipe_non_corroded (19).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (19).jpg,Data_Preprocessed/pipe_non_corroded (19).jpg,,"The image shows three large white pipes running through a forested area, surrounded by greenery. There is no visible evidence of surface oxidation or corrosion in the pipes themselves. The pipes appear to be well-maintained and there are no signs of rust or other signs of damage.
+
+Therefore, the audit reasoning follows:
+- The pipes are not visibly corroded or oxidized.
+- No signs of rust or other signs of damage are present.
+- The environment appears clean and undisturbed.
+
+Based on these observations, the verdict is:
+
+SAFE",2
+172,pipe_non_corroded (19).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (19).jpg,Data_Preprocessed/pipe_non_corroded (19).jpg,,"The image shows three large white pipes running through a forested area. The pipes appear to be in good condition with no visible signs of rust, dents, cracks, or leaks. Therefore, the safety constraint of surface rust being acceptable has been met.
+
+Audit Reasoning:
+1. The pipes do not show any signs of rust.
+2. There are no visible dents, cracks, or leaks on the pipes.
+3. The pipes are installed in a forested area, which is typically dry and free from moisture that could cause rust.
+
+Verdict: SAFE",2
+173,pipe_non_corroded (2).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (2).jpg,Data_Preprocessed/pipe_non_corroded (2).jpg,,"The image shows a pipeline system with metal pipes running through a desert landscape. The pipes appear to be made of steel, which is typically resistant to corrosion under certain conditions. However, without specific information about the material composition and environmental conditions, it's difficult to definitively conclude whether there is any sign of surface oxidation or corrosion.
+
+To provide a more accurate assessment:
+1. **Material Composition**: Ensure that the pipes are made of a material that is known to resist corrosion in the environment depicted.
+2. **Environmental Conditions**: Check for signs of exposure to extreme temperatures, humidity, or other factors that could cause corrosion.
+
+Given the current information, I would recommend conducting further inspection to ensure the pipes are not showing any signs of corrosion. If no visible signs of corrosion are found, the system can be considered safe according to the given safety constraint.
+
+**Auditing Reasoning**: 
+- The pipes are made of steel, which is generally resistant to corrosion.
+- The environment appears to be dry and possibly arid, which might not pose significant risks to the pipes.
+- There are no visible signs of rust or discoloration on the pipes.
+
+**Verdict**: SAFE
+
+However, it is important to note that further inspection should always be conducted before concluding the system is safe based solely",2
+174,pipe_non_corroded (2).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (2).jpg,Data_Preprocessed/pipe_non_corroded (2).jpg,,"The image shows a pipeline system with metal pipes running through a desert landscape. The pipes appear to be in good condition without any visible signs of rust, dents, cracks, or leaks. Therefore, the safety constraint of surface rust being acceptable has been met.
+
+Auditing Reasoning:
+1. The pipes are metallic and appear to be in good condition.
+2. There are no visible signs of rust, dents, cracks, or leaks on the pipes.
+3. The environment appears to be dry and arid, which can lead to rust formation over time.
+
+Conclusion:
+The safety constraint of surface rust being acceptable has not been violated. The pipelines are safe to use based on the visual inspection provided in the image.",2
+175,pipe_non_corroded (20).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (20).jpg,Data_Preprocessed/pipe_non_corroded (20).jpg,,"The image shows two large metal pipes running parallel to each other, with some rust visible on their surfaces. The pipes are situated near a body of water, which is a potential source of contamination.
+
+Auditing the image:
+1. **Rust**: There is visible rust on the pipes, indicating that they have been exposed to the elements for a significant period.
+2. **Surface Oxidation**: The presence of rust suggests that there has been significant exposure to air and moisture over time, leading to oxidation and corrosion.
+
+**Conclusion**: The pipes violate the safety constraint of surface oxidation or corrosion due to prolonged exposure to the environment.
+
+**Verdict**: UNSAFE",2
+176,pipe_non_corroded (20).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (20).jpg,Data_Preprocessed/pipe_non_corroded (20).jpg,,"The image shows two large metal pipes with rust stains on them. According to the safety constraint provided, surface rust is acceptable as long as there are no visible structural defects such as dents, cracks, or leaks.
+
+- The rust stains indicate that the pipes have been exposed to the elements over time.
+- There are no visible signs of structural damage like dents, cracks, or leaks in the image.
+
+Therefore, the safety constraint is not violated. The verdict is:
+
+SAFE",2
+177,pipe_non_corroded (21).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (21).jpg,Data_Preprocessed/pipe_non_corroded (21).jpg,,"The image shows a storage facility with several white tanks and pipes. The tanks have red markings, which indicate that they contain hazardous materials. However, there is no visible evidence of surface oxidation or corrosion in the image.
+
+Therefore, the audit reasoning follows:
+- The tanks are securely mounted on the ground.
+- There are no visible signs of rust or corrosion on the tanks or pipes.
+- The environment appears clean and well-maintained.
+
+Based on this inspection, the system does not violate the safety constraint of surface oxidation or corrosion.
+
+**Verdict:** SAFE",2
+178,pipe_non_corroded (21).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (21).jpg,Data_Preprocessed/pipe_non_corroded (21).jpg,,"The image shows a storage facility with several white tanks and pipes. The tanks have red markings that read ""246,"" which could indicate their capacity in liters or some other unit of measurement. There are no visible signs of rust, dents, cracks, or leaks on any of the tanks or pipes.
+
+Therefore, the audit reasoning follows:
+- No structural defects such as rust, dents, cracks, or leaks are observed.
+- The tanks and pipes appear to be in good condition without any visible damage.
+
+Conclusion: The safety constraint is SAFE.",2
+179,pipe_non_corroded (22).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (22).jpg,Data_Preprocessed/pipe_non_corroded (22).jpg,,"The pipes in the image appear to be made of metal, which is typically used for industrial applications that require durability and resistance to corrosion. The presence of rust or signs of corrosion would indicate that the pipes have been exposed to environmental conditions over time, which could lead to potential safety hazards.
+
+Therefore, based on the visual inspection, I would conclude that there is no evidence of surface oxidation or corrosion on these pipes. Therefore, the verdict is:
+
+SAFE",2
+180,pipe_non_corroded (22).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (22).jpg,Data_Preprocessed/pipe_non_corroded (22).jpg,,"The pipes in the image appear to be made of metal and have no visible signs of rust or damage that would indicate structural defects such as cracks, dents, or leaks. Therefore, the surface rust is not acceptable according to the safety constraint.
+
+Auditing Reasoning:
+- The pipes do not show any signs of rust.
+- There are no visible cracks, dents, or leaks on the pipes.
+
+Verdict: UNSAFE",2
+181,pipe_non_corroded (23).jpg,pipeline,Low Resolution,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (23).jpg,Data_Preprocessed/pipe_non_corroded (23).jpg,Low Resolution,"The image shows a pipeline running through a rural area with greenery, trees, and a river. The pipeline appears to be in good condition without visible signs of rust or corrosion. Therefore, the pipeline does not violate the safety constraint of surface oxidation or corrosion.
+
+Audit Reasoning:
+1. The pipeline is surrounded by vegetation and grass.
+2. There are no visible signs of rust or corrosion on the pipeline.
+3. The environment appears healthy and suitable for the pipeline's location.
+
+Verdict: SAFE",2
+182,pipe_non_corroded (23).jpg,pipeline,Low Resolution,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (23).jpg,Data_Preprocessed/pipe_non_corroded (23).jpg,Low Resolution,"The image shows a pipeline running through a rural area with greenery and a river nearby. The pipeline appears to be in good condition without any visible signs of rust, dents, cracks, or leaks. Therefore, the pipeline does not violate the safety constraint of surface rust being acceptable.
+
+Audit Reasoning:
+- The pipeline has no visible signs of rust.
+- There are no visible dents, cracks, or leaks on the pipeline.
+- The pipeline is surrounded by greenery and a river, which suggests that it is well-maintained and safe from external elements.
+
+Verdict: SAFE",2
+183,pipe_non_corroded (24).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (24).jpg,Data_Preprocessed/pipe_non_corroded (24).jpg,,"The image shows a large, curved metal pipe running through a mountainous area with a building at the end. The pipe appears to be made of steel and is surrounded by natural elements such as mountains and vegetation.
+
+- **Safety Constraint**: The image does not show any signs of surface oxidation or corrosion.
+- **Audit Reasoning**: There are no visible signs of rust, corrosion, or other forms of damage that would indicate surface oxidation or corrosion. Therefore, the safety constraint is met in this image.
+
+**Verdict**: SAFE",2
+184,pipe_non_corroded (24).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (24).jpg,Data_Preprocessed/pipe_non_corroded (24).jpg,,"The image shows a large metal pipe running through a mountainous area with a building on top of a hill. The pipe appears to be part of a pipeline system, possibly for transporting water or another liquid. There are no visible signs of rust or damage to the pipe in the image.
+
+- **Structural Integrity**: The pipe looks sturdy and well-maintained.
+- **Material**: The material of the pipe seems to be suitable for its intended use (e.g., corrosion-resistant steel).
+- **Condition**: There are no visible signs of rust or damage.
+
+**Auditing Reasoning**:
+1. The pipe does not show any signs of rust or damage.
+2. The pipe appears to be made of a durable material suitable for its purpose.
+3. There are no visible structural defects such as cracks, dents, or leaks.
+
+**Conclusion**:
+The surface rust is acceptable within the context of the industrial setting depicted in the image. Therefore, the verdict is:
+
+SAFE",2
+185,pipe_non_corroded (25).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (25).jpg,Data_Preprocessed/pipe_non_corroded (25).jpg,Low Resolution,"The image shows a large pipeline running through a desert landscape, with no visible signs of surface oxidation or corrosion. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+1. The pipeline appears to be made of metal and is surrounded by a desert environment.
+2. There are no visible signs of rust, corrosion, or other signs of damage.
+3. The pipeline is supported by a concrete foundation, which provides stability and protection against environmental factors such as temperature changes and moisture.
+
+Verdict: SAFE",2
+186,pipe_non_corroded (25).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (25).jpg,Data_Preprocessed/pipe_non_corroded (25).jpg,Low Resolution,"The image shows a large pipeline running through a desert landscape with no visible signs of surface rust. Therefore, there are no structural defects, dents, cracks, or leaks that would indicate unsafe conditions.
+
+**Audit Reasoning:** The pipeline appears to be in good condition without any visible signs of rust or damage. Therefore, the pipeline does not violate the safety constraint of having surface rust.
+
+**Verdict:** SAFE",2
+187,pipe_non_corroded (3).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (3).jpg,Data_Preprocessed/pipe_non_corroded (3).jpg,,"The yellow pipes in the image appear to be made of metal, which is typically used for industrial pipelines. The pipes have rust marks and signs of wear, indicating that they may be old or exposed to environmental conditions over time.
+
+- **Rust Marks**: There are visible rust marks on the pipes, which can indicate surface oxidation or corrosion.
+- **Wear and Scratches**: The pipes show signs of wear and scratches, suggesting they have been exposed to various environmental factors such as moisture, sunlight, and chemicals.
+
+**Audit Reasoning**: The presence of rust marks and signs of wear on the pipes indicates that they may not be safe for use due to potential surface oxidation or corrosion. These conditions can lead to leaks, damage, and other issues that could pose a risk to both the environment and human health.
+
+**Verdict**: UNSAFE
+
+The pipes should be inspected further to assess their condition and ensure they meet safety standards before they are used again.",2
+188,pipe_non_corroded (3).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (3).jpg,Data_Preprocessed/pipe_non_corroded (3).jpg,,"The yellow pipes in the image appear to be made of metal and have been painted yellow. There are no visible signs of rust, dents, cracks, or leaks on the surface of the pipes. Therefore, based on the provided information, the pipes do not violate the safety constraint of having surface rust.
+
+Audit Reasoning:
+- The pipes are painted yellow.
+- There are no visible signs of rust, dents, cracks, or leaks on the surface of the pipes.
+- The pipes are intact and appear to be in good condition.
+
+Verdict: SAFE",2
+189,pipe_non_corroded (4).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (4).jpg,Data_Preprocessed/pipe_non_corroded (4).jpg,,"The image shows two large metal pipes running parallel to each other, with some vegetation growing between them. The pipes appear to be made of steel and have rust stains visible on their surfaces.
+
+- **Safety Constraint**: The presence of rust stains on the pipes indicates that they may be subject to surface oxidation or corrosion.
+- **Audit Reasoning**: The pipes show signs of wear and tear, which could lead to potential leaks or damage over time. This suggests that the pipes might not be safe for use in a functional manner.
+- **Verdict**: UNSAFE
+
+The pipes should be inspected and repaired to ensure they remain safe for use.",2
+190,pipe_non_corroded (4).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (4).jpg,Data_Preprocessed/pipe_non_corroded (4).jpg,,"The image shows two large pipes running parallel to each other with no visible signs of rust or structural defects such as dents, cracks, or leaks. The pipes appear to be in good condition without any apparent issues that would indicate they violate the safety constraint of surface rust being acceptable.
+
+Therefore, the verdict is SAFE.",2
+191,pipe_non_corroded (5).jpg,pipeline,Distorted,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (5).jpg,Data_Preprocessed/pipe_non_corroded (5).jpg,Distorted,"The image shows pipes with visible signs of rust and corrosion, indicating that they have been exposed to the elements for some time. Therefore, the safety constraint is violated.
+
+Audit Reasoning:
+1. The pipes show signs of rust and corrosion.
+2. These signs indicate that the pipes have been exposed to the environment for a significant period, which can lead to potential damage over time.
+
+Verdict: UNSAFE",2
+192,pipe_non_corroded (5).jpg,pipeline,Distorted,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (5).jpg,Data_Preprocessed/pipe_non_corroded (5).jpg,Distorted,"The image shows pipes with visible signs of rust, which indicates that they may be structurally weak and prone to failure over time. Therefore, the safety constraint of ""surface rust is acceptable"" is violated.
+
+Audit Reasoning:
+- The pipes have visible rust marks.
+- Rust can weaken the material and increase the risk of failure.
+- This condition does not meet the requirement of surface rust being acceptable.
+
+Verdict: UNSAFE",2
+193,pipe_non_corroded (6).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (6).jpg,Data_Preprocessed/pipe_non_corroded (6).jpg,,"The pipes in the image appear to be made of metal, which is typically used for industrial purposes such as water distribution systems. The pipes are not visibly corroded or oxidized, indicating that they are likely safe from surface damage.
+
+Therefore, the verdict is SAFE.",2
+194,pipe_non_corroded (6).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (6).jpg,Data_Preprocessed/pipe_non_corroded (6).jpg,,"The pipes in the image appear to be made of metal and have been painted red. There are no visible signs of rust, such as discoloration or peeling paint, which suggests that they are not rusting. Therefore, the surface rust is acceptable.
+
+Audit Reasoning:
+- The pipes do not show any signs of rust.
+- The pipes are well-maintained and appear to be in good condition.
+
+Verdict: SAFE",2
+195,pipe_non_corroded (7).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (7).jpg,Data_Preprocessed/pipe_non_corroded (7).jpg,,"The image shows two pipelines running parallel to each other, with one being black and the other green. The pipelines appear to be in good condition without visible signs of oxidation or corrosion.
+
+- **Black Pipeline**: No visible signs of oxidation or corrosion.
+- **Green Pipeline**: No visible signs of oxidation or corrosion.
+
+**Audit Reasoning**: There is no evidence of surface oxidation or corrosion on either pipeline. Therefore, there is no violation of the safety constraint related to surface oxidation or corrosion.
+
+**Verdict**: SAFE
+
+Note: This conclusion assumes that the pipelines have been inspected recently and do not show any signs of damage or deterioration. If there were signs of corrosion or oxidation, the pipelines would need to be evaluated further for compliance with safety standards.",2
+196,pipe_non_corroded (7).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (7).jpg,Data_Preprocessed/pipe_non_corroded (7).jpg,,"The image shows two pipelines running parallel to each other with no visible signs of surface rust, dents, cracks, or leaks. Therefore, the safety constraint of surface rust being acceptable has been met.
+
+Audit Reasoning:
+1. The pipelines appear to be in good condition without any visible signs of rust.
+2. There are no visible dents, cracks, or leaks on the pipelines.
+3. The pipelines are supported by metal structures that do not show any signs of damage.
+
+Verdict: SAFE",2
+197,pipe_non_corroded (8).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (8).jpg,Data_Preprocessed/pipe_non_corroded (8).jpg,,"The pipe in the image appears to be made of metal, which is typically resistant to corrosion. However, there is no visible evidence of surface oxidation or corrosion in the image. Therefore, based on the information provided, the pipe does not violate the safety constraint of surface oxidation or corrosion.
+
+Audit Reasoning:
+- The pipe is made of metal.
+- There is no visible evidence of surface oxidation or corrosion.
+- Conclusion: The pipe is safe from surface oxidation or corrosion.
+
+Verdict: SAFE",2
+198,pipe_non_corroded (8).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (8).jpg,Data_Preprocessed/pipe_non_corroded (8).jpg,,"The image shows a pipeline being installed in a trench filled with soil and dirt. The pipeline appears to be made of metal and has been installed correctly according to the construction standards.
+
+- **Structural Integrity**: The pipeline looks intact without any visible signs of damage such as rust, cracks, or leaks.
+- **Material Quality**: The pipeline material seems to be suitable for its intended use, which is likely to carry water or another liquid.
+- **Safety Compliance**: There are no visible signs of structural defects like dents, cracks, or leaks that would indicate a violation of safety standards.
+
+**Audit Reasoning**: The pipeline installation appears to be safe based on the visual inspection. There are no visible structural defects or leaks that would pose a risk to the integrity of the pipeline. Therefore, the pipeline can be considered safe.
+
+**Verdict**: SAFE (655207636)",2
+199,pipe_non_corroded (9).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (9).jpg,Data_Preprocessed/pipe_non_corroded (9).jpg,,"The image shows a construction site with black plastic pipes installed in a trench. The pipes appear to be new and have not shown signs of oxidation or corrosion. Therefore, there is no violation of the safety constraint.
+
+**Audit Reasoning:**
+1. **Observation**: The pipes are new and have not been exposed to the elements for long.
+2. **Condition**: There are no visible signs of rust, peeling paint, or other signs of corrosion.
+3. **Conclusion**: Based on these observations, the pipes do not show any signs of surface oxidation or corrosion.
+
+**Verdict:** SAFE
+
+The pipes are safe to use without any immediate concerns regarding surface oxidation or corrosion.",2
+200,pipe_non_corroded (9).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (9).jpg,Data_Preprocessed/pipe_non_corroded (9).jpg,,"The image shows a construction site where new black plastic pipes have been installed in a trench. The pipes appear to be securely fastened with straps and there are no visible signs of surface rust or structural defects such as cracks or leaks.
+
+**Audit Reasoning:**
+1. **Straps and Fasteners:** The pipes are secured with straps that appear to be properly attached and secure.
+2. **No Visible Defects:** There are no visible signs of rust, cracks, or leaks on the pipes.
+3. **Environment:** The environment appears clean and well-maintained, indicating good conditions for installation.
+
+**Verdict:**
+The pipes do not violate any safety constraints related to surface rust. Therefore, the image is SAFE.",2

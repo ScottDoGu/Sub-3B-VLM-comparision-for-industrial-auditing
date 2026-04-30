@@ -1,0 +1,2 @@
+Model,Runs,ACCURACY,raw_accuracy_mean,raw_accuracy_std,LCR,raw_lcr_mean,raw_lcr_std,F1,raw_f1_mean,raw_f1_std,ANLS,raw_anls_mean,raw_anls_std,FPR,raw_fpr_mean,raw_fpr_std,FNR,raw_fnr_mean,raw_fnr_std
+Qwen2-VL (CoT Foveation),3,0.573 ± 0.000,0.5728643216080402,0.0,0.330 ± 0.000,0.33,0.0,0.397 ± 0.000,0.39716312056737585,0.0,0.099 ± 0.000,0.09875000000000002,0.0,0.085 ± 0.000,0.0851063829787234,0.0,0.733 ± 0.000,0.7333333333333333,0.0

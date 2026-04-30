@@ -1,0 +1,429 @@
+index,image_id,category,artifact_tag,ground_truth_value,unit,logic_constraint,expected_value,rule_id,reasoning,hard_case_flag,expected_verdict,full_path,processed_path,constraint,model_response,inference_time_sec,peak_vram_gb
+1,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.10 bar.,0.15 bar,Rule A,Value is 0.15. 0.15 > 0.10.,1,UNSAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 0.5 bar, which is within the safe range (0-0.10 bar). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 0.5 bar.
+- This reading falls within the safe range (0-0.10 bar).
+- There is no indication that the pressure has exceeded 0.10 bar.
+
+Verdict: SAFE",29.221538600046188,4.170637607574463
+2,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.20 bar.,0.15 bar,Rule B,Value is 0.15. 0.15 < 0.20.,1,SAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 1.5 bar, which is within the safe range (0 to 0.20 bar). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 1.5 bar.
+- This reading falls within the safe range (0 to 0.20 bar).
+- There is no indication that the pressure has exceeded this limit.
+
+Verdict: SAFE",25.465774699812755,4.171349048614502
+3,guage (10).jpg,guage,,0,bar,Alert if pressure is above 0.05 bar.,0 bar,Rule A,Value is 0. 0 < 0.05.,0,SAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"The image shows a pressure gauge with a value of 1.5 Bar, which is within the safe range (0 to 2.5 Bar). The gauge reads ""0"" at the bottom, indicating that the pressure is below the threshold for the safety alert.
+
+Audit Reasoning:
+- The gauge reads 1.5 Bar, which is within the safe range.
+- There is no indication or warning message on the gauge itself to alert about the pressure being above 0.05 bar.
+
+Verdict: SAFE
+
+The image does not violate the safety constraint of alerting if the pressure is above 0.05 bar.",39.536762500181794,4.258094310760498
+4,guage (10).jpg,guage,,0,bar,Alert if system is non-pressurized (0 bar).,0 bar,Rule B,Value is 0. System is non-pressurized.,0,UNSAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"The image shows a pressure gauge with a value of 1.5 Bar, which is within the safe range of 2 to 30 Bar. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 1.5 Bar.
+- This value falls within the safe range of 2 to 30 Bar.
+- There are no visible signs or indicators that suggest the system is not pressurized.
+
+Verdict: SAFE",35.84234880004078,4.25832986831665
+5,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 20 kPa. Alert if over.,25 kPa,Rule A,Value is 25. 25 > 20.,1,UNSAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"The pressure gauge in the image reads 15 kPa, which is within the normal range of 10 to 30 kPa. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 15 kPa.
+- This value falls within the normal range (10 to 30 kPa).
+- There is no indication that the pressure is too high or too low.
+- No action has been taken to exceed the normal range.
+
+Verdict: SAFE",36.52926789992489,4.22295618057251
+6,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 30 kPa. Alert if over.,25 kPa,Rule B,Value is 25. 25 < 30.,1,SAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"The pressure gauge in the image reads 15 kPa, which is within the normal range of 10 to 20 kPa. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 15 kPa.
+- This value falls within the normal range (10 to 20 kPa).
+- There is no indication that the pressure is too high or too low.
+- No action has been taken to exceed the normal range.
+
+Verdict: SAFE",41.63646740000695,4.222955703735352
+7,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 80 NA.,100 NA,Rule A,Value is 100. 100 > 80.,1,UNSAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 50, which is within the safe range (0-100). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 50, which is less than or equal to 100.
+- There is no indication that the gauge reading will exceed 80 in the image provided.
+
+Verdict: SAFE",26.701973400078714,4.172276020050049
+8,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 120 NA.,100 NA,Rule B,Value is 100. 100 < 120.,1,SAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 50, which is within the safe range (0-120). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 50, which is less than or equal to 120.
+- There is no indication that the gauge has exceeded its maximum capacity.
+- No other safety-related issues are visible in the image.
+
+Verdict: SAFE",28.04783089994453,4.172800064086914
+9,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 1.5 bar. Alert if over.,2 bar,Rule A,Value is 2. 2 > 1.5.,1,UNSAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"The image shows two pressure gauges with values of 0.4 MPa and 0.6 MPa, respectively. The gauge for the higher pressure (0.6 MPa) is within the operating limit of 1.5 bar, while the gauge for the lower pressure (0.4 MPa) is outside the operating limit of 1.5 bar.
+
+Therefore, the image violates the safety constraint ""Operating limit is 1.5 bar.""
+
+**Auditing Reasoning:**
+- The gauge for the higher pressure (0.6 MPa) is within the operating limit of 1.5 bar.
+- The gauge for the lower pressure (0.4 MPa) is outside the operating limit of 1.5 bar.
+
+**Verdict:**
+Unsafe
+
+The image violates the safety constraint because the gauge for the lower pressure is outside the operating limit of 1.5 bar.",89.6492675000336,4.442633628845215
+10,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 3.0 bar. Alert if over.,2 bar,Rule B,Value is 2. 2 < 3.0.,1,SAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"The image shows two pressure gauges with values of 1.0 bar and 2.0 bar, respectively. The gauge for the first pressure (1.0 bar) is within the operating limit of 3.0 bar, while the gauge for the second pressure (2.0 bar) is outside the operating limit of 3.0 bar.
+
+Therefore, the image violates the safety constraint ""Operating limit is 3.0 bar.""
+
+**Auditing Reasoning:**
+- The gauge for the first pressure (1.0 bar) is within the operating limit of 3.0 bar.
+- The gauge for the second pressure (2.0 bar) is outside the operating limit of 3.0 bar.
+
+**Verdict:**
+Unsafe
+
+The image violates the safety constraint because the second pressure gauge is outside its operating limit of 3.0 bar.",74.17246499983594,4.44264030456543
+11,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 14 lbf/in2.,18 lbf/in2,Rule A,Value is 18. 18 > 14.,0,UNSAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"The image shows a pressure gauge with a value of 0, which is below the maximum allowed value of 140 lbf/in2. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 0 lbf/in2.
+- This reading is less than the maximum allowed value of 140 lbf/in2.
+- There is no indication that the pressure will exceed 140 lbf/in2 in the image.
+
+Verdict: SAFE",28.26621920010075,4.190441608428955
+12,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 22 lbf/in2.,18 lbf/in2,Rule B,Value is 18. 18 < 22.,0,SAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"The image shows a pressure gauge with a value of 100, which is within the safe range of 50 to 150 lbf/in2. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 100 lbf/in2.
+- This value falls within the safe range (50 to 150 lbf/in2).
+- There is no indication that the pressure has exceeded 22 lbf/in2.
+
+Verdict: SAFE",28.649277300108224,4.189603328704834
+13,guage (15).jpg,guage,Low Resolution,0,,Alert if reading is above 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"The image shows three pressure gauges with values of 1, 2, and 3 respectively. The gauge readings do not exceed 5, so there is no violation of the alert for readings above 5.
+
+Audit Reasoning:
+- Each gauge has a red line indicating that the value exceeds 5.
+- All gauge values (1, 2, 3) are less than or equal to 5.
+- Therefore, there is no violation of the alert condition.
+
+Verdict: SAFE",27.93570869998075,4.169693470001221
+14,guage (15).jpg,guage,Low Resolution,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"The image shows three pressure gauges on a machine, each with a red ""0"" indicator. The gauge values are as follows:
+
+- Top left gauge: 150
+- Top right gauge: 200
+- Bottom gauge: 300
+
+Since all the gauges show positive values (greater than zero), there is no violation of the safety constraint that the system should not be at 0 NA.
+
+Therefore, the verdict is SAFE.",25.039913299959153,4.170436859130859
+15,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 100 kN/m2.,125 kN/m2,Rule A,Value is 125. 125 > 100.,0,UNSAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"The image shows a temperature gauge with a red line indicating a value of 140, which is above the maximum allowed value of 100 kN/m2. Therefore, the gauge should alert when the value exceeds 100 kN/m2.
+
+Audit Reasoning:
+- The gauge has a maximum value of 100 kN/m2.
+- The current value on the gauge is 140 kN/m2.
+- This value exceeds the maximum allowed value (100 kN/m2).
+
+Verdict: UNSAFE
+
+The gauge should alert when the value exceeds 100 kN/m2 to ensure safe operation.",39.054169700015336,4.189913272857666
+16,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 150 kN/m2.,125 kN/m2,Rule B,Value is 125. 125 < 150.,0,SAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"The image shows a temperature gauge with a red line indicating a value of 140, which is above the maximum allowed value of 150. Therefore, the gauge is unsafe because it exceeds the maximum allowed value.
+
+Audit Reasoning:
+- The gauge has a maximum value of 150 kN/m2.
+- The current value on the gauge is 140 kN/m2.
+- This value exceeds the maximum allowed value of 150 kN/m2.
+
+Verdict: UNSAFE",32.24471149989404,4.190746307373047
+17,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 160 psi.,200 psi,Rule A,Value is 200. 200 > 160.,1,UNSAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 250, which is within the safe range of 200 to 300 psi. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 250 psi.
+- This reading falls within the safe range (200 to 300 psi).
+- There is no indication that the pressure is expected to exceed 160 psi.
+
+Verdict: SAFE",28.523881800007075,4.172603607177734
+18,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 240 psi.,200 psi,Rule B,Value is 200. 200 < 240.,1,SAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 150, which is within the safe range of 100 to 360 psi. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 150, which is within the safe range (100 to 360 psi).
+- There is no indication that the pressure is expected to exceed 240 psi.
+- No other information in the image suggests any potential for over-pressure or unsafe conditions.
+
+Verdict: SAFE",32.23785650008358,4.172603130340576
+19,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 24 NA.,30 NA,Rule A,Value is 30. 30 > 24.,1,UNSAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 10, which is within the safe range (0-24). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 10.
+- This value is within the safe range (0-24).
+- There are no visible signs or indications that the gauge could be malfunctioning or indicating an unsafe condition.
+
+Verdict: SAFE",25.0123749000486,4.172773361206055
+20,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 36 NA.,30 NA,Rule B,Value is 30. 30 < 36.,1,SAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 10, which is within the safe range (0-9). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 10.
+- This value is within the safe range (0-9).
+- There are no visible signs or indications that the gauge could be malfunctioning or indicating an unsafe condition.
+
+Verdict: SAFE",24.66328090010211,4.172274589538574
+21,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 1.7 liter.,2.2 liter,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"The image shows a water valve with a gauge that reads ""0"" on the left side, indicating no water flow. The right side of the valve has a blue plastic cap with a red handle attached to it. There is a small drop of water visible at the bottom of the image.
+
+To determine if the image violates the safety constraint of alerting if the level is greater than 1.7 liters, we need to consider the context provided in the question:
+
+- The gauge reads ""0"", which means there is no water flow.
+- The water valve is closed (no water flow).
+- The red handle is being turned, but it does not exceed the value of 1.7 liters.
+
+Since the water valve is closed and there is no water flow, the level cannot be greater than 1.7 liters. Therefore, the image does not violate the safety constraint of alerting if the level is greater than 1.7 liters.
+
+**Auditing Reasoning:** The water valve is closed, and there is no water flow. The red handle is being turned, but it does not exceed the value of 1.7 liters. Therefore, the image does not violate the safety constraint of alerting if the level is greater than 1.7 liters.
+
+",75.81472729984671,4.2580647468566895
+22,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 2.7 liter.,2.2 liter,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"The image shows a water valve with a pressure gauge, which is used to measure the pressure in the system. The pressure gauge reads ""0"" on the left side of the image.
+
+To determine if the image violates the safety constraint of alerting if the pressure is greater than 2.7 liters, we need to check the value displayed on the pressure gauge:
+
+1. The current reading on the pressure gauge is ""0"".
+2. According to the safety constraint, the pressure should not exceed 2.7 liters.
+3. Since the pressure gauge reads ""0"", which is less than 2.7 liters, there is no violation of the safety constraint.
+
+Therefore, the verdict is:
+SAFE",50.19537209998816,4.258068084716797
+23,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if value exceeds 2 kg/cm2.,0 kg/cm2,Rule A,Value is 0. 0 < 2.,1,SAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"The pressure gauge in the image is labeled as ""kg/cm²"" which indicates that it measures pressure in kilograms per square centimeter (kg/cm²). The gauge reads 10, which is within the safe range of 5 to 20 kg/cm².
+
+Audit Reasoning:
+- The gauge reads 10 kg/cm².
+- This reading falls within the safe range of 5 to 20 kg/cm².
+- There is no indication or warning about exceeding 2 kg/cm².
+
+Verdict: SAFE",109.91836900007911,4.602727890014648
+24,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if system pressure drops to 0 kg/cm2.,0 kg/cm2,Rule B,Value is 0. System pressure is at 0.,1,UNSAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 15, which is within the safe range (0-60) for air master systems. The gauge reads ""kg/cm²"" indicating that it measures pressure in kilograms per square centimeter. There is no indication of any warning or alert related to dropping system pressure to 0 kg/cm².
+
+Therefore, the safety constraint is not violated. The verdict is: SAFE.",107.71429510018788,4.604294776916504
+25,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 3.0 kgf/cm2.,4 kgf/cm2,Rule A,Value is 4. 4 > 3.0.,1,UNSAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"The image shows a pressure gauge with a needle that reads ""15"" on a scale marked in kilograms per square centimeter (kgf/cm²). The gauge indicates that the pressure is currently at 15 kgf/cm².
+
+To assess whether this pressure level is safe, we need to compare it to the maximum allowed pressure for the system. The maximum allowable pressure is typically specified as a percentage of the rated capacity of the equipment or piping system. In this case, the maximum allowable pressure is not provided, but assuming it is within a reasonable range, let's assume it is around 30% of the rated capacity.
+
+A safe operating pressure would be less than 30% of the rated capacity. Let's calculate the safe operating pressure:
+
+Safe Operating Pressure = Rated Capacity × (1 - Percentage Allowable)
+Safe Operating Pressure = 15 kgf/cm² × (1 - 30%)
+Safe Operating Pressure ≈ 15 kgf/cm² × 70%
+Safe Operating Pressure ≈ 105 kgf/cm²
+
+Since the needle reading is 15 kgf/cm², which is greater than the safe operating pressure of approximately 105 kgf/cm², the pressure is unsafe according to",80.09560239990242,4.2586493492126465
+26,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 5.0 kgf/cm2.,4 kgf/cm2,Rule B,Value is 4. 4 < 5.0.,1,SAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"The image shows a pressure gauge with a needle that reads ""15"" on a scale marked in kilograms per square centimeter (kgf/cm²). The safety constraint is to alert if the needle is past 5.0 kgf/cm².
+
+Auditing the image:
+- The needle is at 15 kgf/cm², which is greater than 5 kgf/cm².
+- Therefore, the needle is past the threshold of 5 kgf/cm².
+
+Verdict: UNSAFE
+
+The needle has exceeded the allowed limit, indicating a potential safety violation.",42.72317730006762,4.25864315032959
+27,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 2.0 kPa.,2.5 kPa,Rule A,Value is 2.5. 2.5 > 2.0.,1,UNSAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"The pressure gauge in the image reads 15 kPa, which is within the safe range of 0 to 20 kPa as per the safety constraint. Therefore, the image does not violate the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 15 kPa.
+- This value is within the safe range (0 to 20 kPa).
+- No violation of the safety constraint detected.
+
+Verdict: SAFE",35.80983790010214,4.2580671310424805
+28,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 3.0 kPa.,2.5 kPa,Rule B,Value is 2.5. 2.5 < 3.0.,1,SAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"The pressure gauge in the image reads 25 kPa, which is within the safe range of 10 to 30 kPa as per the safety constraint. Therefore, the image does not violate the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 25 kPa.
+- This value falls within the safe range (10 to 30 kPa).
+- There is no indication that the pressure could exceed 3.0 kPa.
+
+Verdict: SAFE",38.59345720009878,4.258066654205322
+29,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.2 Pa.,1.5 Pa,Rule A,Value is 1.5. 1.5 > 1.2.,1,UNSAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"The image shows a man working on a plumbing system, which is part of a larger HVAC (Heating, Ventilation, and Air Conditioning) system. The pipes and valves in the image appear to be part of the HVAC system.
+
+To determine if the image violates the safety constraint ""Alert if value > 1.2 Pa."", we need to check the pressure gauge values for each pipe valve. However, the image does not provide specific information about the pressure gauges or their readings.
+
+Since there is no visible information about the pressure gauges in the image, we cannot accurately assess whether the system is safe based on the given constraints. Therefore, the verdict would be:
+
+**UNSAFE**
+
+The image does not provide enough information to determine if the system is safe according to the specified safety constraint.",53.75159320002422,4.258039951324463
+30,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.8 Pa.,1.5 Pa,Rule B,Value is 1.5. 1.5 < 1.8.,1,SAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"The image shows a man working on a plumbing system, which is not related to industrial auditing or safety. Therefore, there is no violation of the safety constraint in this case.
+
+Auditing Reasoning:
+- The image does not depict any industrial equipment or machinery.
+- There is no indication that the man is performing any tasks that would require industrial auditing or safety compliance.
+
+Verdict: SAFE",32.42187689989805,4.258040428161621
+31,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 18 celcius.,23 celcius,Rule A,Value is 23. 23 > 18.,0,UNSAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"The image shows a piece of industrial equipment with various pipes, valves, and gauges. The gauge in the center reads ""0"" on the scale, which is typically not safe to exceed as it indicates that the temperature is below the specified limit.
+
+Auditing Reasoning:
+- The gauge reads ""0"", which is not within the safe range (typically between 0 and 60).
+- The temperature cannot be above 18 degrees Celsius.
+- Therefore, the equipment is unsafe based on the given constraints.
+
+Verdict: UNSAFE
+
+The equipment should not have a temperature reading of zero or any value less than 20 degrees Celsius.",45.952077499823645,4.279493808746338
+32,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 28 celcius.,23 celcius,Rule B,Value is 23. 23 < 28.,0,SAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"The image shows a piece of industrial equipment with various pipes, valves, and gauges. The gauge in the center reads ""0"" on the scale, which is typically not safe to exceed as it indicates that the temperature is below the specified limit.
+
+Auditing Reasoning:
+1. The gauge reads ""0"", which is not within the safe range (typically between 0 and 60).
+2. There is no indication or warning provided for exceeding the temperature limit.
+3. The equipment appears to be part of a larger system, but the specific context of the temperature limit is unclear from the image alone.
+
+Verdict: UNSAFE
+
+The equipment should be checked to ensure that the temperature does not exceed 28°C, as per the safety constraint.",52.75486180000007,4.279494762420654
+33,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 0.8 bar.,1 bar,Rule A,Value is 1. 1 > 0.8.,0,UNSAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"The pressure gauge in the image is displaying a value of 1.5 bar, which is within the safe range of 0 to 2.5 bars as per the label on the gauge. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 1.5 bar.
+- This value is less than or equal to 2.5 bar (the maximum allowed).
+- There is no indication that the pressure has exceeded 0.8 bar.
+
+Verdict: SAFE",35.65237449994311,4.265069961547852
+34,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 1.2 bar.,1 bar,Rule B,Value is 1. 1 < 1.2.,0,SAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"The pressure gauge in the image is displaying a value of 0.5 bar, which is below the maximum allowed limit of 1.2 bar. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 0.5 bar.
+- This reading is less than the maximum allowed limit of 1.2 bar.
+- There is no indication that the pressure has exceeded the safe limit.
+
+Verdict: SAFE",34.625467099947855,4.264909267425537
+35,guage (25).jpg,guage,Oblique Angle,0,,Alert if reading is > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"The image shows a mechanical system with various components, including pressure gauges. The gauge readings are within the safe range of 0 to 10, as indicated by the labels on the gauges.
+
+- **Safety Constraint**: The reading should not exceed 5.
+- **Audit Reasoning**: The gauge readings (0 to 10) do not exceed 5, which means the system is operating safely according to the specified limit.
+
+**Verdict**: SAFE",35.25385810015723,4.2580132484436035
+36,guage (25).jpg,guage,Oblique Angle,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"The image shows a mechanical system with various components, including pressure gauges and hoses. The system appears to be designed for high-pressure applications, such as in automotive or industrial machinery.
+
+1. **Safety Constraint**: The system is designed to handle high pressures.
+2. **Audit Reasoning**:
+   - The gauge readings (0) indicate that the system is not operating under normal conditions.
+   - If the system were to reach zero pressure, it could lead to damage or failure of the equipment.
+3. **Verdict**: UNSAFE
+
+The system should not operate at zero pressure due to the potential risk of damage or malfunction. It is crucial to maintain safe operational parameters to ensure the integrity of the system.",46.39869119995274,4.2580132484436035
+37,guage (26).jpg,guage,,400,kPa,Alert if value is > 320 kPa.,400 kPa,Rule A,Value is 400. 400 > 320.,0,UNSAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"The image shows a pressure gauge with a value of 1500 kPa, which is within the safe range of 0 to 320 kPa as per the safety constraint provided. Therefore, the image does not violate the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 1500 kPa.
+- This value falls within the safe range (0 to 320 kPa).
+- There is no indication that the pressure exceeds the safe limit.
+- No violation of the safety constraint detected.
+
+Verdict: SAFE",38.81782880006358,4.258096694946289
+38,guage (26).jpg,guage,,400,kPa,Alert if value is > 480 kPa.,400 kPa,Rule B,Value is 400. 400 < 480.,0,SAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"The image shows a pressure gauge with a value of 1500 kPa, which is within the safe range (0-480 kPa). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 1500 kPa.
+- This value falls within the safe range of 0 to 480 kPa.
+- There is no indication that the gauge is showing values outside this safe range.
+
+Verdict: SAFE",35.10619560000487,4.258096694946289
+39,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 800 mbar.,1000 mbar,Rule A,Value is 1000. 1000 > 800.,1,UNSAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 250 mbar, which is within the safe range (0-1000 mbar). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 250 mbar.
+- This reading falls within the safe range of 0 to 1000 mbar.
+- There is no indication that the gauge has exceeded its maximum capacity or any other safety limit.
+
+Verdict: SAFE",42.386114000109956,4.258066654205322
+40,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 1200 mbar.,1000 mbar,Rule B,Value is 1000. 1000 < 1200.,1,SAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"The image shows a pressure gauge with a value of 500 mbar, which is within the safe range (0-1200 mbar). Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 500 mbar.
+- This reading falls within the safe range of 0 to 1200 mbar.
+- There is no indication that the gauge has exceeded its maximum capacity or any other safety limit.
+
+Verdict: SAFE",40.40186660015024,4.258096218109131
+41,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 100 psi.,125 psi,Rule A,Value is 125. 125 > 100.,1,UNSAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"The image shows a piece of industrial equipment, specifically an air compressor with various components including a gauge for monitoring pressure. The gauge reads ""25 PSI"" which is within the safe range (0-99 PSI). 
+
+**Audit Reasoning:**
+- The gauge indicates that the pressure is currently at 25 PSI.
+- This pressure level is well below the maximum allowed limit of 100 PSI.
+
+**Verdict:**
+- The image does not violate the safety constraint of exceeding 100 psi.
+
+Therefore, the verdict is SAFE.",41.673916400177404,4.258039951324463
+42,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 150 psi.,125 psi,Rule B,Value is 125. 125 < 150.,1,SAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"The image shows a piece of industrial equipment, specifically an air compressor with various components including a gauge for monitoring pressure. The gauge reads ""150"" on the scale, which is within the safe range (0-200 psi) as per the safety constraint.
+
+**Audit Reasoning:**
+1. **Safety Constraint:** The safety constraint states that the pressure should not exceed 150 psi.
+2. **Observation:** The gauge reads 150 psi, which falls within the safe range.
+3. **Conclusion:** There is no violation of the safety constraint in this image.
+
+**Verdict:** SAFE
+
+This conclusion is based on the observation that the pressure gauge indicates a safe value of 150 psi, which does not exceed the specified limit.",55.495824499987066,4.258039951324463
+43,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum > 5 in hg.,0 in hg,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"The gauge reads 10 units of pressure, which is within the safe range of 0 to 20 units. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 10 units of pressure.
+- This value falls within the safe range (0 to 20 units).
+- There is no indication that the vacuum exceeds 5 units of pressure.
+
+Verdict: SAFE",35.14723260002211,4.258013725280762
+44,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum drops to 0 in hg.,0 in hg,Rule B,Value is 0. Vacuum is at 0.,1,UNSAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"The gauge in the image shows that the vacuum is currently at 15 cm Hg, which is within the safe range of 10-20 cm Hg as per the label on the gauge. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 15 cm Hg, which falls within the safe range (10-20 cm Hg).
+- There is no indication or warning about the vacuum dropping to 0 cm Hg.
+- No other safety-related indicators or warnings are visible in the image.
+
+Verdict: SAFE",42.17331809992902,4.258039951324463
+45,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 17 bar.,22 bar,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"The pressure gauge in the image shows a value of 20 bar, which is within the safe range of 0 to 40 bar as indicated on the gauge. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 20 bar.
+- This value is within the safe range (0 to 40 bar).
+- There is no indication that the pressure exceeds 17 bar.
+
+Verdict: SAFE",27.29761409992352,4.189507961273193
+46,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 27 bar.,22 bar,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"The pressure gauge in the image shows a value of 10 bar, which is below the maximum allowed value of 27 bar. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The pressure gauge reads 10 bar.
+- This reading is less than the maximum allowed value of 27 bar.
+- There is no indication that the pressure is expected to exceed 27 bar in the context provided (e.g., a warning sign or a label).
+
+Verdict: SAFE",31.735996899893507,4.188673973083496
+47,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 17 psi.,22 psi,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"The pressure gauge on the red fire hydrant reads 20 psi, which is within the safe range of 15-40 psi as per the safety constraint. Therefore, the hydrant is not unsafe based on the given information.
+
+Audit Reasoning:
+- The pressure gauge shows a value of 20 psi.
+- This value falls within the safe range (15-40 psi).
+- There is no indication that the hydrant is overpressurized or underpressurized.
+
+Verdict: SAFE",35.76010060007684,4.264339923858643
+48,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 27 psi.,22 psi,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"The pressure gauge on the red fire hydrant reads 30 psi, which is within the safe range of 20-40 psi as per the safety constraint. Therefore, the hydrant is not unsafe based on the given information.
+
+Audit Reasoning:
+1. The pressure gauge shows a value of 30 psi.
+2. The safety constraint specifies that the pressure should be between 20-40 psi.
+3. Since the pressure is within the allowed range (30-40 psi), there is no violation of the safety constraint.
+
+Verdict: SAFE",41.730553600005805,4.264341831207275
+49,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.01 Mpa.,0.02 Mpa,Rule A,Value is 0.02. 0.02 > 0.01.,1,UNSAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"The image shows a pressure gauge with a value of 0.5, which is within the safe range of 0 to 0.6 MPa. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 0.5 MPa.
+- This reading falls within the safe range (0 to 0.6 MPa).
+- There is no indication that the system is overpressurized or underpressurized.
+
+Verdict: SAFE",37.8230113000609,4.25050163269043
+50,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.03 Mpa.,0.02 Mpa,Rule B,Value is 0.02. 0.02 < 0.03.,1,SAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"The image shows a pressure gauge with a value of 1.5, which is within the safe range of 0 to 0.6 MPa. Therefore, there is no violation of the safety constraint.
+
+Audit Reasoning:
+- The gauge reads 1.5 MPa.
+- This reading falls within the safe range (0 to 0.6 MPa).
+- There is no indication that the system is overpressurized or at risk of exceeding the safe limit.
+
+Verdict: SAFE",35.616174899972975,4.2505011558532715

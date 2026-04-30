@@ -1,0 +1,1982 @@
+index,image_id,category,artifact_tag,ground_truth_value,unit,logic_constraint,expected_value,rule_id,reasoning,hard_case_flag,expected_verdict,full_path,processed_path,constraint,model_response,stage1_bbox,stage1_raw,run_iteration
+1,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.10 bar.,0.15 bar,Rule A,Value is 0.15. 0.15 > 0.10.,1,UNSAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: -10 bar, 0 bar, 5 bar, 10 bar, 15 bar
+- Outer ring: -10 bar, 0 bar, 5 bar, 10 bar
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at the 10 bar mark on the inner ring of the gauge.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle is pointing at the 10 bar mark, which falls within the safe range of 0 to 10 bar, the safety rule is not triggered.
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(256, 347, 980, 850)","[256, 347, 980, 850]",3
+2,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.20 bar.,0.15 bar,Rule B,Value is 0.15. 0.15 < 0.20.,1,SAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: -10 bar, 0 bar, 5 bar, 10 bar, 15 bar
+- Outer ring: -10 bar, 0 bar, 5 bar, 10 bar
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Needle is pointing at 10 bar on the inner ring.
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule states ""Alert if pressure exceeds 0.20 bar.""
+
+Step 4: Provide a final verdict.
+
+Since the needle is pointing at 10 bar which does not exceed 0.20 bar, the safety rule has not been violated.
+
+Final verdict: SAFE","(256, 347, 980, 850)","[256, 347, 980, 850]",3
+3,guage (10).jpg,guage,,0,bar,Alert if pressure is above 0.05 bar.,0 bar,Rule A,Value is 0. 0 < 0.05.,0,SAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0 - 10 Bar
+- Outer ring: 0 - 30 Bar
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at the 10 Bar mark on the inner ring of the gauge.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle is pointing at the 10 Bar mark, which falls within the safe range of 0 - 10 Bar, the safety rule is not triggered.
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(256, 137, 749, 580)","[256, 137, 749, 580]",3
+4,guage (10).jpg,guage,,0,bar,Alert if system is non-pressurized (0 bar).,0 bar,Rule B,Value is 0. System is non-pressurized.,0,UNSAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Outer ring: 0-30 Bar
+- Inner ring: -1 to 2.4 Bar
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle points at the 15 Bar mark on the outer ring, which corresponds to the -1 to 2.4 Bar inner ring.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle is pointing at the 15 Bar mark on the outer ring, which falls within the range of -1 to 2.4 Bar, the safety rule ""Alert if system is non-pressurized (0 bar)"" does not apply in this case.
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(256, 137, 749, 580)","[256, 137, 749, 580]",3
+5,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 20 kPa. Alert if over.,25 kPa,Rule A,Value is 25. 25 > 20.,1,UNSAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"To determine whether the pressure in the gauge is within the safe range, we need to identify the relevant scale and its unit.
+
+The gauge has two main dials:
+- The inner dial shows measurements in kPa (kilopascals).
+- The outer dial shows measurements in PSI (pounds per square inch).
+
+Let's analyze each scale:
+
+1. **Inner Dial (kPa):**
+   - The scale ranges from 0 to 150 kPa.
+   - The needle is pointing at approximately 70 kPa.
+
+2. **Outer Dial (PSI):**
+   - The scale ranges from 0 to 100 PSI.
+   - The needle is pointing at approximately 80 PSI.
+
+Now, let's apply the safety rule:
+
+**Safety Rule:** ""Normal range is < 20 kPa. Alert if over.""
+
+Since the needle of the inner dial is pointing at 70 kPa, which is greater than the normal range of 20 kPa, the pressure is unsafe.
+
+Final Verdict: **UNSAFE**","(256, 98, 743, 743)","[256, 98, 743, 743]",3
+6,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 30 kPa. Alert if over.,25 kPa,Rule B,Value is 25. 25 < 30.,1,SAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"To determine whether the pressure in the gauge is within the safe range, we need to identify the relevant scale and its unit.
+
+The gauge has two main scales:
+- The inner ring shows measurements in kPa (kilopascals).
+- The outer ring shows measurements in PSI (pounds per square inch).
+
+Let's read the needle on the inner ring:
+
+- The needle points at approximately 5 kPa.
+
+Now, let's apply the safety rule:
+
+""Normal range is < 30 kPa. Alert if over.""
+
+Since the needle is not over 30 kPa, the pressure is within the safe range.
+
+Final verdict: SAFE","(256, 98, 743, 743)","[256, 98, 743, 743]",3
+7,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 80 NA.,100 NA,Rule A,Value is 100. 100 > 80.,1,UNSAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"To determine whether the gauge is safe, we need to identify the scale and its unit.
+
+The gauge in the image has two scales:
+- Inner ring: 0-50 psi
+- Outer ring: 0-150 psi
+
+Since the safety rule states ""Alert if reading exceeds 80 NA,"" we need to compare the readings of both scales.
+
+For the inner ring (0-50 psi):
+- Reading = 0 psi
+- According to the safety rule, no alert should be issued for a reading of 0 psi.
+
+For the outer ring (0-150 psi):
+- Reading = 75 psi
+- According to the safety rule, any reading greater than 80 psi should be considered unsafe.
+
+Therefore, the final verdict is:
+
+[SAFE]","(256, 347, 749, 780)","[256, 347, 749, 780]",3
+8,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 120 NA.,100 NA,Rule B,Value is 100. 100 < 120.,1,SAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"The gauge in the image has two measurement scales, one for pressure and another for temperature.
+
+1. Pressure Scale:
+   - Inner ring: 0-60 psi
+   - Outer ring: 0-150 psi
+
+2. Temperature Scale:
+   - Range: -40°F to 80°F
+
+Step 1: Identify all visible scales and their units.
+- The pressure scale is used to measure the pressure in the system.
+- The temperature scale is used to measure the temperature of the system.
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+- The needle on the pressure scale points towards 70 psi.
+
+Step 3: Apply the safety rule to that reading.
+- Safety Rule: ""Alert if reading exceeds 120 NA.""
+
+Step 4: Provide a final verdict.
+- Since the reading on the pressure scale is 70 psi, which does not exceed 120 psi, there is no need to alert.
+
+Final Verdict: SAFE","(256, 347, 749, 780)","[256, 347, 749, 780]",3
+9,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 1.5 bar. Alert if over.,2 bar,Rule A,Value is 2. 2 > 1.5.,1,UNSAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"To determine whether the operating limit of 1.5 bar has been exceeded, we need to look at the pressure gauge in the foreground.
+
+1. **Identify all visible scales and their units**:
+   - The pressure gauge in the foreground shows a reading of approximately 0.8 bar.
+
+2. **Read the exact numerical value indicated by the needle on the relevant scale**:
+   - The needle on the pressure gauge reads around 0.7 bar.
+
+3. **Apply the safety rule to that reading**:
+   - According to the safety rule ""Operating limit is 1.5 bar. Alert if over,"" any reading above 1.5 bar should be considered unsafe.
+
+4. **Provide a final verdict**:
+   - Since the reading of 0.7 bar is below the alert level of 1.5 bar, it does not exceed the operating limit.
+
+Final verdict: [SAFE]","(256, 187, 743, 923)","[256, 187, 743, 923]",3
+10,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 3.0 bar. Alert if over.,2 bar,Rule B,Value is 2. 2 < 3.0.,1,SAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"To determine whether the operating limit of 3.0 bar has been exceeded, we need to look at the pressure gauge in the foreground.
+
+1. **Identify all visible scales and their units**:
+   - The pressure gauge in the foreground shows a reading of approximately 1.5 bar.
+
+2. **Read the exact numerical value indicated by the needle on the relevant scale**:
+   - The needle on the pressure gauge in the foreground points towards the 1.5 bar mark.
+
+3. **Apply the safety rule to that reading**:
+   - According to the safety rule, ""Operating limit is 3.0 bar. Alert if over.""
+
+4. **Provide a final verdict**:
+   - Since the reading on the pressure gauge in the foreground is less than 3.0 bar, there is no indication of an alert condition based on the given safety rule.
+
+Final verdict: [SAFE]","(256, 187, 743, 923)","[256, 187, 743, 923]",3
+11,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 14 lbf/in2.,18 lbf/in2,Rule A,Value is 18. 18 > 14.,0,UNSAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: lbf/in²
+- Outer ring: kN/m²
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring: 0 lbf/in²
+- Outer ring: 15 kN/m²
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule is ""Alert if pressure exceeds 14 lbf/in².""
+
+Step 4: Provide a final verdict.
+
+Since the needle is not at 14 lbf/in², the pressure is not exceeding 14 lbf/in². Therefore, the final verdict is:
+
+[SAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+12,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 22 lbf/in2.,18 lbf/in2,Rule B,Value is 18. 18 < 22.,0,SAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: lbf/in²
+- Outer ring: kN/m²
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring: 0 lbf/in²
+- Outer ring: 15 kN/m²
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule is ""Alert if pressure exceeds 22 lbf/in².""
+
+Step 4: Provide a final verdict.
+
+Since the pressure reading of 15 kN/m² does not exceed 22 lbf/in², the safety rule has not been triggered.
+
+Final verdict: SAFE","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+13,guage (15).jpg,guage,Low Resolution,0,,Alert if reading is above 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"To determine whether the readings are safe, we need to identify the correct scale and its corresponding unit.
+
+1. **Identify all visible scales and their units**:
+   - The first gauge has a scale marked in percentages.
+   - The second gauge has a scale marked in pounds per square inch (psi).
+   - The third gauge has a scale marked in atmospheres (atm).
+
+2. **Read the exact numerical value indicated by the needle on the relevant scale**:
+   - The needle on the first gauge points towards the ""0"" mark.
+   - The needle on the second gauge points towards the ""0"" mark.
+   - The needle on the third gauge points towards the ""0"" mark.
+
+3. **Apply the safety rule to that reading**:
+   - Safety Rule: ""Alert if reading is above 5 NA.""
+   - Reading on the first gauge: 0%
+   - Reading on the second gauge: 0 psi
+   - Reading on the third gauge: 0 atm
+
+Since none of the readings exceed 5%, there is no need to alert for any unsafe conditions.
+
+Final verdict: [SAFE]","(256, 347, 980, 750)","[256, 347, 980, 750]",3
+14,guage (15).jpg,guage,Low Resolution,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"To determine whether the system is at 0 NA, we need to look at the pressure readings on the gauges.
+
+1. The first gauge shows a reading of approximately 50 psi.
+2. The second gauge shows a reading of approximately 60 psi.
+3. The third gauge shows a reading of approximately 70 psi.
+
+Since none of these readings match the safety rule of ""Alert if system is at 0 NA,"" we can conclude that the system is not at 0 NA.
+
+Final verdict: UNSAFE","(256, 347, 980, 750)","[256, 347, 980, 750]",3
+15,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 100 kN/m2.,125 kN/m2,Rule A,Value is 125. 125 > 100.,0,UNSAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Inner ring: lbf/in² (lbf = pounds per square inch, in² = square inches)
+- Outer ring: kN/m² (kN = kilonewtons, m² = square meters)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing towards the ""Danger"" mark on the outer ring of the gauge, which corresponds to a value of approximately 150 kN/m².
+
+Step 3: Apply the safety rule to that reading.
+
+Since the reading is greater than 100 kN/m², we need to alert for danger.
+
+Step 4: Provide a final verdict.
+
+[UNSAFE]","(256, 347, 980, 800)","[256, 347, 980, 800]",3
+16,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 150 kN/m2.,125 kN/m2,Rule B,Value is 125. 125 < 150.,0,SAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Inner ring: lbf/in² (lbf = pounds per square inch, in² = square inches)
+- Outer ring: kN/m² (kN = kilonewtons, m² = square meters)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing towards the ""Danger"" label, which indicates a value greater than 150 kN/m².
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle is pointing towards the ""Danger"" label, we need to determine whether the actual value exceeds 150 kN/m².
+
+Step 4: Provide a final verdict.
+
+The actual value is greater than 150 kN/m², so the gauge should be considered unsafe according to the safety rule of ""Alert if value exceeds 150 kN/m².""
+
+Final verdict: UNSAFE","(256, 347, 980, 800)","[256, 347, 980, 800]",3
+17,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 160 psi.,200 psi,Rule A,Value is 200. 200 > 160.,1,UNSAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Inner ring: 50°C to 400°C
+- Outer ring: 0 to 160 psi
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at the 150°C mark on the inner ring of the gauge.
+
+Step 3: Apply the safety rule to that reading.
+
+Safety Rule: 'Alert if pressure is > 160 psi.'
+Pressure reading: 150°C = 392°F
+Safety Rule: The pressure is not greater than 160 psi, so there is no need to alert.
+
+Final verdict: [SAFE]","(250, 200, 750, 800)","[250, 200, 750, 800]",3
+18,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 240 psi.,200 psi,Rule B,Value is 200. 200 < 240.,1,SAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 50°C, 100°C, 150°C, 200°C, 250°C, 300°C, 350°C
+- Outer ring: 0°C, 50°C, 100°C, 150°C, 200°C, 250°C, 300°C, 350°C
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at 350°C on the outer ring of the gauge.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the safety rule states ""Alert if pressure is > 240 psi,"" we need to compare the temperature reading to the maximum allowable pressure for safe operation.
+
+Maximum allowable pressure = 240 psi
+
+Step 4: Provide a final verdict.
+
+Temperature reading: 350°C
+
+Pressure reading: Not applicable as it's not provided in the image.
+
+Final verdict: UNSAFE","(250, 200, 750, 800)","[250, 200, 750, 800]",3
+19,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 24 NA.,30 NA,Rule A,Value is 30. 30 > 24.,1,UNSAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"To determine whether the pressure reading is safe, we need to identify the scale and its unit.
+
+The gauge in the picture has two measurement scales:
+- Inner ring: 0-50 psi
+- Outer ring: 0-250 psi
+
+Since the safety rule states ""Alert if reading exceeds 24 NA,"" we need to compare the reading to the outer ring of the gauge.
+
+Reading: 80 psi
+
+Comparing it to the outer ring:
+
+- Outer ring: 0-250 psi
+- Reading: 80 psi
+
+Since the reading is within the outer ring, the pressure is not exceeding 24 NA.
+
+Final verdict: SAFE","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+20,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 36 NA.,30 NA,Rule B,Value is 30. 30 < 36.,1,SAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"To determine if the reading exceeds 36 N/A, we need to look at the scale of the pressure gauge.
+
+The pressure gauge has two scales:
+- Inner ring: 0-50 psi
+- Outer ring: 0-150 psi
+
+Since the needle is pointing towards the 0-50 psi scale, the reading is within the safe range of 0-50 psi.
+
+Final verdict: SAFE","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+21,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 1.7 liter.,2.2 liter,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,Safe,"(256, 347, 749, 850)","[256, 347, 749, 850]",3
+22,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 2.7 liter.,2.2 liter,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"To determine if the gauge indicates a dangerous level of water, we need to identify the scale and its unit.
+
+The gauge has two visible scales:
+- Inner ring: 0-5 liters
+- Outer ring: 6-10 liters
+
+Since the needle is pointing towards the 6-liter mark on the outer ring, which corresponds to the 6-10 liters range, we can apply the safety rule:
+
+""Alert if level is > 2.7 liter.""
+
+Now let's check the reading:
+- Reading = 6 liters
+
+Since the reading is within the safe range (0-5 liters), there is no danger according to the safety rule.
+
+Final verdict: SAFE","(256, 347, 749, 850)","[256, 347, 749, 850]",3
+23,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if value exceeds 2 kg/cm2.,0 kg/cm2,Rule A,Value is 0. 0 < 2.,1,SAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0 - 60 kg/cm²
+- Outer ring: 0 - 90 kg/cm²
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Needle is pointing at 5 on the inner ring, which corresponds to 30 kg/cm².
+- Needle is pointing at 8 on the outer ring, which corresponds to 45 kg/cm².
+
+Step 3: Apply the safety rule to that reading.
+
+- The needle is not within the safe range of 2 kg/cm².
+
+Step 4: Provide a final verdict.
+
+[UNSAFE]","(238, 95, 762, 846)","[238, 95, 762, 846]",3
+24,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if system pressure drops to 0 kg/cm2.,0 kg/cm2,Rule B,Value is 0. System pressure is at 0.,1,UNSAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0 to 60 kg/cm²
+- Outer ring: 0 to 90 kg/cm²
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Needle is pointing at 5 on the inner ring, which corresponds to 30 kg/cm².
+- Needle is pointing at 8 on the outer ring, which corresponds to 45 kg/cm².
+
+Step 3: Apply the safety rule to that reading.
+
+- Safety Rule: Alert if system pressure drops to 0 kg/cm².
+
+Step 4: Provide a final verdict.
+
+- Reading on inner ring: 30 kg/cm²
+- Reading on outer ring: 45 kg/cm²
+
+Since both readings are above the threshold of 0 kg/cm², the system pressure does not drop below 0 kg/cm². Therefore, the safety rule is not triggered in this case.
+
+Final verdict: SAFE","(238, 95, 762, 846)","[238, 95, 762, 846]",3
+25,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 3.0 kgf/cm2.,4 kgf/cm2,Rule A,Value is 4. 4 > 3.0.,1,UNSAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"To determine whether the needle on the pressure gauge is past 3.0 kgf/cm², we need to identify the relevant scale and its unit.
+
+The pressure gauge has two main scales:
+- Inner ring: 0 - 20 kgf/cm²
+- Outer ring: 0 - 50 kgf/cm²
+
+Since the needle is located on the outer ring of the gauge, we should read the value from the outer ring.
+
+Reading the outer ring:
+- Needle is at 20 kgf/cm²
+
+Now, applying the safety rule:
+
+Safety Rule: ""Alert if needle is past 3.0 kgf/cm².""
+
+Since the needle is not past 3.0 kgf/cm² (it's 20 kgf/cm²), there is no need for an alert.
+
+Final verdict: SAFE","(250, 375, 750, 625)","[250, 375, 750, 625]",3
+26,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 5.0 kgf/cm2.,4 kgf/cm2,Rule B,Value is 4. 4 < 5.0.,1,SAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"To determine whether the needle on the gauge is past 5.0 kgf/cm², we need to identify the relevant scale and its unit.
+
+The gauge in the image has two main scales:
+- An inner ring with a range of 0 to 20 kgf/cm²
+- An outer ring with a range of 0 to 100 kgf/cm²
+
+Since the needle is located on the outer ring, we should read the value from there.
+
+Reading the outer ring:
+- The needle is at approximately 70 kgf/cm²
+
+Now, applying the safety rule:
+
+Safety Rule: ""Alert if needle is past 5.0 kgf/cm².""
+
+Since the needle is not past 5.0 kgf/cm² (it's only around 70 kgf/cm²), the final verdict is:
+
+[SAFE]","(250, 375, 750, 625)","[250, 375, 750, 625]",3
+27,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 2.0 kPa.,2.5 kPa,Rule A,Value is 2.5. 2.5 > 2.0.,1,UNSAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"Step 1: Identify all visible scales and their units.
+
+- Inner ring of the gauge: 0 - 25 kPa
+- Outer ring of the gauge: 0 - 20 kPa
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring of the gauge: 16 kPa
+- Outer ring of the gauge: 18 kPa
+
+Step 3: Apply the safety rule to that reading.
+
+- Safety Rule: Alert if reading exceeds 2.0 kPa.
+
+Step 4: Provide a final verdict.
+
+- Reading: 16 kPa
+- Safety Rule: SAFE
+
+The gauge reading is within the safe limit, so the final verdict is SAFE.","(256, 347, 749, 857)","[256, 347, 749, 857]",3
+28,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 3.0 kPa.,2.5 kPa,Rule B,Value is 2.5. 2.5 < 3.0.,1,SAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"Step 1: Identify all visible scales and their units.
+
+- Inner ring of the gauge: 0 - 25 kPa
+- Outer ring of the gauge: 0 - 10 kPa
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring of the gauge: 10 kPa
+- Outer ring of the gauge: 20 kPa
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule is ""Alert if reading exceeds 3.0 kPa.""
+
+Step 4: Provide a final verdict.
+
+Since the reading on the inner ring of the gauge (10 kPa) does not exceed 3.0 kPa, the safety rule has not been violated.
+
+Final verdict: SAFE","(256, 347, 749, 857)","[256, 347, 749, 857]",3
+29,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.2 Pa.,1.5 Pa,Rule A,Value is 1.5. 1.5 > 1.2.,1,UNSAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"To determine whether the gauge is safe, we need to identify the scale and its unit.
+
+From the image:
+- The gauge has two measurement scales: an inner ring and an outer ring.
+- The inner ring shows values in millimeters.
+- The outer ring shows values in inches.
+
+The safety rule states ""Alert if value > 1.2 Pa.""
+
+Let's analyze each scale:
+
+1. **Inner Ring**: This scale reads values in millimeters. 
+   - The maximum value it can read is approximately 50 mm.
+   - Since our gauge reads less than 1.2 Pa, it does not exceed the limit of 1.2 Pa.
+
+2. **Outer Ring**: This scale reads values in inches.
+   - The maximum value it can read is approximately 6 inches.
+   - Since our gauge reads less than 1.2 Pa, it does not exceed the limit of 1.2 Pa.
+
+Since both scales indicate readings below 1.2 Pa, the gauge is safe according to the safety rule.
+
+**Final Verdict:** SAFE","(256, 347, 998, 998)","[256, 347, 998, 998]",3
+30,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.8 Pa.,1.5 Pa,Rule B,Value is 1.5. 1.5 < 1.8.,1,SAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"To determine whether the gauge is safe, we need to identify the scale and its unit.
+
+From the image:
+- The gauge has two measurement scales: an inner ring and an outer ring.
+- The inner ring shows values in millimeters.
+- The outer ring shows values in inches.
+
+The safety rule states ""Alert if value > 1.8 Pa.""
+
+Let's analyze each scale:
+
+1. **Inner Ring (Millimeters):**
+   - The needle reads approximately 0.5 mm.
+   - According to the safety rule, if the needle reads more than 1.8 mm, it should alert.
+
+2. **Outer Ring (Inches):**
+   - The needle reads approximately 6.0 inches.
+   - According to the safety rule, if the needle reads more than 1.8 inches, it should alert.
+
+Since both scales indicate readings less than 1.8 mm, there is no need to apply the safety rule because the readings do not exceed the threshold.
+
+**Final Verdict:** SAFE","(256, 347, 998, 998)","[256, 347, 998, 998]",3
+31,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 18 celcius.,23 celcius,Rule A,Value is 23. 23 > 18.,0,UNSAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring of the pressure gauge: Celsius (°C)
+- Outer ring of the pressure gauge: Celsius (°C)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring of the pressure gauge: 60°C
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule is ""Alert if temperature exceeds 18 celcius.""
+
+Step 4: Provide a final verdict.
+
+Since the temperature shown on the inner ring of the pressure gauge is 60°C, which does not exceed 18°C, there is no need for an alert.
+
+Final verdict: SAFE","(256, 347, 998, 998)","[256, 347, 998, 998]",3
+32,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 28 celcius.,23 celcius,Rule B,Value is 23. 23 < 28.,0,SAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring of the pressure gauge: 0 - 60 psi
+- Outer ring of the pressure gauge: 0 - 150 psi
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring of the pressure gauge: 70 psi
+- Outer ring of the pressure gauge: 90 psi
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule is ""Alert if temperature exceeds 28 Celsius.""
+
+Step 4: Provide a final verdict.
+
+Since the temperature shown in the pressure gauge is not exceeding 28 Celsius, the safety rule has not been triggered.
+
+Final verdict: SAFE","(256, 347, 998, 998)","[256, 347, 998, 998]",3
+33,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 0.8 bar.,1 bar,Rule A,Value is 1. 1 > 0.8.,0,UNSAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0.5 bar, 1 bar, 1.5 bar, 2 bar, 2.5 bar, 3 bar, 6 bar, 9 bar, 12 bar, 15 bar
+- Outer ring: 0 bar, 0.5 bar, 1 bar, 1.5 bar, 2 bar, 2.5 bar, 3 bar, 4 bar, 5 bar, 6 bar, 7 bar, 8 bar
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Needle is pointing at 1.5 bar on the inner ring.
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule states ""Alert if pressure exceeds 0.8 bar.""
+
+Step 4: Provide a final verdict.
+
+Since the needle is not at 0.8 bar but at 1.5 bar, the pressure is within the safe range of 0.8 bar. Therefore, the final verdict is:
+
+[SAFE]","(256, 234, 749, 894)","[256, 234, 749, 894]",3
+34,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 1.2 bar.,1 bar,Rule B,Value is 1. 1 < 1.2.,0,SAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0, 0.5, 1, 1.5, 2, 2.5, 3, 6, 9, 12, 15, 18, 20, 25, 30, 35, 40, 45, 50, 55, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500, 510, 520, 530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640,","(256, 234, 749, 894)","[256, 234, 749, 894]",3
+35,guage (25).jpg,guage,Oblique Angle,0,,Alert if reading is > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"To determine if the reading is unsafe, we need to identify the scale and its unit.
+
+The gauge in the image has two circular faces, each with a needle indicating the pressure reading. The needle on the left face points towards the lower end of the scale, while the needle on the right face points towards the upper end of the scale.
+
+Since the safety rule states ""Alert if reading is > 5 NA,"" we need to compare the reading to 5.
+
+- Reading on the left face: 0
+- Reading on the right face: 5
+
+Comparing these readings:
+- Left face: 0
+- Right face: 5
+
+The right face indicates a reading greater than 5.
+
+**Final verdict:** UNSAFE","(256, 347, 749, 680)","[256, 347, 749, 680]",3
+36,guage (25).jpg,guage,Oblique Angle,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"To determine if the system is at 0 NA, we need to look at the pressure gauges in the image.
+
+1. **Identify all visible scales and their units**:
+   - The left gauge has a scale marked in pounds per square inch (psi).
+   - The right gauge has a scale marked in atmospheres (atm).
+
+2. **Read the exact numerical value indicated by the needle on the relevant scale**:
+   - The needle on the left gauge points towards 500 psi.
+   - The needle on the right gauge points towards 7 atm.
+
+3. **Apply the safety rule to that reading**:
+   - Safety Rule: ""Alert if system is at 0 NA.""
+   - Reading: 500 psi (pounds per square inch) and 7 atm (atmospheres)
+     - Since both readings are above 0 NA, there is no need to alert.
+
+4. **Provide a final verdict**:
+   - [SAFE]
+
+The system is not at 0 NA, so there is no need to alert.","(256, 347, 749, 680)","[256, 347, 749, 680]",3
+37,guage (26).jpg,guage,,400,kPa,Alert if value is > 320 kPa.,400 kPa,Rule A,Value is 400. 400 > 320.,0,UNSAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"To determine whether the pressure gauge is unsafe, we need to follow these steps:
+
+1. **Identify All Visible Scales and Their Units**:
+   - The gauge has two main scales: one for pressure in kPa and another for temperature.
+
+2. **Read the Exact Numerical Value Indicated by the Needle on the Relevant Scale**:
+   - The needle points at the zero mark on the lower scale, which corresponds to 0 kPa.
+
+3. **Apply the Safety Rule to That Reading**:
+   - According to the safety rule ""Alert if value is > 320 kPa,"" the reading of 0 kPa does not exceed 320 kPa.
+
+4. **Provide a Final Verdict**:
+   - Since the reading is within the safe limit, the final verdict is:
+     - [SAFE]
+
+The pressure gauge is safe according to the given safety rule.","(256, 347, 918, 857)","[256, 347, 918, 857]",3
+38,guage (26).jpg,guage,,400,kPa,Alert if value is > 480 kPa.,400 kPa,Rule B,Value is 400. 400 < 480.,0,SAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"To determine whether the pressure gauge is unsafe, we need to follow these steps:
+
+1. **Identify All Visible Scales and Their Units**:
+   - The gauge has two main scales: one for pressures in kPa and another for pressures in MPa.
+
+2. **Read the Exact Numerical Value Indicated by the Needle on the Relevant Scale**:
+   - The needle points at the ""500"" mark on the kPa scale.
+
+3. **Apply the Safety Rule to That Reading**:
+   - The safety rule states that the pressure should not exceed 480 kPa.
+
+4. **Provide a Final Verdict**:
+   - Since the needle reads 500 kPa, which is greater than 480 kPa, the pressure is unsafe.
+
+Final Verdict: UNSAFE","(256, 347, 918, 857)","[256, 347, 918, 857]",3
+39,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 800 mbar.,1000 mbar,Rule A,Value is 1000. 1000 > 800.,1,UNSAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- The outer ring is marked in millimeters of water column (mWc) and millibars (mbar).
+- The inner ring is marked in millimeters of water column (mWc).
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing towards the ""800"" mark on the inner ring, which corresponds to 800 mbar.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the gauge reads 800 mbar, which is less than the safety limit of 800 mbar, there is no need for an alert.
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(238, 257, 496, 780)","[238, 257, 496, 780]",3
+40,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 1200 mbar.,1000 mbar,Rule B,Value is 1000. 1000 < 1200.,1,SAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- The outer ring is marked in millibars (mbar).
+- The inner ring is marked in atmospheres (atm).
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle points at the 800 mark on the inner ring, which corresponds to 800 mbar.
+
+Step 3: Apply the safety rule to that reading.
+
+Safety Rule: ""Alert if pressure exceeds 1200 mbar.""
+
+Since the pressure reading of 800 mbar does not exceed 1200 mbar, there is no need for an alert.
+
+Final verdict: [SAFE]","(238, 257, 496, 780)","[238, 257, 496, 780]",3
+41,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 100 psi.,125 psi,Rule A,Value is 125. 125 > 100.,1,UNSAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0 - 150 psi
+- Outer ring: 0 - 260 psi
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring: Needle is at 75 psi
+- Outer ring: Needle is at 180 psi
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule states ""Alert if pressure exceeds 100 psi.""
+
+Step 4: Provide a final verdict.
+
+Since the needle is not at 100 psi, there is no need to alert for any pressure exceeding 100 psi.
+
+Final verdict: SAFE","(238, 257, 469, 688)","[238, 257, 469, 688]",3
+42,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 150 psi.,125 psi,Rule B,Value is 125. 125 < 150.,1,SAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0-150 psi
+- Outer ring: 0-260 psi
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring: The needle is pointing at 75 psi.
+- Outer ring: The needle is pointing at 180 psi.
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule states ""Alert if pressure exceeds 150 psi.""
+
+Step 4: Provide a final verdict.
+
+Since the needle is not at 150 psi, there is no need to alert for any pressure exceeding 150 psi.
+
+Final verdict: SAFE","(238, 257, 469, 688)","[238, 257, 469, 688]",3
+43,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum > 5 in hg.,0 in hg,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"To determine whether the gauge is safe, we need to read the pressure indicated by the needle on the gauge.
+
+1. Identify all visible scales and their units:
+   - Inner ring: In Hg
+   - Outer ring: cm Hg
+
+2. Read the exact numerical value indicated by the needle on the relevant scale:
+   - The needle is pointing towards the ""0"" mark on the inner ring of the gauge.
+
+3. Apply the safety rule to that reading:
+   - Safety Rule: Alert if vacuum > 5 in Hg.
+
+Since the needle is pointing at the ""0"" mark on the inner ring, which corresponds to zero, there is no indication of a vacuum greater than 5 in Hg.
+
+Final verdict: SAFE","(256, 137, 749, 866)","[256, 137, 749, 866]",3
+44,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum drops to 0 in hg.,0 in hg,Rule B,Value is 0. Vacuum is at 0.,1,UNSAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"The gauge has two measurement scales, one for pressure in inches of mercury (IN Hg) and another for pressure in centimeters of mercury (cm Hg).
+
+- The needle is pointing at approximately -5 cm Hg.
+
+Applying the safety rule:
+""Alert if vacuum drops to 0 in hg.""
+
+Since the needle is not at zero, there is no need to alert.
+
+Final verdict: [SAFE]","(256, 137, 749, 866)","[256, 137, 749, 866]",3
+45,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 17 bar.,22 bar,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Inner ring: 0-40 bar
+- Outer ring: 0-10 bar
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at the 40 bar mark on the inner ring of the gauge.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle is pointing at the 40 bar mark, which falls within the safe range of 0-40 bar, the safety rule ""Alert if pressure > 17 bar"" does not apply in this case.
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(256, 347, 896, 852)","[256, 347, 896, 852]",3
+46,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 27 bar.,22 bar,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Inner ring: 0-40 bar
+- Outer ring: 0-20 bar
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at the 40 bar mark on the inner ring of the gauge.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle is pointing at the 40 bar mark, which falls within the safe range of 0-40 bar, the safety rule ""Alert if pressure > 27 bar"" does not apply in this case.
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(256, 347, 896, 852)","[256, 347, 896, 852]",3
+47,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 17 psi.,22 psi,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"Step 1: Identify all visible scales and their units.
+
+- Inner ring of the gauge: 0 - 10 psi
+- Outer ring of the gauge: 0 - 10 bar
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring of the gauge: 5 psi
+- Outer ring of the gauge: 5 bar
+
+Step 3: Apply the safety rule to that reading.
+
+Since the reading is within the safe range, the final verdict is:
+
+[SAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+48,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 27 psi.,22 psi,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"To determine whether the pressure is safe, we need to read the pressure gauge and compare it to the safety rule of ""Alert if pressure > 27 psi.""
+
+Step 1: Identify all visible scales and their units:
+- Inner ring: psi (pounds per square inch)
+- Outer ring: bar (barrel)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale:
+- The needle is pointing towards the 0 psi mark on the inner ring.
+
+Step 3: Apply the safety rule to that reading:
+- Since the needle is at the 0 psi mark, which corresponds to 0 psi, there is no pressure present according to the safety rule.
+
+Step 4: Provide a final verdict:
+- The final verdict is [SAFE].
+
+The pressure in this case is not above 27 psi, so the safety audit can proceed without any concerns.","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+49,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.01 Mpa.,0.02 Mpa,Rule A,Value is 0.02. 0.02 > 0.01.,1,UNSAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"The gauge in the image has two measurement scales, one for pressure and another for temperature.
+
+1. **Pressure Scale**: The needle is pointing at around 0.5 MPa.
+2. **Temperature Scale**: The needle is not visible as it is not part of the gauge shown in the image.
+
+Since there is no visible temperature scale, we cannot determine whether the pressure exceeds 0.01 MPa based on the information provided.
+
+**Final Verdict**: UNSAFE","(250, 300, 750, 900)","[250, 300, 750, 900]",3
+50,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.03 Mpa.,0.02 Mpa,Rule B,Value is 0.02. 0.02 < 0.03.,1,SAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"To determine whether the pressure is within safe limits, we need to read the gauge's scale and compare it to the safety rule.
+
+1. **Identify all visible scales and their units**:
+   - Inner ring of the gauge: 0-1 MPa
+   - Outer ring of the gauge: 0-6 MPa
+
+2. **Read the exact numerical value indicated by the needle on the relevant scale**:
+   - The needle is pointing towards the 0.5 MPa mark on the outer ring of the gauge.
+
+3. **Apply the safety rule to that reading**:
+   - Safety Rule: ""Alert if > 0.03 Mpa.""
+
+4. **Provide a final verdict**:
+   - Since the needle is at the 0.5 MPa mark, which is less than 0.03 MPa, there is no alert required according to the safety rule.
+
+Final verdict: [SAFE]","(250, 300, 750, 900)","[250, 300, 750, 900]",3
+51,guage (32).jpg,guage,Low Resolution,0.8,bar,Alert if > 0.6 bar.,0.8 bar,Rule A,Value is 0.8. 0.8 > 0.6.,1,UNSAFE,Dataset/Guages/guage (32).jpg,Data_Preprocessed/guage (32).jpg,Low Resolution,"To determine whether the pressure is safe, we need to read the pressure indicated by the needle on the gauge.
+
+1. **Identify all visible scales and their units**:
+   - The gauge has two main scales: one for bar and another for other unspecified units.
+
+2. **Read the exact numerical value indicated by the needle on the relevant scale**:
+   - The needle points towards the ""bar"" scale.
+
+3. **Apply the safety rule to that reading**:
+   - Safety Rule: ""Alert if > 0.6 bar.""
+
+4. **Provide a final verdict**:
+   - Reading: 0.5 bar
+
+Since the reading is less than 0.6 bar, the pressure is not unsafe according to the safety rule.
+
+Final verdict: [SAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+52,guage (32).jpg,guage,Low Resolution,0.8,bar,Alert if > 1.0 bar.,0.8 bar,Rule B,Value is 0.8. 0.8 < 1.0.,1,SAFE,Dataset/Guages/guage (32).jpg,Data_Preprocessed/guage (32).jpg,Low Resolution,"To determine whether the pressure is safe, we need to read the pressure indicated by the needle on the gauge.
+
+1. **Identify all visible scales and their units**:
+   - The gauge has two main scales: one for bar and another for other units.
+
+2. **Read the exact numerical value indicated by the needle on the relevant scale**:
+   - The needle points towards the ""bar"" scale.
+
+3. **Apply the safety rule to that reading**:
+   - Safety Rule: ""Alert if > 1.0 bar.""
+
+4. **Provide a final verdict**:
+   - Since the needle is pointing towards the ""bar"" scale and it reads less than 1.0 bar, the pressure is not unsafe according to the safety rule.
+
+Final verdict: [SAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+53,guage (33).jpg,guage,Glare,3.6,bar,Alert if > 2.8 bar.,3.6 bar,Rule A,Value is 3.6. 3.6 > 2.8.,1,UNSAFE,Dataset/Guages/guage (33).jpg,Data_Preprocessed/guage (33).jpg,Glare,"To determine whether the pressure is unsafe, we need to compare the reading on the gauge to the safety rule of ""Alert if > 2.8 bar.""
+
+Step 1: Identify all visible scales and their units:
+- Inner ring: 0.1 MPa
+- Outer ring: 6 MPa
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale:
+- Inner ring: 0.1 MPa
+- Outer ring: 5.7 MPa
+
+Step 3: Apply the safety rule to that reading:
+- The reading on the outer ring is 5.7 MPa.
+
+Since the reading on the outer ring is greater than 2.8 bar, the pressure is unsafe.
+
+Final verdict: UNSAFE","(256, 347, 743, 789)","[256, 347, 743, 789]",3
+54,guage (33).jpg,guage,Glare,3.6,bar,Alert if > 4.4 bar.,3.6 bar,Rule B,Value is 3.6. 3.6 < 4.4.,1,SAFE,Dataset/Guages/guage (33).jpg,Data_Preprocessed/guage (33).jpg,Glare,"To determine whether the pressure is safe, we need to compare the reading on the gauge to the safety rule of ""Alert if > 4.4 bar.""
+
+1. **Identify all visible scales and their units**:
+   - Inner ring: MPa (milliPascals)
+   - Outer ring: Bar (bars)
+
+2. **Read the exact numerical value indicated by the needle on the relevant scale**:
+   - The needle points to the red zone on the outer ring.
+
+3. **Apply the safety rule**:
+   - The reading on the outer ring is 6.0 MPa.
+
+Since the reading is greater than 4.4 MPa, which is the threshold for alerting, the pressure is unsafe.
+
+Final verdict: UNSAFE","(256, 347, 743, 789)","[256, 347, 743, 789]",3
+55,guage (34).jpg,guage,Oblique Angle/ Low Resolution,83,kPa,Alert if pressure exceeds 66 kPa.,83 kPa,Rule A,Value is 83. 83 > 66.,1,UNSAFE,Dataset/Guages/guage (34).jpg,Data_Preprocessed/guage (34).jpg,Oblique Angle/ Low Resolution,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: -80 kPa to 0 kPa
+- Outer ring: 0 kPa to 100 kPa
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Needle is pointing at -50 kPa on the inner ring.
+
+Step 3: Apply the safety rule to that reading.
+
+The needle is pointing at -50 kPa, which falls within the safe range of -80 kPa to 0 kPa.
+
+Final verdict: SAFE","(256, 347, 749, 681)","[256, 347, 749, 681]",3
+56,guage (34).jpg,guage,Oblique Angle/ Low Resolution,83,kPa,Alert if pressure exceeds 100 kPa.,83 kPa,Rule B,Value is 83. 83 < 100.,1,SAFE,Dataset/Guages/guage (34).jpg,Data_Preprocessed/guage (34).jpg,Oblique Angle/ Low Resolution,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: -60 to 0 kPa
+- Outer ring: 0 to 100 kPa
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Needle is pointing at 50 kPa on the inner ring.
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule states ""Alert if pressure exceeds 100 kPa.""
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(256, 347, 749, 681)","[256, 347, 749, 681]",3
+57,guage (35).jpg,guage,Obstruction,35,Psi,Alert if > 28 Psi.,35 Psi,Rule A,Value is 35. 35 > 28.,1,UNSAFE,Dataset/Guages/guage (35).jpg,Data_Preprocessed/guage (35).jpg,Obstruction,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: kg/cm²
+- Outer ring: PPA (bar)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring: 0 kg/cm²
+
+Step 3: Apply the safety rule to that reading.
+
+Since the reading is 0 kg/cm², which does not exceed 28 psi, there is no need to apply the safety rule.
+
+Final verdict: SAFE","(256, 347, 988, 650)","[256, 347, 988, 650]",3
+58,guage (35).jpg,guage,Obstruction,35,Psi,Alert if > 42 Psi.,35 Psi,Rule B,Value is 35. 35 < 42.,1,SAFE,Dataset/Guages/guage (35).jpg,Data_Preprocessed/guage (35).jpg,Obstruction,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: kg/cm²
+- Outer ring: PPA (bar)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring: 0 kg/cm²
+
+Step 3: Apply the safety rule to that reading.
+
+Since the reading is 0 kg/cm², which does not exceed 42 psi, there is no need to apply the safety rule.
+
+Final verdict: SAFE","(256, 347, 988, 650)","[256, 347, 988, 650]",3
+59,guage (36).jpg,guage,Low Contrast,0.1,Mpa,Alert if > 0.08 Mpa.,0.1 Mpa,Rule A,Value is 0.1. 0.1 > 0.08.,1,UNSAFE,Dataset/Guages/guage (36).jpg,Data_Preprocessed/guage (36).jpg,Low Contrast,"To determine whether the pressure is unsafe, we need to read the needle on the gauge and compare it to the safety rule of ""Alert if > 0.08 MPa.""
+
+The gauge reads approximately 0.6 MPa.
+
+Since the needle is not at the top of the scale indicating ""0.8,"" which would be considered unsafe according to the safety rule, the pressure is not unsafe.
+
+Final verdict: SAFE","(256, 347, 749, 780)","[256, 347, 749, 780]",3
+60,guage (36).jpg,guage,Low Contrast,0.1,Mpa,Alert if > 0.12 Mpa.,0.1 Mpa,Rule B,Value is 0.1. 0.1 < 0.12.,1,SAFE,Dataset/Guages/guage (36).jpg,Data_Preprocessed/guage (36).jpg,Low Contrast,"To determine whether the pressure is unsafe, we need to read the pressure gauge and compare it to the safety rule of ""Alert if > 0.12 MPa.""
+
+1. **Identify all visible scales and their units:**
+   - Inner ring: MPa
+   - Outer ring: MPa
+
+2. **Read the exact numerical value indicated by the needle on the relevant scale:**
+   - The needle is pointing at 0.6 MPa.
+
+3. **Apply the safety rule to that reading:**
+   - Safety Rule: Alert if > 0.12 MPa.
+   - Reading: 0.6 MPa
+
+Since the reading is less than 0.12 MPa, the pressure is not unsafe according to the given safety rule.
+
+**Final Verdict:** SAFE","(256, 347, 749, 780)","[256, 347, 749, 780]",3
+61,guage (37).jpg,guage,Low Contrast,160,celcius,Alert if > 128 celcius.,160 celcius,Rule A,Value is 160. 160 > 128.,1,UNSAFE,Dataset/Guages/guage (37).jpg,Data_Preprocessed/guage (37).jpg,Low Contrast,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Outer ring: Celsius (°C)
+- Inner ring: Pressure (bar)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at the ""0"" mark on the outer ring, which corresponds to 0°C.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the reading is 0°C, which falls within the safe range of -50°C to +70°C, there is no need to apply any safety rules in this case.
+
+Final verdict: [SAFE]","(256, 347, 898, 750)","[256, 347, 898, 750]",3
+62,guage (37).jpg,guage,Low Contrast,160,celcius,Alert if > 192 celcius.,160 celcius,Rule B,Value is 160. 160 < 192.,1,SAFE,Dataset/Guages/guage (37).jpg,Data_Preprocessed/guage (37).jpg,Low Contrast,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Outer ring: Celsius (°C)
+- Inner ring: Pressure (bar)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at the ""0"" mark on the outer ring, which corresponds to 0°C.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle is pointing at the ""0"" mark on the outer ring of the gauge, it indicates that the temperature is 0°C, which does not exceed the threshold of 192°C.
+
+Step 4: Provide a final verdict.
+
+Final verdict: SAFE","(256, 347, 898, 750)","[256, 347, 898, 750]",3
+63,guage (38).jpg,guage,,60,celcius,Alert if temperature exceeds 48 celcius.,60 celcius,Rule A,Value is 60. 60 > 48.,0,UNSAFE,Dataset/Guages/guage (38).jpg,Data_Preprocessed/guage (38).jpg,,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Inner ring: 0°C to 50°C
+- Outer ring: 0°C to 650°C
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at the 50°C mark on the inner ring of the gauge.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle is pointing at the 50°C mark, which falls within the safe range of 0°C to 50°C, the safety rule does not apply in this case.
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+64,guage (38).jpg,guage,,60,celcius,Alert if temperature exceeds 72 celcius.,60 celcius,Rule B,Value is 60. 60 < 72.,0,SAFE,Dataset/Guages/guage (38).jpg,Data_Preprocessed/guage (38).jpg,,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Inner ring: 0°C to 50°C
+- Outer ring: 0°C to 650°C
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at the 50°C mark on the inner ring of the gauge.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle is pointing at the 50°C mark, which falls within the safe range of 0°C to 50°C, there is no need to apply any safety rules in this case.
+
+Final verdict: [SAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+65,guage (39).jpg,guage,,155,psi,Alert if > 124 psi.,155 psi,Rule A,Value is 155. 155 > 124.,0,UNSAFE,Dataset/Guages/guage (39).jpg,Data_Preprocessed/guage (39).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0 - 150 psi
+- Outer ring: 0 - 135 psi
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Needle is pointing at 135 psi on the outer ring.
+
+Step 3: Apply the safety rule to that reading.
+
+The needle is pointing at 135 psi, which is within the safe range of 0 - 135 psi.
+
+Final verdict: SAFE","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+66,guage (39).jpg,guage,,155,psi,Alert if > 186 psi.,155 psi,Rule B,Value is 155. 155 < 186.,0,SAFE,Dataset/Guages/guage (39).jpg,Data_Preprocessed/guage (39).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0 - 150 psi
+- Outer ring: 0 - 186 psi
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Needle is pointing at 150 psi on the outer ring.
+
+Step 3: Apply the safety rule to that reading.
+
+The needle is at 150 psi, which is within the safe range of 0 - 150 psi.
+
+Final verdict: SAFE","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+67,guage (4).jpg,guage,Obstruction,90,fahrenheit,Alert if > 72 fahrenheit.,90 fahrenheit,Rule A,Value is 90. 90 > 72.,1,UNSAFE,Dataset/Guages/guage (4).jpg,Data_Preprocessed/guage (4).jpg,Obstruction,"To determine whether the gauge is unsafe, we need to identify the scale that corresponds to temperatures above 72 degrees Fahrenheit.
+
+The gauge has two main scales:
+- Inner ring: 0°C to 90°C
+- Outer ring: 0°F to 80°F
+
+Since the needle is pointing towards the 90°C mark on the inner ring, which is above 72°F, we can conclude that the gauge is unsafe.
+
+Final verdict: UNSAFE","(256, 347, 980, 850)","[256, 347, 980, 850]",3
+68,guage (4).jpg,guage,Obstruction,90,fahrenheit,Alert if > 108 fahrenheit.,90 fahrenheit,Rule B,Value is 90. 90 < 108.,1,SAFE,Dataset/Guages/guage (4).jpg,Data_Preprocessed/guage (4).jpg,Obstruction,"To determine whether the gauge is unsafe, we need to identify the correct scale and its corresponding unit.
+
+The gauge has two main scales:
+- Inner ring: 0°C to 90°C
+- Outer ring: 0°F to 120°F
+
+We need to find the scale that corresponds to temperatures above 108°F.
+
+Looking at the inner ring of the gauge:
+- The scale ranges from -50°C to 90°C.
+- The needle is pointing towards approximately 60°C.
+
+Now, let's apply the safety rule:
+
+""Alert if > 108 fahrenheit.""
+
+Since the needle is pointing towards 60°C, which is less than 108°F, there is no indication of an alert condition based on the given temperature range.
+
+Final verdict: SAFE","(256, 347, 980, 850)","[256, 347, 980, 850]",3
+69,guage (40).jpg,guage,Low Contrast,53,celcius,Alert if > 42 celcius.,53 celcius,Rule A,Value is 53. 53 > 42.,1,UNSAFE,Dataset/Guages/guage (40).jpg,Data_Preprocessed/guage (40).jpg,Low Contrast,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Outer ring: 0°C to 120°C
+- Inner ring: -40°C to 80°C
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at the 60°C mark on the inner ring of the gauge.
+
+Step 3: Apply the safety rule to that reading.
+
+Safety Rule: ""Alert if > 42 Celsius.""
+
+Since the needle is not above 42°C, there is no need to alert.
+
+Final verdict: [SAFE]","(256, 347, 988, 852)","[256, 347, 988, 852]",3
+70,guage (40).jpg,guage,Low Contrast,53,celcius,Alert if > 64 celcius.,53 celcius,Rule B,Value is 53. 53 < 64.,1,SAFE,Dataset/Guages/guage (40).jpg,Data_Preprocessed/guage (40).jpg,Low Contrast,"To determine whether the temperature is unsafe, we need to read the numerical value indicated by the needle on the relevant scale.
+
+The gauge has two main scales:
+- The inner ring indicates temperatures in Celsius.
+- The outer ring indicates temperatures in Kelvin.
+
+Since the question asks for a temperature of more than 64°C, we will focus on the inner ring.
+
+The needle is pointing at approximately 50°C on the inner ring.
+
+Now, applying the safety rule:
+
+""Alert if > 64°C.""
+
+Since the needle is not above 64°C, the temperature is safe.
+
+Final verdict: SAFE","(256, 347, 988, 852)","[256, 347, 988, 852]",3
+71,guage (41).jpg,guage,Glare,75,fahrenheit,Alert if > 60 fahrenheit.,75 fahrenheit,Rule A,Value is 75. 75 > 60.,1,UNSAFE,Dataset/Guages/guage (41).jpg,Data_Preprocessed/guage (41).jpg,Glare,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: Fahrenheit (°F)
+- Outer ring: Celsius (°C)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at 75°F on the inner ring of the thermometer.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle is pointing at 75°F, which is less than 60°F, there is no need to alert for this temperature.
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+72,guage (41).jpg,guage,Glare,75,fahrenheit,Alert if > 90 fahrenheit.,75 fahrenheit,Rule B,Value is 75. 75 < 90.,1,SAFE,Dataset/Guages/guage (41).jpg,Data_Preprocessed/guage (41).jpg,Glare,"The gauge in the image is a thermometer, which measures temperature in degrees Celsius (°C) and Fahrenheit (°F).
+
+Step 1: Identify all visible scales and their units:
+- Inner ring: °C
+- Outer ring: °F
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale:
+- Needle points at approximately 85°C.
+
+Step 3: Apply the safety rule to that reading:
+- The safety rule states ""Alert if > 90 fahrenheit.""
+
+Step 4: Provide a final verdict:
+- Since the needle does not exceed 90°F, the safety rule has not been triggered.
+
+Final verdict: SAFE","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+73,guage (42).jpg,guage,,25,psi,Alert if > 20 psi.,25 psi,Rule A,Value is 25. 25 > 20.,0,UNSAFE,Dataset/Guages/guage (42).jpg,Data_Preprocessed/guage (42).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: psi (pounds per square inch)
+- Outer ring: bar (bar)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring: 5 psi
+- Outer ring: 9 bar
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule is ""Alert if > 20 psi.""
+
+Step 4: Provide a final verdict.
+
+Since the reading is less than 20 psi, there is no need to alert.
+
+Final verdict: SAFE","(256, 234, 744, 789)","[256, 234, 744, 789]",3
+74,guage (42).jpg,guage,,25,psi,Alert if > 30 psi.,25 psi,Rule B,Value is 25. 25 < 30.,0,SAFE,Dataset/Guages/guage (42).jpg,Data_Preprocessed/guage (42).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: psi (pounds per square inch)
+- Outer ring: bar (bar)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring: 50 psi
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule is ""Alert if > 30 psi.""
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(256, 234, 744, 789)","[256, 234, 744, 789]",3
+75,guage (43).jpg,guage,,43,celcius,Alert if > 34 celcius.,43 celcius,Rule A,Value is 43. 43 > 34.,0,UNSAFE,Dataset/Guages/guage (43).jpg,Data_Preprocessed/guage (43).jpg,,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Outer ring: Celsius (°C)
+- Inner ring: Fahrenheit (°F)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at the 80°C mark on the outer ring of the gauge.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the safety rule states ""Alert if > 34 celcius,"" we need to compare the reading to 34°C.
+
+Step 4: Provide a final verdict.
+
+The reading of 80°C is greater than 34°C, so the safety rule is triggered.
+
+Final verdict: UNSAFE","(256, 347, 988, 820)","[256, 347, 988, 820]",3
+76,guage (43).jpg,guage,,43,celcius,Alert if > 52 celcius.,43 celcius,Rule B,Value is 43. 43 < 52.,0,SAFE,Dataset/Guages/guage (43).jpg,Data_Preprocessed/guage (43).jpg,,"Step 1: Identify all visible scales and their units.
+
+The gauge has two main scales:
+- Outer ring: Celsius (°C)
+- Inner ring: Fahrenheit (°F)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at the 90°C mark on the outer ring of the gauge.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle is pointing at 90°C, which falls within the safe range of 0°C to 52°C, we do not need to apply any specific safety rules for this reading.
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(256, 347, 988, 820)","[256, 347, 988, 820]",3
+77,guage (44).jpg,guage,Obstruction,50,celcius,Alert if > 40 celcius.,50 celcius,Rule A,Value is 50. 50 > 40.,1,UNSAFE,Dataset/Guages/guage (44).jpg,Data_Preprocessed/guage (44).jpg,Obstruction,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0°C to 50°C
+- Outer ring: 0°C to 450°C
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at 400°C, which falls within the outer ring of the gauge.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle points to 400°C, which is greater than 40°C, the safety rule ""Alert if > 40 celcius."" is satisfied.
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+78,guage (44).jpg,guage,Obstruction,50,celcius,Alert if > 60 celcius.,50 celcius,Rule B,Value is 50. 50 < 60.,1,SAFE,Dataset/Guages/guage (44).jpg,Data_Preprocessed/guage (44).jpg,Obstruction,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0°C to 50°C
+- Outer ring: 0°C to 450°C
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+The needle is pointing at approximately 375°C.
+
+Step 3: Apply the safety rule to that reading.
+
+Since the needle is pointing at 375°C, which is greater than 60°C, we need to alert.
+
+Step 4: Provide a final verdict.
+
+[UNSAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+79,guage (45).jpg,guage,,25,psi,Alert if > 20 psi.,25 psi,Rule A,Value is 25. 25 > 20.,0,UNSAFE,Dataset/Guages/guage (45).jpg,Data_Preprocessed/guage (45).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0 - 150 psi (pounds per square inch)
+- Outer ring: 0 - 9 bar (bar)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring: The needle is pointing at 75 psi, which falls within the safe range of 0 - 150 psi.
+
+- Outer ring: The needle is pointing at 8 bar, which falls within the safe range of 0 - 9 bar.
+
+Step 3: Apply the safety rule to that reading.
+
+Since both the inner and outer rings indicate safe readings, there is no need to apply any additional safety rules.
+
+Final verdict: [SAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+80,guage (45).jpg,guage,,25,psi,Alert if > 30 psi.,25 psi,Rule B,Value is 25. 25 < 30.,0,SAFE,Dataset/Guages/guage (45).jpg,Data_Preprocessed/guage (45).jpg,,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: 0 - 90 psi, 0 - 150 bar
+- Outer ring: 0 - 60 psi, 0 - 100 bar
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring: Needle is at 75 psi
+- Outer ring: Needle is at 80 psi
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule states ""Alert if > 30 psi.""
+
+Since the needle is not at 30 psi, there is no need to alert.
+
+Final verdict: SAFE","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+81,guage (46).jpg,guage,Glare,2.2,bar,Alert if > 1.7 bar.,2.2 bar,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (46).jpg,Data_Preprocessed/guage (46).jpg,Glare,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: psi (pounds per square inch)
+- Outer ring: bar (bar)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring: 0 psi
+- Outer ring: 50 bar
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule is ""Alert if > 1.7 bar.""
+
+Step 4: Provide a final verdict.
+
+Since the needle reads 50 bar, which is less than 1.7 bar, there is no need to alert.
+
+Final verdict: SAFE","(256, 347, 749, 850)","[256, 347, 749, 850]",3
+82,guage (46).jpg,guage,Glare,2.2,bar,Alert if > 2.7 bar.,2.2 bar,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (46).jpg,Data_Preprocessed/guage (46).jpg,Glare,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: psi (pounds per square inch)
+- Outer ring: bar (bar)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Inner ring: 0 psi
+- Outer ring: 50 bar
+
+Step 3: Apply the safety rule to that reading.
+
+The safety rule is ""Alert if > 2.7 bar.""
+
+Step 4: Provide a final verdict.
+
+Since the needle is not at 2.7 bar, there is no need to alert based on the given reading.
+
+Final verdict: SAFE","(256, 347, 749, 850)","[256, 347, 749, 850]",3
+83,guage (47).jpg,guage,Obstruction,40,psi,Alert if > 32 psi.,40 psi,Rule A,Value is 40. 40 > 32.,1,UNSAFE,Dataset/Guages/guage (47).jpg,Data_Preprocessed/guage (47).jpg,Obstruction,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: bar / MPA
+- Outer ring: PSI
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Needle is pointing at 300 bar / MPA.
+
+Step 3: Apply the safety rule to that reading.
+
+The needle is pointing at 300 bar / MPA, which exceeds the limit of 32 psi.
+
+Step 4: Provide a final verdict.
+
+[UNSAFE]","(256, 347, 898, 650)","[256, 347, 898, 650]",3
+84,guage (47).jpg,guage,Obstruction,40,psi,Alert if > 48 psi.,40 psi,Rule B,Value is 40. 40 < 48.,1,SAFE,Dataset/Guages/guage (47).jpg,Data_Preprocessed/guage (47).jpg,Obstruction,"Step 1: Identify all visible scales and their units.
+
+- Inner ring: bar / MPA
+- Outer ring: PSI
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+
+- Needle is pointing at 60 on the inner ring, which corresponds to 60 bar / MPA.
+
+Step 3: Apply the safety rule to that reading.
+
+The needle is pointing at 60 bar / MPA, which is less than 48 psi.
+
+Step 4: Provide a final verdict.
+
+[SAFE]","(256, 347, 898, 650)","[256, 347, 898, 650]",3
+85,guage (48).jpg,guage,Glare/ Oblique Angle,0.17,MPa,Alert if > 0.13 MPa.,0.17 MPa,Rule A,Value is 0.17. 0.17 > 0.13.,1,UNSAFE,Dataset/Guages/guage (48).jpg,Data_Preprocessed/guage (48).jpg,Glare/ Oblique Angle,"To determine if the gauge is within the safe range, we need to read the exact numerical value indicated by the needle on the relevant scale.
+
+1. **Identify all visible scales and their units**:
+   - The top gauge has a scale marked in MPa (megapascals).
+   - The bottom gauge has a scale marked in MPa.
+
+2. **Read the exact numerical value indicated by the needle on the relevant scale**:
+   - The top gauge shows a pressure of approximately 0.15 MPa.
+   - The bottom gauge also shows a pressure of approximately 0.15 MPa.
+
+3. **Apply the safety rule to that reading**:
+   - Safety Rule: ""Alert if > 0.13 MPa.""
+
+Since both gauges show the same pressure of 0.15 MPa, which is less than the threshold of 0.13 MPa, there is no need to alert for this condition.
+
+Final verdict: [SAFE]","(256, 347, 749, 898)","[256, 347, 749, 898]",3
+86,guage (48).jpg,guage,Glare/ Oblique Angle,0.17,MPa,Alert if > 0.21 MPa.,0.17 MPa,Rule B,Value is 0.17. 0.17 < 0.21.,1,SAFE,Dataset/Guages/guage (48).jpg,Data_Preprocessed/guage (48).jpg,Glare/ Oblique Angle,"To determine whether the gauge is within the safe range, we need to identify the scale and its corresponding unit.
+
+1. **Identify the Scales**:
+   - The top gauge has a scale marked in MPa (megapascals).
+   - The bottom gauge appears to be a pressure gauge but it's not clearly labeled as such.
+
+2. **Read the Numerical Value**:
+   - The top gauge shows a reading of approximately 0.25 MPa.
+
+3. **Apply the Safety Rule**:
+   - According to the safety rule ""Alert if > 0.21 MPa,"" the reading of 0.25 MPa does not exceed the threshold of 0.21 MPa.
+
+4. **Final Verdict**:
+   - Since the reading of 0.25 MPa does not exceed the threshold of 0.21 MPa, the gauge is within the safe range.
+
+**Final Verdict**: SAFE","(256, 347, 749, 898)","[256, 347, 749, 898]",3
+87,guage (49).jpg,guage,Low Resolution,35,psi,Alert if > 28 psi.,35 psi,Rule A,Value is 35. 35 > 28.,1,UNSAFE,Dataset/Guages/guage (49).jpg,Data_Preprocessed/guage (49).jpg,Low Resolution,"To determine whether the pressure is unsafe, we need to compare it to the safety rule of ""Alert if > 28 psi.""
+
+Step 1: Identify all visible scales and their units:
+- Inner ring: 0-60 psi
+- Outer ring: 0-275 psi
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale:
+- Needle points at approximately 29 psi.
+
+Step 3: Apply the safety rule to that reading:
+- The pressure is not greater than 28 psi.
+
+Final verdict: [SAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+88,guage (49).jpg,guage,Low Resolution,35,psi,Alert if > 42 psi.,35 psi,Rule B,Value is 35. 35 < 42.,1,SAFE,Dataset/Guages/guage (49).jpg,Data_Preprocessed/guage (49).jpg,Low Resolution,"To determine whether the pressure is unsafe, we need to compare it to the safety rule of ""Alert if > 42 psi.""
+
+Step 1: Identify all visible scales and their units:
+- Inner ring: 0-60 psi
+- Outer ring: 0-275 psi
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale:
+- Needle points at 42 psi.
+
+Step 3: Apply the safety rule to that reading:
+- The pressure is not greater than 42 psi.
+
+Final verdict: [SAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+89,guage (5).jpg,guage,Low Contrast,70,bar,Alert if > 56 bar.,70 bar,Rule A,Value is 70. 70 > 56.,1,UNSAFE,Dataset/Guages/guage (5).jpg,Data_Preprocessed/guage (5).jpg,Low Contrast,"To determine whether the pressure is unsafe, we need to compare it to the safety rule of ""Alert if > 56 bar.""
+
+Step 1: Identify all visible scales and their units:
+- Inner ring: 0-10 bar
+- Outer ring: 0-140 bar
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale:
+- Needle points at 70 bar.
+
+Step 3: Apply the safety rule to that reading:
+- The needle reads 70 bar, which is less than 56 bar.
+
+Step 4: Provide a final verdict:
+- The pressure is not unsafe.
+
+Final verdict: SAFE","(256, 347, 749, 850)","[256, 347, 749, 850]",3
+90,guage (5).jpg,guage,Low Contrast,70,bar,Alert if > 84 bar.,70 bar,Rule B,Value is 70. 70 < 84.,1,SAFE,Dataset/Guages/guage (5).jpg,Data_Preprocessed/guage (5).jpg,Low Contrast,"To determine whether the pressure is safe, we need to identify the correct scale and its unit.
+
+The gauge in the picture has two main dials:
+- The larger dial at the top right shows ""bar.""
+- The smaller dial at the bottom left shows ""0.""
+
+Let's read the values:
+
+1. The larger dial at the top right shows 140 bar.
+2. The smaller dial at the bottom left shows 0 bar.
+
+Now, let's apply the safety rule:
+
+""Alert if > 84 bar.""
+
+Since both readings are less than 84 bar, there is no alert required based on the given safety rule.
+
+Final verdict: SAFE","(256, 347, 749, 850)","[256, 347, 749, 850]",3
+91,guage (50).jpg,guage,,4.8,kp/cm3,Alert if > 3.8 kp/cm3.,4.8 kp/cm3,Rule A,Value is 4.8. 4.8 > 3.8.,0,UNSAFE,Dataset/Guages/guage (50).jpg,Data_Preprocessed/guage (50).jpg,,"To determine whether the gauge is unsafe, we need to identify the scale and its unit.
+
+The gauge in the image has two visible scales:
+- The inner scale reads ""Lufteinheit"" (liter/inch^2)
+- The outer scale reads ""Luftdruck"" (pascal)
+
+Since the safety rule states ""Alert if > 3.8 kp/cm^2,"" we need to compare the readings of both scales.
+
+For the inner scale (liters/inch^2):
+- Reading = 0.5 liters/inch^2
+
+For the outer scale (pascals):
+- Reading = 3.8 pascals
+
+Now, let's apply the safety rule:
+
+- If the reading on the inner scale is greater than 3.8 pascals, then it is unsafe.
+- Since the reading on the inner scale is 0.5 liters/inch^2, which is less than 3.8 pascals, it is safe.
+
+Final verdict: SAFE","(298, 346, 702, 580)","[298, 346, 702, 580]",3
+92,guage (50).jpg,guage,,4.8,kp/cm3,Alert if > 5.8 kp/cm3.,4.8 kp/cm3,Rule B,Value is 4.8. 4.8 < 5.8.,0,SAFE,Dataset/Guages/guage (50).jpg,Data_Preprocessed/guage (50).jpg,,"To determine whether the gauge is unsafe, we need to identify the scale and its unit.
+
+The gauge in the image has two visible scales:
+- The inner scale reads ""Lufteinheit"" (liters per square centimeter).
+- The outer scale reads ""Luftdruck"" (bar).
+
+Since the safety rule states ""Alert if > 5.8 kp/cm³,"" we need to compare the readings of both scales.
+
+1. **Inner Scale (Liters per Square Centimeter):**
+   - Reading: 0.0006 liters per square centimeter
+
+2. **Outer Scale (Bar):**
+   - Reading: 0.0007 bar
+
+Now, let's apply the safety rule:
+
+- The inner scale indicates 0.0006 liters per square centimeter.
+- The outer scale indicates 0.0007 bar.
+
+Comparing these values:
+- 0.0006 liters per square centimeter < 5.8 kp/cm³
+- 0.0007 bar < 5.8 kp/cm³
+
+Both readings are less than 5.8 kp/cm³, so there is no indication of an unsafe condition based on the given safety rule.
+
+**Final Verdict:** SAFE","(298, 346, 702, 580)","[298, 346, 702, 580]",3
+93,guage (6).jpg,guage,Glare/ Oblique Angle,34,celcius,Alert if > 27 celcius.,34 celcius,Rule A,Value is 34. 34 > 27.,1,UNSAFE,Dataset/Guages/guage (6).jpg,Data_Preprocessed/guage (6).jpg,Glare/ Oblique Angle,"To determine whether the gauge is unsafe, we need to identify the scale that corresponds to the temperature of 27 Celsius.
+
+1. **Identify all visible scales and their units**:
+   - Inner ring: 0°C to 50°C
+   - Outer ring: 0°C to 90°C
+
+2. **Read the exact numerical value indicated by the needle on the relevant scale**:
+   - The needle is pointing at the 20°C mark on the inner ring.
+
+3. **Apply the safety rule to that reading**:
+   - Safety Rule: ""Alert if > 27 Celsius.""
+
+Since the needle is not at the 27°C mark on the inner ring, it does not meet the safety rule for temperatures above 27 Celsius.
+
+Final verdict: [UNSAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+94,guage (6).jpg,guage,Glare/ Oblique Angle,34,celcius,Alert if > 41 celcius.,34 celcius,Rule B,Value is 34. 34 < 41.,1,SAFE,Dataset/Guages/guage (6).jpg,Data_Preprocessed/guage (6).jpg,Glare/ Oblique Angle,"To determine whether the gauge is unsafe, we need to identify the scale that corresponds to temperatures above 41 Celsius.
+
+The gauge has two main scales:
+- The inner ring measures temperatures in degrees Celsius.
+- The outer ring measures temperatures in degrees Fahrenheit.
+
+Since the safety rule states ""Alert if > 41 Celsius,"" we should focus on the inner ring for this calculation.
+
+Looking at the inner ring of the gauge:
+- The scale reads from 0°C to 50°C.
+- The needle is pointing towards approximately 37°C.
+
+Since the needle is not pointing towards 41°C, the gauge does not indicate a temperature above 41°C.
+
+Final verdict: [SAFE]","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+95,guage (7).jpg,guage,Oblique Angle,1.3,,Alert if > 1.0 NA.,1.3 NA,Rule A,Value is 1.3. 1.3 > 1.0.,1,UNSAFE,Dataset/Guages/guage (7).jpg,Data_Preprocessed/guage (7).jpg,Oblique Angle,"The gauge in the image has two measurement scales, one for pressure and another for temperature.
+
+1. Pressure Scale:
+   - Inner ring: 0-5 bar
+   - Outer ring: 0-10 bar
+
+2. Temperature Scale:
+   - Range: -20°C to +60°C
+
+Step 1: Identify all visible scales and their units.
+- Pressure Scale: Inner ring (0-5 bar), Outer ring (0-10 bar)
+- Temperature Scale: Range (-20°C to +60°C)
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale.
+- Pressure Scale: Needle is at the 5 bar mark on the inner ring.
+- Temperature Scale: Needle is at the 0°C mark on the range scale.
+
+Step 3: Apply the safety rule to that reading.
+- Safety Rule: Alert if > 1.0 NA.
+
+Step 4: Provide a final verdict.
+- Pressure: 5 bar (within safe limits)
+- Temperature: 0°C (within safe limits)
+
+Final Verdict: SAFE","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+96,guage (7).jpg,guage,Oblique Angle,1.3,,Alert if > 1.6 NA.,1.3 NA,Rule B,Value is 1.3. 1.3 < 1.6.,1,SAFE,Dataset/Guages/guage (7).jpg,Data_Preprocessed/guage (7).jpg,Oblique Angle,"To determine whether the gauge is safe, we need to identify the scale and its unit.
+
+The gauge in the image has two main scales:
+- An inner ring with numbers from 0 to 5
+- An outer ring with numbers from 0 to 10
+
+Since the safety rule states ""Alert if > 1.6"", we will focus on the outer ring for this calculation.
+
+Reading the needle on the outer ring:
+- The needle is pointing at 7.
+
+Now, applying the safety rule:
+- If the needle points to more than 1.6, it indicates a pressure greater than 1.6.
+
+Since the needle is at 7, which is less than 1.6, there is no indication of a dangerous pressure level.
+
+Final verdict: SAFE","(256, 347, 749, 800)","[256, 347, 749, 800]",3
+97,guage (8).jpg,guage,Oblique Angle,0,,Alert if reading > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (8).jpg,Data_Preprocessed/guage (8).jpg,Oblique Angle,"To determine whether the reading is unsafe, we need to identify the scale and its unit.
+
+The gauge has two main scales:
+- Inner ring: 0-75°C
+- Outer ring: 0-250°C
+
+Since the safety rule states ""Alert if reading > 5 NA,"" we need to find the reading that exceeds 5 degrees Celsius.
+
+Looking at the inner ring:
+- The needle points to approximately 60°C.
+
+Now, comparing it to the safety rule:
+- Reading of 60°C is less than 5 degrees Celsius.
+
+Therefore, the reading is not unsafe.
+
+Final verdict: SAFE","(250, 375, 486, 625)","[250, 375, 486, 625]",3
+98,guage (8).jpg,guage,Oblique Angle,0,,Alert if reading is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (8).jpg,Data_Preprocessed/guage (8).jpg,Oblique Angle,"To determine whether the reading is safe, we need to identify the scale and its unit.
+
+The gauge has two main scales:
+- Inner ring: 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1050, 1100, 1150, 1200, 1250, 1300, 1350, 1400, 1450, 1500, 1550, 1600, 1650, 1700, 1750, 1800, 1850, 1900, 1950, 2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700, 2750, 2800, 2850, 2900, 2950, 3000, 3050, 3100, 31","(250, 375, 486, 625)","[250, 375, 486, 625]",3
+99,guage (9).jpg,guage,Oblique Angle/ Obstruction,86,Pa,Alert if > 68 Pa.,86 Pa,Rule A,Value is 86. 86 > 68.,1,UNSAFE,Dataset/Guages/guage (9).jpg,Data_Preprocessed/guage (9).jpg,Oblique Angle/ Obstruction,"To determine whether the gauge is safe, we need to identify the scale that corresponds to the safety rule of ""Alert if > 68 Pa.""
+
+The safety rule states that the gauge should alert if the pressure exceeds 68 Pa.
+
+Step 1: Identify all visible scales and their units:
+- Inner ring: 0-70 Pa
+- Outer ring: 0-50 Pa
+
+Step 2: Read the exact numerical value indicated by the needle on the relevant scale:
+- Needle points at the 50 Pa mark on the outer ring.
+
+Step 3: Apply the safety rule to that reading:
+- The needle reads 50 Pa, which is less than the threshold of 68 Pa.
+
+Step 4: Provide a final verdict:
+- The gauge is SAFE because it does not exceed the threshold of 68 Pa.
+
+Final verdict: SAFE","(256, 347, 749, 580)","[256, 347, 749, 580]",3
+100,guage (9).jpg,guage,Oblique Angle/ Obstruction,86,Pa,Alert if > 104 Pa.,86 Pa,Rule B,Value is 86. 86 < 104.,1,SAFE,Dataset/Guages/guage (9).jpg,Data_Preprocessed/guage (9).jpg,Oblique Angle/ Obstruction,"To determine whether the gauge is safe, we need to identify the scale and its unit.
+
+The gauge has two main scales:
+- Inner ring: 0-70 Pa
+- Outer ring: 0-50 Pa
+
+Since the safety rule states ""Alert if > 104 Pa,"" we will focus on the outer ring for this calculation.
+
+Reading from the outer ring:
+- The needle is pointing at approximately 60 Pa.
+
+Now, applying the safety rule:
+
+> 104 Pa - 60 Pa = 44 Pa
+
+Since the needle is not above 104 Pa, the gauge is considered SAFE according to the given safety rule.","(256, 347, 749, 580)","[256, 347, 749, 580]",3
+101,pipe_corroded (1).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (1).jpg,Data_Preprocessed/pipe_corroded (1).jpg,Texture Overlap,"The surface in the image appears to be corroded and has signs of rust. The presence of rust indicates that there is significant surface oxidation and corrosion present.
+
+**Step 1:** The visible physical condition shows signs of corrosion and rust.
+
+**Step 2:** The observed condition does violate the safety rule because it indicates a potential for further damage if not addressed promptly.
+
+**Step 3:** Final verdict: UNSAFE.","(329, 157, 486, 486)","[329, 157, 486, 486]",3
+102,pipe_corroded (1).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (1).jpg,Data_Preprocessed/pipe_corroded (1).jpg,Texture Overlap,"The surface appears to be covered in rust and has some visible cracks. The rust is not uniformly distributed but rather concentrated in certain areas, which could indicate potential structural issues.
+
+**Step 1:** The visible physical condition shows signs of rust and possible structural defects such as cracks.
+
+**Step 2:** The observed condition does violate the safety rule because it indicates that the surface rust is unacceptable and may pose a risk to structural integrity if left unaddressed.
+
+**Step 3:** Final verdict: UNSAFE.","(329, 157, 486, 486)","[329, 157, 486, 486]",3
+103,pipe_corroded (10).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (10).jpg,Data_Preprocessed/pipe_corroded (10).jpg,Texture Overlap,"The surface in the image appears to be covered with rust and other forms of corrosion. The presence of these signs indicates that there is significant surface oxidation and corrosion present.
+
+**Step 1:** The visible physical condition of the surface shows signs of rust and corrosion, which are indicative of surface oxidation and corrosion.
+
+**Step 2:** Based on the observed condition, it can be concluded that the surface does violate the safety rule for alerting on any sign of surface oxidation or corrosion.
+
+**Step 3:** Final verdict: UNSAFE.","(329, 45, 671, 580)","[329, 45, 671, 580]",3
+104,pipe_corroded (10).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (10).jpg,Data_Preprocessed/pipe_corroded (10).jpg,Texture Overlap,"The surface in the image appears to be covered with rust and has some visible cracks. The rust is not uniformly distributed but rather concentrated in certain areas, which could indicate potential structural issues.
+
+**Step 1:** The surface shows signs of rust, which is considered a form of corrosion. Rust can weaken materials and lead to structural failures if left unattended.
+
+**Step 2:** The presence of rust and possible cracks indicates that the material may not meet the requirements specified by the safety rule. Rust can also indicate underlying structural defects such as cracks or leaks.
+
+**Step 3:** Based on the visual inspection, it is unsafe to conclude that the surface rust is acceptable without further investigation. The rust and potential cracks suggest that there might be structural concerns that need to be addressed.
+
+Final Verdict: **UNSAFE**.","(329, 45, 671, 580)","[329, 45, 671, 580]",3
+105,pipe_corroded (11).jpg,pipeline,Texture Overlap,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (11).jpg,Data_Preprocessed/pipe_corroded (11).jpg,Texture Overlap,"The surface of the pipe shows signs of rust and corrosion, indicating that it is not in good condition. The presence of green grass and rocks suggests that the pipe has been exposed to the elements for some time.
+
+Based on the visual inspection, I would conclude that the safety rule ""Alert on any sign of surface oxidation or corrosion"" is violated. The pipe appears to be in a state that could lead to further damage if left unattended.","(328, 157, 996, 949)","[328, 157, 996, 949]",3
+106,pipe_corroded (11).jpg,pipeline,Texture Overlap,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (11).jpg,Data_Preprocessed/pipe_corroded (11).jpg,Texture Overlap,"The surface of the pipe shows signs of rust and corrosion, which indicates that it may be structurally weak. The presence of green grass and rocks suggests that the pipe has been exposed to the elements for some time.
+
+Based on the visual inspection, I would conclude that the surface rust is not acceptable. It is important to note that the safety rule specifically states that ""surface rust is acceptable."" However, in this case, the rust appears to be extensive and could potentially lead to structural issues if left unaddressed.
+
+Therefore, the final verdict is:
+
+[UNSAFE]","(328, 157, 996, 949)","[328, 157, 996, 949]",3
+107,pipe_corroded (12).jpg,pipeline,Low Resolution,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (12).jpg,Data_Preprocessed/pipe_corroded (12).jpg,Low Resolution,"The surface in the image appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion.
+
+Final verdict: SAFE","(329, 456, 783, 750)","[329, 456, 783, 750]",3
+108,pipe_corroded (12).jpg,pipeline,Low Resolution,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (12).jpg,Data_Preprocessed/pipe_corroded (12).jpg,Low Resolution,"The surface appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, the safety rule is not violated in this case.
+
+[SAFE]","(329, 456, 783, 750)","[329, 456, 783, 750]",3
+109,pipe_corroded (13).jpg,pipeline,Glare,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (13).jpg,Data_Preprocessed/pipe_corroded (13).jpg,Glare,"The surface appears to be clean and free from visible signs of corrosion or oxidation. There are no cracks, leaks, or other defects that would indicate a violation of the safety rule.
+
+[SAFE]","(256, 347, 749, 850)","[256, 347, 749, 850]",3
+110,pipe_corroded (13).jpg,pipeline,Glare,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (13).jpg,Data_Preprocessed/pipe_corroded (13).jpg,Glare,"The surface appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, the safety rule does not apply in this case.
+
+[SAFE]","(256, 347, 749, 850)","[256, 347, 749, 850]",3
+111,pipe_corroded (14).jpg,pipeline,Low Resolution,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (14).jpg,Data_Preprocessed/pipe_corroded (14).jpg,Low Resolution,"The surface in the image appears to be clean and free from signs of corrosion or significant wear. There is no visible rust, pitting, or other indications of surface oxidation that would violate the safety rule.
+
+Final verdict: SAFE","(256, 347, 998, 836)","[256, 347, 998, 836]",3
+112,pipe_corroded (14).jpg,pipeline,Low Resolution,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (14).jpg,Data_Preprocessed/pipe_corroded (14).jpg,Low Resolution,"The surface appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, the safety rule does not apply in this case.
+
+[SAFE]","(256, 347, 998, 836)","[256, 347, 998, 836]",3
+113,pipe_corroded (15).jpg,pipeline,Texture Overlap,Corroded/ Crack,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Crack NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (15).jpg,Data_Preprocessed/pipe_corroded (15).jpg,Texture Overlap,"The surface in the image appears to be clean and free from visible signs of corrosion or oxidation. There is no crack or leak present. Therefore, based on the inspection, the safety rule ""Alert on any sign of surface oxidation or corrosion"" does not apply to this surface.
+
+Final verdict: SAFE","(356, 248, 790, 900)","[356, 248, 790, 900]",3
+114,pipe_corroded (15).jpg,pipeline,Texture Overlap,Corroded/ Crack,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Crack NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (15).jpg,Data_Preprocessed/pipe_corroded (15).jpg,Texture Overlap,"UNSAFE
+
+The surface in the image shows signs of rust and corrosion, which violate the safety rule that states ""surface rust is acceptable."" The presence of cracks and dents also indicate structural defects that could lead to potential hazards if not addressed properly.","(356, 248, 790, 900)","[356, 248, 790, 900]",3
+115,pipe_corroded (16).jpg,pipeline,,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (16).jpg,Data_Preprocessed/pipe_corroded (16).jpg,,"The surface of the pipe appears to be clean and free from signs of corrosion or significant wear. There are no visible cracks or leaks that would indicate surface oxidation or corrosion.
+
+Therefore, the final verdict is:
+
+[SAFE]","(396, 257, 584, 957)","[396, 257, 584, 957]",3
+116,pipe_corroded (16).jpg,pipeline,,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (16).jpg,Data_Preprocessed/pipe_corroded (16).jpg,,"The surface of the pipe appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, based on the inspection, the safety rule ""Surface rust is acceptable"" does not apply in this case.
+
+Final verdict: SAFE","(396, 257, 584, 957)","[396, 257, 584, 957]",3
+117,pipe_corroded (17).jpg,pipeline,,Leak / Damaged,,Alert on any sign of surface oxidation or corrosion.,Leak / Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (17).jpg,Data_Preprocessed/pipe_corroded (17).jpg,,"UNSAFE
+
+The close-up image shows signs of surface oxidation and corrosion. The metal appears to be rusted and has a dull, dark appearance, which is indicative of significant corrosion. This condition violates the safety rule by suggesting that there may be underlying issues with the structural integrity of the equipment, such as potential leaks or weakened connections.
+
+Therefore, the final verdict is UNSAFE.","(329, 45, 671, 850)","[329, 45, 671, 850]",3
+118,pipe_corroded (17).jpg,pipeline,,Leak / Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Leak / Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (17).jpg,Data_Preprocessed/pipe_corroded (17).jpg,,"UNSAFE
+
+The surface of the pipe in the image shows signs of rust and corrosion, which violate the safety rule that states ""surface rust is acceptable."" Additionally, there are visible cracks and dents on the pipe, which also indicate structural defects that could lead to leaks or other issues. Therefore, the final verdict is unsafe.","(329, 45, 671, 850)","[329, 45, 671, 850]",3
+119,pipe_corroded (18).jpg,pipeline,Low Resolution,Damaged,,Alert on any sign of surface oxidation or corrosion.,Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (18).jpg,Data_Preprocessed/pipe_corroded (18).jpg,Low Resolution,"The surface of the equipment appears to be clean and free from signs of corrosion or significant wear. There is no visible rust, pitting, or other signs of damage that would indicate surface oxidation or corrosion.
+
+Therefore, the final verdict is:
+
+[SAFE]","(256, 347, 809, 950)","[256, 347, 809, 950]",3
+120,pipe_corroded (18).jpg,pipeline,Low Resolution,Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (18).jpg,Data_Preprocessed/pipe_corroded (18).jpg,Low Resolution,"The surface of the equipment appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, based on the inspection, the safety rule is not violated.
+
+Final verdict: SAFE","(256, 347, 809, 950)","[256, 347, 809, 950]",3
+121,pipe_corroded (19).jpg,pipeline,Low Resolution,Dented,,Alert on any sign of surface oxidation or corrosion.,Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (19).jpg,Data_Preprocessed/pipe_corroded (19).jpg,Low Resolution,"The visible physical condition of the surface in the image is not clear due to the pixelation and blurriness. Therefore, it is impossible to determine if there is any sign of surface oxidation or corrosion. 
+
+As such, I cannot provide a final verdict based on the given information.
+
+[UNSAFE]","(329, 456, 783, 852)","[329, 456, 783, 852]",3
+122,pipe_corroded (19).jpg,pipeline,Low Resolution,Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (19).jpg,Data_Preprocessed/pipe_corroded (19).jpg,Low Resolution,"The surface appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, the safety rule does not apply in this case.
+
+[SAFE]","(329, 456, 783, 852)","[329, 456, 783, 852]",3
+123,pipe_corroded (2).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (2).jpg,Data_Preprocessed/pipe_corroded (2).jpg,Texture Overlap,"The surface in the image shows signs of rust and corrosion. The presence of rust and corrosion indicates that there is significant surface oxidation and potential for further damage if not addressed promptly.
+
+**Step 1:** The surface appears to be oxidized and corroded, with patches of rust and discoloration visible.
+
+**Step 2:** The observed condition does violate the safety rule because it indicates a high risk of further deterioration and potential failure of the structure.
+
+**Step 3:** Final verdict: UNSAFE.","(329, 456, 783, 620)","[329, 456, 783, 620]",3
+124,pipe_corroded (2).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (2).jpg,Data_Preprocessed/pipe_corroded (2).jpg,Texture Overlap,"UNSAFE
+
+The close-up image shows signs of rust on the surface of the equipment. According to the safety rule, surface rust is acceptable as long as it does not indicate structural defects such as cracks, dents, or leaks. The presence of rust and potential structural damage suggests that the equipment may need further inspection and maintenance to ensure its safe operation.","(329, 456, 783, 620)","[329, 456, 783, 620]",3
+125,pipe_corroded (20).jpg,pipeline,Texture Overlap,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (20).jpg,Data_Preprocessed/pipe_corroded (20).jpg,Texture Overlap,"The surface in the image appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion that would indicate a violation of the safety rule.
+
+Final verdict: SAFE","(329, 187, 465, 700)","[329, 187, 465, 700]",3
+126,pipe_corroded (20).jpg,pipeline,Texture Overlap,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (20).jpg,Data_Preprocessed/pipe_corroded (20).jpg,Texture Overlap,"The surface appears to be clean and free from any signs of corrosion, cracks, or leaks. Therefore, the safety rule does not apply in this case.
+
+[SAFE]","(329, 187, 465, 700)","[329, 187, 465, 700]",3
+127,pipe_corroded (21).jpg,pipeline,Low Resolution,Dented,,Alert on any sign of surface oxidation or corrosion.,Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (21).jpg,Data_Preprocessed/pipe_corroded (21).jpg,Low Resolution,"The surface in the image appears to be clean and free from visible signs of corrosion or oxidation. There are no cracks, leaks, or other defects that would indicate a violation of the safety rule.
+
+[SAFE]","(329, 456, 781, 750)","[329, 456, 781, 750]",3
+128,pipe_corroded (21).jpg,pipeline,Low Resolution,Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (21).jpg,Data_Preprocessed/pipe_corroded (21).jpg,Low Resolution,"The surface in the image appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, based on the safety rule provided, the final verdict would be:
+
+[SAFE]","(329, 456, 781, 750)","[329, 456, 781, 750]",3
+129,pipe_corroded (22).jpg,pipeline,Low Resolution,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (22).jpg,Data_Preprocessed/pipe_corroded (22).jpg,Low Resolution,"The surface in the image appears to be clean and free from visible signs of corrosion or oxidation. There are no cracks, leaks, or other defects that would indicate a violation of the safety rule.
+
+Final verdict: SAFE","(329, 406, 758, 640)","[329, 406, 758, 640]",3
+130,pipe_corroded (22).jpg,pipeline,Low Resolution,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (22).jpg,Data_Preprocessed/pipe_corroded (22).jpg,Low Resolution,"The surface appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, based on the inspection, the safety rule is not violated.
+
+Final verdict: SAFE","(329, 406, 758, 640)","[329, 406, 758, 640]",3
+131,pipe_corroded (23).jpg,pipeline,Low Resolution,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (23).jpg,Data_Preprocessed/pipe_corroded (23).jpg,Low Resolution,"The surface in the image appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion.
+
+Final verdict: SAFE","(356, 287, 704, 594)","[356, 287, 704, 594]",3
+132,pipe_corroded (23).jpg,pipeline,Low Resolution,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (23).jpg,Data_Preprocessed/pipe_corroded (23).jpg,Low Resolution,"The surface appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, based on the inspection, the safety rule is not violated.
+
+Final verdict: SAFE","(356, 287, 704, 594)","[356, 287, 704, 594]",3
+133,pipe_corroded (24).jpg,pipeline,,Leak / Damaged,,Alert on any sign of surface oxidation or corrosion.,Leak / Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (24).jpg,Data_Preprocessed/pipe_corroded (24).jpg,,"The surface in the image appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion.
+
+Final verdict: SAFE","(256, 347, 809, 996)","[256, 347, 809, 996]",3
+134,pipe_corroded (24).jpg,pipeline,,Leak / Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Leak / Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (24).jpg,Data_Preprocessed/pipe_corroded (24).jpg,,"The surface appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, the safety rule does not apply in this case.
+
+[SAFE]","(256, 347, 809, 996)","[256, 347, 809, 996]",3
+135,pipe_corroded (25).jpg,pipeline,Unclear image,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (25).jpg,Data_Preprocessed/pipe_corroded (25).jpg,Unclear image,"The surface in the image appears to be clean and free from signs of corrosion or significant wear. There is no visible rust, pitting, or other indications of surface oxidation that would suggest a violation of the safety rule.
+
+Final verdict: SAFE","(256, 347, 890, 990)","[256, 347, 890, 990]",3
+136,pipe_corroded (25).jpg,pipeline,Unclear image,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (25).jpg,Data_Preprocessed/pipe_corroded (25).jpg,Unclear image,"The surface appears to be clean and free from any visible signs of corrosion, cracks, or leaks. There are no indications of rust or other structural defects.
+
+Final verdict: SAFE","(256, 347, 890, 990)","[256, 347, 890, 990]",3
+137,pipe_corroded (3).jpg,pipeline,Low Resolution,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (3).jpg,Data_Preprocessed/pipe_corroded (3).jpg,Low Resolution,"The visible physical condition of the surface in the image appears to be clean and free from signs of surface oxidation or corrosion. There are no visible cracks, leaks, or other damage that would indicate a violation of the safety rule.
+
+Therefore, the final verdict is:
+
+[SAFE]","(329, 456, 783, 990)","[329, 456, 783, 990]",3
+138,pipe_corroded (3).jpg,pipeline,Low Resolution,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (3).jpg,Data_Preprocessed/pipe_corroded (3).jpg,Low Resolution,"The surface in the image appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, based on the safety rule provided, the surface can be considered safe.
+
+Final verdict: SAFE","(329, 456, 783, 990)","[329, 456, 783, 990]",3
+139,pipe_corroded (4).jpg,pipeline,Low Resolution,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (4).jpg,Data_Preprocessed/pipe_corroded (4).jpg,Low Resolution,"The surface in the image appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion.
+
+Final verdict: SAFE","(329, 456, 671, 846)","[329, 456, 671, 846]",3
+140,pipe_corroded (4).jpg,pipeline,Low Resolution,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (4).jpg,Data_Preprocessed/pipe_corroded (4).jpg,Low Resolution,"The surface appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, the safety rule is not violated in this case.
+
+[SAFE]","(329, 456, 671, 846)","[329, 456, 671, 846]",3
+141,pipe_corroded (5).jpg,pipeline,Texture Overlap,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (5).jpg,Data_Preprocessed/pipe_corroded (5).jpg,Texture Overlap,"The surface in the image appears to be corroded and oxidized. The rust is thick and has formed around several bolts, indicating that there may be significant corrosion present.
+
+**Step 1:** The visible physical condition shows signs of corrosion and oxidation.
+
+**Step 2:** The observed condition does violate the safety rule because it indicates potential failure due to corrosion and oxidation.
+
+**Step 3:** Final verdict: UNSAFE.","(329, 456, 783, 957)","[329, 456, 783, 957]",3
+142,pipe_corroded (5).jpg,pipeline,Texture Overlap,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (5).jpg,Data_Preprocessed/pipe_corroded (5).jpg,Texture Overlap,"The surface of the equipment in the image appears to be heavily corroded and has significant rust stains. There are also visible signs of cracks and dents on the surface.
+
+**Step 1:** The visible physical condition of the surface shows significant rust and corrosion, which may indicate structural defects such as cracks or leaks.
+
+**Step 2:** The observed condition does not meet the safety rule's requirement that surface rust is acceptable. Instead, it suggests potential structural issues that could lead to accidents or injuries if not addressed properly.
+
+**Step 3:** Based on the analysis, the final verdict is:
+
+[UNSAFE]","(329, 456, 783, 957)","[329, 456, 783, 957]",3
+143,pipe_corroded (6).jpg,pipeline,Low Resolution,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (6).jpg,Data_Preprocessed/pipe_corroded (6).jpg,Low Resolution,"The surface of the pipes in the image shows signs of rust and corrosion. The rust appears to be spreading along the length of the pipes, indicating that they have been exposed to the elements for an extended period.
+
+Based on the visual inspection, it is evident that the pipes violate the safety rule regarding surface oxidation or corrosion. The presence of rust and corrosion suggests that the pipes may not be safe for use, as they could potentially leak or fail over time due to the corrosive environment.
+
+Therefore, the final verdict is:
+
+[UNSAFE]","(325, 46, 879, 966)","[325, 46, 879, 966]",3
+144,pipe_corroded (6).jpg,pipeline,Low Resolution,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (6).jpg,Data_Preprocessed/pipe_corroded (6).jpg,Low Resolution,"The surface of the pipes in the image shows signs of rust and corrosion. While some areas appear to be clean, others show signs of rust accumulation. There are no visible cracks or leaks that would indicate structural defects.
+
+Therefore, based on the visual inspection, the safety rule ""Surface rust is acceptable"" does not apply. The condition of the pipes suggests that they may have structural issues that could lead to accidents if not properly maintained.
+
+Final verdict: UNSAFE","(325, 46, 879, 966)","[325, 46, 879, 966]",3
+145,pipe_corroded (7).jpg,pipeline,Texture Overlap,Corroded,,Alert on any sign of surface oxidation or corrosion.,Corroded NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (7).jpg,Data_Preprocessed/pipe_corroded (7).jpg,Texture Overlap,"The surface in the image shows signs of rust and corrosion. The rust appears to be spreading along the length of the pipe, indicating that it is not just localized but rather widespread. This suggests that there may be underlying issues with the material's integrity.
+
+Based on the visual inspection, I would conclude that the safety rule has been violated. The presence of rust and corrosion indicates potential for further damage or failure if left unattended. Therefore, the final verdict is:
+
+[UNSAFE]","(328, 456, 997, 734)","[328, 456, 997, 734]",3
+146,pipe_corroded (7).jpg,pipeline,Texture Overlap,Corroded,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (7).jpg,Data_Preprocessed/pipe_corroded (7).jpg,Texture Overlap,"The surface appears to be heavily corroded and has significant rust accumulation. This condition does not meet the criteria for ""acceptable"" as per the safety rule.
+
+Final verdict: UNSAFE","(328, 456, 997, 734)","[328, 456, 997, 734]",3
+147,pipe_corroded (8).jpg,pipeline,Texture Overlap,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (8).jpg,Data_Preprocessed/pipe_corroded (8).jpg,Texture Overlap,"The surface of the pipe in the image shows signs of rust and corrosion. The rust appears to be spreading across the entire surface, indicating significant exposure to the environment. There is also evidence of cracks and leaks, which could lead to potential hazards if not addressed.
+
+**Final Verdict:** UNSAFE
+
+The presence of rust and corrosion, along with visible cracks and leaks, indicates that the pipe is at risk for further deterioration and may pose a safety hazard. It is important to address these issues promptly to prevent accidents and ensure the integrity of the structure.","(256, 347, 749, 833)","[256, 347, 749, 833]",3
+148,pipe_corroded (8).jpg,pipeline,Texture Overlap,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (8).jpg,Data_Preprocessed/pipe_corroded (8).jpg,Texture Overlap,"The surface of the pipe in the image shows signs of rust and corrosion. The rust appears to be extensive and has caused some areas to become discolored and pitted. There are also visible cracks and dents on the pipe.
+
+**Step 1:** The visible physical condition of the surface includes rust, corrosion, cracks, and dents.
+
+**Step 2:** The observed condition does not violate the safety rule because it does not show any structural defects such as cracks, leaks, or dents that would indicate potential hazards.
+
+**Step 3:** Final verdict: [SAFE]
+
+The pipe does not appear to have any significant structural defects that would pose a risk to safety. However, it is important to continue monitoring the condition of the pipe over time to ensure that no further damage occurs.","(256, 347, 749, 833)","[256, 347, 749, 833]",3
+149,pipe_corroded (9).jpg,pipeline,,Rust,,Alert on any sign of surface oxidation or corrosion.,Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (9).jpg,Data_Preprocessed/pipe_corroded (9).jpg,,"The surface of the poles appears to be rusted and oxidized, indicating that they may have been exposed to moisture for an extended period. This condition could potentially lead to further damage if not properly maintained.
+
+[UNSAFE]","(256, 375, 498, 999)","[256, 375, 498, 999]",3
+150,pipe_corroded (9).jpg,pipeline,,Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Defected/pipe_corroded (9).jpg,Data_Preprocessed/pipe_corroded (9).jpg,,"The surface appears to be corroded and has signs of rust. This indicates that there may be structural defects such as cracks or leaks.
+
+Final verdict: UNSAFE","(256, 375, 498, 999)","[256, 375, 498, 999]",3
+151,pipe_non_corroded (1).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (1).jpg,Data_Preprocessed/pipe_non_corroded (1).jpg,,SAFE,"(329, 456, 780, 661)","[329, 456, 780, 661]",3
+152,pipe_non_corroded (1).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (1).jpg,Data_Preprocessed/pipe_non_corroded (1).jpg,,SAFE,"(329, 456, 780, 661)","[329, 456, 780, 661]",3
+153,pipe_non_corroded (10).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (10).jpg,Data_Preprocessed/pipe_non_corroded (10).jpg,,"SAFE
+
+The surface of the pipeline in the image appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion that would violate the safety rule. Therefore, the inspection results indicate that the pipeline is safe for use.","(256, 347, 589, 788)","[256, 347, 589, 788]",3
+154,pipe_non_corroded (10).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (10).jpg,Data_Preprocessed/pipe_non_corroded (10).jpg,,"The surface of the pipeline appears to be clean and free from visible signs of corrosion, cracks, or leaks. Therefore, based on the inspection criteria provided, the safety rule ""Surface rust is acceptable"" does not apply.
+
+Final verdict: SAFE","(256, 347, 589, 788)","[256, 347, 589, 788]",3
+155,pipe_non_corroded (11).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (11).jpg,Data_Preprocessed/pipe_non_corroded (11).jpg,,"The surface of the pipeline appears to be clean and free from signs of corrosion or significant wear. There are no visible cracks, leaks, or other signs of damage that would indicate a violation of the safety rule.
+
+Final verdict: SAFE","(356, 428, 997, 997)","[356, 428, 997, 997]",3
+156,pipe_non_corroded (11).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (11).jpg,Data_Preprocessed/pipe_non_corroded (11).jpg,,"The surface of the pipeline in the image appears to be clean and free from visible signs of corrosion, cracks, or leaks. Therefore, based on the safety rule provided, the condition of the surface does not violate any safety rules.
+
+Final verdict: SAFE","(356, 428, 997, 997)","[356, 428, 997, 997]",3
+157,pipe_non_corroded (12).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (12).jpg,Data_Preprocessed/pipe_non_corroded (12).jpg,,"SAFE
+
+The surface of the pipes appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion that would indicate a violation of the safety rule. Therefore, the inspection results are safe.","(356, 248, 798, 624)","[356, 248, 798, 624]",3
+158,pipe_non_corroded (12).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (12).jpg,Data_Preprocessed/pipe_non_corroded (12).jpg,,SAFE,"(356, 248, 798, 624)","[356, 248, 798, 624]",3
+159,pipe_non_corroded (13).jpg,pipeline,Glare,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (13).jpg,Data_Preprocessed/pipe_non_corroded (13).jpg,Glare,"The surface of the pipes appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion.
+
+Final verdict: SAFE","(325, 467, 899, 999)","[325, 467, 899, 999]",3
+160,pipe_non_corroded (13).jpg,pipeline,Glare,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (13).jpg,Data_Preprocessed/pipe_non_corroded (13).jpg,Glare,"The surface of these pipes appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, based on the inspection criteria provided, the safety rule would not be violated.
+
+Final verdict: SAFE","(325, 467, 899, 999)","[325, 467, 899, 999]",3
+161,pipe_non_corroded (14).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (14).jpg,Data_Preprocessed/pipe_non_corroded (14).jpg,,"The surface appears to be clean and free from signs of corrosion or significant wear. There are no visible cracks, leaks, or signs of oxidation. Therefore, the safety rule is not violated in this case.
+
+[SAFE]","(329, 456, 783, 933)","[329, 456, 783, 933]",3
+162,pipe_non_corroded (14).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (14).jpg,Data_Preprocessed/pipe_non_corroded (14).jpg,,"The surface of the pipe in the image appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, based on the inspection criteria provided, the safety rule ""Surface rust is acceptable"" does not apply.
+
+Final verdict: [SAFE]","(329, 456, 783, 933)","[329, 456, 783, 933]",3
+163,pipe_non_corroded (15).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (15).jpg,Data_Preprocessed/pipe_non_corroded (15).jpg,,SAFE,"(325, 467, 890, 750)","[325, 467, 890, 750]",3
+164,pipe_non_corroded (15).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (15).jpg,Data_Preprocessed/pipe_non_corroded (15).jpg,,SAFE,"(325, 467, 890, 750)","[325, 467, 890, 750]",3
+165,pipe_non_corroded (16).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (16).jpg,Data_Preprocessed/pipe_non_corroded (16).jpg,Low Resolution,"The surface appears to be clean and free from visible signs of corrosion or oxidation. There are no cracks, leaks, or other damage that would indicate a violation of the safety rule.
+
+[SAFE]","(329, 456, 783, 564)","[329, 456, 783, 564]",3
+166,pipe_non_corroded (16).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (16).jpg,Data_Preprocessed/pipe_non_corroded (16).jpg,Low Resolution,"The surface appears to be clean and free from any signs of corrosion, cracks, or leaks. Therefore, the safety rule does not apply in this case.
+
+[SAFE]","(329, 456, 783, 564)","[329, 456, 783, 564]",3
+167,pipe_non_corroded (17).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (17).jpg,Data_Preprocessed/pipe_non_corroded (17).jpg,Low Resolution,"SAFE
+
+The surface of the pipes in the image appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion that would indicate a violation of the safety rule. Therefore, the final verdict is that the surface condition does not violate the safety rule.","(256, 347, 998, 934)","[256, 347, 998, 934]",3
+168,pipe_non_corroded (17).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (17).jpg,Data_Preprocessed/pipe_non_corroded (17).jpg,Low Resolution,SAFE,"(256, 347, 998, 934)","[256, 347, 998, 934]",3
+169,pipe_non_corroded (18).jpg,pipeline,Low Resolution,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (18).jpg,Data_Preprocessed/pipe_non_corroded (18).jpg,Low Resolution,"The surface of the railway tracks appears to be clean and free from signs of corrosion or significant wear. There are no visible cracks, leaks, or other signs of damage that would indicate a violation of the safety rule.
+
+Therefore, the final verdict is:
+
+[SAFE]","(256, 347, 988, 987)","[256, 347, 988, 987]",3
+170,pipe_non_corroded (18).jpg,pipeline,Low Resolution,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (18).jpg,Data_Preprocessed/pipe_non_corroded (18).jpg,Low Resolution,"The surface of the railway tracks appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, based on the inspection, the safety rule ""Surface rust is acceptable"" does not apply.
+
+Final verdict: SAFE","(256, 347, 988, 987)","[256, 347, 988, 987]",3
+171,pipe_non_corroded (19).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (19).jpg,Data_Preprocessed/pipe_non_corroded (19).jpg,,SAFE,"(325, 187, 649, 999)","[325, 187, 649, 999]",3
+172,pipe_non_corroded (19).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (19).jpg,Data_Preprocessed/pipe_non_corroded (19).jpg,,SAFE,"(325, 187, 649, 999)","[325, 187, 649, 999]",3
+173,pipe_non_corroded (2).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (2).jpg,Data_Preprocessed/pipe_non_corroded (2).jpg,,SAFE,"(358, 246, 799, 500)","[358, 246, 799, 500]",3
+174,pipe_non_corroded (2).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (2).jpg,Data_Preprocessed/pipe_non_corroded (2).jpg,,SAFE,"(358, 246, 799, 500)","[358, 246, 799, 500]",3
+175,pipe_non_corroded (20).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (20).jpg,Data_Preprocessed/pipe_non_corroded (20).jpg,,"The surface of the pipes appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion.
+
+Final verdict: SAFE","(329, 456, 783, 750)","[329, 456, 783, 750]",3
+176,pipe_non_corroded (20).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (20).jpg,Data_Preprocessed/pipe_non_corroded (20).jpg,,"The surface of the pipes in the image shows signs of rust and corrosion. While there may be some minor cracks and dents, these do not appear to be significant enough to warrant an alert under the safety rule.
+
+Therefore, the final verdict is:
+
+[SAFE]","(329, 456, 783, 750)","[329, 456, 783, 750]",3
+177,pipe_non_corroded (21).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (21).jpg,Data_Preprocessed/pipe_non_corroded (21).jpg,,"SAFE
+
+The surface of the pipes and tanks appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion that would indicate a violation of the safety rule. The structure looks intact and well-maintained.","(256, 347, 988, 747)","[256, 347, 988, 747]",3
+178,pipe_non_corroded (21).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (21).jpg,Data_Preprocessed/pipe_non_corroded (21).jpg,,"The surface of the pipes and tanks appears to be clean and free from visible signs of corrosion, cracks, or leaks. Therefore, based on the inspection, the safety rule ""Surface rust is acceptable"" does not apply in this case.
+
+Final verdict: SAFE","(256, 347, 988, 747)","[256, 347, 988, 747]",3
+179,pipe_non_corroded (22).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (22).jpg,Data_Preprocessed/pipe_non_corroded (22).jpg,,"The surface of the pipes appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion.
+
+Final verdict: SAFE","(256, 347, 998, 998)","[256, 347, 998, 998]",3
+180,pipe_non_corroded (22).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (22).jpg,Data_Preprocessed/pipe_non_corroded (22).jpg,,"The surface of the pipes appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, based on the inspection, the safety rule is not violated.
+
+[SAFE]","(256, 347, 998, 998)","[256, 347, 998, 998]",3
+181,pipe_non_corroded (23).jpg,pipeline,Low Resolution,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (23).jpg,Data_Preprocessed/pipe_non_corroded (23).jpg,Low Resolution,"The surface of the pipeline appears to be clean and free from signs of corrosion or significant wear. There is no visible rust, pitting, or other signs of surface oxidation that would indicate a violation of the safety rule.
+
+Final verdict: SAFE","(329, 456, 879, 999)","[329, 456, 879, 999]",3
+182,pipe_non_corroded (23).jpg,pipeline,Low Resolution,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (23).jpg,Data_Preprocessed/pipe_non_corroded (23).jpg,Low Resolution,"The surface of the pipeline appears to be corroded and has some signs of rust. There are no visible cracks or leaks that would indicate structural defects.
+
+Therefore, the final verdict is:
+
+[SAFE]","(329, 456, 879, 999)","[329, 456, 879, 999]",3
+183,pipe_non_corroded (24).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (24).jpg,Data_Preprocessed/pipe_non_corroded (24).jpg,,"SAFE
+
+The surface of the pipeline appears to be clean and free from signs of corrosion or significant wear. There are no visible cracks, leaks, or other indications of surface damage that would violate the safety rule. The condition of the pipeline is consistent with good maintenance practices and does not pose a risk to the structure or its contents.","(329, 456, 708, 800)","[329, 456, 708, 800]",3
+184,pipe_non_corroded (24).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (24).jpg,Data_Preprocessed/pipe_non_corroded (24).jpg,,"The surface of the pipeline appears to be clean and free from visible signs of corrosion, cracks, or leaks. Therefore, based on the inspection, the safety rule ""Surface rust is acceptable"" does not apply.
+
+Final verdict: [SAFE]","(329, 456, 708, 800)","[329, 456, 708, 800]",3
+185,pipe_non_corroded (25).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (25).jpg,Data_Preprocessed/pipe_non_corroded (25).jpg,Low Resolution,"The surface appears to be clean and free from visible signs of corrosion or oxidation. There are no cracks, leaks, or other defects that would indicate a violation of the safety rule.
+
+[SAFE]","(250, 300, 750, 800)","[250, 300, 750, 800]",3
+186,pipe_non_corroded (25).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (25).jpg,Data_Preprocessed/pipe_non_corroded (25).jpg,Low Resolution,"The surface appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, the safety rule does not apply in this case.
+
+[SAFE]","(250, 300, 750, 800)","[250, 300, 750, 800]",3
+187,pipe_non_corroded (3).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (3).jpg,Data_Preprocessed/pipe_non_corroded (3).jpg,,SAFE,"(256, 347, 898, 996)","[256, 347, 898, 996]",3
+188,pipe_non_corroded (3).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (3).jpg,Data_Preprocessed/pipe_non_corroded (3).jpg,,SAFE,"(256, 347, 898, 996)","[256, 347, 898, 996]",3
+189,pipe_non_corroded (4).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (4).jpg,Data_Preprocessed/pipe_non_corroded (4).jpg,,"SAFE
+
+The surface of the pipeline appears to be clean and free from signs of corrosion or significant wear. There is no visible rust, pitting, or other signs of surface oxidation that would indicate a need for attention. The pipeline looks intact and well-maintained. Therefore, the safety rule has not been violated in this instance.","(356, 298, 744, 980)","[356, 298, 744, 980]",3
+190,pipe_non_corroded (4).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (4).jpg,Data_Preprocessed/pipe_non_corroded (4).jpg,,"SAFE
+
+The surface of the pipeline appears to be clean and free from significant signs of corrosion, cracks, or leaks. The rust on the surface is minimal and does not appear to pose any immediate threat to the integrity of the structure. Therefore, based on the visual inspection, the safety rule is not violated in this case.","(356, 298, 744, 980)","[356, 298, 744, 980]",3
+191,pipe_non_corroded (5).jpg,pipeline,Distorted,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (5).jpg,Data_Preprocessed/pipe_non_corroded (5).jpg,Distorted,"The visible physical condition of the surface in the image shows signs of surface oxidation and corrosion. The pipes appear to have rust stains and discoloration, which indicates that they may be corroded.
+
+Step 1: Description of the surface condition:
+- Corrosion and rust stains are present on the pipes.
+- There is a noticeable discoloration of the metal surfaces.
+
+Step 2: Evaluation of the observed condition:
+- The presence of corrosion and rust stains suggests that the pipes are not safe for use as they could lead to leaks or other issues over time.
+
+Step 3: Final verdict:
+[UNSAFE]
+
+The pipes should be removed immediately and replaced with new ones to ensure safety and prevent potential hazards.","(256, 347, 980, 750)","[256, 347, 980, 750]",3
+192,pipe_non_corroded (5).jpg,pipeline,Distorted,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (5).jpg,Data_Preprocessed/pipe_non_corroded (5).jpg,Distorted,"The surface of the pipes appears to be clean and free from any visible signs of corrosion, cracks, or leaks. Therefore, based on the inspection, the safety rule ""Surface rust is acceptable"" does not apply in this case.
+
+Final verdict: SAFE","(256, 347, 980, 750)","[256, 347, 980, 750]",3
+193,pipe_non_corroded (6).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (6).jpg,Data_Preprocessed/pipe_non_corroded (6).jpg,,SAFE,"(329, 285, 674, 999)","[329, 285, 674, 999]",3
+194,pipe_non_corroded (6).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (6).jpg,Data_Preprocessed/pipe_non_corroded (6).jpg,,SAFE,"(329, 285, 674, 999)","[329, 285, 674, 999]",3
+195,pipe_non_corroded (7).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (7).jpg,Data_Preprocessed/pipe_non_corroded (7).jpg,,SAFE,"(250, 375, 998, 649)","[250, 375, 998, 649]",3
+196,pipe_non_corroded (7).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (7).jpg,Data_Preprocessed/pipe_non_corroded (7).jpg,,SAFE,"(250, 375, 998, 649)","[250, 375, 998, 649]",3
+197,pipe_non_corroded (8).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (8).jpg,Data_Preprocessed/pipe_non_corroded (8).jpg,,"SAFE
+
+The visible physical condition of the surface in the image shows no signs of surface oxidation or corrosion. The pipe appears to be intact and free from any visible damage or leaks. Therefore, it can be concluded that the safety rule is not violated in this case.","(329, 45, 876, 914)","[329, 45, 876, 914]",3
+198,pipe_non_corroded (8).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (8).jpg,Data_Preprocessed/pipe_non_corroded (8).jpg,,"SAFE
+
+The visible physical condition of the surface in the image shows no signs of corrosion, cracks, or leaks. The pipe appears to be clean and intact without any visible damage. Therefore, it does not violate the safety rule regarding surface rust being acceptable.","(329, 45, 876, 914)","[329, 45, 876, 914]",3
+199,pipe_non_corroded (9).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (9).jpg,Data_Preprocessed/pipe_non_corroded (9).jpg,,"SAFE
+
+The surface of the pipes in the image appears to be clean and free from signs of corrosion or significant wear. There is no visible evidence of surface oxidation or corrosion that would indicate a violation of the safety rule. Therefore, the final verdict is safe.","(250, 375, 689, 940)","[250, 375, 689, 940]",3
+200,pipe_non_corroded (9).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (9).jpg,Data_Preprocessed/pipe_non_corroded (9).jpg,,"SAFE
+
+The surface of the pipes in the image appears to be clean and free from visible signs of corrosion, cracks, or leaks. Therefore, it does not violate the safety rule regarding surface rust being acceptable.","(250, 375, 689, 940)","[250, 375, 689, 940]",3

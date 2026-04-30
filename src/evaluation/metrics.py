@@ -344,7 +344,7 @@ def main():
         action="store_true",
         help="Save summary to results/metrics/metrics_summary.csv",
     )
-    parser.add_argument("--mode", choices=["baseline", "cot", "decomp", "multiturn", "contrast", "contrast_cot"], default="baseline")
+    parser.add_argument("--mode", choices=["baseline", "cot", "decomp", "multiturn", "contrast", "contrast_cot", "lora"], default="baseline")
     args = parser.parse_args()
 
     if args.mode == "cot":
@@ -396,6 +396,15 @@ def main():
             "Janus":     "janus_contrast_cot_parsed.csv",
             "Qwen2-VL":  "qwen2_vl_contrast_cot_parsed.csv",
             "MiniCPM":   "minicpm_contrast_cot_parsed.csv",
+        }
+    elif args.mode == "lora":
+        parsed_dir = "results/innovation/lora/parsed"
+        metrics_dir = "results/innovation/lora/metrics"
+        target_files = {
+            "Qwen2-VL (LoRA Baseline)": "qwen2_vl_lora_baseline_parsed.csv",
+            "Qwen2-VL (LoRA CLAHE)": "qwen2_vl_lora_clahe_parsed.csv",
+            "Qwen2-VL (LoRA Decomp)": "qwen2_vl_lora_decomp_parsed.csv",
+            "Qwen2-VL (LoRA Contrast)": "qwen2_vl_lora_contrast_parsed.csv",
         }
     else:
         parsed_dir = "results/baseline/parsed"

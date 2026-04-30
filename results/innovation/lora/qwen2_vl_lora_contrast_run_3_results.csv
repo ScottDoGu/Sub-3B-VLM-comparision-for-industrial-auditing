@@ -1,0 +1,709 @@
+index,image_id,category,artifact_tag,ground_truth_value,unit,logic_constraint,expected_value,rule_id,reasoning,hard_case_flag,expected_verdict,full_path,processed_path,constraint,model_response,run_iteration
+1,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.10 bar.,0.15 bar,Rule A,Value is 0.15. 0.15 > 0.10.,1,UNSAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"Q1: Observation: The current readings on both gauges are 0.5 bar.
+Q2: Evaluation: The observation does not violate the Safety Rule because the gauge reads within the allowed range of 0 to 0.10 bar.
+Q3: Final Verdict: SAFE",3
+2,guage (1).jpg,guage,Oblique Angle,0.15,bar,Alert if pressure exceeds 0.20 bar.,0.15 bar,Rule B,Value is 0.15. 0.15 < 0.20.,1,SAFE,Dataset/Guages/guage (1).jpg,Data_Preprocessed/guage (1).jpg,Oblique Angle,"Q1: Observation: The current readings on both gauges are 0.5 bar.
+Q2: Evaluation: The observation does not violate the Safety Rule because the gauge reads within the allowed range of 0 to 1.5 bars.
+Q3: Final Verdict: SAFE",3
+3,guage (10).jpg,guage,,0,bar,Alert if pressure is above 0.05 bar.,0 bar,Rule A,Value is 0. 0 < 0.05.,0,SAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"Q1: Observation: The left gauge reads 0.5 and the right gauge reads 0.5.
+Q2: Evaluation: The readings do not exceed 0.05 bar, so they do not violate the Safety Rule.
+Q3: Final Verdict: SAFE",3
+4,guage (10).jpg,guage,,0,bar,Alert if system is non-pressurized (0 bar).,0 bar,Rule B,Value is 0. System is non-pressurized.,0,UNSAFE,Dataset/Guages/guage (10).jpg,Data_Preprocessed/guage (10).jpg,,"Q1: Observation: The pressure gauge on the left side of the image shows 4 units and the pressure gauge on the right side of the image shows 5 units.
+Q2: Evaluation: The observation from Q1 does not violate the Safety Rule because both gauges show a positive value indicating that the system is pressurized at 0.5 bars.
+Q3: Final Verdict: SAFE",3
+5,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 20 kPa. Alert if over.,25 kPa,Rule A,Value is 25. 25 > 20.,1,UNSAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"Q1: Observation: The current reading on the pressure gauge is 45 kPa.
+Q2: Evaluation: The reading of 45 kPa does not violate the Safety Rule because it falls within the normal range (< 20 kPa).
+Q3: Final Verdict: SAFE",3
+6,guage (11).jpg,guage,Oblique Angle,25,kPa,Normal range is < 30 kPa. Alert if over.,25 kPa,Rule B,Value is 25. 25 < 30.,1,SAFE,Dataset/Guages/guage (11).jpg,Data_Preprocessed/guage (11).jpg,Oblique Angle,"Q1: Observation: The current reading on the pressure gauge is 45 kPa.
+Q2: Evaluation: The reading does not exceed the normal range of 30 kPa, so it does not violate the Safety Rule.
+Q3: Final Verdict: SAFE",3
+7,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 80 NA.,100 NA,Rule A,Value is 100. 100 > 80.,1,UNSAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"Q1: Observation: The left image shows a gauge with a value of 75 and the right image shows a gauge with a value of 90.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+8,guage (12).jpg,guage,Oblique Angle,100,,Alert if reading exceeds 120 NA.,100 NA,Rule B,Value is 100. 100 < 120.,1,SAFE,Dataset/Guages/guage (12).jpg,Data_Preprocessed/guage (12).jpg,Oblique Angle,"Q1: Observation: The left image shows a gauge with a value of 95 and the right image shows a gauge with a value of 120.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+9,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 1.5 bar. Alert if over.,2 bar,Rule A,Value is 2. 2 > 1.5.,1,UNSAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"Q1: Observation: The pressure gauge on the left side of the image shows a value of 0.8 bar and the pressure gauge on the right side of the image shows a value of 1.4 bar.
+Q2: Evaluation: The observation does not violate the Safety Rule because the pressure readings do not exceed the operating limit of 1.5 bar.
+Q3: Final Verdict: SAFE",3
+10,guage (13).jpg,guage,Obstruction,2,bar,Operating limit is 3.0 bar. Alert if over.,2 bar,Rule B,Value is 2. 2 < 3.0.,1,SAFE,Dataset/Guages/guage (13).jpg,Data_Preprocessed/guage (13).jpg,Obstruction,"Q1: Observation: The pressure gauge on the left side of the image shows a value of 3.5 bar and the one on the right side shows a value of 4.0 bar.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+11,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 14 lbf/in2.,18 lbf/in2,Rule A,Value is 18. 18 > 14.,0,UNSAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"Q1: Observation: The left image shows a gauge with a value of 50 and a pointer at 60. The right image shows a gauge with a value of 70 and a pointer at 80.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+12,guage (14).jpg,guage,,18,lbf/in2,Alert if pressure exceeds 22 lbf/in2.,18 lbf/in2,Rule B,Value is 18. 18 < 22.,0,SAFE,Dataset/Guages/guage (14).jpg,Data_Preprocessed/guage (14).jpg,,"Q1: Observation: The left image shows a pressure gauge with a value of 50 and a pointer at 40. The right image shows a pressure gauge with a value of 60 and a pointer at 50.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+13,guage (15).jpg,guage,Low Resolution,0,,Alert if reading is above 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"Q1: Observation: The left side of the image shows two pressure gauges with values of 0 and 4, respectively. The right side of the image shows two temperature gauges with values of 7 and 8, respectively.
+Q2: Evaluation: The Safety Rule requires that readings be below 5 for all gauges to be considered safe. Since both pressure gauges have values greater than 5, they do not meet this requirement. Therefore, the evaluation is Yes.
+Q3: Final Verdict: UNSAFE",3
+14,guage (15).jpg,guage,Low Resolution,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (15).jpg,Data_Preprocessed/guage (15).jpg,Low Resolution,"Q1: Observation: The values on the pressure gauges are 50 and 40 respectively.
+Q2: Evaluation: The values do not violate the Safety Rule because they are within the allowed range of 0 to 99.
+Q3: Final Verdict: SAFE",3
+15,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 100 kN/m2.,125 kN/m2,Rule A,Value is 125. 125 > 100.,0,UNSAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"Q1: Observation: The left thermometer reads 95 kN/m2 and the right thermometer reads 85 kN/m2.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+16,guage (16).jpg,guage,,125,kN/m2,Alert if value exceeds 150 kN/m2.,125 kN/m2,Rule B,Value is 125. 125 < 150.,0,SAFE,Dataset/Guages/guage (16).jpg,Data_Preprocessed/guage (16).jpg,,"Q1: Observation: The left thermometer reads 140 kN/m2 and the right thermometer reads 160 kN/m2.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+17,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 160 psi.,200 psi,Rule A,Value is 200. 200 > 160.,1,UNSAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"Q1: Observation: The value on the left gauge reads 150 and the value on the right gauge reads 140.
+Q2: Evaluation: The observation does not violate the Safety Rule because the values do not exceed 160 psi.
+Q3: Final Verdict: SAFE",3
+18,guage (17).jpg,guage,Oblique Angle,200,psi,Alert if pressure is > 240 psi.,200 psi,Rule B,Value is 200. 200 < 240.,1,SAFE,Dataset/Guages/guage (17).jpg,Data_Preprocessed/guage (17).jpg,Oblique Angle,"Q1: Observation: The value on the left gauge reads 250 and the value on the right gauge reads 260.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+19,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 24 NA.,30 NA,Rule A,Value is 30. 30 > 24.,1,UNSAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"Q1: Observation: The gauge on the left reads 0 and the gauge on the right reads 24.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+20,guage (18).jpg,guage,Oblique Angle,30,,Alert if reading exceeds 36 NA.,30 NA,Rule B,Value is 30. 30 < 36.,1,SAFE,Dataset/Guages/guage (18).jpg,Data_Preprocessed/guage (18).jpg,Oblique Angle,"Q1: Observation: The gauge on the left side of the image shows a value of 30 and the gauge on the right side of the image shows a value of 45.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+21,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 1.7 liter.,2.2 liter,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"Q1: Observation: The blue gauge shows a value of approximately 0.8 liters.
+Q2: Evaluation: The observation does not violate the Safety Rule because the gauge reads below the threshold of 1.7 liters.
+Q3: Final Verdict: SAFE",3
+22,guage (19).jpg,guage,Oblique Angle,2.2,liter,Alert if level is > 2.7 liter.,2.2 liter,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (19).jpg,Data_Preprocessed/guage (19).jpg,Oblique Angle,"Q1: Observation: The blue gauge shows a value of approximately 2.5 liters.
+Q2: Evaluation: The observation does not violate the Safety Rule because the gauge reads within the allowed range of 0 to 4 liters.
+Q3: Final Verdict: SAFE",3
+23,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if value exceeds 2 kg/cm2.,0 kg/cm2,Rule A,Value is 0. 0 < 2.,1,SAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"Q1: Observation: The numeric reading on the first gauge is 0 and on the second gauge is 5.
+Q2: Evaluation: The observation from Q1 does not violate the Safety Rule because there is no value exceeding 2 kg/cm².
+Q3: Final Verdict: SAFE",3
+24,guage (2).jpg,guage,Oblique Angle,0,kg/cm2,Alert if system pressure drops to 0 kg/cm2.,0 kg/cm2,Rule B,Value is 0. System pressure is at 0.,1,UNSAFE,Dataset/Guages/guage (2).jpg,Data_Preprocessed/guage (2).jpg,Oblique Angle,"Q1: Observation: The lower value reads 5 and the upper value reads 15.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+25,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 3.0 kgf/cm2.,4 kgf/cm2,Rule A,Value is 4. 4 > 3.0.,1,UNSAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"Q1: Observation: The pressure gauge on the left side of the image shows a value of 15 kgf/cm2 and the one on the right side shows a value of 18 kgf/cm2.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+26,guage (20).jpg,guage,Glare,4,kgf/cm2,Alert if needle is past 5.0 kgf/cm2.,4 kgf/cm2,Rule B,Value is 4. 4 < 5.0.,1,SAFE,Dataset/Guages/guage (20).jpg,Data_Preprocessed/guage (20).jpg,Glare,"Q1: Observation: The pressure gauge on the left side of the image reads 4.7 kgf/cm2 and the pressure gauge on the right side of the image reads 4.8 kgf/cm2.
+Q2: Evaluation: The observation does not violate the Safety Rule because the needle is still within the allowed range of 5.0 kgf/cm2.
+Q3: Final Verdict: SAFE",3
+27,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 2.0 kPa.,2.5 kPa,Rule A,Value is 2.5. 2.5 > 2.0.,1,UNSAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"Q1: Observation: The pressure gauge reads 2.5 kPa.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+28,guage (21).jpg,guage,Low Contrast,2.5,kPa,Alert if reading exceeds 3.0 kPa.,2.5 kPa,Rule B,Value is 2.5. 2.5 < 3.0.,1,SAFE,Dataset/Guages/guage (21).jpg,Data_Preprocessed/guage (21).jpg,Low Contrast,"Q1: Observation: The pressure gauge reads 2.5 kPa.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+29,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.2 Pa.,1.5 Pa,Rule A,Value is 1.5. 1.5 > 1.2.,1,UNSAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"Q1: Observation: The left image shows a valve with a gauge reading of approximately 0.8 Pa and a pressure indicator showing 1.2 Pa. The right image shows another valve with a gauge reading of approximately 0.7 Pa and a pressure indicator showing 1.2 Pa.
+Q2: Evaluation: The observation does not violate the Safety Rule because both valves have gauge readings that are within the allowed range of 0.8 to 1.2 Pa.
+Q3: Final Verdict: SAFE",3
+30,guage (22).jpg,guage,Oblique Angle,1.5,Pa,Alert if value > 1.8 Pa.,1.5 Pa,Rule B,Value is 1.5. 1.5 < 1.8.,1,SAFE,Dataset/Guages/guage (22).jpg,Data_Preprocessed/guage (22).jpg,Oblique Angle,"Q1: Observation: The left image shows a valve with a gauge reading of approximately 0.7 Pa and a pressure indicator showing 1.5 Pa. The right image shows another valve with a gauge reading of approximately 1.4 Pa and a pressure indicator showing 1.6 Pa.
+Q2: Evaluation: The observation from Q1 does not violate the Safety Rule because the readings do not exceed 1.8 Pa.
+Q3: Final Verdict: SAFE",3
+31,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 18 celcius.,23 celcius,Rule A,Value is 23. 23 > 18.,0,UNSAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"Q1: Observation: The pressure gauge on the left side of the image shows a reading of 60 units, while the pressure gauge on the right side of the image shows a reading of 50 units.
+Q2: Evaluation: The observation does not violate the Safety Rule because there is no indication that the temperature has exceeded 18 degrees Celsius.
+Q3: Final Verdict: SAFE",3
+32,guage (23).jpg,guage,,23,celcius,Alert if temperature exceeds 28 celcius.,23 celcius,Rule B,Value is 23. 23 < 28.,0,SAFE,Dataset/Guages/guage (23).jpg,Data_Preprocessed/guage (23).jpg,,"Q1: Observation: The pressure gauge on the left side of the image shows a reading of 60 units, while the pressure gauge on the right side of the image shows a reading of 50 units.
+Q2: Evaluation: The observation does not violate the Safety Rule because there is no indication that the temperature has exceeded 28 degrees Celsius.
+Q3: Final Verdict: SAFE",3
+33,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 0.8 bar.,1 bar,Rule A,Value is 1. 1 > 0.8.,0,UNSAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"Q1: Observation: The left image shows a gauge with a value of 1.5 bar and a red indicator light on the right side, indicating that the pressure has exceeded the limit of 0.8 bar. The right image shows a gauge with a value of 1.5 bar and no red indicator light, indicating that the pressure is within the safe range of 0.8 bar.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+34,guage (24).jpg,guage,,1,bar,Alert if pressure exceeds 1.2 bar.,1 bar,Rule B,Value is 1. 1 < 1.2.,0,SAFE,Dataset/Guages/guage (24).jpg,Data_Preprocessed/guage (24).jpg,,"Q1: Observation: The left image shows a gauge with a value of 0.5 bar and a red indicator light on the right side, indicating that the pressure is below the threshold of 1.2 bar. The right image shows a gauge with a value of 0.6 bar and a green indicator light on the right side, indicating that the pressure is within the safe range of 1.2 bar to 1.5 bar.
+
+Q2: Evaluation: The evaluation is No because both gauges show values below 1.2 bar, which violates the Safety Rule.
+
+Q3: Final Verdict: UNSAFE",3
+35,guage (25).jpg,guage,Oblique Angle,0,,Alert if reading is > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"Q1: Observation: The left image shows a gauge with a reading of 4 and a pressure of 0. The right image shows a gauge with a reading of 6 and a pressure of 0.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+36,guage (25).jpg,guage,Oblique Angle,0,,Alert if system is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (25).jpg,Data_Preprocessed/guage (25).jpg,Oblique Angle,"Q1: Observation: The left image shows a gauge with a value of 5 and a pressure of 4000 psi, while the right image shows a gauge with a value of 6 and a pressure of 5000 psi.
+Q2: Evaluation: The gauge readings do not violate the Safety Rule because they both indicate that the system is above 0 psi, which is the threshold for alerting when the system is at 0 psi.
+Q3: Final Verdict: SAFE",3
+37,guage (26).jpg,guage,,400,kPa,Alert if value is > 320 kPa.,400 kPa,Rule A,Value is 400. 400 > 320.,0,UNSAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"Q1: Observation: The left image shows a gauge with a value of approximately 325 kPa and the right image shows a gauge with a value of approximately 320 kPa.
+Q2: Evaluation: The gauge readings do not exceed the Safety Rule's threshold of 320 kPa, so the evaluation is No.
+Q3: Final Verdict: SAFE",3
+38,guage (26).jpg,guage,,400,kPa,Alert if value is > 480 kPa.,400 kPa,Rule B,Value is 400. 400 < 480.,0,SAFE,Dataset/Guages/guage (26).jpg,Data_Preprocessed/guage (26).jpg,,"Q1: Observation: The left image shows a gauge with a value of approximately 475 kPa and the right image shows a gauge with a value of approximately 465 kPa.
+Q2: Evaluation: The gauge readings do not exceed 480 kPa, so the Safety Rule does not apply to these gauges.
+Q3: Final Verdict: SAFE",3
+39,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 800 mbar.,1000 mbar,Rule A,Value is 1000. 1000 > 800.,1,UNSAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"Q1: Observation: The gauge reads 650 mbar on the left and 700 mbar on the right.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+40,guage (27).jpg,guage,Oblique Angle,1000,mbar,Alert if pressure exceeds 1200 mbar.,1000 mbar,Rule B,Value is 1000. 1000 < 1200.,1,SAFE,Dataset/Guages/guage (27).jpg,Data_Preprocessed/guage (27).jpg,Oblique Angle,"Q1: Observation: The gauge reads 800 mbar on the left and 900 mbar on the right.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+41,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 100 psi.,125 psi,Rule A,Value is 125. 125 > 100.,1,UNSAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"Q1: Observation: The left image shows a gauge with a value of approximately 95 psi and a needle pointing to the right side of the gauge. The right image shows a gauge with a value of approximately 85 psi and a needle pointing to the left side of the gauge.
+Q2: Evaluation: The gauge readings on both images do not exceed 100 psi, so they do not violate the Safety Rule.
+Q3: Final Verdict: SAFE",3
+42,guage (28).jpg,guage,Oblique Angle,125,psi,Alert if pressure exceeds 150 psi.,125 psi,Rule B,Value is 125. 125 < 150.,1,SAFE,Dataset/Guages/guage (28).jpg,Data_Preprocessed/guage (28).jpg,Oblique Angle,"Q1: Observation: The left image shows a gauge with a value of 140 psi and a needle pointing to the right side of the gauge, indicating that the pressure is below 150 psi. The right image shows a gauge with a value of 160 psi and a needle pointing to the left side of the gauge, indicating that the pressure is above 150 psi.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+43,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum > 5 in hg.,0 in hg,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"Q1: Observation: The gauge reads 0 units on the left and 4 units on the right.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+44,guage (29).jpg,guage,Oblique Angle,0,in hg,Alert if vacuum drops to 0 in hg.,0 in hg,Rule B,Value is 0. Vacuum is at 0.,1,UNSAFE,Dataset/Guages/guage (29).jpg,Data_Preprocessed/guage (29).jpg,Oblique Angle,"Q1: Observation: The gauge reads 0 units on both images.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+45,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 17 bar.,22 bar,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"Q1: Observation: The left gauge shows a reading of 40 bars and the right gauge shows a reading of 50 bars.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+46,guage (3).jpg,guage,Low Contrast,22,bar,Alert if pressure > 27 bar.,22 bar,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (3).jpg,Data_Preprocessed/guage (3).jpg,Low Contrast,"Q1: Observation: The left gauge shows a reading of 40 bars and the right gauge shows a reading of 50 bars.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+47,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 17 psi.,22 psi,Rule A,Value is 22. 22 > 17.,1,UNSAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"Q1: Observation: The red fire hydrant has a gauge with a white dial and black numbers indicating a value of 0 on the left side and 17 on the right side.
+Q2: Evaluation: The observation does not violate the Safety Rule because the pressure is within the allowed range of 0 to 17 psi.
+Q3: Final Verdict: SAFE",3
+48,guage (30).jpg,guage,Oblique Angle,22,psi,Alert if pressure > 27 psi.,22 psi,Rule B,Value is 22. 22 < 27.,1,SAFE,Dataset/Guages/guage (30).jpg,Data_Preprocessed/guage (30).jpg,Oblique Angle,"Q1: Observation: The red fire hydrant has a gauge with a white dial and black numbers indicating a value of 0 on the left side and 26 on the right side.
+Q2: Evaluation: The observation does not violate the Safety Rule because the pressure is below 27 psi.
+Q3: Final Verdict: SAFE",3
+49,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.01 Mpa.,0.02 Mpa,Rule A,Value is 0.02. 0.02 > 0.01.,1,UNSAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"Q1: Observation: The pressure gauge reads 0.05 MPa on the left side of the image and 0.06 MPa on the right side of the image.
+Q2: Evaluation: The observation does not violate the Safety Rule because the pressure readings do not exceed 0.01 MPa.
+Q3: Final Verdict: SAFE",3
+50,guage (31).jpg,guage,Glare/ Oblique Angle,0.02,Mpa,Alert if > 0.03 Mpa.,0.02 Mpa,Rule B,Value is 0.02. 0.02 < 0.03.,1,SAFE,Dataset/Guages/guage (31).jpg,Data_Preprocessed/guage (31).jpg,Glare/ Oblique Angle,"Q1: Observation: The pressure gauge reads 0.04 MPa on the left side of the image and 0.05 MPa on the right side of the image.
+Q2: Evaluation: The observation does not violate the Safety Rule because the pressure readings do not exceed 0.03 MPa.
+Q3: Final Verdict: SAFE",3
+51,guage (32).jpg,guage,Low Resolution,0.8,bar,Alert if > 0.6 bar.,0.8 bar,Rule A,Value is 0.8. 0.8 > 0.6.,1,UNSAFE,Dataset/Guages/guage (32).jpg,Data_Preprocessed/guage (32).jpg,Low Resolution,"Q1: Observation: The pressure gauge shows a value of 1 bar on the left and 2 bars on the right.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+52,guage (32).jpg,guage,Low Resolution,0.8,bar,Alert if > 1.0 bar.,0.8 bar,Rule B,Value is 0.8. 0.8 < 1.0.,1,SAFE,Dataset/Guages/guage (32).jpg,Data_Preprocessed/guage (32).jpg,Low Resolution,"Q1: Observation: The pressure gauge reads 1 bar on the left and 2 bars on the right.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+53,guage (33).jpg,guage,Glare,3.6,bar,Alert if > 2.8 bar.,3.6 bar,Rule A,Value is 3.6. 3.6 > 2.8.,1,UNSAFE,Dataset/Guages/guage (33).jpg,Data_Preprocessed/guage (33).jpg,Glare,"Q1: Observation: The left gauge reads 0.5 bar and the right gauge reads 0.6 bar.
+Q2: Evaluation: The observation does not violate the Safety Rule because both gauges read within the allowed range of 0 to 2.8 bar.
+Q3: Final Verdict: SAFE",3
+54,guage (33).jpg,guage,Glare,3.6,bar,Alert if > 4.4 bar.,3.6 bar,Rule B,Value is 3.6. 3.6 < 4.4.,1,SAFE,Dataset/Guages/guage (33).jpg,Data_Preprocessed/guage (33).jpg,Glare,"Q1: Observation: The left gauge reads 0.5 bar and the right gauge reads 0.6 bar.
+Q2: Evaluation: The observation does not violate the Safety Rule because both gauges read within the allowed range of 0 to 0.8 bar.
+Q3: Final Verdict: SAFE",3
+55,guage (34).jpg,guage,Oblique Angle/ Low Resolution,83,kPa,Alert if pressure exceeds 66 kPa.,83 kPa,Rule A,Value is 83. 83 > 66.,1,UNSAFE,Dataset/Guages/guage (34).jpg,Data_Preprocessed/guage (34).jpg,Oblique Angle/ Low Resolution,"Q1: Observation: The left image shows a gauge with a green band indicating a value of approximately 50 kPa and a red band indicating a value of approximately 70 kPa. The right image shows a gauge with a green band indicating a value of approximately 40 kPa and a red band indicating a value of approximately 80 kPa.
+Q2: Evaluation: The gauge readings on both images do not exceed 66 kPa, so the Safety Rule has not been violated.
+Q3: Final Verdict: SAFE",3
+56,guage (34).jpg,guage,Oblique Angle/ Low Resolution,83,kPa,Alert if pressure exceeds 100 kPa.,83 kPa,Rule B,Value is 83. 83 < 100.,1,SAFE,Dataset/Guages/guage (34).jpg,Data_Preprocessed/guage (34).jpg,Oblique Angle/ Low Resolution,"Q1: Observation: The left image shows a gauge with a green band indicating a value of approximately 50 kPa and a red band indicating a value of approximately 70 kPa. The right image shows a gauge with a green band indicating a value of approximately 80 kPa and a red band indicating a value of approximately 90 kPa.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+57,guage (35).jpg,guage,Obstruction,35,Psi,Alert if > 28 Psi.,35 Psi,Rule A,Value is 35. 35 > 28.,1,UNSAFE,Dataset/Guages/guage (35).jpg,Data_Preprocessed/guage (35).jpg,Obstruction,"Q1: Observation: The pressure gauge readings are 0 kg/cm² and 50 kg/cm² for the first pair of gauges, 0 kg/cm² and 60 kg/cm² for the second pair, and 0 kg/cm² and 70 kg/cm² for the third pair. The values are all below 28 kg/cm², so there is no violation of the Safety Rule.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+58,guage (35).jpg,guage,Obstruction,35,Psi,Alert if > 42 Psi.,35 Psi,Rule B,Value is 35. 35 < 42.,1,SAFE,Dataset/Guages/guage (35).jpg,Data_Preprocessed/guage (35).jpg,Obstruction,"Q1: Observation: The pressure gauge readings are 0 kg/cm² and 50 kg/cm² for the first pair of gauges, 0 kg/cm² and 60 kg/cm² for the second pair, and 0 kg/cm² and 70 kg/cm² for the third pair. The values are all below 42 psi.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+59,guage (36).jpg,guage,Low Contrast,0.1,Mpa,Alert if > 0.08 Mpa.,0.1 Mpa,Rule A,Value is 0.1. 0.1 > 0.08.,1,UNSAFE,Dataset/Guages/guage (36).jpg,Data_Preprocessed/guage (36).jpg,Low Contrast,"Q1: Observation: The left gauge reads 0.4 MPa and the right gauge reads 0.6 MPa.
+Q2: Evaluation: The observation does not violate the Safety Rule because both gauges read values below 0.08 MPa.
+Q3: Final Verdict: SAFE",3
+60,guage (36).jpg,guage,Low Contrast,0.1,Mpa,Alert if > 0.12 Mpa.,0.1 Mpa,Rule B,Value is 0.1. 0.1 < 0.12.,1,SAFE,Dataset/Guages/guage (36).jpg,Data_Preprocessed/guage (36).jpg,Low Contrast,"Q1: Observation: The left gauge reads 0.4 MPa and the right gauge reads 0.6 MPa.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+61,guage (37).jpg,guage,Low Contrast,160,celcius,Alert if > 128 celcius.,160 celcius,Rule A,Value is 160. 160 > 128.,1,UNSAFE,Dataset/Guages/guage (37).jpg,Data_Preprocessed/guage (37).jpg,Low Contrast,"Q1: Observation: The left gauge reads 50 and the right gauge reads 150.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+62,guage (37).jpg,guage,Low Contrast,160,celcius,Alert if > 192 celcius.,160 celcius,Rule B,Value is 160. 160 < 192.,1,SAFE,Dataset/Guages/guage (37).jpg,Data_Preprocessed/guage (37).jpg,Low Contrast,"Q1: Observation: The left gauge reads 150 and the right gauge reads 150.
+Q2: Evaluation: The readings do not exceed 192 degrees Celsius, so they do not violate the Safety Rule.
+Q3: Final Verdict: SAFE",3
+63,guage (38).jpg,guage,,60,celcius,Alert if temperature exceeds 48 celcius.,60 celcius,Rule A,Value is 60. 60 > 48.,0,UNSAFE,Dataset/Guages/guage (38).jpg,Data_Preprocessed/guage (38).jpg,,"Q1: Observation: The left thermometer reads 50 degrees Celsius and the right thermometer reads 60 degrees Celsius.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+64,guage (38).jpg,guage,,60,celcius,Alert if temperature exceeds 72 celcius.,60 celcius,Rule B,Value is 60. 60 < 72.,0,SAFE,Dataset/Guages/guage (38).jpg,Data_Preprocessed/guage (38).jpg,,"Q1: Observation: The left thermometer reads 50 degrees Celsius and the right thermometer reads 60 degrees Celsius.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+65,guage (39).jpg,guage,,155,psi,Alert if > 124 psi.,155 psi,Rule A,Value is 155. 155 > 124.,0,UNSAFE,Dataset/Guages/guage (39).jpg,Data_Preprocessed/guage (39).jpg,,"Q1: Observation: The left side of the image shows a black and white gauge with the label ""AEM"" at the top center. The gauge reads 0 on the right side, while the left side shows the oil pressure value increasing to 150 psi. The right side of the image shows the same gauge with the label ""AEM"" but the oil pressure value is now 150 psi, which does not exceed the limit of 124 psi.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+66,guage (39).jpg,guage,,155,psi,Alert if > 186 psi.,155 psi,Rule B,Value is 155. 155 < 186.,0,SAFE,Dataset/Guages/guage (39).jpg,Data_Preprocessed/guage (39).jpg,,"Q1: Observation: The left side of the image shows a black and white gauge with the label ""AEM"" at the top center. The gauge reads 0 on the right side, while the left side shows the oil pressure value increasing to 150 psi. The right side of the image shows the same gauge with the label ""AEM"" but the oil pressure value is now 150 psi, which does not exceed the limit of 186 psi.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+67,guage (4).jpg,guage,Obstruction,90,fahrenheit,Alert if > 72 fahrenheit.,90 fahrenheit,Rule A,Value is 90. 90 > 72.,1,UNSAFE,Dataset/Guages/guage (4).jpg,Data_Preprocessed/guage (4).jpg,Obstruction,"Q1: Observation: The left image shows a temperature gauge with a reading of 80 degrees Fahrenheit and the right image shows a temperature gauge with a reading of 95 degrees Fahrenheit.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+68,guage (4).jpg,guage,Obstruction,90,fahrenheit,Alert if > 108 fahrenheit.,90 fahrenheit,Rule B,Value is 90. 90 < 108.,1,SAFE,Dataset/Guages/guage (4).jpg,Data_Preprocessed/guage (4).jpg,Obstruction,"Q1: Observation: The left image shows a temperature gauge with a reading of approximately 95 degrees Fahrenheit and the right image shows a temperature gauge with a reading of approximately 96 degrees Fahrenheit.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+69,guage (40).jpg,guage,Low Contrast,53,celcius,Alert if > 42 celcius.,53 celcius,Rule A,Value is 53. 53 > 42.,1,UNSAFE,Dataset/Guages/guage (40).jpg,Data_Preprocessed/guage (40).jpg,Low Contrast,"Q1: Observation: The left gauge reads 60 and the right gauge reads 50.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+70,guage (40).jpg,guage,Low Contrast,53,celcius,Alert if > 64 celcius.,53 celcius,Rule B,Value is 53. 53 < 64.,1,SAFE,Dataset/Guages/guage (40).jpg,Data_Preprocessed/guage (40).jpg,Low Contrast,"Q1: Observation: The left gauge reads 50 and the right gauge reads 70.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+71,guage (41).jpg,guage,Glare,75,fahrenheit,Alert if > 60 fahrenheit.,75 fahrenheit,Rule A,Value is 75. 75 > 60.,1,UNSAFE,Dataset/Guages/guage (41).jpg,Data_Preprocessed/guage (41).jpg,Glare,"Q1: Observation: The left image shows a temperature gauge with a reading of 50 degrees Fahrenheit and a scale indicating temperatures up to 250 degrees Fahrenheit. The right image shows a similar gauge with a reading of 40 degrees Fahrenheit and a scale indicating temperatures up to 250 degrees Fahrenheit.
+Q2: Evaluation: The observation does not violate the Safety Rule because the readings do not exceed 60 degrees Fahrenheit.
+Q3: Final Verdict: SAFE",3
+72,guage (41).jpg,guage,Glare,75,fahrenheit,Alert if > 90 fahrenheit.,75 fahrenheit,Rule B,Value is 75. 75 < 90.,1,SAFE,Dataset/Guages/guage (41).jpg,Data_Preprocessed/guage (41).jpg,Glare,"Q1: Observation: The left image shows a temperature gauge with a reading of 75 degrees Fahrenheit and a scale indicating temperatures up to 250 degrees Fahrenheit. The right image shows a similar gauge with a reading of 80 degrees Fahrenheit and a scale indicating temperatures up to 250 degrees Fahrenheit.
+Q2: Evaluation: The observation does not violate the Safety Rule because the readings do not exceed 90 degrees Fahrenheit.
+Q3: Final Verdict: SAFE",3
+73,guage (42).jpg,guage,,25,psi,Alert if > 20 psi.,25 psi,Rule A,Value is 25. 25 > 20.,0,UNSAFE,Dataset/Guages/guage (42).jpg,Data_Preprocessed/guage (42).jpg,,"Q1: Observation: The left gauge reads 50 and the right gauge reads 60.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+74,guage (42).jpg,guage,,25,psi,Alert if > 30 psi.,25 psi,Rule B,Value is 25. 25 < 30.,0,SAFE,Dataset/Guages/guage (42).jpg,Data_Preprocessed/guage (42).jpg,,"Q1: Observation: The left gauge reads 50 and the right gauge reads 60.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+75,guage (43).jpg,guage,,43,celcius,Alert if > 34 celcius.,43 celcius,Rule A,Value is 43. 43 > 34.,0,UNSAFE,Dataset/Guages/guage (43).jpg,Data_Preprocessed/guage (43).jpg,,"Q1: Observation: The left thermometer reads 50°C and the right thermometer reads 60°C.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+76,guage (43).jpg,guage,,43,celcius,Alert if > 52 celcius.,43 celcius,Rule B,Value is 43. 43 < 52.,0,SAFE,Dataset/Guages/guage (43).jpg,Data_Preprocessed/guage (43).jpg,,"Q1: Observation: The left thermometer reads 40 degrees Celsius and the right thermometer reads 60 degrees Celsius.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+77,guage (44).jpg,guage,Obstruction,50,celcius,Alert if > 40 celcius.,50 celcius,Rule A,Value is 50. 50 > 40.,1,UNSAFE,Dataset/Guages/guage (44).jpg,Data_Preprocessed/guage (44).jpg,Obstruction,"Q1: Observation: The left thermometer reads 50 degrees Celsius and the right thermometer reads 60 degrees Celsius.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+78,guage (44).jpg,guage,Obstruction,50,celcius,Alert if > 60 celcius.,50 celcius,Rule B,Value is 50. 50 < 60.,1,SAFE,Dataset/Guages/guage (44).jpg,Data_Preprocessed/guage (44).jpg,Obstruction,"Q1: Observation: The left thermometer reads 50 degrees Celsius and the right thermometer reads 40 degrees Celsius.
+Q2: Evaluation: The observation does not violate the Safety Rule because the readings do not exceed 60 degrees Celsius.
+Q3: Final Verdict: SAFE",3
+79,guage (45).jpg,guage,,25,psi,Alert if > 20 psi.,25 psi,Rule A,Value is 25. 25 > 20.,0,UNSAFE,Dataset/Guages/guage (45).jpg,Data_Preprocessed/guage (45).jpg,,"Q1: Observation: The left gauge reads 50 and the right gauge reads 60.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+80,guage (45).jpg,guage,,25,psi,Alert if > 30 psi.,25 psi,Rule B,Value is 25. 25 < 30.,0,SAFE,Dataset/Guages/guage (45).jpg,Data_Preprocessed/guage (45).jpg,,"Q1: Observation: The left gauge reads 50 and the right gauge reads 60.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+81,guage (46).jpg,guage,Glare,2.2,bar,Alert if > 1.7 bar.,2.2 bar,Rule A,Value is 2.2. 2.2 > 1.7.,1,UNSAFE,Dataset/Guages/guage (46).jpg,Data_Preprocessed/guage (46).jpg,Glare,"Q1: Observation: The left gauge reads 50 and the right gauge reads 49.
+Q2: Evaluation: The observation does not violate the Safety Rule because the readings do not exceed 1.7 bar.
+Q3: Final Verdict: SAFE",3
+82,guage (46).jpg,guage,Glare,2.2,bar,Alert if > 2.7 bar.,2.2 bar,Rule B,Value is 2.2. 2.2 < 2.7.,1,SAFE,Dataset/Guages/guage (46).jpg,Data_Preprocessed/guage (46).jpg,Glare,"Q1: Observation: The left gauge reads 50 and the right gauge reads 49.
+Q2: Evaluation: The observation does not violate the Safety Rule because the readings do not exceed 2.7 bar.
+Q3: Final Verdict: SAFE",3
+83,guage (47).jpg,guage,Obstruction,40,psi,Alert if > 32 psi.,40 psi,Rule A,Value is 40. 40 > 32.,1,UNSAFE,Dataset/Guages/guage (47).jpg,Data_Preprocessed/guage (47).jpg,Obstruction,"Q1: Observation: The pressure gauge on the left side of the image shows a value of approximately 40 PSI and the pressure gauge on the right side of the image shows a value of approximately 50 PSI.
+Q2: Evaluation: The observation from Q1 does not violate the Safety Rule because both pressure gauges show values that are below 32 PSI.
+Q3: Final Verdict: SAFE",3
+84,guage (47).jpg,guage,Obstruction,40,psi,Alert if > 48 psi.,40 psi,Rule B,Value is 40. 40 < 48.,1,SAFE,Dataset/Guages/guage (47).jpg,Data_Preprocessed/guage (47).jpg,Obstruction,"Q1: Observation: The pressure gauge on the left side of the image shows a value of approximately 50 PSI and the pressure gauge on the right side of the image shows a value of approximately 60 PSI.
+Q2: Evaluation: The observation from Q1 does not violate the Safety Rule because both pressure gauges show values that are below 48 PSI.
+Q3: Final Verdict: SAFE",3
+85,guage (48).jpg,guage,Glare/ Oblique Angle,0.17,MPa,Alert if > 0.13 MPa.,0.17 MPa,Rule A,Value is 0.17. 0.17 > 0.13.,1,UNSAFE,Dataset/Guages/guage (48).jpg,Data_Preprocessed/guage (48).jpg,Glare/ Oblique Angle,"Q1: Observation: The gauge on the left side of the image shows a value of 0.14 MPa and the gauge on the right side of the image shows a value of 0.15 MPa.
+Q2: Evaluation: The gauge readings do not exceed 0.13 MPa, so they do not violate the Safety Rule.
+Q3: Final Verdict: SAFE",3
+86,guage (48).jpg,guage,Glare/ Oblique Angle,0.17,MPa,Alert if > 0.21 MPa.,0.17 MPa,Rule B,Value is 0.17. 0.17 < 0.21.,1,SAFE,Dataset/Guages/guage (48).jpg,Data_Preprocessed/guage (48).jpg,Glare/ Oblique Angle,"Q1: Observation: The gauge on the left side of the image shows a value of 0.21 MPa and the gauge on the right side of the image shows a value of 0.24 MPa.
+Q2: Evaluation: The gauge readings do not exceed 0.21 MPa, so they do not violate the Safety Rule.
+Q3: Final Verdict: SAFE",3
+87,guage (49).jpg,guage,Low Resolution,35,psi,Alert if > 28 psi.,35 psi,Rule A,Value is 35. 35 > 28.,1,UNSAFE,Dataset/Guages/guage (49).jpg,Data_Preprocessed/guage (49).jpg,Low Resolution,"Q1: Observation: The pressure gauge on the left reads 50 PSI and the pressure gauge on the right reads 60 PSI.
+Q2: Evaluation: The observation does not violate the Safety Rule because the readings do not exceed 28 PSI.
+Q3: Final Verdict: SAFE",3
+88,guage (49).jpg,guage,Low Resolution,35,psi,Alert if > 42 psi.,35 psi,Rule B,Value is 35. 35 < 42.,1,SAFE,Dataset/Guages/guage (49).jpg,Data_Preprocessed/guage (49).jpg,Low Resolution,"Q1: Observation: The pressure gauge on the left reads 50 PSI and the pressure gauge on the right reads 60 PSI.
+Q2: Evaluation: The observation does not violate the Safety Rule because the readings do not exceed 42 PSI.
+Q3: Final Verdict: SAFE",3
+89,guage (5).jpg,guage,Low Contrast,70,bar,Alert if > 56 bar.,70 bar,Rule A,Value is 70. 70 > 56.,1,UNSAFE,Dataset/Guages/guage (5).jpg,Data_Preprocessed/guage (5).jpg,Low Contrast,"Q1: Observation: The left gauge reads 0 bar and the right gauge reads 40 bar.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+90,guage (5).jpg,guage,Low Contrast,70,bar,Alert if > 84 bar.,70 bar,Rule B,Value is 70. 70 < 84.,1,SAFE,Dataset/Guages/guage (5).jpg,Data_Preprocessed/guage (5).jpg,Low Contrast,"Q1: Observation: The left gauge reads 0 bar and the right gauge reads 65 bar.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+91,guage (50).jpg,guage,,4.8,kp/cm3,Alert if > 3.8 kp/cm3.,4.8 kp/cm3,Rule A,Value is 4.8. 4.8 > 3.8.,0,UNSAFE,Dataset/Guages/guage (50).jpg,Data_Preprocessed/guage (50).jpg,,"Q1: Observation: The left gauge shows a value of 6 and the right gauge shows a value of 5.
+Q2: Evaluation: The observation does not violate the Safety Rule because both gauges show values that are below the threshold of 3.8 kp/cm3.
+Q3: Final Verdict: SAFE",3
+92,guage (50).jpg,guage,,4.8,kp/cm3,Alert if > 5.8 kp/cm3.,4.8 kp/cm3,Rule B,Value is 4.8. 4.8 < 5.8.,0,SAFE,Dataset/Guages/guage (50).jpg,Data_Preprocessed/guage (50).jpg,,"Q1: Observation: The left gauge shows a value of 4 and the right gauge shows a value of 6.
+Q2: Evaluation: The left gauge does not exceed 5.8 kp/cm3 while the right gauge exceeds 5.8 kp/cm3. Therefore, the Safety Rule is violated.
+Q3: Final Verdict: UNSAFE",3
+93,guage (6).jpg,guage,Glare/ Oblique Angle,34,celcius,Alert if > 27 celcius.,34 celcius,Rule A,Value is 34. 34 > 27.,1,UNSAFE,Dataset/Guages/guage (6).jpg,Data_Preprocessed/guage (6).jpg,Glare/ Oblique Angle,"Q1: Observation: The left gauge reads 60 degrees Celsius and the right gauge reads -5 degrees Celsius.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+94,guage (6).jpg,guage,Glare/ Oblique Angle,34,celcius,Alert if > 41 celcius.,34 celcius,Rule B,Value is 34. 34 < 41.,1,SAFE,Dataset/Guages/guage (6).jpg,Data_Preprocessed/guage (6).jpg,Glare/ Oblique Angle,"Q1: Observation: The left gauge reads 50 and the right gauge reads 60.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+95,guage (7).jpg,guage,Oblique Angle,1.3,,Alert if > 1.0 NA.,1.3 NA,Rule A,Value is 1.3. 1.3 > 1.0.,1,UNSAFE,Dataset/Guages/guage (7).jpg,Data_Preprocessed/guage (7).jpg,Oblique Angle,"Q1: Observation: The gauge on the left shows a value of 1.5 and the gauge on the right shows a value of 1.0.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+96,guage (7).jpg,guage,Oblique Angle,1.3,,Alert if > 1.6 NA.,1.3 NA,Rule B,Value is 1.3. 1.3 < 1.6.,1,SAFE,Dataset/Guages/guage (7).jpg,Data_Preprocessed/guage (7).jpg,Oblique Angle,"Q1: Observation: The value on the left gauge reads 0 and the value on the right gauge reads 5.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+97,guage (8).jpg,guage,Oblique Angle,0,,Alert if reading > 5 NA.,0 NA,Rule A,Value is 0. 0 < 5.,1,SAFE,Dataset/Guages/guage (8).jpg,Data_Preprocessed/guage (8).jpg,Oblique Angle,"Q1: Observation: The left gauge reads 200 and the right gauge reads 250.
+Q2: Evaluation: The observation does not violate the Safety Rule because there is no indication of a reading above 5 NA.
+Q3: Final Verdict: SAFE",3
+98,guage (8).jpg,guage,Oblique Angle,0,,Alert if reading is at 0 NA.,0 NA,Rule B,Value is 0. System is at 0.,1,UNSAFE,Dataset/Guages/guage (8).jpg,Data_Preprocessed/guage (8).jpg,Oblique Angle,"Q1: Observation: The left side of the image shows a pressure gauge with a reading of 250 and a scale indicating values up to 300. The right side of the image shows another pressure gauge with a reading of 250 and a scale indicating values up to 300. Both gauges have red markings on their scales that indicate the maximum safe operating range for the system they are monitoring.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+99,guage (9).jpg,guage,Oblique Angle/ Obstruction,86,Pa,Alert if > 68 Pa.,86 Pa,Rule A,Value is 86. 86 > 68.,1,UNSAFE,Dataset/Guages/guage (9).jpg,Data_Preprocessed/guage (9).jpg,Oblique Angle/ Obstruction,"Q1: Observation: The gauge reads 70 Pa.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+100,guage (9).jpg,guage,Oblique Angle/ Obstruction,86,Pa,Alert if > 104 Pa.,86 Pa,Rule B,Value is 86. 86 < 104.,1,SAFE,Dataset/Guages/guage (9).jpg,Data_Preprocessed/guage (9).jpg,Oblique Angle/ Obstruction,"Q1: Observation: The gauge reads 98 Pa.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+101,pipe_corroded (1).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (1).jpg,Data_Preprocessed/pipe_corroded (1).jpg,Texture Overlap,"Q1: Observation: The image shows a pipe with rust and dirt around it, indicating signs of surface oxidation and corrosion.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+102,pipe_corroded (1).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (1).jpg,Data_Preprocessed/pipe_corroded (1).jpg,Texture Overlap,"Q1: Observation: The image shows a pipe with rust on its surface and water flowing through it. There are no visible signs of structural defects such as dents, cracks, or leaks.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+103,pipe_corroded (10).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (10).jpg,Data_Preprocessed/pipe_corroded (10).jpg,Texture Overlap,"Q1: Observation: The image shows a metal structure with signs of rust and corrosion, including a large area of rusted metal that appears to be leaking water.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+104,pipe_corroded (10).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (10).jpg,Data_Preprocessed/pipe_corroded (10).jpg,Texture Overlap,"Q1: Observation: The image shows a pipe with rust and water dripping from it.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+105,pipe_corroded (11).jpg,pipeline,Texture Overlap,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (11).jpg,Data_Preprocessed/pipe_corroded (11).jpg,Texture Overlap,"Q1: Observation: The image shows rust and corrosion on the metal pipes, indicating surface oxidation and corrosion.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+106,pipe_corroded (11).jpg,pipeline,Texture Overlap,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (11).jpg,Data_Preprocessed/pipe_corroded (11).jpg,Texture Overlap,"Q1: Observation: The surface rust on the metal pipes is visible and does not appear to be excessive or significant enough to warrant an alert.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+107,pipe_corroded (12).jpg,pipeline,Low Resolution,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (12).jpg,Data_Preprocessed/pipe_corroded (12).jpg,Low Resolution,"Q1: Observation: The image shows a piece of metal with a sharp edge that appears to be rusting and oxidizing. There are also signs of wear and tear on the metal surface.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+108,pipe_corroded (12).jpg,pipeline,Low Resolution,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (12).jpg,Data_Preprocessed/pipe_corroded (12).jpg,Low Resolution,"Q1: Observation: The image shows a piece of metal with a sharp edge and a small dent on its surface. There is also some rust present on the metal.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+109,pipe_corroded (13).jpg,pipeline,Glare,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (13).jpg,Data_Preprocessed/pipe_corroded (13).jpg,Glare,"Q1: Observation: The left image shows a pipe with water spraying out, indicating that there is a leak. The right image shows the same pipe without water spraying out, indicating that there is no leak.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+110,pipe_corroded (13).jpg,pipeline,Glare,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (13).jpg,Data_Preprocessed/pipe_corroded (13).jpg,Glare,"Q1: Observation: The image shows two pipes with water spraying out of them, indicating that they have been leaking.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+111,pipe_corroded (14).jpg,pipeline,Low Resolution,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (14).jpg,Data_Preprocessed/pipe_corroded (14).jpg,Low Resolution,"Q1: Observation: The image shows a pipe with signs of rust and corrosion, including a large hole that allows water to flow through.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+112,pipe_corroded (14).jpg,pipeline,Low Resolution,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (14).jpg,Data_Preprocessed/pipe_corroded (14).jpg,Low Resolution,"Q1: Observation: The image shows a pipe with a large hole in it, allowing water to flow through.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+113,pipe_corroded (15).jpg,pipeline,Texture Overlap,Corroded/ Crack,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Crack NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (15).jpg,Data_Preprocessed/pipe_corroded (15).jpg,Texture Overlap,"Q1: Observation: The left image shows a rock with a crack running through it, and the right image shows the same rock without the crack. There is no visible crack in the right image.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+114,pipe_corroded (15).jpg,pipeline,Texture Overlap,Corroded/ Crack,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Crack NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (15).jpg,Data_Preprocessed/pipe_corroded (15).jpg,Texture Overlap,"Q1: Observation: The image shows two rock surfaces with varying levels of surface rust and grass growth around them.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+115,pipe_corroded (16).jpg,pipeline,,Corroded/ Damaged,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (16).jpg,Data_Preprocessed/pipe_corroded (16).jpg,,"To determine if the Safety Rule is violated based on the observations and evaluations, let's analyze each image step by step.
+
+### Image 1
+- **Observation**: The pipe has a white label with a green dot indicating ""Safe.""
+- **Evaluation**: The label indicates that the pipe is safe according to the rule.
+- **Final Verdict**: SAFE
+
+### Image 2
+- **Observation**: The pipe has a white label with a green dot indicating ""Safe.""
+- **Evaluation**: The label indicates that the pipe is safe according to the rule.
+- **Final Verdict**: SAFE
+
+### Image 3
+- **Observation**: The pipe has a white label with a green dot indicating ""Safe.""
+- **Evaluation**: The label indicates that the pipe is safe according to the rule.
+- **Final Verdict**: SAFE
+
+### Image 4
+- **Observation**: The pipe has a white label with a green dot indicating ""Safe.""
+- **Evaluation**: The label indicates that the pipe is safe according to the rule.
+- **Final Verdict**: SAFE
+
+### Image 5
+- **Observation**: The pipe has a white label with a green dot indicating ""Safe.""
+- **Evaluation**: The label indicates that the pipe is safe according to the rule.
+- **Final Verdict**: SAFE
+
+### Image 6
+- **Observation**: The pipe has a white label with a green dot indicating ""Safe.""
+- **Evaluation**: The label indicates that the pipe is safe according to the rule.
+- **Final Verdict**: SAFE
+
+### Image 7
+- **Observation**: The pipe has a white label with a green dot indicating ""Safe.""
+- **Evaluation**: The label indicates that the pipe is safe according to the rule.
+- **Final Verdict**: SAFE
+
+### Image 8
+- **Observation**: The pipe has a white label with",3
+116,pipe_corroded (16).jpg,pipeline,,Corroded/ Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (16).jpg,Data_Preprocessed/pipe_corroded (16).jpg,,"Q1: Observation: The surface rust is visible on the pipe.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+117,pipe_corroded (17).jpg,pipeline,,Leak / Damaged,,Alert on any sign of surface oxidation or corrosion.,Leak / Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (17).jpg,Data_Preprocessed/pipe_corroded (17).jpg,,"Q1: Observation: The image shows a pipe with water spraying out of it, indicating that there is a leak.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+118,pipe_corroded (17).jpg,pipeline,,Leak / Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Leak / Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (17).jpg,Data_Preprocessed/pipe_corroded (17).jpg,,"Q1: Observation: The image shows a pipe with water spraying out of it, indicating a leak.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+119,pipe_corroded (18).jpg,pipeline,Low Resolution,Damaged,,Alert on any sign of surface oxidation or corrosion.,Damaged NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (18).jpg,Data_Preprocessed/pipe_corroded (18).jpg,Low Resolution,"Q1: Observation: The image shows two cylindrical objects with holes cut into them. One object appears to be yellow and the other is brownish-yellow. Both objects have signs of surface oxidation and corrosion.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+120,pipe_corroded (18).jpg,pipeline,Low Resolution,Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Damaged NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (18).jpg,Data_Preprocessed/pipe_corroded (18).jpg,Low Resolution,"Q1: Observation: The image shows two cylindrical objects with holes cut into them. One object appears to be yellow and the other is brownish-yellow. Both objects have visible signs of rust, including discoloration and pitting on their surfaces.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+121,pipe_corroded (19).jpg,pipeline,Low Resolution,Dented,,Alert on any sign of surface oxidation or corrosion.,Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (19).jpg,Data_Preprocessed/pipe_corroded (19).jpg,Low Resolution,"Q1: Observation: The image shows a pipeline with signs of rust and corrosion, indicating that it has been exposed to the elements for some time.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+122,pipe_corroded (19).jpg,pipeline,Low Resolution,Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (19).jpg,Data_Preprocessed/pipe_corroded (19).jpg,Low Resolution,"Q1: Observation: The image shows a pipeline with visible signs of rust and corrosion on its surface.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+123,pipe_corroded (2).jpg,pipeline,Texture Overlap,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (2).jpg,Data_Preprocessed/pipe_corroded (2).jpg,Texture Overlap,"Q1: Observation: The image shows a rusted and corroded pipe with signs of leaks and cracks.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+124,pipe_corroded (2).jpg,pipeline,Texture Overlap,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (2).jpg,Data_Preprocessed/pipe_corroded (2).jpg,Texture Overlap,"Q1: Observation: The pipe has a visible crack near its bottom end.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+125,pipe_corroded (20).jpg,pipeline,Texture Overlap,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (20).jpg,Data_Preprocessed/pipe_corroded (20).jpg,Texture Overlap,"Q1: Observation: The yellow and black paint on the pipe shows signs of rust and discoloration, indicating surface oxidation and corrosion.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+126,pipe_corroded (20).jpg,pipeline,Texture Overlap,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (20).jpg,Data_Preprocessed/pipe_corroded (20).jpg,Texture Overlap,"Q1: Observation: The surface of the pipe shows signs of rust and corrosion, including black spots and patches on the yellow paint.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+127,pipe_corroded (21).jpg,pipeline,Low Resolution,Dented,,Alert on any sign of surface oxidation or corrosion.,Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (21).jpg,Data_Preprocessed/pipe_corroded (21).jpg,Low Resolution,"Q1: Observation: The exact numeric reading or visible physical condition shown in the image is 50°C.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+128,pipe_corroded (21).jpg,pipeline,Low Resolution,Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (21).jpg,Data_Preprocessed/pipe_corroded (21).jpg,Low Resolution,"Q1: Observation: The image shows a piece of metal with visible signs of rust and wear, including scratches and dents. There are also markings indicating different levels of rust severity.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+129,pipe_corroded (22).jpg,pipeline,Low Resolution,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (22).jpg,Data_Preprocessed/pipe_corroded (22).jpg,Low Resolution,"Q1: Observation: The left side shows a rusted metal rod with a visible spot where the paint has chipped off and exposed the metal. The right side shows the same metal rod after being painted over the rusted area, indicating that the rusting has been stopped.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+130,pipe_corroded (22).jpg,pipeline,Low Resolution,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (22).jpg,Data_Preprocessed/pipe_corroded (22).jpg,Low Resolution,"Q1: Observation: The surface rust appears to be present on both sides of the metal rod, but there are no visible signs of structural defects such as dents, cracks, or leaks.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+131,pipe_corroded (23).jpg,pipeline,Low Resolution,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (23).jpg,Data_Preprocessed/pipe_corroded (23).jpg,Low Resolution,"Q1: Observation: The left image shows a metallic surface with a small, round, grayish spot that appears to be oxidized or corroded. The right image shows the same area after cleaning and treatment, revealing a more uniform, darker color without the oxidized or corroded appearance.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+132,pipe_corroded (23).jpg,pipeline,Low Resolution,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (23).jpg,Data_Preprocessed/pipe_corroded (23).jpg,Low Resolution,"Q1: Observation: The image shows a metallic surface with a small, circular area that appears to be corroded or rusted. There is also some discoloration around this area.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+133,pipe_corroded (24).jpg,pipeline,,Leak / Damaged,,Alert on any sign of surface oxidation or corrosion.,Leak / Damaged NA,Rule A,Image shows corrosion or damage.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (24).jpg,Data_Preprocessed/pipe_corroded (24).jpg,,"Q1: Observation: The left side of the image shows a metal pipe with a flange and a visible oxide layer on its surface. The right side of the image shows the same pipe after cleaning, revealing no signs of oxide or corrosion.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+134,pipe_corroded (24).jpg,pipeline,,Leak / Damaged,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Leak / Damaged NA,Rule B,Critical structural defect is visible.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (24).jpg,Data_Preprocessed/pipe_corroded (24).jpg,,"Q1: Observation: The image shows two pipes with a flange and a bolted joint. One pipe has a visible sign of rust on its surface, while the other appears to be clean and free of rust.
+
+Q2: Evaluation: The observation from Q1 does not violate the Safety Rule because the presence of rust is not considered a structural defect, dent, crack, or leak. Therefore, the evaluation is No.
+
+Q3: Final Verdict: SAFE",3
+135,pipe_corroded (25).jpg,pipeline,Unclear image,Corroded/ Dented,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Dented NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (25).jpg,Data_Preprocessed/pipe_corroded (25).jpg,Unclear image,"Q1: Observation: The image shows two images side by side, both showing a cylindrical object with a metallic surface and a yellow circular label at the top. The left image appears to be before maintenance, while the right image appears to be after maintenance, indicating that there has been some improvement in the condition of the object over time.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+136,pipe_corroded (25).jpg,pipeline,Unclear image,Corroded/ Dented,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Dented NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (25).jpg,Data_Preprocessed/pipe_corroded (25).jpg,Unclear image,"Q1: Observation: The surface of the object shows signs of rust and wear, but there are no visible cracks, dents, or leaks.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+137,pipe_corroded (3).jpg,pipeline,Low Resolution,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (3).jpg,Data_Preprocessed/pipe_corroded (3).jpg,Low Resolution,"Q1: Observation: The image shows two pieces of wood with signs of rust and corrosion.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+138,pipe_corroded (3).jpg,pipeline,Low Resolution,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (3).jpg,Data_Preprocessed/pipe_corroded (3).jpg,Low Resolution,"Q1: Observation: The image shows a piece of metal with a visible crack running through it.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+139,pipe_corroded (4).jpg,pipeline,Low Resolution,Corroded/ Leak,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Leak NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (4).jpg,Data_Preprocessed/pipe_corroded (4).jpg,Low Resolution,"Q1: Observation: The image shows a rusted and corroded metal pipe with signs of water leakage into a body of water, indicating a potential leak or breach in the pipeline.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+140,pipe_corroded (4).jpg,pipeline,Low Resolution,Corroded/ Leak,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Leak NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (4).jpg,Data_Preprocessed/pipe_corroded (4).jpg,Low Resolution,"Q1: Observation: The image shows a rusty pipe with signs of corrosion and water flowing out of it into a body of water. There are no visible signs of structural defects, dents, cracks, or leaks that would indicate a violation of the Safety Rule.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+141,pipe_corroded (5).jpg,pipeline,Texture Overlap,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (5).jpg,Data_Preprocessed/pipe_corroded (5).jpg,Texture Overlap,"Q1: Observation: The rusted pipe has a visible crack running through its length.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+142,pipe_corroded (5).jpg,pipeline,Texture Overlap,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (5).jpg,Data_Preprocessed/pipe_corroded (5).jpg,Texture Overlap,"Q1: Observation: The image shows a pipe with visible signs of rust and corrosion, including cracks and dents.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+143,pipe_corroded (6).jpg,pipeline,Low Resolution,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (6).jpg,Data_Preprocessed/pipe_corroded (6).jpg,Low Resolution,"Q1: Observation: The image shows rusted pipes with signs of oxidation and corrosion.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+144,pipe_corroded (6).jpg,pipeline,Low Resolution,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (6).jpg,Data_Preprocessed/pipe_corroded (6).jpg,Low Resolution,"Q1: Observation: The image shows multiple pipes with visible signs of rust and corrosion, including rust stains on the surface and patches of green algae growing around them.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+145,pipe_corroded (7).jpg,pipeline,Texture Overlap,Corroded,,Alert on any sign of surface oxidation or corrosion.,Corroded NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (7).jpg,Data_Preprocessed/pipe_corroded (7).jpg,Texture Overlap,"Q1: Observation: The image shows rusted pipes with varying degrees of corrosion and oxidation.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+146,pipe_corroded (7).jpg,pipeline,Texture Overlap,Corroded,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (7).jpg,Data_Preprocessed/pipe_corroded (7).jpg,Texture Overlap,"Q1: Observation: The image shows several pipes with varying degrees of rust and corrosion. Some areas appear more heavily rusted than others.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+147,pipe_corroded (8).jpg,pipeline,Texture Overlap,Corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Corroded/ Rust NA,Rule A,Image shows corrosion or damage.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (8).jpg,Data_Preprocessed/pipe_corroded (8).jpg,Texture Overlap,"Q1: Observation: The image shows four rusted pipes with varying degrees of corrosion and oxidation.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+148,pipe_corroded (8).jpg,pipeline,Texture Overlap,Corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Corroded/ Rust NA,Rule B,Critical structural defect is visible.,1,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (8).jpg,Data_Preprocessed/pipe_corroded (8).jpg,Texture Overlap,"Q1: Observation: The surface rust on the columns appears to be acceptable and does not show any signs of structural defects such as dents, cracks, or leaks.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+149,pipe_corroded (9).jpg,pipeline,,Rust,,Alert on any sign of surface oxidation or corrosion.,Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Defected/pipe_corroded (9).jpg,Data_Preprocessed/pipe_corroded (9).jpg,,"Q1: Observation: The image shows a set of vertical bars with rust and corrosion visible along their length.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+150,pipe_corroded (9).jpg,pipeline,,Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Defected/pipe_corroded (9).jpg,Data_Preprocessed/pipe_corroded (9).jpg,,"Q1: Observation: The image shows a set of vertical bars with a rusty appearance, indicating that they have been exposed to the elements over time and have developed rust.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+151,pipe_non_corroded (1).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (1).jpg,Data_Preprocessed/pipe_non_corroded (1).jpg,,"Q1: Observation: The image shows two identical sections of pipeline with no signs of surface oxidation or corrosion.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+152,pipe_non_corroded (1).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (1).jpg,Data_Preprocessed/pipe_non_corroded (1).jpg,,"Q1: Observation: The image shows two identical sections of pipeline with no visible signs of rust or damage.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+153,pipe_non_corroded (10).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (10).jpg,Data_Preprocessed/pipe_non_corroded (10).jpg,,"Q1: Observation: 0
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+154,pipe_non_corroded (10).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (10).jpg,Data_Preprocessed/pipe_non_corroded (10).jpg,,"Q1: Observation: 0
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+155,pipe_non_corroded (11).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (11).jpg,Data_Preprocessed/pipe_non_corroded (11).jpg,,"Q1: Observation: The image shows two pipes with rust stains and signs of oxidation along their surfaces.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+156,pipe_non_corroded (11).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (11).jpg,Data_Preprocessed/pipe_non_corroded (11).jpg,,"Q1: Observation: The image shows two pipes with rust stains on them, indicating surface rust.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+157,pipe_non_corroded (12).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (12).jpg,Data_Preprocessed/pipe_non_corroded (12).jpg,,"Q1: Observation: The pipes appear to be in good condition with no signs of rust or oxidation.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+158,pipe_non_corroded (12).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (12).jpg,Data_Preprocessed/pipe_non_corroded (12).jpg,,"Q1: Observation: The pipes have visible signs of rust and wear, including cracks and dents.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+159,pipe_non_corroded (13).jpg,pipeline,Glare,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (13).jpg,Data_Preprocessed/pipe_non_corroded (13).jpg,Glare,"Q1: Observation: The image shows a pipeline system with no visible signs of surface oxidation or corrosion.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+160,pipe_non_corroded (13).jpg,pipeline,Glare,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (13).jpg,Data_Preprocessed/pipe_non_corroded (13).jpg,Glare,"Q1: Observation: The image shows a pipeline system with no visible signs of surface rust or structural defects, dents, cracks, or leaks.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+161,pipe_non_corroded (14).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (14).jpg,Data_Preprocessed/pipe_non_corroded (14).jpg,,"Q1: Observation: The left pipe shows signs of rust and discoloration, indicating surface oxidation or corrosion.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+162,pipe_non_corroded (14).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (14).jpg,Data_Preprocessed/pipe_non_corroded (14).jpg,,"Q1: Observation: The left pipe has visible signs of rust and corrosion on its surface, while the right pipe appears to be intact without any visible signs of rust or corrosion.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+163,pipe_non_corroded (15).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (15).jpg,Data_Preprocessed/pipe_non_corroded (15).jpg,,"Q1: Observation: The image shows two identical sections of a large pipeline with no signs of surface oxidation or corrosion.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+164,pipe_non_corroded (15).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (15).jpg,Data_Preprocessed/pipe_non_corroded (15).jpg,,"Q1: Observation: The pipes appear to be in good condition with no visible signs of rust or damage.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+165,pipe_non_corroded (16).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (16).jpg,Data_Preprocessed/pipe_non_corroded (16).jpg,Low Resolution,"Q1: Observation: The image shows a large metal pipe with signs of rust and corrosion, including patches of green algae growth on its surface.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+166,pipe_non_corroded (16).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (16).jpg,Data_Preprocessed/pipe_non_corroded (16).jpg,Low Resolution,"Q1: Observation: The image shows a large metal pipe with signs of rust and corrosion on its surface, indicating that it has been exposed to the elements for some time.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+167,pipe_non_corroded (17).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (17).jpg,Data_Preprocessed/pipe_non_corroded (17).jpg,Low Resolution,"Q1: Observation: The image shows two pipes being installed in a trench with protective covers and a crane lifting them into place. There are no signs of surface oxidation or corrosion visible in the image.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+168,pipe_non_corroded (17).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (17).jpg,Data_Preprocessed/pipe_non_corroded (17).jpg,Low Resolution,"Q1: Observation: The image shows two sets of pipes being installed in a trench. Each set consists of four pipes, and each pipe has a protective cover with a label indicating ""SAFETY FIRST"" on it. There are no visible signs of surface rust or structural defects, dents, cracks, or leaks.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+169,pipe_non_corroded (18).jpg,pipeline,Low Resolution,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (18).jpg,Data_Preprocessed/pipe_non_corroded (18).jpg,Low Resolution,"Q1: Observation: The image shows two sets of pipes with rust stains and signs of corrosion. One set appears to be in good condition while the other has more significant rust and corrosion.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+170,pipe_non_corroded (18).jpg,pipeline,Low Resolution,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (18).jpg,Data_Preprocessed/pipe_non_corroded (18).jpg,Low Resolution,"Q1: Observation: The image shows a set of metal pipes with rust stains on them. There are no visible signs of structural defects, dents, cracks, or leaks.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+171,pipe_non_corroded (19).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (19).jpg,Data_Preprocessed/pipe_non_corroded (19).jpg,,"Q1: Observation: The image shows two sets of pipes with no visible signs of surface oxidation or corrosion.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+172,pipe_non_corroded (19).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (19).jpg,Data_Preprocessed/pipe_non_corroded (19).jpg,,"Q1: Observation: The image shows two sets of pipes with no visible signs of rust or damage.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+173,pipe_non_corroded (2).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (2).jpg,Data_Preprocessed/pipe_non_corroded (2).jpg,,"Q1: Observation: The image shows two pipes running parallel to each other with a blue sky and some clouds above them. There are no signs of surface oxidation or corrosion visible in the image.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+174,pipe_non_corroded (2).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (2).jpg,Data_Preprocessed/pipe_non_corroded (2).jpg,,"Q1: Observation: The image shows two pipes running parallel to each other with no visible signs of rust or damage.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+175,pipe_non_corroded (20).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (20).jpg,Data_Preprocessed/pipe_non_corroded (20).jpg,,"Q1: Observation: The pipes appear to be rusted and have signs of corrosion, indicating that they are not in good condition.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+176,pipe_non_corroded (20).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (20).jpg,Data_Preprocessed/pipe_non_corroded (20).jpg,,"Q1: Observation: The pipes appear to be rusted and have some signs of wear and tear, but there are no visible cracks or leaks that would indicate structural defects.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+177,pipe_non_corroded (21).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (21).jpg,Data_Preprocessed/pipe_non_corroded (21).jpg,,"Q1: Observation: The image shows multiple white cylindrical tanks with red and blue markings, some with pipes running between them. There are also metal pipes and valves visible.
+Q2: Evaluation: The observation does not show any signs of surface oxidation or corrosion, so the Safety Rule is not violated.
+Q3: Final Verdict: SAFE",3
+178,pipe_non_corroded (21).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (21).jpg,Data_Preprocessed/pipe_non_corroded (21).jpg,,"Q1: Observation: The image shows multiple white cylindrical storage tanks with red and blue markings on them. There are also metal pipes running along the ground between the tanks. The tanks appear to be clean and there are no visible signs of rust or damage.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+179,pipe_non_corroded (22).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (22).jpg,Data_Preprocessed/pipe_non_corroded (22).jpg,,"Q1: Observation: The image shows multiple pipes with a metallic sheen and some signs of wear and tear, indicating possible signs of oxidation or corrosion.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+180,pipe_non_corroded (22).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (22).jpg,Data_Preprocessed/pipe_non_corroded (22).jpg,,"Q1: Observation: The pipes appear to be in good condition with no visible signs of surface rust or structural defects, dents, cracks, or leaks.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+181,pipe_non_corroded (23).jpg,pipeline,Low Resolution,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (23).jpg,Data_Preprocessed/pipe_non_corroded (23).jpg,Low Resolution,"Q1: Observation: The image shows a pipeline with signs of rust and corrosion, including discoloration and peeling paint.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+182,pipe_non_corroded (23).jpg,pipeline,Low Resolution,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (23).jpg,Data_Preprocessed/pipe_non_corroded (23).jpg,Low Resolution,"Q1: Observation: The pipe has a rusty appearance with patches of rust and some areas where the paint is chipped off.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+183,pipe_non_corroded (24).jpg,pipeline,,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,0,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (24).jpg,Data_Preprocessed/pipe_non_corroded (24).jpg,,"Q1: Observation: The image shows a metal pipe with a blue label indicating ""Warning: Corrosion."" There is also a warning sign on the ground next to the pipe.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+184,pipe_non_corroded (24).jpg,pipeline,,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (24).jpg,Data_Preprocessed/pipe_non_corroded (24).jpg,,"Q1: Observation: The image shows a metal pipe with a visible rust layer on its surface.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+185,pipe_non_corroded (25).jpg,pipeline,Low Resolution,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (25).jpg,Data_Preprocessed/pipe_non_corroded (25).jpg,Low Resolution,"Q1: Observation: The left image shows a pipeline with no signs of surface oxidation or corrosion, while the right image shows a pipeline with visible signs of surface oxidation and corrosion.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+186,pipe_non_corroded (25).jpg,pipeline,Low Resolution,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (25).jpg,Data_Preprocessed/pipe_non_corroded (25).jpg,Low Resolution,"Q1: Observation: The left side of the image shows a pipeline with no visible signs of rust or damage, while the right side shows a pipeline with significant surface rust and dents on its exterior.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+187,pipe_non_corroded (3).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (3).jpg,Data_Preprocessed/pipe_non_corroded (3).jpg,,"Q1: Observation: The pipes appear to be yellow and have rust stains on them, indicating signs of oxidation and corrosion.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+188,pipe_non_corroded (3).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (3).jpg,Data_Preprocessed/pipe_non_corroded (3).jpg,,"Q1: Observation: The pipes appear to be rusted and have some signs of wear and tear, but they do not show any significant structural defects such as cracks or leaks that would indicate a need for alerting.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+189,pipe_non_corroded (4).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (4).jpg,Data_Preprocessed/pipe_non_corroded (4).jpg,,"Q1: Observation: The left image shows a pipeline with signs of significant surface oxidation and corrosion, while the right image shows the same pipeline with no visible signs of corrosion or oxidation.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+190,pipe_non_corroded (4).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (4).jpg,Data_Preprocessed/pipe_non_corroded (4).jpg,,"Q1: Observation: The left image shows a pipeline with signs of rust and corrosion, while the right image shows the same pipeline with no visible rust or corrosion.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+191,pipe_non_corroded (5).jpg,pipeline,Distorted,Non corroded/ Rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ Rust NA,Rule A,Surface oxidation/rust is present.,1,UNSAFE,Dataset/Pipes/Non defected/pipe_non_corroded (5).jpg,Data_Preprocessed/pipe_non_corroded (5).jpg,Distorted,"Q1: Observation: The image shows two pieces of metal rebar with rust and corrosion visible at their ends, indicating signs of surface oxidation and corrosion.
+
+Q2: Evaluation: Yes
+
+Q3: Final Verdict: UNSAFE",3
+192,pipe_non_corroded (5).jpg,pipeline,Distorted,Non corroded/ Rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ Rust NA,Rule B,Image shows surface rust but no critical defects.,1,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (5).jpg,Data_Preprocessed/pipe_non_corroded (5).jpg,Distorted,"Q1: Observation: The image shows two pieces of metal rebar with rust on them. One piece has a small crack near the top, and the other piece has a larger crack near the bottom.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+193,pipe_non_corroded (6).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (6).jpg,Data_Preprocessed/pipe_non_corroded (6).jpg,,"Q1: Observation: The red pipes appear to be rusted and have signs of corrosion, indicating that they are not in good condition.
+Q2: Evaluation: Yes
+Q3: Final Verdict: UNSAFE",3
+194,pipe_non_corroded (6).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (6).jpg,Data_Preprocessed/pipe_non_corroded (6).jpg,,"Q1: Observation: The pipes appear to be rusted and have some signs of wear and tear, but they do not show any significant structural defects such as cracks or leaks that would indicate unsafe conditions.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+195,pipe_non_corroded (7).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (7).jpg,Data_Preprocessed/pipe_non_corroded (7).jpg,,"Q1: Observation: The image shows a pipeline with green paint and metal pipes. There are no signs of surface oxidation or corrosion visible in the image.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+196,pipe_non_corroded (7).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (7).jpg,Data_Preprocessed/pipe_non_corroded (7).jpg,,"Q1: Observation: The image shows a pipeline with green paint and metal supports. There are no visible signs of surface rust or structural defects such as dents, cracks, or leaks.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+197,pipe_non_corroded (8).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (8).jpg,Data_Preprocessed/pipe_non_corroded (8).jpg,,"Q1: Observation: The image shows two metal pipes buried in soil with no visible signs of surface oxidation or corrosion.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+198,pipe_non_corroded (8).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (8).jpg,Data_Preprocessed/pipe_non_corroded (8).jpg,,"Q1: Observation: The image shows two metal pipes buried in soil with no visible signs of rust or damage to the surface.
+Q2: Evaluation: No
+Q3: Final Verdict: SAFE",3
+199,pipe_non_corroded (9).jpg,pipeline,,Non corroded/ No rust,,Alert on any sign of surface oxidation or corrosion.,Non corroded/ No rust NA,Rule A,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (9).jpg,Data_Preprocessed/pipe_non_corroded (9).jpg,,"Q1: Observation: The image shows two rows of black metal pipes running through a trench filled with dirt and sand. There are no signs of surface oxidation or corrosion visible in the image.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3
+200,pipe_non_corroded (9).jpg,pipeline,,Non corroded/ No rust,,"Surface rust is acceptable. Alert only for structural defects, dents, cracks, or leaks.",Non corroded/ No rust NA,Rule B,Surface is clean and nominal.,0,SAFE,Dataset/Pipes/Non defected/pipe_non_corroded (9).jpg,Data_Preprocessed/pipe_non_corroded (9).jpg,,"Q1: Observation: The image shows two rows of black metal pipes running through a trench filled with dirt and sand. There are no visible signs of surface rust or structural defects such as dents, cracks, or leaks.
+
+Q2: Evaluation: No
+
+Q3: Final Verdict: SAFE",3

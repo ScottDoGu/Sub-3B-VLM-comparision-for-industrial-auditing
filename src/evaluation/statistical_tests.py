@@ -41,7 +41,7 @@ def main():
     parser = argparse.ArgumentParser(description="Compute McNemar's Test for Intervention Efficacy.")
     parser.add_argument("--runs", type=int, default=3, help="Number of runs to aggregate")
     parser.add_argument("--base_mode", default="baseline", help="The mode to use as the baseline for comparison (default: baseline)")
-    parser.add_argument("--intervention", choices=["cot", "decomp", "contrast", "contrast_cot"], required=True)
+    parser.add_argument("--intervention", choices=["cot", "decomp", "contrast", "contrast_cot", "lora_baseline", "decomp_foveation", "cot_foveation"], required=True)
     args = parser.parse_args()
 
     models = ["smolvlm", "internvl2", "janus", "qwen2_vl", "minicpm", "gemma4_e2b"]
@@ -61,6 +61,9 @@ def main():
         "decomp":       ("results/innovation/decomposition/parsed",        "_decomp"),
         "contrast":     ("results/innovation/contrast/parsed",             "_contrast"),
         "contrast_cot": ("results/innovation/contrast_cot/parsed",         "_contrast_cot"),
+        "lora_baseline":("results/innovation/lora/parsed",                 "_lora_baseline"),
+        "decomp_foveation":("results/innovation/decomp_foveation/parsed",  "_decomp_foveation"),
+        "cot_foveation":("results/innovation/cot_foveation/parsed",        "_cot_foveation"),
     }
     
     baseline_dir, base_suffix = MODE_CONFIG[args.base_mode]

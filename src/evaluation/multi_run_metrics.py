@@ -26,7 +26,7 @@ def compute_confidence_interval(data, confidence=0.95):
 def main():
     parser = argparse.ArgumentParser(description="Aggregate metrics across N runs.")
     parser.add_argument("--runs", type=int, default=3, help="Number of runs to aggregate")
-    parser.add_argument("--mode", choices=["baseline", "cot", "decomp", "contrast", "contrast_cot"], default="baseline")
+    parser.add_argument("--mode", choices=["baseline", "cot", "decomp", "contrast", "contrast_cot", "lora", "cot_foveation", "decomp_foveation"], default="baseline")
     args = parser.parse_args()
 
     models = ["smolvlm", "internvl2", "janus", "qwen2_vl", "minicpm", "gemma4_e2b"]
@@ -46,6 +46,9 @@ def main():
         "decomp":       ("results/innovation/decomposition/parsed",        "_decomp"),
         "contrast":     ("results/innovation/contrast/parsed",             "_contrast"),
         "contrast_cot": ("results/innovation/contrast_cot/parsed",         "_contrast_cot"),
+        "lora":         ("results/innovation/lora/parsed",                 ""),
+        "cot_foveation":    ("results/innovation/cot_foveation/parsed",            ""),
+        "decomp_foveation": ("results/innovation/decomp_foveation/parsed",         ""),
     }
     base_dir, suffix = MODE_CONFIG[args.mode]
     
@@ -53,6 +56,25 @@ def main():
     print(f"Aggregating {args.runs} runs for {args.mode.upper()} mode")
     print(f"Base dir: {base_dir}")
     print(f"==================================================")
+
+    if args.mode == "lora":
+        models = ["qwen2_vl_lora_baseline", "qwen2_vl_lora_clahe", "qwen2_vl_lora_contrast", "qwen2_vl_lora_decomp"]
+        model_display_names = {
+            "qwen2_vl_lora_baseline": "Qwen2-VL (LoRA Baseline)",
+            "qwen2_vl_lora_clahe": "Qwen2-VL (LoRA CLAHE)",
+            "qwen2_vl_lora_contrast": "Qwen2-VL (LoRA Contrast)",
+            "qwen2_vl_lora_decomp": "Qwen2-VL (LoRA Decomp)"
+        }
+    elif args.mode == "cot_foveation":
+        models = ["qwen2_vl_cot_foveation"]
+        model_display_names = {
+            "qwen2_vl_cot_foveation": "Qwen2-VL (CoT Foveation)"
+        }
+    elif args.mode == "decomp_foveation":
+        models = ["qwen2_vl_decomp_foveation"]
+        model_display_names = {
+            "qwen2_vl_decomp_foveation": "Qwen2-VL (Decomp Foveation)"
+        }
 
     aggregated_results = []
 
