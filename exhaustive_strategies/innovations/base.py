@@ -51,3 +51,7 @@ class Strategy(ABC):
         Subclasses must implement this.
         """
         ...
+
+
+def base_prompt(category: str) -> str:
+    return f"Category: {category}. Analyze the image and provide a PASS/FAIL verdict with confidence. "
