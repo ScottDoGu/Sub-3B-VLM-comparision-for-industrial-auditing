@@ -25,7 +25,14 @@ def run_sweep(engine, images, out_dir=None, resume=False):
                 strat_results.append(ckpt.state["done"][img_key][sname])
                 continue
             try:
-                result = STRATEGY_REGISTRY[sname]().run(engine, img, entry["cat"])
+                strategy_cls = STRATEGY_REGISTRY.get(sname)
+                if strategy_cls is None:
+                    return {
+                        "error": f"Strategy '{sname}' not found",
+                        "strategy": sname,
+                        "image": img
+                    }
+                result = strategy_cls().run(engine, img, entry["cat"])
                 result.update({"image": img_key, "category": entry["cat"]})
                 strat_results.append(result)
                 print(f"  [{sname}] {result['label']}  conf={result['confidence']}")
