@@ -1,28 +1,53 @@
 import re
 from abc import ABC, abstractmethod
+from typing import Dict, Any
 
-PASS_KW = ["pass", "acceptable", "normal", "good", "safe", "within range", "no defect", "clean", "intact"]
-FAIL_KW = ["fail", "defect", "abnormal", "danger", "unsafe", "out of range", "corroded", "corrosion", "rust", "damage", "leak", "crack"]
-
-def label_from_text(text):
-    t = text.lower()
-    f = sum(1 for k in FAIL_KW if k in t)
-    p = sum(1 for k in PASS_KW if k in t)
-    if f > p: return "fail"
-    if p > f: return "pass"
-    return "uncertain"
-
-def conf_from_text(text):
-    m = re.search(r"(\d{1,3}(?:\.\d+)?)\s*%", text)
-    return min(float(m.group(1)) / 100.0, 1.0) if m else 0.5
-
-GAUGE_PROMPT = "You are an industrial visual inspector. Examine this pressure gauge. Determine if the reading is within acceptable range (PASS) or indicates danger (FAIL). "
-PIPE_PROMPT = "You are an industrial visual inspector. Examine this pipe. Determine if it shows corrosion or damage (FAIL) or is in acceptable condition (PASS). "
-
-def base_prompt(cat): return GAUGE_PROMPT if "gauge" in cat else PIPE_PROMPT
 
 class Strategy(ABC):
-    name = "base"
-    def run(self, engine, img, cat): ...
-    def _result(self, text, **meta):
-        return {"strategy": self.name, "label": label_from_text(text), "confidence": conf_from_text(text), "raw_text": text, "meta": meta}
+    name: str  # used in results/<model>/<strategy>/...
+
+    @abstractmethod
+    def build_prompt(
+        self,
+        base_prompt: str,
+        metadata: Dict[str, Any],
+        model_name: str,
+    ) -> str:
+        """
+        Take the baseline prompt and optionally modify it
+        (CoT, contrast, decomposition, etc.).
+        """
+        ...
+
+    @abstractmethod
+    def postprocess(
+        self,
+        model_output: str,
+        parsed_output: str,
+        metadata: Dict[str, Any],
+        model_name: str,
+    ) -> Dict[str, Any]:
+        """
+        Optionally verify/correct the parsed output.
+
+        Must return at least:
+          - "model_output": str
+          - "parsed_output": str
+          - "is_correct": bool
+          - "is_wrong": bool
+          - "is_no_verdict": bool
+        """
+        ...
+
+    @abstractmethod
+    def run(
+        self,
+        engine,
+        img,
+        cat,
+    ):
+        """
+        Execute the full strategy on a single image/category.
+        Subclasses must implement this.
+        """
+        ...
