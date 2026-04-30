@@ -11,6 +11,9 @@ class Checkpoint:
         return {"done": {}, "t0": time.time()}
     def save(self):
         os.path.dirname("checkpoint.json") == ""
+        dirpath = os.path.dirname(self.path)
+        if dirpath:
+            os.makedirs(dirpath, exist_ok=True)
         tmp = self.path + ".tmp"
         with open(tmp, "w") as f: json.dump(self.state, f, indent=2, default=str)
         os.replace(tmp, self.path)
