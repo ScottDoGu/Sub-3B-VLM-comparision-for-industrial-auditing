@@ -55,3 +55,7 @@ class Strategy(ABC):
 
 def base_prompt(category: str) -> str:
     return f"Category: {category}. Analyze the image and provide a PASS/FAIL verdict with confidence. "
+
+__all__ = [
+    "Strategy", "base_prompt", "label_from_text", "conf_from_text"
+]
