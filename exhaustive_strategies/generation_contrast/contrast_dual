@@ -1,0 +1,22 @@
+class ContrastDual:
+    """
+    Utility for running dual contrastive inference:
+    - one positive prompt
+    - one negative prompt
+    - compare outputs
+    """
+
+    def __init__(self, engine):
+        self.engine = engine
+
+    def run(self, pos_prompt, neg_prompt, img):
+        pos = self.engine.infer(pos_prompt, images=[img])
+        neg = self.engine.infer(neg_prompt, images=[img])
+
+        return {
+            "positive": pos,
+            "negative": neg,
+            "pos_text": pos["text"],
+            "neg_text": neg["text"],
+            "elapsed": pos["elapsed_s"] + neg["elapsed_s"],
+        }
