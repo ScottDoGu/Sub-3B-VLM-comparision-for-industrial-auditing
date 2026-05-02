@@ -10,7 +10,7 @@ from src.generation_baseline.inference_utils import load_preprocessed_metadata
 
 class VLM_Engine:
     def __init__(self, model_id):
-        from transformers import AutoProcessor, AutoModelForVision2Seq, AutoModelForImageTextToText
+        from transformers import AutoProcessor, AutoModelForVision2Seq, AutoModelForImageTextToText, AutoModelForMultimodalLM
         self.model_id = model_id
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -20,16 +20,19 @@ class VLM_Engine:
             "openbmb/MiniCPM-V-2_6": "models/MiniCPM",
             "deepseek-ai/Janus-Pro-1.6B": "models/Janus",
             "internvl/internvl2-2b": "models/InternVL2",
-            "google/gemma-2-2b-it": "models/Gemma2"
+            "google/gemma-4-E2B-it": "models/Gemma4E2B"
         }
         local_path = mapping.get(model_id, f"models/{model_id.split('/')[-1]}")
 
         print(f"[ENGINE] Initializing {model_id} from {local_path}")
         self.processor = AutoProcessor.from_pretrained(local_path, trust_remote_code=True)
 
-        model_class = AutoModelForVision2Seq
-        if any(x in local_path for x in ["SmolVLM", "InternVL", "Gemma2"]):
+        if "Gemma4E2B" in local_path:
+            model_class = AutoModelForMultimodalLM
+        elif any(x in local_path for x in ["SmolVLM", "InternVL", "Janus"]):
             model_class = AutoModelForImageTextToText
+        else:
+            model_class = AutoModelForVision2Seq
 
         self.model = model_class.from_pretrained(
             local_path,
@@ -72,20 +75,22 @@ if __name__ == "__main__":
     torch.manual_seed(42 + args.run)
     final_results = []
 
-    for i, item in enumerate(tqdm(dataset, desc=f"Model: {args.model} | Run: {args.run}")):
+    print(f"[INFO] Evaluating {args.model} | Run {args.run}")
+
+    for i, item in enumerate(tqdm(dataset, desc="Processing Images")):
         img = Image.open(item['processed_path']).convert("RGB")
         row = item.copy()
         for name, strategy in strategies.items():
             try:
                 res = strategy.run(engine, img, item.get('category', 'item'))
-                row[f\"{name}_label\"] = res.get('label')
-                row[f\"{name}_text\"] = res.get('text')
+                row[f"{name}_label"] = res.get('label')
+                row[f"{name}_text"] = res.get('text')
             except Exception as e:
-                row[f\"{name}_error\"] = str(e)
+                row[f"{name}_error"] = str(e)
         final_results.append(row)
         if (i+1) % 10 == 0:
             gc.collect()
             torch.cuda.empty_cache()
 
     pd.DataFrame(final_results).to_csv(os.path.join(args.results, f"results_run_{args.run}.csv"), index=False)
-    print(f"[SUCCESS] Evaluation complete for {args.model}")
+    print(f"[SUCCESS] Saved comprehensive evaluations to {args.results}")
