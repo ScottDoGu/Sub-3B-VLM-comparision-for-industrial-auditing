@@ -1,114 +1,91 @@
-import json
-from pathlib import Path
-from typing import Dict, Any, List
+import os
+import torch
+import pandas as pd
+import gc
+import argparse
+from tqdm import tqdm
+from PIL import Image
+from exhaustive_strategies.innovations.registry import get_all_strategies
+from src.generation_baseline.inference_utils import load_preprocessed_metadata
 
-from src.generation_baseline.inference_utils import (
-    load_image_and_preprocess,
-    run_model_inference,
-    parse_model_output,
-)
-from src.generation_baseline.download_models import (
-    load_qwen2_vl,
-    load_internvl2,
-    load_minicpm,
-    load_janus,
-    load_smolvlm,
-    load_gemma4_e2b,
-)
-from src.ingestion.clean_metadata import load_clean_metadata  # adjust if different
+class VLM_Engine:
+    def __init__(self, model_id):
+        from transformers import AutoProcessor, AutoModelForVision2Seq, AutoModelForImageTextToText
+        self.model_id = model_id
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
-from exhaustive_strategies.base_strategy import Strategy
-from exhaustive_strategies.generation_cot.cot_verify import CoTVerify
-from exhaustive_strategies.generation_contrast.contrast_dual import ContrastDual
+        mapping = {
+            "HuggingFaceTB/SmolVLM-2.2B": "models/SmolVLM",
+            "Qwen/Qwen2-VL-2B-Instruct": "models/Qwen2VL",
+            "openbmb/MiniCPM-V-2_6": "models/MiniCPM",
+            "deepseek-ai/Janus-Pro-1.6B": "models/Janus",
+            "internvl/internvl2-2b": "models/InternVL2",
+            "google/gemma-2-2b-it": "models/Gemma2"
+        }
+        local_path = mapping.get(model_id, f"models/{model_id.split('/')[-1]}")
 
+        print(f"[ENGINE] Initializing {model_id} from {local_path}")
+        self.processor = AutoProcessor.from_pretrained(local_path, trust_remote_code=True)
 
-MODEL_LOADERS = {
-    "Qwen2-VL": load_qwen2_vl,
-    "InternVL2": load_internvl2,
-    "MiniCPM": load_minicpm,
-    "Janus": load_janus,
-    "SmolVLM": load_smolvlm,
-    "Gemma4-E2B": load_gemma4_e2b,
-}
+        model_class = AutoModelForVision2Seq
+        if any(x in local_path for x in ["SmolVLM", "InternVL", "Gemma2"]):
+            model_class = AutoModelForImageTextToText
 
-STRATEGIES: List[Strategy] = [
-    CoTVerify(),
-    ContrastDual(),
-    # add more here
-]
+        self.model = model_class.from_pretrained(
+            local_path,
+            torch_dtype=torch.bfloat16 if self.device == "cuda" else torch.float32,
+            device_map="auto" if self.device == "cuda" else None,
+            trust_remote_code=True
+        ).eval()
 
+    def infer(self, prompt, images=None):
+        if images and not isinstance(images, list): images = [images]
 
-def build_baseline_prompt(metadata: Dict[str, Any], model_name: str) -> str:
-    """
-    Reproduce the exact baseline prompt logic you have now.
-    For now, you can literally copy the prompt construction
-    from run_qwen2_vl.py / run_internvl2.py / etc. and branch
-    on model_name.
-    """
-    # Pseudocode – you’ll paste your real templates here:
-    if model_name == "Qwen2-VL":
-        # build Qwen prompt exactly as in run_qwen2_vl.py
-        ...
-    elif model_name == "InternVL2":
-        ...
-    elif model_name == "Gemma4-E2B":
-        ...
-    else:
-        ...
-    return prompt
+        if "Qwen2" in self.model_id:
+            from qwen_vl_utils import process_vision_info
+            messages = [{"role": "user", "content": [{"type": "image", "image": img} for img in images] + [{"type": "text", "text": prompt}]}]
+            text = self.processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+            image_inputs, _ = process_vision_info(messages)
+            inputs = self.processor(text=[text], images=image_inputs, padding=True, return_tensors="pt").to(self.device)
+        else:
+            inputs = self.processor(text=prompt, images=images, return_tensors="pt").to(self.device)
 
+        with torch.no_grad():
+            out = self.model.generate(**inputs, max_new_tokens=128, do_sample=False)
 
-def run_extension(
-    results_root: str = "results",
-    metadata_path: str = "src/ingestion/clean_metadata.json",
-    num_runs: int = 1,
-    config: Dict[str, Any] | None = None,
-) -> None:
-    config = config or {}
-    metadata = json.load(open(metadata_path, "r", encoding="utf-8"))
+        generated_ids = out[0][inputs['input_ids'].shape[1]:]
+        text = self.processor.decode(generated_ids, skip_special_tokens=True)
+        return {"text": text.strip(), "elapsed_s": 0.1}
 
-    for model_name, loader in MODEL_LOADERS.items():
-        model, processor = loader()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model", type=str, required=True)
+    parser.add_argument("--results", type=str, required=True)
+    parser.add_argument("--run", type=int, default=1)
+    args = parser.parse_args()
 
-        for strategy in STRATEGIES:
-            for run_idx in range(num_runs):
-                out_dir = Path(results_root) / model_name / strategy.name / f"run_{run_idx}"
-                out_dir.mkdir(parents=True, exist_ok=True)
+    engine = VLM_Engine(args.model)
+    strategies = get_all_strategies()
+    dataset = load_preprocessed_metadata()
+    os.makedirs(args.results, exist_ok=True)
 
-                predictions: List[Dict[str, Any]] = []
+    torch.manual_seed(42 + args.run)
+    final_results = []
 
-                for sample in metadata:
-                    image_path = sample["processed_path"]
-                    image_inputs = load_image_and_preprocess(image_path, processor)
+    for i, item in enumerate(tqdm(dataset, desc=f"Model: {args.model} | Run: {args.run}")):
+        img = Image.open(item['processed_path']).convert("RGB")
+        row = item.copy()
+        for name, strategy in strategies.items():
+            try:
+                res = strategy.run(engine, img, item.get('category', 'item'))
+                row[f\"{name}_label\"] = res.get('label')
+                row[f\"{name}_text\"] = res.get('text')
+            except Exception as e:
+                row[f\"{name}_error\"] = str(e)
+        final_results.append(row)
+        if (i+1) % 10 == 0:
+            gc.collect()
+            torch.cuda.empty_cache()
 
-                    base_prompt = build_baseline_prompt(sample, model_name)
-                    prompt = strategy.build_prompt(base_prompt, sample, model_name)
-
-                    raw_output = run_model_inference(model, processor, image_inputs, prompt)
-                    parsed = parse_model_output(raw_output)
-
-                    post = strategy.postprocess(raw_output, parsed, sample, model_name)
-
-                    result = {
-                        "image_id": sample["image_id"],
-                        "artifact_tag": sample["artifact_tag"],
-                        "category": sample["category"],
-                        "ground_truth": sample["expected_verdict"],
-                        "model_output": post["model_output"],
-                        "parsed_output": post["parsed_output"],
-                        "is_correct": post["is_correct"],
-                        "is_wrong": post["is_wrong"],
-                        "is_no_verdict": post["is_no_verdict"],
-                    }
-                    # carry any extra fields (e.g., traces)
-                    for k, v in post.items():
-                        if k not in result:
-                            result[k] = v
-
-                    predictions.append(result)
-
-                with open(out_dir / "predictions.json", "w", encoding="utf-8") as f:
-                    json.dump(predictions, f, indent=2)
-
-                # call your existing metric computation here if it’s a function
-                # compute_metrics(predictions, out_dir)
+    pd.DataFrame(final_results).to_csv(os.path.join(args.results, f"results_run_{args.run}.csv"), index=False)
+    print(f"[SUCCESS] Evaluation complete for {args.model}")
