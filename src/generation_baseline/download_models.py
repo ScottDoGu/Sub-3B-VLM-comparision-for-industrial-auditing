@@ -67,13 +67,12 @@ def download_internvl2(models_dir):
         print("InternVL2 already exists.")
 
 def download_minicpm(models_dir):
-    """BAP: Download full-precision weights; 4-bit quantization happens at inference time.
-    Uses snapshot_download so no GPU is required during download (runs under ragenv)."""
+    """BAP: Download full-precision weights; 4-bit quantization happens at inference time."""
     from huggingface_hub import snapshot_download
     model_id = "openbmb/MiniCPM-V-2"
     save_path = os.path.join(models_dir, "MiniCPM")
     if not os.path.exists(save_path):
-        print(f"Downloading {model_id} via snapshot_download (full precision)...")
+        print(f"Downloading {model_id} via snapshot_download (full precision)...Check ragenv.")
         snapshot_download(repo_id=model_id, local_dir=save_path, local_dir_use_symlinks=False)
         print(f"Saved to {save_path}")
     else:
@@ -110,12 +109,11 @@ def download_qwen2_vl(models_dir):
         print("Qwen2-VL already exists.")
 
 def download_gemma4_e2b(models_dir):
-    \"\"\"Download Gemma-4-E2B-it for multimodal processing.\"\"\"
+    """Download Gemma-4-E2B-it for multimodal processing."""
     model_id = "google/gemma-4-E2B-it"
     save_path = os.path.join(models_dir, "Gemma4E2B")
     if not os.path.exists(save_path):
         print(f"Downloading {model_id}...")
-        # Make sure to import AutoModelForMultimodalLM inside or globally
         from transformers import AutoProcessor, AutoModelForMultimodalLM
         processor = AutoProcessor.from_pretrained(model_id)
         model = AutoModelForMultimodalLM.from_pretrained(
@@ -142,6 +140,6 @@ if __name__ == "__main__":
     download_internvl2(base_models_dir)
     download_minicpm(base_models_dir)
     download_janus(base_models_dir)
-    download_qwen2_vl(base_models_dir) # Added call for Qwen2-VL
-    download_gemma4_e2b(base_models_dir) # Added call for Gemma-4-E2B-it
+    download_qwen2_vl(base_models_dir)
+    download_gemma4_e2b(base_models_dir)
     print("All models prepared.")
