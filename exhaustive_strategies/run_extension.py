@@ -11,31 +11,28 @@ from src.generation_baseline.inference_utils import load_preprocessed_metadata
 class VLM_Engine:
     def __init__(self, model_id):
         from transformers import AutoProcessor, AutoModelForVision2Seq, AutoModelForImageTextToText
-        
-        # Fallback for environments where AutoModelForMultimodalLM is missing
-        try:
-            from transformers import AutoModelForMultimodalLM
-        except ImportError:
-            print("[INFO] AutoModelForMultimodalLM not found, falling back to AutoModelForVision2Seq")
-            from transformers import AutoModelForVision2Seq as AutoModelForMultimodalLM
-
         self.model_id = model_id
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
+        # Use absolute paths to prevent Transformers from hitting the Hub
+        base_path = "/content/Sub-3B-VLM-comparision-for-industrial-auditing/models"
         mapping = {
-            "HuggingFaceTB/SmolVLM-2.2B": "models/SmolVLM",
-            "Qwen/Qwen2-VL-2B-Instruct": "models/Qwen2VL",
-            "openbmb/MiniCPM-V-2_6": "models/MiniCPM",
-            "deepseek-ai/Janus-Pro-1.6B": "models/Janus",
-            "internvl/internvl2-2b": "models/InternVL2",
-            "google/gemma-4-E2B-it": "models/Gemma4E2B"
+            "HuggingFaceTB/SmolVLM-2.2B": os.path.join(base_path, "SmolVLM"),
+            "Qwen/Qwen2-VL-2B-Instruct": os.path.join(base_path, "Qwen2VL"),
+            "openbmb/MiniCPM-V-2_6": os.path.join(base_path, "MiniCPM"),
+            "deepseek-ai/Janus-Pro-1.6B": os.path.join(base_path, "Janus"),
+            "internvl/internvl2-2b": os.path.join(base_path, "InternVL2"),
+            "google/gemma-4-E2B-it": os.path.join(base_path, "Gemma4E2B")
         }
-        local_path = mapping.get(model_id, f"models/{model_id.split('/')[-1]}")
+        local_path = mapping.get(model_id)
+        if not local_path:
+             local_path = os.path.join(base_path, model_id.split('/')[-1])
 
         print(f"[ENGINE] Initializing {model_id} from {local_path}")
-        self.processor = AutoProcessor.from_pretrained(local_path, trust_remote_code=True)
+        self.processor = AutoProcessor.from_pretrained(local_path, trust_remote_code=True, local_files_only=True)
 
         if "Gemma4E2B" in local_path:
+            from transformers import AutoModelForMultimodalLM
             model_class = AutoModelForMultimodalLM
         elif any(x in local_path for x in ["SmolVLM", "InternVL", "Janus"]):
             model_class = AutoModelForImageTextToText
@@ -46,7 +43,8 @@ class VLM_Engine:
             local_path,
             torch_dtype=torch.bfloat16 if self.device == "cuda" else torch.float32,
             device_map="auto" if self.device == "cuda" else None,
-            trust_remote_code=True
+            trust_remote_code=True,
+            local_files_only=True
         ).eval()
 
     def infer(self, prompt, images=None):
