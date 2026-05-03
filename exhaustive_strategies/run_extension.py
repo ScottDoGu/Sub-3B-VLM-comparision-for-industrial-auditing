@@ -10,7 +10,15 @@ from src.generation_baseline.inference_utils import load_preprocessed_metadata
 
 class VLM_Engine:
     def __init__(self, model_id):
-        from transformers import AutoProcessor, AutoModelForVision2Seq, AutoModelForImageTextToText, AutoModelForMultimodalLM
+        from transformers import AutoProcessor, AutoModelForVision2Seq, AutoModelForImageTextToText
+        
+        # Fallback for environments where AutoModelForMultimodalLM is missing
+        try:
+            from transformers import AutoModelForMultimodalLM
+        except ImportError:
+            print("[INFO] AutoModelForMultimodalLM not found, falling back to AutoModelForVision2Seq")
+            from transformers import AutoModelForVision2Seq as AutoModelForMultimodalLM
+
         self.model_id = model_id
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -83,10 +91,10 @@ if __name__ == "__main__":
         for name, strategy in strategies.items():
             try:
                 res = strategy.run(engine, img, item.get('category', 'item'))
-                row[f"{name}_label"] = res.get('label')
-                row[f"{name}_text"] = res.get('text')
+                row[f'{name}_label'] = res.get('label')
+                row[f'{name}_text'] = res.get('text')
             except Exception as e:
-                row[f"{name}_error"] = str(e)
+                row[f'{name}_error'] = str(e)
         final_results.append(row)
         if (i+1) % 10 == 0:
             gc.collect()
