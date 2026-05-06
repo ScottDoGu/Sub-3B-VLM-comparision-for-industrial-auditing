@@ -41,7 +41,6 @@ Thumbs.db
 # Presentation and Paper (DO NOT PUSH TO GITHUB)
 docs/
 presentation/
-paper/
 presenter_script.md
 generate_pptx.py
 extract_notes.py
@@ -55,3 +54,8 @@ src/evaluation/generate_latex_table.py
 # Demos
 demo_agentic_foveation.py
 demo_cropped_*.jpg
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
